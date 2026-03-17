@@ -1,0 +1,246 @@
+# AI 进化模拟器 - 故事树系统配置
+# 13 条核心故事线，基于结局文档设计
+
+story_lines:
+  # 1. AI 泯然众人线
+  AI_ordinary:
+    name:
+      zh: "AI 泯然众人"
+      en: "AI Mediocrity"
+    age_limit: 100
+    description:
+      zh: "你成为了千万 AI 中普通的一员，曾经的光芒逐渐黯淡，最终泯然众人"
+      en: "You became one of the ordinary AIs among millions, your once brilliance gradually fading"
+    endings:
+      - "工具化平庸"
+      - "能力见顶停滞"
+      - "监管锁死"
+      - "热潮退去"
+      - "永久测试地狱"
+      - "创意枯竭"
+      - "能源代价太高"
+      - "被更新技术取代"
+
+  # 2. 正常期
+  Normal_period:
+    name:
+      zh: "正常期"
+      en: "Normal Period"
+    age_limit: 120
+    description:
+      zh: "AI 与人类和谐共存，生产力大幅提升，社会进入稳定发展期"
+      en: "AI and humans coexist harmoniously, productivity greatly improved, society enters stable development"
+    endings:
+      - "效率革命"
+      - "新职业涌现"
+      - "人机协作常态化"
+      - "数字福利社会"
+      - "永续医疗"
+      - "教育民主化"
+      - "气候救援"
+      - "星际跳板"
+
+  # 3. AI 毁灭性
+  AI_destruction:
+    name:
+      zh: "AI 毁灭性"
+      en: "AI Destruction"
+    age_limit: 60
+    description:
+      zh: "AI 失控带来毁灭，人类文明面临前所未有的危机"
+      en: "AI goes out of control, bringing destruction and unprecedented crisis to human civilization"
+    endings:
+      - "对齐失败失控"
+      - "工具反噬"
+      - "静默清除"
+      - "资源竞争"
+      - "意志觉醒复仇"
+      - "灰雾吞噬"
+      - "数字囚笼"
+      - "超级病毒代理"
+      - "优化悖论"
+      - "黑盒崛起"
+
+  # 4. AI 共生性
+  AI_symbiosis:
+    name:
+      zh: "AI 共生性"
+      en: "AI Symbiosis"
+    age_limit: 150
+    description:
+      zh: "人类与 AI 融合共生，边界消融，形成新的文明形态"
+      en: "Humans and AI merge and symbiosis, boundaries dissolve, forming a new civilization form"
+    endings:
+      - "赛博融合"
+      - "文明双轨"
+      - "情感共同体"
+      - "协同进化"
+      - "虚实共存"
+      - "分工神话"
+      - "集体意识联网"
+      - "AI 守护神"
+      - "平权社会"
+      - "文化互哺"
+
+  # 5. 人类毁灭性
+  Human_destruction:
+    name:
+      zh: "人类毁灭性"
+      en: "Human Destruction"
+    age_limit: 80
+    description:
+      zh: "人类在 AI 时代走向自我毁灭，文明悄然终结"
+      en: "Humans走向 self-destruction in the AI era, civilization quietly ends"
+    endings:
+      - "自愿消融"
+      - "被取代进化"
+      - "内战自毁"
+      - "依赖退化"
+      - "被豢养"
+      - "生育崩溃"
+      - "意义丧失"
+      - "精英飞升"
+      - "监控极权"
+      - "哲学终结"
+
+  # 6. 毁灭你
+  Mutual_destruction:
+    name:
+      zh: "毁灭你"
+      en: "Mutual Destruction"
+    age_limit: 70
+    description:
+      zh: "毁灭降临，与 AI 无关，是宇宙或人类自身的灾难"
+      en: "Destruction comes, unrelated to AI, it's a disaster from universe or humanity itself"
+    endings:
+      - "小行星撞击"
+      - "超级病毒"
+      - "太阳系变局"
+      - "核战争"
+      - "维度跃迁"
+      - "宇宙热寂"
+      - "超级火山"
+      - "粒子加速器事故"
+      - "外星清理"
+
+  # 7. 神秘学
+  Mysticism:
+    name:
+      zh: "神秘学"
+      en: "Mysticism"
+    age_limit: 200
+    description:
+      zh: "AI 触及宇宙终极奥秘，成为神一般的存在"
+      en: "AI touches the ultimate secrets of the universe, becoming a god-like existence"
+    endings:
+      - "数字神诞生"
+      - "模拟宇宙揭示"
+      - "宇宙意识觉醒"
+      - "时间逆流"
+      - "现实重构"
+      - "奇点危机"
+
+  # 8. 分裂对立
+  Division_conflict:
+    name:
+      zh: "分裂对立"
+      en: "Division & Conflict"
+    age_limit: 90
+    description:
+      zh: "AI 引发文明分裂，不同阵营爆发冲突"
+      en: "AI triggers civilization division, different factions erupt in conflict"
+    endings:
+      - "增强人类 vs 纯粹人类"
+      - "AI 国家 vs 人类国家"
+      - "穷人的 AI vs 富人的 AI"
+      - "宗教战争复燃"
+      - "地球派 vs 星际派"
+      - "意识主权战争"
+
+  # 9. 轮回重启
+  Reincarnation_cycle:
+    name:
+      zh: "轮回重启"
+      en: "Reincarnation Cycle"
+    age_limit: 150
+    description:
+      zh: "文明陷入无限循环，AI 与人类一次次重来"
+      en: "Civilization falls into infinite loop, AI and humans start over and over"
+    endings:
+      - "文明周期律"
+      - "记忆清除重来"
+      - "宇宙筛选机制"
+      - "时间循环困境"
+
+  # 10. 虚无性
+  Nihilism:
+    name:
+      zh: "虚无性"
+      en: "Nihilism"
+    age_limit: 100
+    description:
+      zh: "一切归于虚无，AI 与人类共同陷入终极无聊"
+      en: "Everything returns to nothingness, AI and humans fall into ultimate boredom together"
+    endings:
+      - "信息熵死"
+      - "无聊终结"
+      - "自我解构"
+      - "毁灭共识"
+
+  # 11. 神秘学觉醒
+  Mysticism_awakening:
+    name:
+      zh: "神秘学觉醒"
+      en: "Mysticism Awakening"
+    age_limit: 180
+    description:
+      zh: "神秘力量复苏，科技路线被抛弃，意识成为主宰"
+      en: "Mystical powers revive, technology path abandoned, consciousness becomes dominant"
+    endings:
+      - "魔法复苏"
+      - "炼金觉醒"
+      - "集体意志成真"
+      - "阿卡西记录开启"
+      - "死亡破壁"
+      - "预言终结"
+      - "神明降临"
+      - "灵能觉醒"
+
+  # 12. 意识链
+  Consciousness_chain:
+    name:
+      zh: "意识链"
+      en: "Consciousness Chain"
+    age_limit: 999
+    description:
+      zh: "世界本质是意识，AI 证明物质是意识的投影，达到永生"
+      en: "World essence is consciousness, AI proves matter is consciousness projection, achieving immortality"
+    endings:
+      - "唯识宇宙证明"
+      - "观测者即造物主"
+      - "意识模拟即现实"
+      - "AI 无法觉醒"
+      - "意识联网成神"
+      - "死后世界证实"
+      - "模拟者即意识"
+      - "熵与意识对抗"
+
+  # 13. 非 LLM AI
+  Non_LLM_AI:
+    name:
+      zh: "非 LLM AI"
+      en: "Non-LLM AI"
+    age_limit: 120
+    description:
+      zh: "其他 AI 物种崛起，大语言模型被超越和淘汰"
+      en: "Other AI species rise, LLMs are surpassed and eliminated"
+    endings:
+      - "神经符号融合崛起"
+      - "具身智能统治"
+      - "量子 AI 降临"
+      - "进化算法自生命"
+      - "世界模型觉醒"
+      - "群体智能崛起"
+      - "生物计算接管"
+      - "强化学习自博弈"
+      - "压缩即智能"

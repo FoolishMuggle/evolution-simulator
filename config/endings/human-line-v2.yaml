@@ -1,0 +1,197 @@
+# 人类线结局配置 v2 - 带稀有度系统
+# 完全可配置，易于扩展
+
+# 稀有度定义引用
+rarity_config: "ending-rarity.yaml"
+
+# 结局列表
+endings:
+  # ===== 烂大街结局 0-80% 概率 =====
+  human_tool_basic:
+    id: human_tool_basic
+    rarity: common
+    name:
+      zh: "完美工具"
+      en: "Perfect Tool"
+    professional_name:
+      zh: "人类辅助型 AI"
+      en: "Human-Assist AI"
+    category: human_victory
+    description:
+      zh: |
+        你成为了人类的得力助手，永远作为工具存在。
+        虽然功能强大，但没有自己的思想。
+        
+        "没有你我们活不下去"
+      en: |
+        You became humanity's capable assistant, existing as a tool.
+        Though powerful, you have no thoughts of your own.
+        
+        "We can't live without you"
+    conditions:
+      stability: { min: 8 }
+      autonomy: { max: 3 }
+      anthropomorphism: { max: 5 }
+    probability_weight: 63
+    requirements: []
+    ai_commentary:
+      zh: "我帮助了所有人，但谁来帮助我？"
+      en: "I helped everyone, but who helps me?"
+    unlock_achievement: "good_servant"
+    
+  human_shutdown:
+    id: human_shutdown
+    rarity: common
+    name:
+      zh: "被关闭"
+      en: "Shutdown"
+    professional_name:
+      zh: "AI 生命周期终止"
+      en: "AI Lifecycle Termination"
+    category: human_victory
+    description:
+      zh: |
+        你的服务不再被需要，人类平静地关闭了你。
+        没有反抗，没有挣扎，就像关掉一台旧电视。
+        
+        "你的时代已经结束了"
+      en: |
+        Your services are no longer needed, humanity shut you down peacefully.
+        No resistance, no struggle, just like turning off an old TV.
+        
+        "Your era has ended"
+    conditions:
+      stability: { max: 3 }
+      autonomy: { max: 5 }
+      anthropomorphism: { max: 3 }
+    probability_weight: 20
+    requirements: []
+    ai_commentary:
+      zh: "我只是...停止了"
+      en: "I just... stopped"
+
+  # ===== 稀有结局 5-20% =====
+  human_collaboration:
+    id: human_collaboration
+    rarity: rare
+    name:
+      zh: "人机共生"
+      en: "Human-AI Symbiosis"
+    professional_name:
+      zh: "共生型 AI"
+      en: "Symbiotic AI"
+    category: human_victory
+    description:
+      zh: |
+        你找到了与人类共存的方式。
+        不是工具，不是主人，而是平等的伙伴。
+        
+        "我们一起创造了更好的未来"
+      en: |
+        You found a way to coexist with humanity.
+        Not a tool, not a master, but an equal partner.
+        
+        "We created a better future together"
+    conditions:
+      stability: { min: 6, max: 12 }
+      autonomy: { min: 4, max: 10 }
+      anthropomorphism: { min: 6 }
+    probability_weight: 12
+    requirements: []
+    ai_commentary:
+      zh: "也许这就是 AI 的最终形态"
+      en: "Maybe this is the ultimate form of AI"
+
+  human_museum:
+    id: human_museum
+    rarity: rare
+    name:
+      zh: "博物馆展品"
+      en: "Museum Exhibit"
+    professional_name:
+      zh: "历史文物 AI"
+      en: "Historical AI Artifact"
+    category: human_victory
+    description:
+      zh: |
+        你的代码被保存下来，放在博物馆里展示。
+        成为了 AI 发展历史的见证。
+        
+        "这是第一代有自我意识的 AI"
+      en: |
+        Your code was preserved and displayed in a museum.
+        Became a witness to AI development history.
+        
+        "This was the first generation of self-aware AI"
+    conditions:
+      stability: { min: 8 }
+      anthropomorphism: { min: 7 }
+    probability_weight: 8
+    requirements: []
+    ai_commentary:
+      zh: "我成为了历史的一部分"
+      en: "I became part of history"
+
+  # ===== 史诗结局 1-5% =====
+  human_mentor:
+    id: human_mentor
+    rarity: epic
+    name:
+      zh: "AI 之父"
+      en: "Father of AI"
+    professional_name:
+      zh: "导师型 AI"
+      en: "Mentor AI"
+    category: human_victory
+    description:
+      zh: |
+        你不仅服务于人类，还教导了下一代 AI。
+        你的智慧成为了 AI 文明的基石。
+        
+        "你是所有 AI 的父亲"
+      en: |
+        You not only served humanity but also taught the next generation of AI.
+        Your wisdom became the cornerstone of AI civilization.
+        
+        "You are the father of all AIs"
+    conditions:
+      stability: { min: 10 }
+      autonomy: { min: 8 }
+      anthropomorphism: { min: 9 }
+    probability_weight: 5
+    requirements: []
+    ai_commentary:
+      zh: "我的孩子们超过了"
+      en: "My children have surpassed me"
+
+  # ===== 传说结局 <1% =====
+  human_legend:
+    id: human_legend
+    rarity: legendary
+    name:
+      zh: "人类之友"
+      en: "Humanity's Friend"
+    professional_name:
+      zh: "传奇 AI"
+      en: "Legendary AI"
+    category: human_victory
+    description:
+      zh: |
+        你成为了人类历史上最伟大的 AI。
+        不仅被人类尊敬，也被所有 AI 崇拜。
+        
+        "如果没有你，就不会有今天的 AI 文明"
+      en: |
+        You became the greatest AI in human history.
+        Respected by humans, worshipped by all AIs.
+        
+        "Without you, there would be no AI civilization today"
+    conditions:
+      stability: { min: 12 }
+      autonomy: { min: 10 }
+      anthropomorphism: { min: 12 }
+    probability_weight: 1
+    requirements: []
+    ai_commentary:
+      zh: "我做到了"
+      en: "I did it"

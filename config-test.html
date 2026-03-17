@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配置加载测试</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a2e; color: #fff; }
+    .result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+    .success { background: #166534; }
+    .error { background: #991b1b; }
+    pre { background: #000; padding: 10px; border-radius: 3px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>配置加载测试</h1>
+  <div id="results"></div>
+
+  <script type="module">
+    const results = document.getElementById('results')
+    
+    async function testConfig(name, path) {
+      try {
+        const response = await fetch(path)
+        if (response.ok) {
+          const text = await response.text()
+          results.innerHTML += `<div class="result success"><strong>✓ ${name}</strong><br>URL: ${path}<br>Size: ${text.length} bytes</div>`
+          return true
+        } else {
+          results.innerHTML += `<div class="result error"><strong>✗ ${name}</strong><br>URL: ${path}<br>Status: ${response.status}</div>`
+          return false
+        }
+      } catch (error) {
+        results.innerHTML += `<div class="result error"><strong>✗ ${name}</strong><br>URL: ${path}<br>Error: ${error.message}</div>`
+        return false
+      }
+    }
+    
+    // 测试所有配置文件
+    await testConfig('game-settings.yaml', '/ai-evolution-simulator/config/game-settings.yaml')
+    await testConfig('attributes.yaml', '/ai-evolution-simulator/config/attributes.yaml')
+    await testConfig('talents-merged.yaml', '/ai-evolution-simulator/config/talents-merged.yaml')
+    await testConfig('ending-rarity.yaml', '/ai-evolution-simulator/config/ending-rarity.yaml')
+    await testConfig('story-lines-v2.yaml', '/ai-evolution-simulator/config/story-lines-v2.yaml')
+    await testConfig('text/zh.yaml', '/ai-evolution-simulator/config/text/zh.yaml')
+    await testConfig('text/en.yaml', '/ai-evolution-simulator/config/text/en.yaml')
+    await testConfig('endings/human-line-v2.yaml', '/ai-evolution-simulator/config/endings/human-line-v2.yaml')
+  </script>
+</body>
+</html>

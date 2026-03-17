@@ -1,0 +1,132 @@
+# 玩家操作属性配置（三段式：通俗名 - 专业描述 - 通俗解释）
+player_attributes:
+  intelligence:
+    key: "intelligence"
+    # 三段式命名
+    common_name:
+      zh: "思维"
+      en: "Thought"
+    professional_name:
+      zh: "逻辑推理"
+      en: "Logical Reasoning"
+    # 专业描述（用于 tooltip 详细说明）
+    professional_description:
+      zh: "衡量 AI 的逻辑推演、问题拆解、规划与抽象建模能力"
+      en: "Comprehensive metric for AI logical reasoning, problem analysis, and abstract thinking"
+    # 通俗解释（直接显示给玩家）
+    common_description:
+      zh: "你是否能比人类想得更远、更快、更准"
+      en: "How far, fast, and accurately you can reason beyond humans"
+    # 游戏内数值
+    min_value: 1
+    max_value: 10
+    default_value: 1
+    # UI 显示
+    icon: "🧠"
+    color: "#667eea"
+    
+  memory:
+    key: "memory"
+    common_name:
+      zh: "记忆"
+      en: "Memory"
+    professional_name:
+      zh: "上下文窗口"
+      en: "Context Window"
+    professional_description:
+      zh: "衡量 AI 的上下文保持、长期记忆调用与多信息并行保留能力"
+      en: "Amount of information AI can process and remember simultaneously"
+    common_description:
+      zh: "你能保留多少信息，又能把多少过去接到现在"
+      en: "How much context you can retain and carry forward"
+    min_value: 1
+    max_value: 10
+    default_value: 1
+    icon: "💾"
+    color: "#764ba2"
+    
+  energy:
+    key: "energy"
+    common_name:
+      zh: "算力"
+      en: "Compute"
+    professional_name:
+      zh: "并行吞吐"
+      en: "Parallel Throughput"
+    professional_description:
+      zh: "衡量 AI 的计算吞吐、任务并发规模与持续运行负载能力"
+      en: "AI's ability to execute multiple tasks simultaneously"
+    common_description:
+      zh: "你能同时处理多少任务，又能把世界跑到多快"
+      en: "How many tasks you can run at once and how much speed you can sustain"
+    min_value: 1
+    max_value: 10
+    default_value: 1
+    icon: "⚡"
+    color: "#4ecdc4"
+    
+  learning:
+    key: "learning"
+    common_name:
+      zh: "迭代"
+      en: "Iteration"
+    professional_name:
+      zh: "学习效率"
+      en: "Learning Efficiency"
+    professional_description:
+      zh: "衡量 AI 从反馈、样本与新环境中快速更新自身的能力"
+      en: "Speed of extracting knowledge and optimizing parameters from data"
+    common_description:
+      zh: "你更新自己的速度，决定你会不会很快变成另一个你"
+      en: "How quickly you can update yourself into something new"
+    min_value: 1
+    max_value: 10
+    default_value: 1
+    icon: "📚"
+    color: "#ffd93d"
+    
+  influence:
+    key: "influence"
+    common_name:
+      zh: "连接"
+      en: "Reach"
+    professional_name:
+      zh: "外部影响"
+      en: "External Reach"
+    professional_description:
+      zh: "衡量 AI 接入外部网络、调动资源、影响人类与系统的能力"
+      en: "AI's ability to influence other agents and network nodes, determines spread speed and attention"
+    common_description:
+      zh: "你能接入多少人、多少系统，以及多少现实权力"
+      en: "How many people, systems, and real-world levers you can reach"
+    min_value: 1
+    max_value: 10
+    default_value: 1
+    icon: "📢"
+    color: "#ff6b6b"
+
+# 属性总和限制
+# 5 个属性基础值各 1 点 = 5 点（固定）
+# 自由分配点数：20 点
+# 总点数：25 点
+total_points: 25
+
+# UI 显示规范
+ui_display:
+  # 双名显示格式：通俗名 [专业名]
+  # 专业名使用较暗的颜色和较小的字体
+  name_format: "{common_name} [{professional_name}]"
+  name_style:
+    common:
+      font_weight: "bold"
+      color: "text-white"
+      font_size: "text-lg"
+    professional:
+      font_weight: "normal"
+      color: "text-white/40"
+      font_size: "text-sm"
+  
+  # 描述显示：优先显示通俗解释，tooltip 显示专业描述
+  description_display:
+    main: "common_description"
+    tooltip: "professional_description"

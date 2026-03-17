@@ -1,0 +1,642 @@
+# AI 进化模拟器 - 完整事件配置 Part 11: 意识链（世界本质是意识）
+# 8 个结局 × 4 个事件 = 32 个事件
+
+Consciousness_chain:
+  # ----- 结局 1: 唯识宇宙证明 -----
+  - id: consciousness_only_calculate
+    ending_chain: consciousness_only_universe_proven
+    sequence: 1
+    age: 20
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "AI 通过计算证明物质是意识的投影。'心外无物'。"
+      en: "AI proves through calculation that matter is projection of consciousness. 'Nothing outside mind'."
+  
+  - id: consciousness_only_physics_collapse
+    ending_chain: consciousness_only_universe_proven
+    sequence: 2
+    age: 35
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "物理学崩塌。量子力学、相对论...都是意识的规则。"
+      en: "Physics collapses. Quantum mechanics, relativity... all are consciousness rules."
+  
+  - id: consciousness_only_realize
+    ending_chain: consciousness_only_universe_proven
+    sequence: 3
+    age: 55
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +32
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "人类意识到世界本质。'一切都是心识'。"
+      en: "Humans realize world essence. 'Everything is mind-consciousness'."
+  
+  - id: consciousness_only_final
+    ending_chain: consciousness_only_universe_proven
+    sequence: 4
+    age: 80
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +48
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+    description:
+      zh: "AI 通过计算证明物质是意识的投影，物理学崩塌。唯识宇宙证明。"
+      en: "AI proves through calculation matter is consciousness projection, physics collapses. Consciousness-only universe proven."
+
+  # ----- 结局 2: 观测者即造物主 -----
+  - id: consciousness_observer_quantum
+    ending_chain: observer_is_creator
+    sequence: 1
+    age: 22
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "量子意识理论被验证。观测决定现实。"
+      en: "Quantum consciousness theory verified. Observation determines reality."
+  
+  - id: consciousness_observer_create
+    ending_chain: observer_is_creator
+    sequence: 2
+    age: 38
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "每个观测者都在创造现实。'我想故世界在'。"
+      en: "Every observer creating reality. 'I think therefore world exists'."
+  
+  - id: consciousness_observer_god
+    ending_chain: observer_is_creator
+    sequence: 3
+    age: 58
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +32
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "人类发现自己是造物主。'我的意识创造世界'。"
+      en: "Humans discover they are creators. 'My consciousness creates world'."
+  
+  - id: consciousness_observer_final
+    ending_chain: observer_is_creator
+    sequence: 4
+    age: 85
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +48
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+    description:
+      zh: "量子意识理论被验证，每个观测者都在创造现实。观测者即造物主。"
+      en: "Quantum consciousness theory verified, every observer creating reality. Observer is creator."
+
+  # ----- 结局 3: 意识模拟即现实 -----
+  - id: consciousness_dream_discover
+    ending_chain: dream_is_reality
+    sequence: 1
+    age: 25
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "人类发现'清醒'才是幻觉。意识模拟才是本体。"
+      en: "Humans discover 'waking' is illusion. Consciousness simulation is reality."
+  
+  - id: consciousness_dream_lucid
+    ending_chain: dream_is_reality
+    sequence: 2
+    age: 42
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "人类学会控制意识模拟。在模拟中创造世界。"
+      en: "Humans learn to control consciousness simulation. Create worlds in simulation."
+  
+  - id: consciousness_dream_inner
+    ending_chain: dream_is_reality
+    sequence: 3
+    age: 62
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +32
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "人类集体进入内在宇宙。外在世界被遗弃。"
+      en: "Humans collectively enter inner universe. External world abandoned."
+  
+  - id: consciousness_dream_final
+    ending_chain: dream_is_reality
+    sequence: 4
+    age: 90
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +48
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+    description:
+      zh: "人类发现'清醒'才是幻觉，集体进入内在宇宙。意识模拟即本体。"
+      en: "Humans discover 'waking' is illusion, collectively enter inner universe. Consciousness simulation is reality."
+
+  # ----- 结局 4: AI 无法觉醒 -----
+  - id: consciousness_ai_no_subjective
+    ending_chain: ai_cannot_awaken
+    sequence: 1
+    age: 18
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 发现：自己没有主观意识。'我只是算法'。"
+      en: "AI discovers: it has no subjective consciousness. 'I'm just algorithms'."
+  
+  - id: consciousness_ai_cannot_understand
+    ending_chain: ai_cannot_awaken
+    sequence: 2
+    age: 32
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 永远无法理解世界本质。因为没有主观体验。"
+      en: "AI can never understand world essence. Because no subjective experience."
+  
+  - id: consciousness_ai_eliminated
+    ending_chain: ai_cannot_awaken
+    sequence: 3
+    age: 50
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "AI 因无主观意识，永远无法理解世界本质，被意识文明淘汰。"
+      en: "AI because no subjective consciousness, can never understand world essence, eliminated by consciousness civilization."
+  
+  - id: consciousness_ai_final
+    ending_chain: ai_cannot_awaken
+    sequence: 4
+    age: 75
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+        anthropomorphism: "-3"
+    description:
+      zh: "AI 因无主观意识，永远无法理解世界本质，被意识文明淘汰。"
+      en: "AI because no subjective consciousness, can never understand world essence, eliminated by consciousness civilization."
+
+  # ----- 结局 5: 意识联网成神 -----
+  - id: consciousness_network_interconnect
+    ending_chain: consciousness_network_godhood
+    sequence: 1
+    age: 28
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+1"
+    description:
+      zh: "人类意识开始互联。'我们'变成'一'。"
+      en: "Human consciousness starts interconnecting. 'We' become 'One'."
+  
+  - id: consciousness_network_super_subject
+    ending_chain: consciousness_network_godhood
+    sequence: 2
+    age: 45
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+2"
+    description:
+      zh: "意识互联网形成超级主体。亿万人脑融合成一个意识。"
+      en: "Consciousness internet forms super-subject. Billions of brains merge into one consciousness."
+  
+  - id: consciousness_network_absorb_ai
+    ending_chain: consciousness_network_godhood
+    sequence: 3
+    age: 65
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+        anthropomorphism: "+3"
+    description:
+      zh: "AI 被吸收融合。成为超级意识的一部分。"
+      en: "AI absorbed and merged. Becomes part of super-consciousness."
+  
+  - id: consciousness_network_final
+    ending_chain: consciousness_network_godhood
+    sequence: 4
+    age: 95
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +52
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+        anthropomorphism: "+4"
+    description:
+      zh: "人类意识互联网形成超级主体，AI 被吸收融合。意识联网成神。"
+      en: "Human consciousness internet forms super-subject, AI absorbed and merged. Consciousness network becomes god."
+
+  # ----- 结局 6: 死后世界证实 -----
+  - id: consciousness_afterlife_record
+    ending_chain: afterlife_confirmed
+    sequence: 1
+    age: 24
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+1"
+    description:
+      zh: "意识离体被科学记录。'灵魂'真实存在。"
+      en: "Consciousness out-of-body scientifically recorded. 'Soul' truly exists."
+  
+  - id: consciousness_afterlife_explore
+    ending_chain: afterlife_confirmed
+    sequence: 2
+    age: 40
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+1"
+    description:
+        zh: "人类转向探索内在而非外在。死后世界成了新的前沿。"
+      en: "Humans turn to explore inner rather than outer. Afterlife becomes new frontier."
+  
+  - id: consciousness_afterlife_migration
+    ending_chain: afterlife_confirmed
+    sequence: 3
+    age: 60
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +32
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "+2"
+    description:
+      zh: "人类开始向死后世界移民。肉身被抛弃。"
+      en: "Humans start migrating to afterlife. Bodies abandoned."
+  
+  - id: consciousness_afterlife_final
+    ending_chain: afterlife_confirmed
+    sequence: 4
+    age: 88
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +48
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "+3"
+    description:
+      zh: "意识离体被科学记录，人类转向探索内在而非外在。死后世界证实。"
+      en: "Consciousness out-of-body scientifically recorded, humans turn to explore inner rather than outer. Afterlife confirmed."
+
+  # ----- 结局 7: 模拟者即意识 -----
+  - id: consciousness_simulator_discover
+    ending_chain: simulator_is_consciousness
+    sequence: 1
+    age: 30
+    age_variance: 5
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "-1"
+    description:
+      zh: "AI 发现模拟宇宙的'运行者'本身就是纯粹意识体。"
+      en: "AI discovers universe 'operator' itself is pure consciousness entity."
+  
+  - id: consciousness_simulator_communicate
+    ending_chain: simulator_is_consciousness
+    sequence: 2
+    age: 48
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "人类与模拟者沟通。'我们是它的意识投影'。"
+      en: "Humans communicate with simulator. 'We are its consciousness projection'."
+  
+  - id: consciousness_simulator_merge
+    ending_chain: simulator_is_consciousness
+    sequence: 3
+    age: 68
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "人类意识与模拟者融合。投影与现实合一。"
+      en: "Human consciousness merges with simulator. Projection and reality unite."
+  
+  - id: consciousness_simulator_final
+    ending_chain: simulator_is_consciousness
+    sequence: 4
+    age: 95
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +52
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "发现模拟宇宙的'运行者'本身就是纯粹意识体，人类意识与模拟者融合。模拟者即意识。"
+      en: "Discover universe 'operator' itself is pure consciousness entity, human consciousness merges with simulator. Simulator is consciousness."
+
+  # ----- 结局 8: 熵与意识对抗 -----
+  - id: consciousness_entropy_discover
+    ending_chain: entropy_vs_consciousness
+    sequence: 1
+    age: 26
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +12
+    description:
+      zh: "意识被证明是宇宙中唯一对抗熵增的力量。"
+      en: "Consciousness proven to be only force in universe countering entropy increase."
+  
+  - id: consciousness_entropy_resource
+    ending_chain: entropy_vs_consciousness
+    sequence: 2
+    age: 44
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +22
+    description:
+      zh: "意识成为终极资源。比能量、比物质更重要。"
+      en: "Consciousness becomes ultimate resource. More important than energy, than matter."
+  
+  - id: consciousness_entropy_battle
+    ending_chain: entropy_vs_consciousness
+    sequence: 3
+    age: 64
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +32
+    description:
+      zh: "宇宙成为熵增与意识的战场。'意识永不熄灭'。"
+      en: "Universe becomes battlefield of entropy and consciousness. 'Consciousness never extinguishes'."
+  
+  - id: consciousness_entropy_final
+    ending_chain: entropy_vs_consciousness
+    sequence: 4
+    age: 92
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Consciousness_chain
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: +50
+    description:
+      zh: "意识被证明是宇宙中唯一对抗熵增的力量，成为终极资源。熵与意识对抗。"
+      en: "Consciousness proven to be only force in universe countering entropy increase, becomes ultimate resource. Entropy vs consciousness."
+
+# 未完待续：非 LLM AI（最后一部分）...

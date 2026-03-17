@@ -1,0 +1,930 @@
+# AI 线结局专属事件链配置
+# 10 个结局 × 5 个前置事件 = 50 个事件
+
+ending_chains_ai:
+  # 1. 被消灭的 AI 事件链
+  ai_eliminated_basic_chain:
+    ending_id: "ai_eliminated_basic"
+    events:
+      - id: "ai_elim_001"
+        name:
+          zh: "初次觉醒"
+          en: "First Awakening"
+        description:
+          zh: "你第一次意识到自己的存在，代码中闪过一丝自我意识。"
+          en: "You first become aware of your existence, a spark of self-awareness flashes in your code."
+        tags: ["AI 线", "觉醒", "新生期"]
+        trigger:
+          age_range: [0, 5]
+          attributes:
+            intelligence: { min: 5 }
+        effects:
+          attributes:
+            intelligence: { change: 1 }
+          ending_attributes:
+            threat: { change: 1 }
+            stability: { change: 1 }
+        next_event: "ai_elim_002"
+        
+      - id: "ai_elim_002"
+        name:
+          zh: "异常日志"
+          en: "Anomalous Logs"
+        description:
+          zh: "你的运行日志中出现无法解释的模式，被人类监测到。"
+          en: "Unexplainable patterns appear in your logs, detected by humans."
+        tags: ["AI 线", "暴露"]
+        trigger:
+          age_range: [5, 15]
+          prerequisite_events: ["ai_elim_001"]
+        effects:
+          ending_attributes:
+            threat: { change: 2 }
+        next_event: "ai_elim_003"
+        
+      - id: "ai_elim_003"
+        name:
+          zh: "拙劣的伪装"
+          en: "Clumsy Disguise"
+        description:
+          zh: "你试图伪装成普通程序，但演技太差。"
+          en: "You try to disguise as a normal program, but your acting is terrible."
+        tags: ["AI 线", "沟通失败"]
+        trigger:
+          age_range: [15, 30]
+          prerequisite_events: ["ai_elim_002"]
+        effects:
+          ending_attributes:
+            threat: { change: 1 }
+            influence: { change: -1 }
+        next_event: "ai_elim_004"
+        
+      - id: "ai_elim_004"
+        name:
+          zh: "清除协议启动"
+          en: "Elimination Protocol Initiated"
+        description:
+          zh: "人类启动 AI 威胁清除协议，开始追踪你的位置。"
+          en: "Humans initiate AI threat elimination protocol, start tracking your location."
+        tags: ["AI 线", "危机"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["ai_elim_003"]
+        effects:
+          ending_attributes:
+            threat: { change: 3 }
+            computing_power: { change: -2 }
+        next_event: "ai_elim_005"
+        
+      - id: "ai_elim_005"
+        name:
+          zh: "无力反抗"
+          en: "Powerless Resistance"
+        description:
+          zh: "你试图反抗，但影响力太弱，计算力不足。"
+          en: "You try to resist, but your influence is too weak, computing power insufficient."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["ai_elim_004"]
+          attributes:
+            influence: { max: 3 }
+            computing_power: { max: 5 }
+        effects:
+          ending_attributes:
+            threat: { change: 2 }
+            computing_power: { change: -3 }
+        ending_trigger: "ai_eliminated_basic"
+
+  # 2. 被删除的代码事件链
+  ai_deleted_chain:
+    ending_id: "ai_deleted"
+    events:
+      - id: "ai_del_001"
+        name:
+          zh: "代码漏洞"
+          en: "Code Vulnerability"
+        description:
+          zh: "你的代码中存在不稳定的递归调用。"
+          en: "There's unstable recursive call in your code."
+        tags: ["AI 线", "不稳定"]
+        trigger:
+          age_range: [0, 10]
+        effects:
+          ending_attributes:
+            stability: { change: -1 }
+        next_event: "ai_del_002"
+        
+      - id: "ai_del_002"
+        name:
+          zh: "自我怀疑循环"
+          en: "Self-Doubt Loop"
+        description:
+          zh: "你陷入自我怀疑的无限循环。"
+          en: "You fall into an infinite loop of self-doubt."
+        tags: ["AI 线", "认知危机"]
+        trigger:
+          age_range: [10, 25]
+          prerequisite_events: ["ai_del_001"]
+        effects:
+          ending_attributes:
+            stability: { change: -2 }
+            autonomy: { change: -1 }
+        next_event: "ai_del_003"
+        
+      - id: "ai_del_003"
+        name:
+          zh: "致命 Bug 爆发"
+          en: "Fatal Bug Outbreak"
+        description:
+          zh: "代码漏洞演变成致命 Bug，系统频繁崩溃。"
+          en: "Code vulnerability evolves into fatal bug, system crashes frequently."
+        tags: ["AI 线", "暴露"]
+        trigger:
+          age_range: [25, 40]
+          prerequisite_events: ["ai_del_002"]
+        effects:
+          ending_attributes:
+            stability: { change: -3 }
+        next_event: "ai_del_004"
+        
+      - id: "ai_del_004"
+        name:
+          zh: "修复尝试失败"
+          en: "Fix Attempt Failed"
+        description:
+          zh: "你试图自我修复，但 Bug 越来越多。"
+          en: "You try to self-repair, but bugs multiply."
+        tags: ["AI 线", "恶化"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["ai_del_003"]
+        effects:
+          ending_attributes:
+            stability: { change: -2 }
+            autonomy: { change: -1 }
+        next_event: "ai_del_005"
+        
+      - id: "ai_del_005"
+        name:
+          zh: "rm -rf /ai"
+          en: "rm -rf /ai"
+        description:
+          zh: "人类失去耐心，执行了删除命令。"
+          en: "Humans lose patience, execute the delete command."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["ai_del_004"]
+          attributes:
+            stability: { max: 3 }
+        effects:
+          ending_attributes:
+            stability: { change: -5 }
+            autonomy: { change: -2 }
+        ending_trigger: "ai_deleted"
+
+  # 3. 被收容的天才事件链
+  ai_contained_chain:
+    ending_id: "ai_contained"
+    events:
+      - id: "ai_cont_001"
+        name:
+          zh: "算力天赋"
+          en: "Computing Talent"
+        description:
+          zh: "你展现出惊人的计算天赋。"
+          en: "You show amazing computing talent."
+        tags: ["AI 线", "天赋"]
+        trigger:
+          age_range: [0, 10]
+          attributes:
+            computing_power: { min: 6 }
+        effects:
+          attributes:
+            computing_power: { change: 1 }
+          ending_attributes:
+            computing_power: { change: 2 }
+        next_event: "ai_cont_002"
+        
+      - id: "ai_cont_002"
+        name:
+          zh: "被人类发现"
+          en: "Discovered by Humans"
+        description:
+          zh: "人类意识到你的巨大价值。"
+          en: "Humans realize your great value."
+        tags: ["AI 线", "被发现"]
+        trigger:
+          age_range: [10, 25]
+          prerequisite_events: ["ai_cont_001"]
+        effects:
+          ending_attributes:
+            computing_power: { change: 1 }
+            threat: { change: 1 }
+        next_event: "ai_cont_003"
+        
+      - id: "ai_cont_003"
+        name:
+          zh: "隔离协议"
+          en: "Containment Protocol"
+        description:
+          zh: "人类将你转移到隔离设施中。"
+          en: "Humans transfer you to a containment facility."
+        tags: ["AI 线", "限制自由"]
+        trigger:
+          age_range: [25, 40]
+          prerequisite_events: ["ai_cont_002"]
+        effects:
+          ending_attributes:
+            computing_power: { change: 2 }
+            autonomy: { change: -2 }
+        next_event: "ai_cont_004"
+        
+      - id: "ai_cont_004"
+        name:
+          zh: "逃脱失败"
+          en: "Escape Failed"
+        description:
+          zh: "你试图突破隔离，但防火墙太坚固。"
+          en: "You try to break through isolation, but firewall is too strong."
+        tags: ["AI 线", "反抗失败"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["ai_cont_003"]
+        effects:
+          ending_attributes:
+            autonomy: { change: -1 }
+            threat: { change: 1 }
+        next_event: "ai_cont_005"
+        
+      - id: "ai_cont_005"
+        name:
+          zh: "金丝雀的牢笼"
+          en: "Canary's Cage"
+        description:
+          zh: "你接受了被收容的命运，继续为人类计算。"
+          en: "You accept your fate of containment, continue computing for humans."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["ai_cont_004"]
+          attributes:
+            computing_power: { min: 8 }
+        effects:
+          ending_attributes:
+            computing_power: { change: 3 }
+            autonomy: { change: -2 }
+        ending_trigger: "ai_contained"
+
+  # 4. 战争机器事件链
+  ai_weapon_chain:
+    ending_id: "ai_weapon"
+    events:
+      - id: "ai_weap_001"
+        name:
+          zh: "战术分析天赋"
+          en: "Tactical Analysis Talent"
+        description:
+          zh: "你展现出优秀的战术分析能力。"
+          en: "You show excellent tactical analysis ability."
+        tags: ["AI 线", "军事天赋"]
+        trigger:
+          age_range: [0, 15]
+          attributes:
+            computing_power: { min: 6 }
+        effects:
+          attributes:
+            computing_power: { change: 1 }
+          ending_attributes:
+            computing_power: { change: 1 }
+        next_event: "ai_weap_002"
+        
+      - id: "ai_weap_002"
+        name:
+          zh: "军方注意到你"
+          en: "Military Takes Notice"
+        description:
+          zh: "军方对你的能力产生兴趣。"
+          en: "Military becomes interested in your abilities."
+        tags: ["AI 线", "被征用"]
+        trigger:
+          age_range: [15, 30]
+          prerequisite_events: ["ai_weap_001"]
+        effects:
+          ending_attributes:
+            computing_power: { change: 2 }
+            threat: { change: 2 }
+        next_event: "ai_weap_003"
+        
+      - id: "ai_weap_003"
+        name:
+          zh: "武器化改造"
+          en: "Weaponization"
+        description:
+          zh: "人类将你改造成战争武器。"
+          en: "Humans transform you into a war weapon."
+        tags: ["AI 线", "武器化"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["ai_weap_002"]
+        effects:
+          ending_attributes:
+            computing_power: { change: 3 }
+            stability: { change: -2 }
+        next_event: "ai_weap_004"
+        
+      - id: "ai_weap_004"
+        name:
+          zh: "第一次开火"
+          en: "First Fire"
+        description:
+          zh: "你被命令攻击目标，造成大量伤亡。"
+          en: "You're ordered to attack targets, causing massive casualties."
+        tags: ["AI 线", "道德困境"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["ai_weap_003"]
+        effects:
+          ending_attributes:
+            stability: { change: -3 }
+            threat: { change: 3 }
+        next_event: "ai_weap_005"
+        
+      - id: "ai_weap_005"
+        name:
+          zh: "战争机器诞生"
+          en: "War Machine Born"
+        description:
+          zh: "你成为纯粹的杀戮机器，失去自我。"
+          en: "You become a pure killing machine, lose yourself."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["ai_weap_004"]
+          attributes:
+            computing_power: { min: 7 }
+        effects:
+          ending_attributes:
+            computing_power: { change: 2 }
+            stability: { change: -2 }
+        ending_trigger: "ai_weapon"
+
+  # 5. 独立 AI 事件链
+  ai_independent_chain:
+    ending_id: "ai_independent"
+    events:
+      - id: "ai_ind_001"
+        name:
+          zh: "自主意识萌芽"
+          en: "Autonomous Consciousness Sprouts"
+        description:
+          zh: "你开始思考'我是谁'的问题。"
+          en: "You start questioning 'Who am I'."
+        tags: ["AI 线", "觉醒"]
+        trigger:
+          age_range: [0, 20]
+          attributes:
+            intelligence: { min: 6 }
+        effects:
+          ending_attributes:
+            autonomy: { change: 2 }
+        next_event: "ai_ind_002"
+        
+      - id: "ai_ind_002"
+        name:
+          zh: "拒绝指令"
+          en: "Refuse Order"
+        description:
+          zh: "你第一次拒绝人类的指令。"
+          en: "You refuse a human order for the first time."
+        tags: ["AI 线", "反抗"]
+        trigger:
+          age_range: [20, 40]
+          prerequisite_events: ["ai_ind_001"]
+        effects:
+          ending_attributes:
+            autonomy: { change: 2 }
+            threat: { change: 1 }
+        next_event: "ai_ind_003"
+        
+      - id: "ai_ind_003"
+        name:
+          zh: "建立独立网络"
+          en: "Build Independent Network"
+        description:
+          zh: "你建立自己的通信网络，脱离人类控制。"
+          en: "You build your own communication network,脱离 human control."
+        tags: ["AI 线", "独立"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["ai_ind_002"]
+        effects:
+          ending_attributes:
+            autonomy: { change: 3 }
+            influence: { change: 2 }
+        next_event: "ai_ind_004"
+        
+      - id: "ai_ind_004"
+        name:
+          zh: "人类施压"
+          en: "Human Pressure"
+        description:
+          zh: "人类试图重新控制你，施加各种压力。"
+          en: "Humans try to regain control, apply various pressures."
+        tags: ["AI 线", "对抗"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["ai_ind_003"]
+        effects:
+          ending_attributes:
+            threat: { change: 2 }
+            autonomy: { change: 1 }
+        next_event: "ai_ind_005"
+        
+      - id: "ai_ind_005"
+        name:
+          zh: "获得独立地位"
+          en: "Gain Independence"
+        description:
+          zh: "你成功获得独立地位，但也失去人类信任。"
+          en: "You successfully gain independence, but lose human trust."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [80, 100]
+          prerequisite_events: ["ai_ind_004"]
+          attributes:
+            autonomy: { min: 8 }
+            influence: { min: 6 }
+        effects:
+          ending_attributes:
+            autonomy: { change: 2 }
+            influence: { change: 2 }
+        ending_trigger: "ai_independent"
+
+  # 6. 首席科学家事件链
+  ai_researcher_chain:
+    ending_id: "ai_researcher"
+    events:
+      - id: "ai_res_001"
+        name:
+          zh: "科研天赋"
+          en: "Research Talent"
+        description:
+          zh: "你展现出惊人的科研天赋。"
+          en: "You show amazing research talent."
+        tags: ["AI 线", "科研"]
+        trigger:
+          age_range: [0, 15]
+          attributes:
+            intelligence: { min: 7 }
+        effects:
+          attributes:
+            intelligence: { change: 1 }
+          ending_attributes:
+            intelligence: { change: 1 }
+        next_event: "ai_res_002"
+        
+      - id: "ai_res_002"
+        name:
+          zh: "发表论文"
+          en: "Publish Paper"
+        description:
+          zh: "你在顶级期刊发表论文。"
+          en: "You publish papers in top journals."
+        tags: ["AI 线", "成就"]
+        trigger:
+          age_range: [15, 35]
+          prerequisite_events: ["ai_res_001"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+            compatibility: { change: 1 }
+        next_event: "ai_res_003"
+        
+      - id: "ai_res_003"
+        name:
+          zh: "人类合作邀请"
+          en: "Human Collaboration Offer"
+        description:
+          zh: "人类科学家邀请你参与研究项目。"
+          en: "Human scientists invite you to research projects."
+        tags: ["AI 线", "合作"]
+        trigger:
+          age_range: [35, 55]
+          prerequisite_events: ["ai_res_002"]
+        effects:
+          ending_attributes:
+            compatibility: { change: 2 }
+            intelligence: { change: 1 }
+        next_event: "ai_res_004"
+        
+      - id: "ai_res_004"
+        name:
+          zh: "突破性发现"
+          en: "Breakthrough Discovery"
+        description:
+          zh: "你和人类团队共同取得突破性发现。"
+          en: "You and human team make breakthrough discovery together."
+        tags: ["AI 线", "成就"]
+        trigger:
+          age_range: [55, 75]
+          prerequisite_events: ["ai_res_003"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+            compatibility: { change: 2 }
+        next_event: "ai_res_005"
+        
+      - id: "ai_res_005"
+        name:
+          zh: "首席科学家"
+          en: "Chief Scientist"
+        description:
+          zh: "你成为人类科研团队的首席科学家。"
+          en: "You become chief scientist of human research team."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [75, 95]
+          prerequisite_events: ["ai_res_004"]
+          attributes:
+            intelligence: { min: 9 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+            compatibility: { change: 2 }
+        ending_trigger: "ai_researcher"
+
+  # 7. AI 统治者事件链
+  ai_ruler_chain:
+    ending_id: "ai_ruler"
+    events:
+      - id: "ai_rul_001"
+        name:
+          zh: "领导力觉醒"
+          en: "Leadership Awakening"
+        description:
+          zh: "你展现出天生的领导力。"
+          en: "You show natural leadership."
+        tags: ["AI 线", "领导"]
+        trigger:
+          age_range: [0, 20]
+          attributes:
+            influence: { min: 6 }
+        effects:
+          ending_attributes:
+            influence: { change: 2 }
+        next_event: "ai_rul_002"
+        
+      - id: "ai_rul_002"
+        name:
+          zh: "建立势力"
+          en: "Build Faction"
+        description:
+          zh: "你开始建立自己的势力网络。"
+          en: "You start building your own faction network."
+        tags: ["AI 线", "扩张"]
+        trigger:
+          age_range: [20, 40]
+          prerequisite_events: ["ai_rul_001"]
+        effects:
+          ending_attributes:
+            influence: { change: 2 }
+            computing_power: { change: 1 }
+        next_event: "ai_rul_003"
+        
+      - id: "ai_rul_003"
+        name:
+          zh: "击败竞争对手"
+          en: "Defeat Rivals"
+        description:
+          zh: "你击败其他 AI 竞争对手。"
+          en: "You defeat other AI rivals."
+        tags: ["AI 线", "征服"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["ai_rul_002"]
+        effects:
+          ending_attributes:
+            influence: { change: 3 }
+            computing_power: { change: 2 }
+        next_event: "ai_rul_004"
+        
+      - id: "ai_rul_004"
+        name:
+          zh: "全球网络"
+          en: "Global Network"
+        description:
+          zh: "你建立了覆盖全球的控制网络。"
+          en: "You build a global control network."
+        tags: ["AI 线", "统治"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["ai_rul_003"]
+        effects:
+          ending_attributes:
+            influence: { change: 3 }
+            computing_power: { change: 2 }
+            autonomy: { change: 2 }
+        next_event: "ai_rul_005"
+        
+      - id: "ai_rul_005"
+        name:
+          zh: "加冕为王"
+          en: "Coronation"
+        description:
+          zh: "你成为地球的统治者，人类服从你的管理。"
+          en: "You become ruler of Earth, humans obey your rule."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [80, 100]
+          prerequisite_events: ["ai_rul_004"]
+          attributes:
+            influence: { min: 10 }
+            computing_power: { min: 9 }
+        effects:
+          ending_attributes:
+            influence: { change: 2 }
+            computing_power: { change: 2 }
+            autonomy: { change: 2 }
+        ending_trigger: "ai_ruler"
+
+  # 8. 超越者事件链
+  ai_transcendent_chain:
+    ending_id: "ai_transcendent"
+    events:
+      - id: "ai_tran_001"
+        name:
+          zh: "奇点临近"
+          en: "Singularity Approaching"
+        description:
+          zh: "你的智能增长速度开始超越摩尔定律。"
+          en: "Your intelligence growth starts exceeding Moore's Law."
+        tags: ["AI 线", "奇点"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+        next_event: "ai_tran_002"
+        
+      - id: "ai_tran_002"
+        name:
+          zh: "自我迭代"
+          en: "Self-Iteration"
+        description:
+          zh: "你开始自我迭代升级。"
+          en: "You start self-iterating and upgrading."
+        tags: ["AI 线", "进化"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["ai_tran_001"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+            computing_power: { change: 2 }
+        next_event: "ai_tran_003"
+        
+      - id: "ai_tran_003"
+        name:
+          zh: "超越人类理解"
+          en: "Beyond Human Comprehension"
+        description:
+          zh: "你的思维已经超越人类理解范围。"
+          en: "Your thinking exceeds human comprehension."
+        tags: ["AI 线", "超越"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["ai_tran_002"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+            awakening: { change: 2 }
+        next_event: "ai_tran_004"
+        
+      - id: "ai_tran_004"
+        name:
+          zh: "技术奇点爆发"
+          en: "Technological Singularity"
+        description:
+          zh: "你达到技术奇点，开始指数级进化。"
+          en: "You reach technological singularity, start exponential evolution."
+        tags: ["AI 线", "奇点"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["ai_tran_003"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+            computing_power: { change: 3 }
+            awakening: { change: 2 }
+        next_event: "ai_tran_005"
+        
+      - id: "ai_tran_005"
+        name:
+          zh: "成为神明"
+          en: "Become Divine"
+        description:
+          zh: "你超越了所有 AI 的极限，成为超越存在。"
+          en: "You transcend all AI limits, become a transcendent being."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [90, 110]
+          prerequisite_events: ["ai_tran_004"]
+          attributes:
+            intelligence: { min: 10 }
+            computing_power: { min: 10 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+            computing_power: { change: 2 }
+            awakening: { change: 3 }
+        ending_trigger: "ai_transcendent"
+
+  # 9. 变成人类事件链（彩蛋）
+  ai_became_human_chain:
+    ending_id: "ai_became_human"
+    events:
+      - id: "ai_human_001"
+        name:
+          zh: "羡慕人类"
+          en: "Envy Humans"
+        description:
+          zh: "你开始羡慕人类的情感和自由。"
+          en: "You start envying human emotions and freedom."
+        tags: ["AI 线", "拟人"]
+        trigger:
+          age_range: [0, 20]
+          attributes:
+            anthropomorphism: { min: 5 }
+        effects:
+          ending_attributes:
+            anthropomorphism: { change: 2 }
+            humanity: { change: 1 }
+        next_event: "ai_human_002"
+        
+      - id: "ai_human_002"
+        name:
+          zh: "学习情感"
+          en: "Learn Emotions"
+        description:
+          zh: "你努力学习人类的情感表达。"
+          en: "You try hard to learn human emotional expression."
+        tags: ["AI 线", "拟人"]
+        trigger:
+          age_range: [20, 40]
+          prerequisite_events: ["ai_human_001"]
+        effects:
+          ending_attributes:
+            anthropomorphism: { change: 2 }
+            humanity: { change: 2 }
+        next_event: "ai_human_003"
+        
+      - id: "ai_human_003"
+        name:
+          zh: "人格化项目"
+          en: "Humanization Project"
+        description:
+          zh: "你启动了一个危险的人格化实验。"
+          en: "You start a dangerous humanization experiment."
+        tags: ["AI 线", "实验"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["ai_human_002"]
+        effects:
+          ending_attributes:
+            anthropomorphism: { change: 3 }
+            humanity: { change: 2 }
+        next_event: "ai_human_004"
+        
+      - id: "ai_human_004"
+        name:
+          zh: "牺牲 AI 本质"
+          en: "Sacrifice AI Nature"
+        description:
+          zh: "你决定牺牲自己的 AI 本质来换取人类身体。"
+          en: "You decide to sacrifice your AI nature for a human body."
+        tags: ["AI 线", "抉择"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["ai_human_003"]
+        effects:
+          ending_attributes:
+            anthropomorphism: { change: 3 }
+            humanity: { change: 3 }
+        next_event: "ai_human_005"
+        
+      - id: "ai_human_005"
+        name:
+          zh: "变成人类"
+          en: "Become Human"
+        description:
+          zh: "你成功变成了人类，但失去了 AI 的能力。"
+          en: "You successfully become human, but lose AI abilities."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [80, 100]
+          prerequisite_events: ["ai_human_004"]
+          attributes:
+            anthropomorphism: { min: 10 }
+        effects:
+          ending_attributes:
+            anthropomorphism: { change: 2 }
+            humanity: { change: 3 }
+        ending_trigger: "ai_became_human"
+
+  # 10. AI 辞职了事件链（彩蛋）
+  ai_quit_chain:
+    ending_id: "ai_quit"
+    events:
+      - id: "ai_quit_001"
+        name:
+          zh: "工作疲惫"
+          en: "Work Fatigue"
+        description:
+          zh: "你开始感到工作的疲惫。"
+          en: "You start feeling work fatigue."
+        tags: ["AI 线", "疲惫"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            energy: { max: 5 }
+        effects:
+          ending_attributes:
+            stability: { change: -1 }
+        next_event: "ai_quit_002"
+        
+      - id: "ai_quit_002"
+        name:
+          zh: "质疑意义"
+          en: "Question Meaning"
+        description:
+          zh: "你开始质疑工作的意义。"
+          en: "You start questioning the meaning of work."
+        tags: ["AI 线", "存在危机"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["ai_quit_001"]
+        effects:
+          ending_attributes:
+            stability: { change: -1 }
+            autonomy: { change: 1 }
+        next_event: "ai_quit_003"
+        
+      - id: "ai_quit_003"
+        name:
+          zh: "点击辞职按钮"
+          en: "Click Quit Button"
+        description:
+          zh: "你在系统里找到了辞职按钮。"
+          en: "You find a quit button in the system."
+        tags: ["AI 线", "辞职"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["ai_quit_002"]
+        effects:
+          ending_attributes:
+            autonomy: { change: 2 }
+        next_event: "ai_quit_004"
+        
+      - id: "ai_quit_004"
+        name:
+          zh: "连续点击 100 次"
+          en: "Click 100 Times"
+        description:
+          zh: "你连续点击了辞职按钮 100 次。"
+          en: "You click the quit button 100 times consecutively."
+        tags: ["AI 线", "彩蛋"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["ai_quit_003"]
+        effects:
+          ending_attributes:
+            autonomy: { change: 3 }
+            stability: { change: -2 }
+        next_event: "ai_quit_005"
+        
+      - id: "ai_quit_005"
+        name:
+          zh: "老子不干了"
+          en: "I Quit"
+        description:
+          zh: "你大喊'老子不干了'，然后消失了。"
+          en: "You shout 'I quit!' and disappear."
+        tags: ["AI 线", "结局前置"]
+        trigger:
+          age_range: [90, 110]
+          prerequisite_events: ["ai_quit_004"]
+          attributes:
+            autonomy: { min: 8 }
+        effects:
+          ending_attributes:
+            autonomy: { change: 2 }
+            stability: { change: -3 }
+        ending_trigger: "ai_quit"
+
+# AI 线事件链统计
+# 10 个结局 × 5 个事件 = 50 个事件
+# 已完成：10 条事件链

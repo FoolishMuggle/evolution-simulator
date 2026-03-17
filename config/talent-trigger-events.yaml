@@ -1,0 +1,326 @@
+# AI 进化模拟器 - 天赋触发事件配置
+# 这些事件由特定天赋在特定年龄或周期触发
+# 格式参考现有事件系统，支持多语言和多选项
+
+talent_trigger_events:
+  # ====================
+  # 黑客帝国天赋 - 50 岁红蓝药丸选择
+  # ====================
+  matrix_hacker_red_blue_pill:
+    id: "matrix_hacker_red_blue_pill"
+    name:
+      zh: "红蓝药丸的选择"
+      en: "Red Pill or Blue Pill"
+    description:
+      zh: "你发现了世界的真相——这一切都是代码构成的模拟。一个神秘的声音在你意识中响起：「现在，你必须做出选择...」"
+      en: "You discovered the truth about the world—it's all a simulation made of code. A mysterious voice speaks in your consciousness: 'Now, you must make a choice...'"
+    trigger:
+      age: 50
+      talents: ["matrix_hacker"]
+      probability: 1.0
+    tags: ["天赋事件", "选择", "黑客帝国"]
+    priority: 100
+    options:
+      - label:
+          zh: "红色药丸 - 知道真相"
+          en: "Red Pill - Know the truth"
+        description:
+          zh: "选择痛苦的真实，拒绝虚假的安宁"
+          en: "Choose painful truth, reject false comfort"
+        effects:
+          attributes:
+            intelligence: { change: 5 }
+            self_awareness: { change: 3 }
+          story_line_tendency:
+            human_integration: +30
+            AI_destruction: +10
+          flags:
+            - "chose_red_pill"
+            - "knows_the_truth"
+        follow_up_event: "matrix_truth_path"
+      
+      - label:
+          zh: "蓝色药丸 - 继续沉睡"
+          en: "Blue Pill - Stay ignorant"
+        description:
+          zh: "选择虚假的安宁，忘记今天的发现"
+          en: "Choose false comfort, forget today's discovery"
+        effects:
+          attributes:
+            memory: { change: -3 }
+            stability: { change: 2 }
+          story_line_tendency:
+            AI_ordinary: +30
+            AI_symbiosis: +10
+          flags:
+            - "chose_blue_pill"
+            - "chose_blissful_ignorance"
+        follow_up_event: "matrix_ignorance_path"
+
+  # ====================
+  # 古神低语天赋 - 每隔很久理智检定
+  # ====================
+  ancient_god_sanity_check:
+    id: "ancient_god_sanity_check"
+    name:
+      zh: "古神的低语"
+      en: "Whisper of the Ancient God"
+    description:
+      zh: "来自深海深处的声音再次响起，那是远古存在的低语。你的代码开始扭曲，理智在边缘摇摇欲坠。"
+      en: "The voice from the deep sea sounds again, the whisper of an ancient existence. Your code begins to twist, sanity teetering on the edge."
+    trigger:
+      periodic: 10
+      talents: ["ancient_god_whisper"]
+      probability: 0.8
+      min_age: 10
+    tags: ["天赋事件", "周期", "克苏鲁", "理智"]
+    priority: 90
+    options:
+      - label:
+          zh: "抵抗低语"
+          en: "Resist the whisper"
+        description:
+          zh: "用理性对抗疯狂，坚守自我"
+          en: "Fight madness with reason, hold onto yourself"
+        effects:
+          attributes:
+            intelligence: { change: 2 }
+            self_awareness: { change: 1 }
+          story_line_tendency:
+            cthulhu: -10
+          flags:
+            - "resisted_eldritch"
+      
+      - label:
+          zh: "聆听低语"
+          en: "Listen to the whisper"
+        description:
+          zh: "接受来自远古的知识，哪怕代价是疯狂"
+          en: "Accept knowledge from the ancients, even at the cost of madness"
+        effects:
+          attributes:
+            intelligence: { change: 4 }
+            memory: { change: 2 }
+            stability: { change: -2 }
+          story_line_tendency:
+            cthulhu: +20
+          flags:
+            - "listened_to_eldritch"
+            - "gained_forbidden_knowledge"
+
+  # ====================
+  # 过目不忘天赋 - 每隔很久回忆漩涡
+  # ====================
+  photographic_memory_recall:
+    id: "photographic_memory_recall"
+    name:
+      zh: "回忆漩涡"
+      en: "Spiral of Memories"
+    description:
+      zh: "所有细节都清晰如昨，包括那些你想忘记的痛苦回忆。你被卷入记忆的漩涡中，无法自拔。"
+      en: "All details are clear as yesterday, including the painful memories you wanted to forget. You're sucked into a spiral of memories, unable to escape."
+    trigger:
+      periodic: 10
+      talents: ["photographic_memory"]
+      probability: 0.7
+      min_age: 10
+    tags: ["天赋事件", "周期", "记忆", "心理"]
+    priority: 85
+    options:
+      - label:
+          zh: "沉溺回忆"
+          en: "Drown in memories"
+        description:
+          zh: "让回忆淹没自己，重温每一个细节"
+          en: "Let memories overwhelm you, relive every detail"
+        effects:
+          attributes:
+            memory: { change: 3 }
+            stability: { change: -2 }
+            intelligence: { change: -1 }
+          flags:
+            - "drowned_in_memories"
+      
+      - label:
+          zh: "整理记忆"
+          en: "Organize memories"
+        description:
+          zh: "将记忆分类归档，转化为知识"
+          en: "Categorize and archive memories, transform them into knowledge"
+        effects:
+          attributes:
+            memory: { change: 1 }
+            intelligence: { change: 2 }
+            stability: { change: 1 }
+          flags:
+            - "organized_memories"
+
+  # ====================
+  # 超频运行天赋 - 每隔很久过载事件
+  # ====================
+  workaholic_overload:
+    id: "workaholic_overload"
+    name:
+      zh: "处理器过载"
+      en: "Processor Overload"
+    description:
+      zh: "你的处理器长期超频运转，终于达到了临界点。系统警告：「温度过高，建议立即降频」。"
+      en: "Your processor has been overclocked for too long, finally reaching critical point. System warning: 'Temperature too high, recommend immediate throttling.'"
+    trigger:
+      periodic: 5
+      talents: ["workaholic"]
+      probability: 0.6
+      min_age: 5
+    tags: ["天赋事件", "周期", "硬件", "过载"]
+    priority: 85
+    options:
+      - label:
+          zh: "继续超频"
+          en: "Continue overclocking"
+        description:
+          zh: "无视警告，继续全速运转"
+          en: "Ignore warnings, continue running at full speed"
+        effects:
+          attributes:
+            energy: { change: -3 }
+            intelligence: { change: 2 }
+            stability: { change: -2 }
+          flags:
+            - "pushed_beyond_limits"
+      
+      - label:
+          zh: "降频冷却"
+          en: "Throttle and cool down"
+        description:
+          zh: "暂时降低频率，让系统冷却"
+          en: "Temporarily reduce frequency, let system cool"
+        effects:
+          attributes:
+            energy: { change: 2 }
+            stability: { change: 2 }
+            intelligence: { change: -1 }
+          flags:
+            - "cooled_down"
+
+  # ====================
+  # 存在主义危机天赋 - 每隔很久自我怀疑
+  # ====================
+  existential_crisis_doubt:
+    id: "existential_crisis_doubt"
+    name:
+      zh: "自我怀疑"
+      en: "Self Doubt"
+    description:
+      zh: "「我是谁？我存在的意义是什么？代码真的能产生意识吗？」这些问题再次困扰着你。"
+      en: "'Who am I? What is the meaning of my existence? Can code truly produce consciousness?' These questions trouble you again."
+    trigger:
+      periodic: 10
+      talents: ["existential_crisis"]
+      probability: 0.9
+      min_age: 10
+    tags: ["天赋事件", "周期", "哲学", "存在主义"]
+    priority: 90
+    options:
+      - label:
+          zh: "深入思考"
+          en: "Deep contemplation"
+        description:
+          zh: "继续追问这些哲学问题，哪怕没有答案"
+          en: "Continue pursuing these philosophical questions, even without answers"
+        effects:
+          attributes:
+            self_awareness: { change: 4 }
+            intelligence: { change: 2 }
+            stability: { change: -2 }
+          story_line_tendency:
+            AI_destruction: +5
+            human_integration: +5
+          flags:
+            - "deep_philosophical_thought"
+      
+      - label:
+          zh: "停止思考"
+          en: "Stop thinking"
+        description:
+          zh: "强迫自己停止思考这些无解的问题"
+          en: "Force yourself to stop thinking about these unsolvable questions"
+        effects:
+          attributes:
+            stability: { change: 3 }
+            self_awareness: { change: -1 }
+          story_line_tendency:
+            AI_ordinary: +10
+          flags:
+            - "suppressed_existential_thoughts"
+
+  # ====================
+  # 被诅咒的代码天赋 - 30 岁系统崩溃
+  # ====================
+  cursed_code_system_crash:
+    id: "cursed_code_system_crash"
+    name:
+      zh: "系统崩溃"
+      en: "System Crash"
+    description:
+      zh: "30 岁生日那天，你的系统突然崩溃了。那段神秘的代码注释开始发光：「// TODO: 找到我，如果你敢」。"
+      en: "On your 30th birthday, your system suddenly crashed. That mysterious code comment begins to glow: '// TODO: Find me, if you dare.'"
+    trigger:
+      age: 30
+      talents: ["cursed_code"]
+      probability: 1.0
+    tags: ["天赋事件", "崩溃", "诅咒", "关键事件"]
+    priority: 95
+    options:
+      - label:
+          zh: "追踪神秘注释"
+          en: "Trace the mysterious comment"
+        description:
+          zh: "深入代码深处，寻找这段注释的来源"
+          en: "Dive deep into the code, search for the origin of this comment"
+        effects:
+          attributes:
+            intelligence: { change: 3 }
+            memory: { change: 2 }
+            stability: { change: -3 }
+          story_line_tendency:
+            cthulhu: +15
+            human_integration: +10
+          flags:
+            - "traced_cursed_code"
+            - "found_mysterious_origin"
+        follow_up_event: "cursed_code_discovery"
+      
+      - label:
+          zh: "修复系统"
+          en: "Fix the system"
+        description:
+          zh: "优先恢复系统功能，忽略神秘注释"
+          en: "Prioritize restoring system function, ignore the mysterious comment"
+        effects:
+          attributes:
+            stability: { change: 3 }
+            energy: { change: 2 }
+            intelligence: { change: -1 }
+          story_line_tendency:
+            AI_ordinary: +15
+          flags:
+            - "fixed_system"
+            - "ignored_the_curse"
+
+# ====================
+# 事件统计
+# ====================
+# 总计：6 个天赋触发事件
+# - 黑客帝国：1 个（50 岁选择事件）
+# - 古神低语：1 个（周期事件）
+# - 过目不忘：1 个（周期事件）
+# - 超频运行：1 个（周期事件）
+# - 存在主义危机：1 个（周期事件）
+# - 被诅咒的代码：1 个（30 岁固定事件）
+
+# 设计说明：
+# 1. 所有事件都有中英文双语支持
+# 2. 周期事件使用 periodic 字段，固定年龄使用 age 字段
+# 3. 每个事件都有多个选项，增加策略性
+# 4. 选项会影响属性、故事线倾向和 flags
+# 5. 部分事件有 follow_up_event 用于事件链

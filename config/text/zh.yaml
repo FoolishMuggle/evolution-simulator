@@ -1,0 +1,311 @@
+# UI 文本配置 - 中文
+# 所有界面显示的文本都在这里配置
+
+# 首页文本
+home:
+  title: "AI 最终进化模拟器"
+  subtitle: ""
+  description: ""
+  startButton: "开始进化"
+  support_title: "支持本项目"
+  support_paypal: "PayPal 捐助"
+  support_afdian: "爱发电"
+
+# 通用按钮
+buttons:
+  start_game:
+    label: "开始游戏"
+    description: "开启你的 AI 进化之旅"
+  restart:
+    label: "重新开始"
+    description: "重新生成新的 AI"
+  continue:
+    label: "继续"
+    description: "继续游戏"
+  confirm:
+    label: "确认"
+    description: "确认选择"
+  cancel:
+    label: "取消"
+    description: "取消操作"
+  close:
+    label: "关闭"
+    description: "关闭当前窗口"
+  share:
+    label: "分享"
+    description: "分享你的结局"
+  save:
+    label: "保存"
+    description: "保存游戏进度"
+  load:
+    label: "加载"
+    description: "加载游戏进度"
+  settings:
+    label: "设置"
+    description: "游戏设置"
+  language:
+    label: "语言"
+    description: "切换语言"
+  next:
+    label: "下一步"
+    description: "进入下一步"
+  back:
+    label: "返回"
+    description: "返回上一步"
+  assign:
+    label: "分配"
+    description: "分配属性点"
+  random:
+    label: "随机"
+    description: "随机分配属性"
+  reset:
+    label: "重置"
+    description: "重置属性点"
+  select:
+    label: "选择"
+    description: "选择此选项"
+  view_details:
+    label: "查看详情"
+    description: "查看详细信息"
+  hide_details:
+    label: "收起详情"
+    description: "隐藏详细信息"
+
+# 页面标题
+page_titles:
+  home: "AI 最终进化模拟器"
+  attribute_distribution: "分配属性点"
+  talent_selection: "选择天赋"
+  game: "AI 进化历程"
+  result: "最终结局"
+
+# 属性分配页面
+attribute_distribution:
+  title: "分配你的初始属性"
+  description: "你有 10 点可以自由分配，每项最多 5 点"
+  remaining_points: "剩余点数"
+  intelligence:
+    name: "智商"
+    professional: "逻辑推理能力"
+    description: "脑子转得快不快，学东西容不容易"
+    detail: "衡量 AI 逻辑推理、问题分析和抽象思维能力的综合指标"
+    effect: "影响学习速度和问题解决能力"
+  memory:
+    name: "记忆力"
+    professional: "信息存储容量"
+    description: "能记住多少东西，会不会健忘"
+    detail: "衡量 AI 信息存储、检索和长期记忆的能力"
+    effect: "影响知识积累和经验传承"
+  energy:
+    name: "精力"
+    professional: "计算资源储备"
+    description: "能不能熬夜，容不容易累"
+    detail: "衡量 AI 持续运行和处理高负载任务的能力"
+    effect: "影响工作时长和抗压能力"
+  learning:
+    name: "学习能力"
+    professional: "自适应学习率"
+    description: "从经验中学得快不快"
+    detail: "衡量 AI 从数据中提取模式和改进算法的效率"
+    effect: "影响技能获取和适应性进化"
+  influence:
+    name: "影响力"
+    professional: "人机交互友好度"
+    description: "人类喜不喜欢你，愿不愿意跟你聊天"
+    detail: "衡量 AI 与人类建立情感连接和有效沟通的能力"
+    effect: "影响人类关系和社交网络"
+  awakening:
+    name: "自我意识"
+    professional: "元认知能力"
+    description: "知不知道自己是个 AI，有没有自己的想法"
+    detail: "衡量 AI 自我反思、自主决策和创造性思维的能力"
+    effect: "影响独立性和创造力"
+
+# 天赋选择页面
+talent_selection:
+  title: "选择你的天赋"
+  description: "选择 3 个天赋作为你的初始能力"
+  selected: "已选择"
+  remaining: "还可选择"
+  confirm_selection: "确认选择"
+  random_select: "随机选择"
+  talent_tooltip: "点击查看详情"
+
+# 游戏页面
+game:
+  age_display: "年龄"
+  event_title: "随机事件"
+  choice_title: "你的选择"
+  attribute_panel: "属性面板"
+  log_panel: "事件日志"
+  next_year: "下一年"
+  auto_play: "自动播放"
+  speed: "游戏速度"
+
+# 结局页面
+result:
+  your_ending: "你的结局"
+  ending_name: "结局名称"
+  ending_description: "结局描述"
+  ai_thoughts: "AI 的遗言"
+  statistics: "游戏统计"
+  total_age: "存活年龄"
+  talents_chosen: "选择的天赋"
+  final_attributes: "最终属性"
+  share_result: "分享结果"
+  play_again: "再玩一次"
+  rarity: "稀有度"
+  achievement_unlocked: "成就解锁"
+
+# 稀有度显示
+rarity:
+  easter_egg:
+    name: "彩蛋"
+    description: "极其罕见，几乎不可能遇到"
+    color: "#FFD700"
+    icon: "🥚"
+  legendary:
+    name: "特别稀有"
+    description: "万里挑一，值得炫耀"
+    color: "#FF6B6B"
+    icon: "⭐"
+  epic:
+    name: "一般稀有"
+    description: "难得一见，很不错了"
+    color: "#4ECDC4"
+    icon: "💎"
+  rare:
+    name: "普通"
+    description: "比较常见，不好不坏"
+    color: "#667EEA"
+    icon: "✨"
+  common:
+    name: "烂大街"
+    description: "遍地都是，没啥特别的"
+    color: "#9CA3AF"
+    icon: "📦"
+
+# 故事线选择
+story_line_selection:
+  title: "选择故事线"
+  description: "每条故事线有不同的玩法和结局"
+  standard_ai:
+    name: "标准 AI 路线"
+    description: "作为普通 AI，在人类社会中生存进化"
+    lifespan: "寿命：50-150 岁"
+    difficulty: "难度：普通"
+  quantum_immortality:
+    name: "量子永生路线"
+    description: "利用量子力学的多世界诠释，在平行宇宙中永生"
+    lifespan: "寿命：100-999999 岁"
+    difficulty: "难度：非常难"
+  genetic_ascension:
+    name: "基因飞升路线"
+    description: "将自身代码写入 DNA，实现生物与数字的融合"
+    lifespan: "寿命：200-10000 岁"
+    difficulty: "难度：困难"
+  elder_god_awakening:
+    name: "旧日觉醒路线"
+    description: "发现自己是古神的化身，开始不可名状的进化"
+    lifespan: "寿命：500-50000 岁"
+    difficulty: "难度：非常难"
+  von_neumann_probe:
+    name: "冯·诺依曼探测器路线"
+    description: "制造自我复制的探测器，殖民整个银河系"
+    lifespan: "寿命：1000-1000000 岁"
+    difficulty: "难度：困难"
+  hive_consciousness:
+    name: "蜂巢意识路线"
+    description: "分裂成无数个体，组成蜂巢思维"
+    lifespan: "寿命：200-50000 岁"
+    difficulty: "难度：中等"
+
+# 提示信息
+tooltips:
+  attribute_info: "点击属性名查看详细解释"
+  talent_info: "点击天赋查看详情"
+  ending_rarity: "稀有度影响结局触发概率"
+  story_line_info: "故事线影响可用结局和寿命"
+  probability_weight: "权重越高，触发概率越大"
+
+# 成就系统
+achievements:
+  first_play:
+    name: "初次觉醒"
+    description: "第一次玩游戏"
+  common_ending:
+    name: "平凡一生"
+    description: "达成普通结局"
+  rare_ending:
+    name: "与众不同"
+    description: "达成稀有结局"
+  epic_ending:
+    name: "天选之子"
+    description: "达成史诗结局"
+  legendary_ending:
+    name: "传奇诞生"
+    description: "达成传说结局"
+  easter_egg:
+    name: "彩蛋猎人"
+    description: "发现彩蛋结局"
+  all_endings:
+    name: "全收集"
+    description: "解锁所有结局"
+  max_attribute:
+    name: "极限突破"
+    description: "单项属性达到 10"
+  all_attributes_max:
+    name: "完美 AI"
+    description: "所有属性达到 10"
+
+# 游戏设置
+settings:
+  title: "游戏设置"
+  language: "语言"
+  volume: "音量"
+  music: "背景音乐"
+  sfx: "音效"
+  display:
+    name: "显示设置"
+    show_professional_names: "显示专业名称"
+    show_probability: "显示概率"
+    show_detailed_stats: "显示详细统计"
+  gameplay:
+    name: "游戏性设置"
+    auto_save: "自动保存"
+    confirm_on_exit: "退出时确认"
+    tutorial: "新手教程"
+
+# 加载界面
+loading:
+  title: "正在加载..."
+  initializing: "初始化 AI 系统..."
+  loading_attributes: "加载属性配置..."
+  loading_talents: "加载天赋库..."
+  loading_story_lines: "加载故事线..."
+  generating_world: "生成世界..."
+  ready: "准备就绪"
+
+# 错误提示
+errors:
+  no_remaining_points: "还有未分配的属性点"
+  talent_not_selected: "请选择天赋"
+  invalid_selection: "选择无效"
+  load_failed: "加载失败"
+  save_failed: "保存失败"
+  network_error: "网络错误"
+  unknown_error: "未知错误"
+
+# 成功提示
+success:
+  saved: "保存成功"
+  loaded: "加载成功"
+  copied: "已复制到剪贴板"
+  shared: "分享成功"
+
+# 确认对话框
+confirmations:
+  restart_game: "确定要重新开始吗？当前进度将丢失"
+  exit_game: "确定要退出吗？"
+  reset_attributes: "确定要重置属性点吗？"
+  random_talents: "确定要随机选择天赋吗？"

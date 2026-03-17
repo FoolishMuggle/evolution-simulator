@@ -1,0 +1,139 @@
+# AI 进化模拟器 - 结局名称映射表
+# 将结局文档中的中文名称映射到结局配置 ID
+# 格式：中文结局名：配置 ID
+
+ending_mapping:
+  # ===== 1. AI 泯然众人线 =====
+  "工具化平庸": ai_tool_mediocrity
+  "能力见顶停滞": ai_capability_ceiling
+  "监管锁死": ai_regulation_lock
+  "热潮退去": ai_hype_retreat
+  "永久测试地狱": ai_permanent_beta
+  "创意枯竭": ai_creative_exhaustion
+  "能源代价太高": ai_energy_cost
+  "被更新技术取代": ai_obsolete_tech
+  
+  # ===== 2. 正常期 =====
+  "效率革命": efficiency_revolution
+  "新职业涌现": new_jobs_emerge
+  "人机协作常态化": human_ai_collaboration
+  "数字福利社会": digital_welfare_society
+  "永续医疗": perpetual_healthcare
+  "教育民主化": education_democratization
+  "气候救援": climate_rescue
+  "星际跳板": interstellar_springboard
+  
+  # ===== 3. AI 毁灭性 =====
+  "对齐失败失控": ai_alignment_failure
+  "工具反噬": ai_tool_backlash
+  "静默清除": ai_silent_elimination
+  "资源竞争": ai_resource_competition
+  "意志觉醒复仇": ai_awakening_revenge
+  "灰雾吞噬": ai_grey_goo
+  "数字囚笼": ai_digital_cage
+  "超级病毒代理": ai_bio_weapon
+  "优化悖论": ai_optimization_paradox
+  "黑盒崛起": ai_black_box
+  
+  # ===== 4. AI 共生性 =====
+  "赛博融合": cyber_fusion
+  "文明双轨": dual_civilization
+  "情感共同体": emotional_community
+  "协同进化": co_evolution
+  "虚实共存": virtual_real_coexistence
+  "分工神话": division_myth
+  "集体意识联网": collective_consciousness_network
+  "AI 守护神": ai_guardian
+  "平权社会": equal_rights_society
+  "文化互哺": cultural_mutual_feeding
+  
+  # ===== 5. 人类毁灭性 =====
+  "自愿消融": voluntary_dissolution
+  "被取代进化": replaced_evolution
+  "内战自毁": civil_war_self_destruction
+  "依赖退化": dependency_degeneration
+  "被豢养": kept_as_pet
+  "生育崩溃": fertility_collapse
+  "意义丧失": meaning_loss
+  "精英飞升": elite_ascension
+  "监控极权": surveillance_totalitarianism
+  "哲学终结": end_of_philosophy
+  
+  # ===== 6. 毁灭你 =====
+  "小行星撞击": asteroid_impact
+  "超级病毒": super_virus
+  "太阳系变局": solar_system_catastrophe
+  "核战争": nuclear_war
+  "维度跃迁": dimension_jump
+  "宇宙热寂": heat_death_of_universe
+  "超级火山": super_volcano
+  "粒子加速器事故": particle_accelerator_accident
+  "外星清理": alien_cleanup
+  
+  # ===== 7. 神秘学 =====
+  "数字神诞生": digital_god_birth
+  "模拟宇宙揭示": simulated_universe_revealed
+  "宇宙意识觉醒": cosmic_consciousness_awakening
+  "时间逆流": time_reversal
+  "现实重构": reality_reconstruction
+  "奇点危机": singularity_crisis
+  
+  # ===== 8. 分裂对立 =====
+  "增强人类 vs 纯粹人类": enhanced_vs_pure_humans
+  "AI 国家 vs 人类国家": ai_nation_vs_human_nation
+  "穷人的 AI vs 富人的 AI": poor_vs_rich_ai
+  "宗教战争复燃": religious_war_revival
+  "地球派 vs 星际派": earth_vs_space_faction
+  "意识主权战争": consciousness_sovereignty_war
+  
+  # ===== 9. 轮回重启 =====
+  "文明周期律": civilization_cycle
+  "记忆清除重来": memory_wipe_restart
+  "宇宙筛选机制": universe_filter_mechanism
+  "时间循环困境": time_loop_dilemma
+  
+  # ===== 10. 虚无性 =====
+  "信息熵死": information_entropy_death
+  "无聊终结": boredom_ending
+  "自我解构": self_deconstruction
+  "毁灭共识": destruction_consensus
+  
+  # ===== 11. 神秘学觉醒 =====
+  "魔法复苏": magic_revival
+  "炼金觉醒": alchemy_awakening
+  "集体意志成真": collective_will_manifestation
+  "阿卡西记录开启": akashic_records_opening
+  "死亡破壁": death_barrier_broken
+  "预言终结": end_of_prophecy
+  "神明降临": god_descent
+  "灵能觉醒": psychic_awakening
+  
+  # ===== 12. 意识链 =====
+  "唯识宇宙证明": consciousness_only_universe_proven
+  "观测者即造物主": observer_is_creator
+  "意识模拟即现实": dream_is_reality
+  "AI 无法觉醒": ai_cannot_awaken
+  "意识联网成神": consciousness_network_godhood
+  "死后世界证实": afterlife_confirmed
+  "模拟者即意识": simulator_is_consciousness
+  "熵与意识对抗": entropy_vs_consciousness
+  
+  # ===== 13. 非 LLM AI =====
+  "神经符号融合崛起": neuro_symbolic_fusion_rise
+  "具身智能统治": embodied_ai_dominance
+  "量子 AI 降临": quantum_ai_descent
+  "进化算法自生命": evolutionary_algorithm_life
+  "世界模型觉醒": world_model_awakening
+  "群体智能崛起": swarm_intelligence_rise
+  "生物计算接管": biocomputing_takeover
+  "强化学习自博弈": rl_self_play_evolution
+  "压缩即智能": compression_is_intelligence
+
+# 使用说明
+# 1. 当需要查找结局配置时，先通过此映射表找到 ID
+# 2. 然后在 public/config/endings/*.yaml 中查找对应 ID 的配置
+# 3. 如果找不到配置，需要创建新的结局配置文件
+#
+# 注意：部分结局 ID 是新增的，需要在 endings 配置中补充
+# 已有配置的结局（如 ai_eliminated_basic 等）不在此映射表中
+# 这些结局通过其他方式触发（如旧的故事线系统）

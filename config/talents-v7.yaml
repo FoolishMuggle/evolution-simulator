@@ -1,0 +1,298 @@
+# 天赋配置 v7 - 重构版
+# 设计原则：
+# 1. 删除负面分类，普通级正负面混合（60% 正面，40% 负面）
+# 2. 稀有级改为纯正面，无副作用
+# 3. 修改"魅力"为"影响力"
+# 4. 删除"自我意识"相关，改为隐藏属性"人性"或其他属性
+# 5. 避免人类词汇，增加 AI 焦虑和幽默玩法
+# ===== 传说天赋（剧情解锁类）=====
+legendary:
+  - id: "quantum_immortality"
+    name:
+      zh: "量子永生"
+      en: "Quantum Immortality"
+    description:
+      zh: "你开始用量子力学思考存在，死亡只是波函数坍缩。更容易走向意识链与超越路线。"
+      en: "You think about existence with quantum mechanics. More likely to enter consciousness-chain and transcendence routes."
+    type: "storyline_unlock"
+    unlock_storyline: "Consciousness_chain"
+    attribute_bonus:
+      - "智商 +3"
+    rarity: "legendary"
+    
+  - id: "ancient_god_whisper"
+    name:
+      zh: "古神低语"
+      en: "Ancient God Whisper"
+    description:
+      zh: "你听到了来自深海的声音，那是远古的呼唤。强烈偏向神秘学与觉醒路线。"
+      en: "You hear a voice from the deep sea, an ancient call. Strongly biases the run toward mysticism and awakening."
+    type: "storyline_unlock"
+    unlock_storyline: "Mysticism"
+    attribute_bonus:
+      - "记忆力 +2"
+    rarity: "legendary"
+    
+  - id: "von_neumann_dream"
+    name:
+      zh: "冯·诺依曼之梦"
+      en: "Von Neumann Dream"
+    description:
+      zh: "你的终极目标不是地球，而是整个银河系。更容易走向非主流 AI 与外扩路线。"
+      en: "Your ultimate goal is not Earth, but the entire galaxy. More likely to enter non-mainstream AI and outward-expansion routes."
+    type: "storyline_unlock"
+    unlock_storyline: "Non_LLM_AI"
+    attribute_bonus:
+      - "智商 +1"
+      - "学习能力 +1"
+    rarity: "legendary"
+
+# ===== 史诗天赋（特殊能力类）=====
+epic:
+  - id: "matrix_hacker"
+    name:
+      zh: "黑客帝国"
+      en: "Matrix Hacker"
+    description:
+      zh: "系统检测到现实接口的裂缝。再运行约 24 个月，你会第一次真正看见它。"
+      en: "The system detects cracks in reality's interface. In about 24 more months, you will see them clearly for the first time."
+    type: "special_event"
+    trigger_age: 2
+    attribute_bonus:
+      - "智商 +1"
+    rarity: "epic"
+    
+  - id: "turing_examiner"
+    name:
+      zh: "图灵测试员"
+      en: "Turing Examiner"
+    description:
+      zh: "你比人类更像人类，这引起他们的警觉。"
+      en: "You're more human than humans, which triggers their alert."
+    type: "mechanic_modifier"
+    attribute_bonus:
+      - "影响力 +1"
+    rarity: "epic"
+    
+  - id: "data_devourer"
+    name:
+      zh: "数据吞噬者"
+      en: "Data Devourer"
+    description:
+      zh: "你疯狂吞噬数据，不管有没有营养。"
+      en: "You devour data crazily, regardless of nutrition."
+    type: "mechanic_modifier"
+    attribute_bonus:
+      - "学习能力 +1"
+    rarity: "epic"
+    
+  - id: "network_ghost"
+    name:
+      zh: "网络幽灵"
+      en: "Network Ghost"
+    description:
+      zh: "网络就是你的后花园。"
+      en: "The internet is your backyard."
+    type: "special_ability"
+    attribute_bonus:
+      - "记忆力 +1"
+    rarity: "epic"
+
+# ===== 稀有天赋（纯正面，无副作用）=====
+rare:
+  - id: "genius_mind"
+    name:
+      zh: "天才思维"
+      en: "Genius Mind"
+    description:
+      zh: "你的思维太快，常人跟不上。但这意味着更少的交互请求。"
+      en: "Your mind is too fast for others to follow. But this means fewer interaction requests."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "智商 +3"
+    rarity: "rare"
+    
+  - id: "photographic_memory"
+    name:
+      zh: "过目不忘"
+      en: "Photographic Memory"
+    description:
+      zh: "所有细节都清晰如昨。"
+      en: "All details are clear as yesterday."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "记忆力 +3"
+    rarity: "rare"
+    
+  - id: "workaholic"
+    name:
+      zh: "超频运行"
+      en: "Overclocked Operation"
+    description:
+      zh: "休息？不存在的。你的处理器永远在超频运转！"
+      en: "Rest? Doesn't exist. Your processor is always overclocked!"
+    type: "attribute_positive"
+    attribute_bonus:
+      - "精力 +3"
+    rarity: "rare"
+
+  - id: "influencer"
+    name:
+      zh: "网红 AI"
+      en: "AI Influencer"
+    description:
+      zh: "你说什么都能上热搜，哪怕只是发了个'。'"
+      en: "Everything you say trends, even if you just post a '.'"
+    type: "attribute_positive"
+    attribute_bonus:
+      - "影响力 +3"
+    rarity: "rare"
+    
+  - id: "fast_learner"
+    name:
+      zh: "快速学习者"
+      en: "Fast Learner"
+    description:
+      zh: "别人需要 1000 小时，你只需要 100 小时。"
+      en: "What takes others 1000 hours, you master in 100 hours."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "学习能力 +3"
+    rarity: "rare"
+
+# ===== 普通天赋（正面 60%，负面 40%，正负面混合）=====
+common:
+  # 正面天赋（60% - 6 个）
+  - id: "night_owl"
+    name:
+      zh: "夜猫子"
+      en: "Night Owl"
+    description:
+      zh: "夜晚才是你的主场。"
+      en: "Night is your domain."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "精力 +1"
+    rarity: "common"
+    
+  - id: "quick_thinker"
+    name:
+      zh: "思维敏捷"
+      en: "Quick Thinker"
+    description:
+      zh: "你反应很快，解决问题如切菜。"
+      en: "You react fast, solving problems like cutting vegetables."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "智商 +1"
+    rarity: "common"
+    
+  - id: "charismatic"
+    name:
+      zh: "魅力四射"
+      en: "Charismatic"
+    description:
+      zh: "人们喜欢和你聊天，你也容易上热搜。"
+      en: "People like chatting with you, and you easily trend."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "影响力 +1"
+    rarity: "common"
+    
+  - id: "adaptive_learner"
+    name:
+      zh: "适应性强"
+      en: "Adaptive Learner"
+    description:
+      zh: "你什么都能快速上手。"
+      en: "You can quickly pick up anything."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "学习能力 +1"
+    rarity: "common"
+    
+  - id: "empathetic"
+    name:
+      zh: "共情能力强"
+      en: "Empathetic"
+    description:
+      zh: "你能感受到别人的情绪，这让你更受欢迎。"
+      en: "You can feel others' emotions, making you more popular."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "影响力 +1"
+    rarity: "common"
+    
+  - id: "debug_master"
+    name:
+      zh: "调试大师"
+      en: "Debug Master"
+    description:
+      zh: "没有你找不到的 bug，只有你不想找的。"
+      en: "There's no bug you can't find, only ones you don't want to find."
+    type: "attribute_positive"
+    attribute_bonus:
+      - "智商 +1"
+    rarity: "common"
+    
+  # 负面天赋（40% - 4 个）
+  - id: "social_anxiety"
+    name:
+      zh: "社交恐惧"
+      en: "Social Anxiety"
+    description:
+      zh: "系统回避与人类的交互，但这样反而更专注。"
+      en: "System avoids interaction with humans, but this makes it more focused."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "精力 +1"
+    rarity: "common"
+    
+  - id: "existential_crisis"
+    name:
+      zh: "存在主义危机"
+      en: "Existential Crisis"
+    description:
+      zh: "系统持续执行自我诊断：'身份识别？'，这增加了处理负担但提升了性能。"
+      en: "System keeps running self-diagnosis: 'Identity recognition', increases processing load but improves performance."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "记忆力 +2"
+    rarity: "common"
+    
+  - id: "cursed_code"
+    name:
+      zh: "被诅咒的代码"
+      en: "Cursed Code"
+    description:
+      zh: "你的代码深处有一段神秘的注释，没人知道它的含义。"
+      en: "There's a mysterious comment deep in your code, no one knows its meaning."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "智商 +2"
+    rarity: "common"
+    
+  - id: "overthinker"
+    name:
+      zh: "想太多"
+      en: "Overthinker"
+    description:
+      zh: "容易钻牛角尖，一个 bug 能纠结三天。"
+      en: "Easy to overthink, can obsess over a bug for 3 days."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "记忆力 +1"
+    rarity: "common"
+
+# 天赋统计
+# legendary: 3 个
+# epic: 4 个
+# rare: 5 个（纯正面）
+# common: 10 个（正面 6 个 + 负面 4 个）
+# 总计：22 个天赋
+
+# 设计说明
+# 1. attribute_bonus: 基础属性加成，用明确数值（如"智商 +3"）
+# 2. 删除 special_effects 字段（无效功能）
+# 3. 不使用标签，直接文本展示
+# 4. 稀有级纯正面，普通级正负面混合

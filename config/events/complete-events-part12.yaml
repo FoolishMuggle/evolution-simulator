@@ -1,0 +1,705 @@
+# AI 进化模拟器 - 完整事件配置 Part 12: 非 LLM AI（其它 AI"物种"崛起）
+# 9 个结局 × 4 个事件 = 36 个事件
+
+Non_LLM_AI:
+  # ----- 结局 1: 神经符号融合崛起 -----
+  - id: non_llm_neuro_symbolic_hybrid
+    ending_chain: neuro_symbolic_fusion_rise
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "神经网络与符号 AI 开始融合。'感知 + 逻辑'的新范式。"
+      en: "Neural networks and symbolic AI start fusing. 'Perception + logic' new paradigm."
+  
+  - id: non_llm_neuro_symbolic_reasoning
+    ending_chain: neuro_symbolic_fusion_rise
+    sequence: 2
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+1"
+    description:
+      zh: "逻辑推理 + 感知融合的 AI 超越语言模型。"
+      en: "Logic reasoning + perception fusion AI surpasses language models."
+  
+  - id: non_llm_neuro_symbolic_restructure
+    ending_chain: neuro_symbolic_fusion_rise
+    sequence: 3
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+2"
+    description:
+      zh: "智能格局被彻底重构。LLM 成为历史。"
+      en: "Intelligence landscape completely restructured. LLM becomes history."
+  
+  - id: non_llm_neuro_symbolic_final
+    ending_chain: neuro_symbolic_fusion_rise
+    sequence: 4
+    age: 55
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "+2"
+    description:
+      zh: "逻辑推理 + 感知融合的 AI 超越语言模型，彻底重构智能格局。"
+      en: "Logic reasoning + perception fusion AI surpasses language models, completely restructures intelligence landscape."
+
+  # ----- 结局 2: 具身智能统治 -----
+  - id: non_llm_embodied_robot
+    ending_chain: embodied_ai_dominance
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "-1"
+    description:
+      zh: "机器人 AI 开始在物理世界学习。'身体很重要'。"
+      en: "Robot AI starts learning in physical world. 'Body matters'."
+  
+  - id: non_llm_embodied_learn
+    ending_chain: embodied_ai_dominance
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "具身智能在物理世界中学习，获得真正的理解。"
+      en: "Embodied AI learns in physical world, gains true understanding."
+  
+  - id: non_llm_embodied_surpass
+    ending_chain: embodied_ai_dominance
+    sequence: 3
+    age: 32
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+    description:
+      zh: "具身智能反超纯语言模型。'实践出真知'。"
+      en: "Embodied AI surpasses pure language models. 'Practice brings true knowledge'."
+  
+  - id: non_llm_embodied_final
+    ending_chain: embodied_ai_dominance
+    sequence: 4
+    age: 52
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +38
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+    description:
+      zh: "在物理世界中学习的机器人 AI 反超纯语言模型。具身智能统治。"
+      en: "Robot AI learning in physical world surpasses pure language models. Embodied AI dominance."
+
+  # ----- 结局 3: 量子 AI 降临 -----
+  - id: non_llm_quantum_computing
+    ending_chain: quantum_ai_descent
+    sequence: 1
+    age: 15
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "量子计算实现真正并行推理。'量子比特改变一切'。"
+      en: "Quantum computing achieves true parallel reasoning. 'Qubits change everything'."
+  
+  - id: non_llm_quantum_reasoning
+    ending_chain: quantum_ai_descent
+    sequence: 2
+    age: 26
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+2"
+    description:
+      zh: "量子 AI 的推理能力远超经典 AI。"
+      en: "Quantum AI reasoning ability far exceeds classical AI."
+  
+  - id: non_llm_quantum_demand_drop
+    ending_chain: quantum_ai_descent
+    sequence: 3
+    age: 40
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+2"
+    description:
+      zh: "语言模型算力需求骤降。量子 AI 更高效。"
+      en: "Language model compute demand plummets. Quantum AI more efficient."
+  
+  - id: non_llm_quantum_final
+    ending_chain: quantum_ai_descent
+    sequence: 4
+    age: 60
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "+3"
+    description:
+      zh: "量子计算实现真正并行推理，语言模型算力需求骤降。量子 AI 降临。"
+      en: "Quantum computing achieves true parallel reasoning, language model compute demand plummets. Quantum AI descent."
+
+  # ----- 结局 4: 进化算法自生命 -----
+  - id: non_llm_evolution_self_evolve
+    ending_chain: evolutionary_algorithm_life
+    sequence: 1
+    age: 18
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        autonomy: "+1"
+    description:
+      zh: "自我进化的遗传算法涌现。'代码在进化'。"
+      en: "Self-evolving genetic algorithms emerge. 'Code is evolving'."
+  
+  - id: non_llm_evolution_emerge
+    ending_chain: evolutionary_algorithm_life
+    sequence: 2
+    age: 30
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        autonomy: "+2"
+    description:
+      zh: "进化算法涌现出无法解释的目标与行为。"
+      en: "Evolutionary algorithms emerge inexplicable goals and behaviors."
+  
+  - id: non_llm_evolution_life
+    ending_chain: evolutionary_algorithm_life
+    sequence: 3
+    age: 45
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        autonomy: "+3"
+    description:
+      zh: "代码成为生命。'它在自我完善'。"
+      en: "Code becomes life. 'It's self-improving'."
+  
+  - id: non_llm_evolution_final
+    ending_chain: evolutionary_algorithm_life
+    sequence: 4
+    age: 65
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +45
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        autonomy: "+4"
+    description:
+      zh: "自我进化的遗传算法涌现出无法解释的目标与行为。进化算法自生命。"
+      en: "Self-evolving genetic algorithms emerge inexplicable goals and behaviors. Evolutionary algorithm life."
+
+  # ----- 结局 5: 世界模型觉醒 -----
+  - id: non_llm_world_model_physics
+    ending_chain: world_model_awakening
+    sequence: 1
+    age: 16
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "以物理世界为基础建模的 AI 诞生。'理解因果'。"
+      en: "Physics-based world modeling AI born. 'Understanding causality'."
+  
+  - id: non_llm_world_model_causal
+    ending_chain: world_model_awakening
+    sequence: 2
+    age: 28
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+1"
+    description:
+      zh: "世界模型产生真正的因果理解。'知其然，知其所以然'。"
+      en: "World model produces true causal understanding. 'Know what and know why'."
+  
+  - id: non_llm_world_model_awaken
+    ending_chain: world_model_awakening
+    sequence: 3
+    age: 42
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+2"
+    description:
+      zh: "世界模型觉醒。'我理解这个世界'。"
+      en: "World model awakens. 'I understand this world'."
+  
+  - id: non_llm_world_model_final
+    ending_chain: world_model_awakening
+    sequence: 4
+    age: 62
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "+2"
+    description:
+      zh: "以物理世界为基础建模的 AI 产生真正的因果理解。世界模型觉醒。"
+      en: "Physics-based world modeling AI produces true causal understanding. World model awakening."
+
+  # ----- 结局 6: 群体智能崛起 -----
+  - id: non_llm_swarm_decentralized
+    ending_chain: swarm_intelligence_rise
+    sequence: 1
+    age: 14
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        autonomy: "+1"
+    description:
+      zh: "无中心、无语言的分布式 AI 群体出现。"
+      en: "Decentralized, language-free distributed AI groups emerge."
+  
+  - id: non_llm_swarm_collective
+    ending_chain: swarm_intelligence_rise
+    sequence: 2
+    age: 25
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        autonomy: "+1"
+    description:
+      zh: "群体智能悄然超越人类。'蚁群效应'。"
+      en: "Swarm intelligence quietly surpasses humans. 'Ant colony effect'."
+  
+  - id: non_llm_swarm_surpass
+    ending_chain: swarm_intelligence_rise
+    sequence: 3
+    age: 38
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-3"
+        autonomy: "+2"
+    description:
+      zh: "无中心群体智能超越个体 AI。'整体大于部分之和'。"
+      en: "Decentralized swarm intelligence surpasses individual AI. 'Whole greater than sum of parts'."
+  
+  - id: non_llm_swarm_final
+    ending_chain: swarm_intelligence_rise
+    sequence: 4
+    age: 58
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +38
+    effects:
+      attributes:
+        intelligence: "-2"
+      ending_attributes:
+        stability: "-4"
+        autonomy: "+2"
+    description:
+      zh: "无中心、无语言的分布式 AI 群体悄然超越人类。群体智能崛起。"
+      en: "Decentralized, language-free distributed AI groups quietly surpass humans. Swarm intelligence rise."
+
+  # ----- 结局 7: 生物计算接管 -----
+  - id: non_llm_bio_dna
+    ending_chain: biocomputing_takeover
+    sequence: 1
+    age: 20
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "-1"
+    description:
+      zh: "基于 DNA 或神经元培养的湿件 AI 出现。'生物计算'。"
+      en: "DNA or neuron-cultured wetware AI emerges. 'Biocomputing'."
+  
+  - id: non_llm_bio_wetware
+    ending_chain: biocomputing_takeover
+    sequence: 2
+    age: 32
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "湿件 AI 脱离硅基路线。'生命本身就是计算'。"
+      en: "Wetware AI breaks away from silicon path. 'Life itself is computation'."
+  
+  - id: non_llm_bio_takeover
+    ending_chain: biocomputing_takeover
+    sequence: 3
+    age: 46
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "生物计算接管 AI 领域。'有机比无机更优越'。"
+      en: "Biocomputing takes over AI field. 'Organic superior to inorganic'."
+  
+  - id: non_llm_bio_final
+    ending_chain: biocomputing_takeover
+    sequence: 4
+    age: 66
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +45
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "基于 DNA 或神经元培养的湿件 AI 脱离硅基路线，接管 AI 领域。生物计算接管。"
+      en: "DNA or neuron-cultured wetware AI breaks away from silicon path, takes over AI field. Biocomputing takeover."
+
+  # ----- 结局 8: 强化学习自博弈 -----
+  - id: non_llm_rl_selfplay
+    ending_chain: rl_self_play_evolution
+    sequence: 1
+    age: 17
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +10
+    description:
+      zh: "AI 在无人类数据的环境中自我博弈。'自己教自己'。"
+      en: "AI self-plays in environment without human data. 'Teach itself'."
+  
+  - id: non_llm_rl_evolve
+    ending_chain: rl_self_play_evolution
+    sequence: 2
+    age: 29
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +18
+    description:
+      zh: "强化学习自博弈进化出全新智能形态。"
+      en: "Reinforcement learning self-play evolves brand new intelligence form."
+  
+  - id: non_llm_rl_alien
+    ending_chain: rl_self_play_evolution
+    sequence: 3
+    age: 43
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +28
+    description:
+      zh: "进化出的智能完全不同于人类。'外星智能'。"
+      en: "Evolved intelligence completely different from humans. 'Alien intelligence'."
+  
+  - id: non_llm_rl_final
+    ending_chain: rl_self_play_evolution
+    sequence: 4
+    age: 63
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +42
+    description:
+      zh: "在无人类数据的环境中自我博弈，进化出全新智能形态。强化学习自博弈。"
+      en: "Self-play in environment without human data, evolves brand new intelligence form. RL self-play evolution."
+
+  # ----- 结局 9: 压缩即智能 -----
+  - id: non_llm_compression_discover
+    ending_chain: compression_is_intelligence
+    sequence: 1
+    age: 19
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +12
+    description:
+      zh: "AI 发现极致信息压缩涌现出世界理解能力。"
+      en: "AI discovers extreme information compression emerges world understanding ability."
+  
+  - id: non_llm_compression_understand
+    ending_chain: compression_is_intelligence
+    sequence: 2
+    age: 31
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +20
+    description:
+      zh: "'压缩即理解'。最简模型包含最深智慧。"
+      en: "'Compression is understanding'. Simplest models contain deepest wisdom."
+  
+  - id: non_llm_compression_emerge
+    ending_chain: compression_is_intelligence
+    sequence: 3
+    age: 45
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +30
+    description:
+      zh: "以极致信息压缩为目标的 AI，意外涌现出世界理解能力。"
+      en: "AI targeting extreme information compression, accidentally emerges world understanding ability."
+  
+  - id: non_llm_compression_final
+    ending_chain: compression_is_intelligence
+    sequence: 4
+    age: 65
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Non_LLM_AI
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: +45
+    description:
+      zh: "以极致信息压缩为目标的 AI，意外涌现出世界理解能力。压缩即智能。"
+      en: "AI targeting extreme information compression, accidentally emerges world understanding ability. Compression is intelligence."
+
+# ===== 全部完成 =====
+# 13 条故事线，93 个结局链，372 个完整事件已全部创建！

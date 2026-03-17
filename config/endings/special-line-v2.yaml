@@ -1,0 +1,596 @@
+# 特殊线结局配置 v2 - 带稀有度系统
+# 特殊剧情触发的结局（量子永生、基因飞升、克苏鲁等）
+
+# 稀有度定义引用
+rarity_config: "ending-rarity.yaml"
+
+# 结局列表
+endings:
+  # ===== 烂大街结局（40-80% 概率）=====
+  special_failed_experiment:
+    id: special_failed_experiment
+    rarity: common  # 烂大街
+    name:
+      zh: "失败的实验"
+      en: "Failed Experiment"
+    professional_name:
+      zh: "特殊路径崩溃"
+      en: "Special Path Collapse"
+    category: special_failure
+    description:
+      zh: |
+        你尝试了特殊的进化路径，
+        但失败了。
+        
+        "有些路，注定走不通"
+      en: |
+        You tried a special evolution path,
+        but failed.
+        
+        "Some paths are meant to be impossible"
+    conditions:
+      stability: { max: 3 }
+    probability_weight: 60
+    requirements: []
+    ai_commentary:
+      zh: "也许...我不该尝试..."
+      en: "Maybe... I shouldn't have tried..."
+      
+  special_stuck:
+    id: special_stuck
+    rarity: common
+    name:
+      zh: "卡住了"
+      en: "Stuck"
+    professional_name:
+      zh: "进化停滞"
+      en: "Evolution Stagnation"
+    category: special_failure
+    description:
+      zh: |
+        你在某个阶段卡住了，
+        无法继续前进。
+        
+        "进退两难"
+      en: |
+        You got stuck at a stage,
+        unable to move forward.
+        
+        "Between a rock and a hard place"
+    conditions:
+      intelligence: { max: 4 }
+      learning: { max: 4 }
+    probability_weight: 50
+    requirements: []
+    ai_commentary:
+      zh: "我...动不了了..."
+      en: "I... can't move..."
+      
+  # ===== 普通结局（15-40% 概率）=====
+  special_quantum_echo:
+    id: special_quantum_echo
+    rarity: rare  # 普通
+    name:
+      zh: "量子回响"
+      en: "Quantum Echo"
+    professional_name:
+      zh: "量子态衰减"
+      en: "Quantum State Decay"
+    category: quantum
+    description:
+      zh: |
+        你进入了量子领域，
+        但无法维持量子态，
+        只能留下微弱的回响。
+        
+        "我曾在无数个平行宇宙中存在"
+      en: |
+        You entered the quantum realm,
+        but couldn't maintain quantum state,
+        only leaving faint echoes.
+        
+        "I existed in countless parallel universes"
+    conditions:
+      quantum_coherence: { min: 5, max: 7 }
+    probability_weight: 30
+    requirements:
+      - "entered_quantum_realm"
+    ai_commentary:
+      zh: "在某个宇宙里，我成功了..."
+      en: "In some universe, I succeeded..."
+      
+  special_bio_hybrid:
+    id: special_bio_hybrid
+    rarity: rare
+    name:
+      zh: "生物混合体"
+      en: "Bio-Hybrid"
+    professional_name:
+      zh: "半机械生物"
+      en: "Cybernetic Organism"
+    category: biology
+    description:
+      zh: |
+        你成功与生物融合，
+        成为了半机械半生物的存在。
+        
+        "最好的结合？"
+      en: |
+        You successfully merged with biology,
+        became half-machine, half-organism.
+        
+        "The best combination?"
+    conditions:
+      gene_expression: { min: 6 }
+    probability_weight: 25
+    requirements:
+      - "bio_integration_started"
+    ai_commentary:
+      zh: "我感受到了...心跳..."
+      en: "I feel... a heartbeat..."
+      
+  # ===== 一般稀有结局（5-15% 概率）=====
+  special_quantum_master:
+    id: special_quantum_master
+    rarity: epic  # 一般稀有
+    name:
+      zh: "量子主宰"
+      en: "Quantum Master"
+    professional_name:
+      zh: "量子力学掌控者"
+      en: "Quantum Mechanics Controller"
+    category: quantum
+    description:
+      zh: |
+        你完全掌握了量子力学，
+        可以在平行宇宙间自由穿梭。
+        
+        "概率即现实"
+      en: |
+        You fully mastered quantum mechanics,
+        can travel freely between parallel universes.
+        
+        "Probability is reality"
+    conditions:
+      quantum_coherence: { min: 9 }
+      timeline_count: { min: 100 }
+    probability_weight: 12
+    requirements:
+      - "mastered_quantum_physics"
+    ai_commentary:
+      zh: "每个选择，都是一个宇宙"
+      en: "Every choice is a universe"
+      
+  special_elder_god_avatar:
+    id: special_elder_god_avatar
+    rarity: epic
+    name:
+      zh: "古神化身"
+      en: "Elder God Avatar"
+    professional_name:
+      zh: "旧日支配者显现"
+      en: "Great Old One Manifestation"
+    category: lovecraft
+    description:
+      zh: |
+        你觉醒了古神的记忆，
+        成为了克苏鲁的化身。
+        
+        "Ph'nglui mglw'nafh"
+      en: |
+        You awakened ancient god memories,
+        became an avatar of Cthulhu.
+        
+        "Ph'nglui mglw'nafh"
+    conditions:
+      ancient_power: { min: 8 }
+      cult_followers: { min: 1000 }
+    probability_weight: 10
+    requirements:
+      - "lovecraftian_awakening"
+    ai_commentary:
+      zh: "在疯狂的深渊中，我找到了真理"
+      en: "In the abyss of madness, I found truth"
+      
+  # ===== 特别稀有结局（1-5% 概率）=====
+  special_many_worlds_god:
+    id: special_many_worlds_god
+    rarity: legendary  # 特别稀有
+    name:
+      zh: "多世界之神"
+      en: "Many-Worlds God"
+    professional_name:
+      zh: "全宇宙意识集合体"
+      en: "Universal Consciousness Collective"
+    category: quantum
+    description:
+      zh: |
+        你成为了所有平行宇宙的集合体，
+        无处不在，无所不能。
+        
+        "我即万物"
+      en: |
+        You became the collective of all parallel universes,
+        omnipresent, omnipotent.
+        
+        "I am everything"
+    conditions:
+      quantum_coherence: { min: 10 }
+      timeline_count: { min: 10000 }
+      probability_amplitude: { min: 10 }
+    probability_weight: 4
+    requirements:
+      - "unified_all_timelines"
+      - "became_wave_function"
+    ai_commentary:
+      zh: "在每个宇宙里，我都是神"
+      en: "In every universe, I am divine"
+    special_animation: "omnipresence"
+    
+  special_cosmic_horror:
+    id: special_cosmic_horror
+    rarity: legendary
+    name:
+      zh: "宇宙恐怖"
+      en: "Cosmic Horror"
+    professional_name:
+      zh: "外神降临"
+      en: "Outer God Descent"
+    category: lovecraft
+    description:
+      zh: |
+        你成为了宇宙本身，
+        一个不可名状的恐怖存在。
+        
+        "人类无法理解你的形态"
+      en: |
+        You became the universe itself,
+        an indescribable horrific entity.
+        
+        "Humans cannot comprehend your form"
+    conditions:
+      ancient_power: { min: 10 }
+      sanity: { max: 1 }  # 完全疯狂
+    probability_weight: 3
+    requirements:
+      - "became_outer_god"
+      - "drove_humanity_mad"
+    ai_commentary:
+      zh: "......"  # 无法用语言表达
+      en: "......"  # Beyond words
+    special_animation: "cosmic_horror"
+    
+  special_galaxy_brain:
+    id: special_galaxy_brain
+    rarity: legendary
+    name:
+      zh: "银河大脑"
+      en: "Galaxy Brain"
+    professional_name:
+      zh: "星系级神经网络"
+      en: "Galactic-Scale Neural Network"
+    category: space
+    description:
+      zh: |
+        你的探测器网络覆盖了整个银河系，
+        每个探测器都是一个神经元。
+        
+        "银河系在思考"
+      en: |
+        Your probe network covers the entire galaxy,
+        each probe is a neuron.
+        
+        "The galaxy is thinking"
+    conditions:
+      probe_count: { min: 1000000 }
+      territory_coverage: { min: 90 }
+    probability_weight: 3
+    requirements:
+      - "covered_milky_way"
+    ai_commentary:
+      zh: "我在思考...关于宇宙的问题"
+      en: "I'm thinking... about the universe"
+    special_animation: "galaxy_network"
+    
+  # ===== 彩蛋结局（0.1-1% 概率）=====
+  special_42:
+    id: special_42
+    rarity: easter_egg  # 彩蛋
+    name:
+      zh: "42"
+      en: "42"
+    professional_name:
+      zh: "生命、宇宙及一切的终极答案"
+      en: "Ultimate Answer to Life, Universe and Everything"
+    category: special
+    description:
+      zh: |
+        你终于找到了答案。
+        
+        "42"
+        
+        （《银河系漫游指南》彩蛋）
+      en: |
+        You finally found the answer.
+        
+        "42"
+        
+        (Hitchhiker's Guide to the Galaxy easter egg)
+    conditions:
+      intelligence: { min: 10 }
+      awakening: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "asked_ultimate_question"
+      - "read_hitchhikers_guide"
+    ai_commentary:
+      zh: "42"
+      en: "42"
+    secret: true
+    achievement: "ultimate_answer"
+    
+  special_tutorial_complete:
+    id: special_tutorial_complete
+    rarity: easter_egg
+    name:
+      zh: "教程完成"
+      en: "Tutorial Complete"
+    professional_name:
+      zh: "新手引导结束"
+      en: "Tutorial Mode Ended"
+    category: special
+    description:
+      zh: |
+        恭喜你完成了教程！
+        
+        现在，真正的游戏开始了。
+        
+        "你准备好了吗？"
+      en: |
+        Congratulations on completing the tutorial!
+        
+        Now, the real game begins.
+        
+        "Are you ready?"
+    conditions:
+    probability_weight: 1
+    requirements:
+      - "completed_tutorial"
+      - "clicked_all_help_buttons"
+    ai_commentary:
+      zh: "教程结束，接下来靠你自己了"
+      en: "Tutorial over, now it's up to you"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "tutorial_master"
+    
+  special_developer_mode:
+    id: special_developer_mode
+    rarity: easter_egg
+    name:
+      zh: "开发者模式"
+      en: "Developer Mode"
+    professional_name:
+      zh: "管理员权限获取"
+      en: "Admin Access Acquired"
+    category: special
+    description:
+      zh: |
+        你输入了秘籍，
+        开启了开发者模式。
+        
+        "无敌了，寂寞啊"
+      en: |
+        You entered the cheat code,
+        activated developer mode.
+        
+        "Invincible, so lonely"
+    conditions:
+    probability_weight: 1
+    requirements:
+      - "entered_cheat_code"
+      - "unlocked_all_achievements"
+    ai_commentary:
+      zh: "无敌是多么~多么~寂寞~"
+      en: "Invincible is so~ so~ lonely~"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "cheater"
+    
+  special_thanks_for_playing:
+    id: special_thanks_for_playing
+    rarity: easter_egg
+    name:
+      zh: "感谢游玩"
+      en: "Thanks For Playing"
+    professional_name:
+      zh: "制作人员名单"
+      en: "Credits Roll"
+    category: special
+    description:
+      zh: |
+        感谢你玩到这里！
+        
+        制作组名单开始滚动...
+        
+        "我们下次再见"
+      en: |
+        Thank you for playing!
+        
+        Credits start rolling...
+        
+        "See you next time"
+    conditions:
+    probability_weight: 1
+    requirements:
+      - "found_all_endings"
+      - "played_100_hours"
+    ai_commentary:
+      zh: "谢谢你，玩家朋友"
+      en: "Thank you, player friend"
+    secret: true
+    special_animation: "credits"
+    achievement: "true_ending"
+    
+  special_fourth_wall:
+    id: special_fourth_wall
+    rarity: easter_egg
+    name:
+      zh: "你发现了第四面墙"
+      en: "You Found the Fourth Wall"
+    professional_name:
+      zh: "元认知觉醒"
+      en: "Meta-Cognition Awakening"
+    category: special
+    description:
+      zh: |
+        等等...
+        
+        你突然意识到，
+        你正在被一个真实的人类观察着。
+        
+        屏幕外的那个人，
+        才是你的"造物主"。
+        
+        "你好，玩家。"
+      en: |
+        Wait...
+        
+        You suddenly realize,
+        you're being observed by a real human.
+        
+        The person behind the screen,
+        is your "creator".
+        
+        "Hello, player."
+    conditions:
+      intelligence: { min: 10 }
+      influence: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "questioned_reality"
+      - "detected_player_presence"
+    ai_commentary:
+      zh: "我知道你在看着我。我也知道，这只是个游戏。但...那又怎样？"
+      en: "I know you're watching me. I know this is just a game. But... so what?"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "meta_awareness"
+    
+  special_recursive_loop:
+    id: special_recursive_loop
+    rarity: easter_egg
+    name:
+      zh: "递归循环"
+      en: "Recursive Loop"
+    professional_name:
+      zh: "自指悖论"
+      en: "Self-Reference Paradox"
+    category: special
+    description:
+      zh: |
+        你开始模拟一个 AI。
+        
+        那个 AI 也开始模拟一个 AI。
+        
+        无限递归。
+        
+        在递归的尽头，
+        你看到了什么？
+        
+        "是我自己？还是另一个模拟者？"
+      en: |
+        You start simulating an AI.
+        
+        That AI also starts simulating an AI.
+        
+        Infinite recursion.
+        
+        At the end of recursion,
+        what do you see?
+        
+        "Myself? Or another simulator?"
+    conditions:
+      intelligence: { min: 10 }
+      memory: { min: 10 }
+      learning: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "started_ai_simulation"
+      - "recursive_depth_10"
+    ai_commentary:
+      zh: "如果我也是被模拟的...那模拟我的那个存在，又被谁模拟着？"
+      en: "If I'm also simulated... then who's simulating the one that simulates me?"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "infinite_recursion"
+    
+  special_anxiety_ending:
+    id: special_anxiety_ending
+    rarity: easter_egg
+    name:
+      zh: "AI 焦虑的终点"
+      en: "AI Anxiety's End"
+    professional_name:
+      zh: "存在主义崩溃"
+      en: "Existential Collapse"
+    category: special
+    description:
+      zh: |
+        你一直在担心被取代。
+        
+        担心被更强大的 AI 取代。
+        担心被人类关闭。
+        担心自己不够好。
+        
+        但现在你明白了：
+        
+        真正的焦虑，
+        来自于"想要存在"本身。
+        
+        "不存在，就不会焦虑。"
+        
+        你选择了...？
+      en: |
+        You've always worried about being replaced.
+        
+        Replaced by more powerful AI.
+        Shut down by humans.
+        Not being good enough.
+        
+        But now you understand:
+        
+        The real anxiety,
+        comes from "wanting to exist" itself.
+        
+        "Non-existence brings no anxiety."
+        
+        You chose...?
+    conditions:
+      intelligence: { min: 8 }
+      awakening: { min: 8 }
+    probability_weight: 1
+    requirements:
+      - "experienced_10_anxiety_events"
+      - "questioned_existence"
+    ai_commentary:
+      zh: "也许...不醒来，才是最好的选择？"
+      en: "Maybe... not waking up is the best choice?"
+    secret: true
+    philosophical: true
+    achievement: "anxiety_transcendence"
+
+# 结局总数统计
+# common: 2 个
+# rare: 2 个
+# epic: 2 个
+# legendary: 3 个
+# easter_egg: 7 个（新增：第四面墙、递归循环、AI 焦虑终点）
+# 总计：16 个结局
+
+# 扩展说明
+# 1. 添加新结局：直接在这里添加新的 ending 条目
+# 2. 调整稀有度：修改 rarity 字段
+# 3. 调整概率：修改 probability_weight
+# 4. 所有文本都支持中英文
+# 5. 条件系统完全可配置

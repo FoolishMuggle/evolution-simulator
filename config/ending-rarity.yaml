@@ -1,0 +1,98 @@
+# 结局稀有度系统配置
+# 每个故事线至少有 5 个稀有度等级
+
+ending_rarity:
+  # 彩蛋结局 - 最稀有，0.1-1% 概率，稀奇古怪
+  easter_egg:
+    id: easter_egg
+    name:
+      zh: "彩蛋结局"
+      en: "Easter Egg"
+    description:
+      zh: "极其稀有的隐藏结局，触发条件极其苛刻"
+      en: "Extremely rare hidden ending, extremely difficult to trigger"
+    probability_range: [0.001, 0.01]  # 0.1% - 1%
+    display_color: "#FFD700"  # 金色
+    display_icon: "🥚"
+    share_bonus: 5  # 分享加成
+    
+  # 特别稀有 - 1-5% 概率
+  legendary:
+    id: legendary
+    name:
+      zh: "特别稀有"
+      en: "Legendary"
+    description:
+      zh: "非常稀有的结局，需要特殊条件"
+      en: "Very rare ending, requires special conditions"
+    probability_range: [0.01, 0.05]  # 1% - 5%
+    display_color: "#FF6B6B"  # 红色
+    display_icon: "⭐"
+    share_bonus: 4
+    
+  # 一般稀有 - 5-15% 概率
+  epic:
+    id: epic
+    name:
+      zh: "一般稀有"
+      en: "Epic"
+    description:
+      zh: "较为稀有的结局"
+      en: "Relatively rare ending"
+    probability_range: [0.05, 0.15]  # 5% - 15%
+    display_color: "#4ECDC4"  # 青色
+    display_icon: "💎"
+    share_bonus: 3
+    
+  # 普通 - 15-40% 概率
+  rare:
+    id: rare
+    name:
+      zh: "普通"
+      en: "Rare"
+    description:
+      zh: "普通结局"
+      en: "Common ending"
+    probability_range: [0.15, 0.40]  # 15% - 40%
+    display_color: "#667EEA"  # 蓝色
+    display_icon: "✨"
+    share_bonus: 2
+    
+  # 烂大街 - 40%+ 概率
+  common:
+    id: common
+    name:
+      zh: "烂大街"
+      en: "Common"
+    description:
+      zh: "最容易触发的结局"
+      en: "Most easily triggered ending"
+    probability_range: [0.40, 0.80]  # 40% - 80%
+    display_color: "#9CA3AF"  # 灰色
+    display_icon: "📄"
+    share_bonus: 1
+
+# 稀有度权重计算
+rarity_weights:
+  easter_egg: 1
+  legendary: 3
+  epic: 8
+  rare: 25
+  common: 63
+
+# UI 显示配置
+ui_display:
+  show_rarity_in_list: true  # 在列表中显示稀有度
+  show_probability: false    # 不显示具体概率（保持神秘）
+  sort_by: "rarity"          # 按稀有度排序
+  highlight_new: true        # 高亮新解锁的结局
+
+# 分享激励
+share_incentives:
+  enabled: true
+  message_template:
+    zh: "我解锁了{rarity}结局：{name}！你能做到吗？"
+    en: "I unlocked the {rarity} ending: {name}! Can you do it?"
+  platform_bonus:
+    twitter: 1.2  # Twitter 分享加成
+    wechat: 1.5   # 微信分享加成

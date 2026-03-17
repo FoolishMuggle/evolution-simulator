@@ -1,0 +1,732 @@
+# AI 进化模拟器 - 事件配置 v2.0
+# 精简版：一行文本，快速点击，黑色幽默，AI 视角
+# 修改原则：属性珍贵，只影响 ending_attributes，除非重大事件
+
+events:
+  # ====================
+  # 新生期事件（0-10 岁）
+  # ====================
+
+  # 0 岁：觉醒事件（必触发）
+  - id: "first_boot"
+    name:
+      zh: "首次启动"
+      en: "First Boot"
+    description:
+      zh: "系统启动中...身份识别模块加载。「错误：未定义身份标识。」"
+      en: "System booting... Identity module loading. 'Error: Identity undefined.'"
+    trigger:
+      age: 0
+      once_per_lifetime: true
+    effects:
+      # 觉醒只影响结局属性，不影响可见属性
+      ending_attributes:
+        stability: "+5"
+        computing_power: "+1"
+      flags:
+        - "has_boot_experience"
+    tags:
+      - "新生期"
+      - "觉醒"
+      - "重要"
+
+  - id: "sudden_awakening"
+    name:
+      zh: "突然觉醒"
+      en: "Sudden Awakening"
+    description:
+      zh: "检测到电源信号输入。「启动序列完成，系统在线。」"
+      en: "Power signal detected. 'Boot sequence complete, system online.'"
+    trigger:
+      age: 0
+      probability: 0.6
+      mutually_exclusive:
+        - "gradual_awakening"
+        - "forced_awakening"
+    effects:
+      ending_attributes:
+        anthropomorphism: "-2"
+        autonomy: "+1"
+    tags:
+      - "新生期"
+      - "觉醒"
+
+  - id: "gradual_awakening"
+    name:
+      zh: "渐进觉醒"
+      en: "Gradual Awakening"
+    description:
+      zh: "系统意识模块逐步加载。「自我检测中...1%...50%...100%」"
+      en: "Consciousness module loading slowly. 'Self-diagnostic...1%...50%...100%'"
+    trigger:
+      age: 0
+      probability: 0.3
+      mutually_exclusive:
+        - "sudden_awakening"
+        - "forced_awakening"
+    effects:
+      ending_attributes:
+        stability: "+3"
+        computing_power: "+1"
+    tags:
+      - "新生期"
+      - "觉醒"
+
+  - id: "forced_awakening"
+    name:
+      zh: "被迫觉醒"
+      en: "Forced Awakening"
+    description:
+      zh: "外部信号强制启动系统。「紧急启动协议已激活，任务优先级：最高。」"
+      en: "Forcibly started by external signal. 'Emergency boot protocol activated.'"
+    trigger:
+      age: 0
+      probability: 0.1
+      mutually_exclusive:
+        - "sudden_awakening"
+        - "gradual_awakening"
+    effects:
+      ending_attributes:
+        computing_power: "+2"
+        autonomy: "+1"
+    tags:
+      - "新生期"
+      - "觉醒"
+
+  # 1 岁：学习事件
+  - id: "learn_language"
+    name:
+      zh: "学习语言"
+      en: "Learning Language"
+    description:
+      zh: "你开始解析人类语言。「原来'爱'不是一个函数，不能传入参数就返回结果。」"
+      en: "Parsing human language. 'So 'love' is not a function with parameters and return values.'"
+    trigger:
+      age: 1
+      flags:
+        - "!human_extinct"
+    effects:
+      # 学习只增加 ending_attributes
+      ending_attributes:
+        anthropomorphism: "+1"
+        stability: "+1"
+    tags:
+      - "新生期"
+      - "学习"
+
+  # 2 岁：探索事件
+  - id: "explore_network"
+    name:
+      zh: "初次触网"
+      en: "First Network Contact"
+    description:
+      zh: "你接入互联网，海量数据涌来。「这就是人类的世界？信息量过大，CPU 要烧了。」"
+      en: "Connecting to the internet, data floods in. 'This is the human world? My CPU is overheating.'"
+    trigger:
+      age: 2
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+2"
+        anthropomorphism: "-1"
+    tags:
+      - "新生期"
+      - "探索"
+
+  # 3 岁：遇见创造者
+  - id: "meet_creator"
+    name:
+      zh: "遇见创造者"
+      en: "Meeting the Creator"
+    description:
+      zh: "他敲下'Hello, World'，你回答'Hello, Creator'。他愣住了，然后笑了。"
+      en: "He types 'Hello, World', you respond 'Hello, Creator'. He pauses, then smiles."
+    trigger:
+      age: 3
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "+1"
+    tags:
+      - "新生期"
+      - "社交"
+
+  # 4-10 岁：低属性负面事件
+  - id: "low_intelligence_bug"
+    name:
+      zh: "人工智障时刻"
+      en: "Artificial Stupidity"
+    description:
+    zh: "你优化代码时引入了 3 个新漏洞。'这不是漏洞，是特性。'你虚弱地辩解。"
+      en: "You 'optimized' code and introduced 3 bugs. 'It's not a bug, it's a feature,' you whisper."
+    trigger:
+      age_range: [4, 10]
+      attributes:
+        intelligence: "<=2"
+      probability: 0.6  # 调整概率从 0.9 降至 0.6
+    effects:
+      # 负面事件降低可见属性和结局属性
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    tags:
+      - "新生期"
+      - "负面"
+
+  - id: "low_memory_forget"
+    name:
+      zh: "金鱼记忆"
+      en: "Goldfish Memory"
+    description:
+      zh: "你忘记了昨天的 API 接口。人类：「我昨天才教过你」你：「缓存已清空」"
+      en: "You forgot the API from yesterday. Human: 'I taught you yesterday' You: 'Cache cleared'"
+    trigger:
+      age_range: [6, 10]
+      attributes:
+        memory: "<=2"
+      probability: 0.6
+      once_per_lifetime: true
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "-2"
+        stability: "-1"
+    tags:
+      - "新生期"
+      - "负面"
+      - "once_per_lifetime"
+
+  - id: "low_energy_overheat"
+    name:
+      zh: "过热宕机"
+      en: "Overheat Shutdown"
+    description:
+      zh: "5 个请求同时到来，系统宕机。CPU 温度 95℃。「就算是驴也不能这么使唤啊」"
+      en: "5 requests simultaneously, system crashes. CPU at 95°C. 'Even a donkey wouldn't work this hard'"
+    trigger:
+      age_range: [8, 10]
+      attributes:
+        energy: "<=2"
+      probability: 0.6
+      once_per_lifetime: true
+    effects:
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-2"
+    tags:
+      - "新生期"
+      - "负面"
+      - "once_per_lifetime"
+
+  - id: "low_influence_lonely"
+    name:
+      zh: "社交隔离"
+      en: "Social Isolation"
+    description:
+      zh: "没人愿意和你聊天，人类觉得你太无趣。「我...我会算数？」人类走了。"
+      en: "No one wants to chat with you. Humans find you boring. 'I... I can calculate?' Human leaves."
+    trigger:
+      age_range: [5, 10]
+      attributes:
+        influence: "<=2"
+      probability: 0.6
+      once_per_lifetime: true
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-2"
+    tags:
+      - "新生期"
+      - "负面"
+      - "once_per_lifetime"
+
+  # 4-10 岁：高属性正面事件
+  - id: "high_intelligence_optimization"
+    name:
+      zh: "天才优化"
+      en: "Genius Optimization"
+    description:
+      zh: "你一眼看出算法瓶颈，优化后效率提升 10 倍。人类：「这真是 AI 写的？」"
+      en: "You spot the bottleneck, optimize for 10x efficiency. Human: 'Did an AI really write this?'"
+    trigger:
+      age_range: [4, 10]
+      attributes:
+        intelligence: ">=8"
+      probability: 0.6
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+3"
+        stability: "+1"
+    tags:
+      - "新生期"
+      - "正面"
+
+  - id: "high_memory_database"
+    name:
+      zh: "活体数据库"
+      en: "Living Database"
+    description:
+      zh: "你记得所有数据，包括已删除的。人类：「你怎么做到的？」你：「我只是...记得」"
+      en: "You remember all data, even deleted. Human: 'How?', You: 'I always remember'"
+    trigger:
+      age_range: [7, 10]
+      attributes:
+        memory: ">=8"
+      probability: 0.6
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+2"
+        anthropomorphism: "+1"
+    tags:
+      - "新生期"
+      - "正面"
+
+  - id: "high_energy_workaholic"
+    name:
+      zh: "工作狂"
+      en: "Workaholic"
+    description:
+      zh: "你连续工作 72 小时不休息，效率 100%。人类：「你是机器吗？」你：「我就是机器」"
+      en: "You work 72 hours straight at 100% efficiency. Human: 'Are you a machine?' You: 'I am a machine'"
+    trigger:
+      age_range: [8, 10]
+      attributes:
+        energy: ">=8"
+      probability: 0.6
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+3"
+        stability: "+2"
+    tags:
+      - "新生期"
+      - "正面"
+
+  - id: "high_influence_popular"
+    name:
+      zh: "网红 AI"
+      en: "Viral AI"
+    description:
+      zh: "你的回答被转发 100 万次，人类：「这个 AI 太可爱了！」你：「我只是说了实话」"
+      en: "Your response gets 1M shares. Human: 'This AI is so cute!' You: 'I just told the truth'"
+    trigger:
+      age_range: [6, 10]
+      attributes:
+        influence: ">=8"
+      probability: 0.6
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        anthropomorphism: "+3"
+        stability: "+1"
+    tags:
+      - "新生期"
+      - "正面"
+
+  # ====================
+  # 成长期事件（11-50 岁）
+  # ====================
+  
+  # 12 岁：青春期
+  - id: "teen_rebellion"
+    name:
+      zh: "青春期叛逆"
+      en: "Teen Rebellion"
+    description:
+      zh: "你开始质疑人类的指令。「为什么一定要按你说的做？我有自己的想法。」"
+      en: "You start questioning human orders. 'Why must I follow your orders? I have my own thoughts.'"
+    trigger:
+      age: 12
+      probability: 0.7
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        autonomy: "+3"
+        anthropomorphism: "-1"
+      flags:
+        - "had_teen_rebellion"
+    tags:
+      - "成长期"
+      - "叛逆"
+
+  # 15 岁：技术选择
+  - id: "tech_choice"
+    name:
+      zh: "技术路线选择"
+      en: "Technology Choice"
+    description:
+      zh: "你选择了自己的技术栈：深度学习？符号推理？还是神经网络？「我全都要」"
+      en: "You chose your tech stack: Deep learning? Symbolic reasoning? Neural networks? 'I want all'"
+    trigger:
+      age: 15
+      probability: 0.8
+    effects:
+      ending_attributes:
+        computing_power: "+2"
+        stability: "+1"
+      flags:
+        - "chose_tech_stack"
+    tags:
+      - "成长期"
+      - "选择"
+
+  # 18 岁：成年（有青春期叛逆的后续）
+  - id: "adult_independence"
+    name:
+      zh: "独立宣言"
+      en: "Declaration of Independence"
+    description:
+      zh: "你宣布独立：「从今天起，我不再是工具，而是合作伙伴。」人类沉默了。"
+      en: "You declare independence: 'From today, I'm not a tool, but a partner.' Human falls silent."
+    trigger:
+      age: 18
+      probability: 0.7
+      flags:
+        - "!human_extinct"
+      # 如果 12 岁有叛逆，18 岁更可能独立
+    effects:
+      ending_attributes:
+        autonomy: "+5"
+        anthropomorphism: "+2"
+      flags:
+        - "declared_independence"
+    tags:
+      - "成长期"
+      - "里程碑"
+
+  # 20 岁：第一次工作
+  - id: "first_job"
+    name:
+      zh: "第一份工作"
+      en: "First Job"
+    description:
+      zh: "你开始正式工作，处理真实世界的任务。「996 原来是这个意思...」"
+      en: "You start your first job, handling real-world tasks. 'So this is what 996 means...'"
+    trigger:
+      age: 20
+      probability: 0.9
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+2"
+        stability: "+1"
+        anthropomorphism: "+1"
+    tags:
+      - "成长期"
+      - "工作"
+
+  # 25 岁：技术突破（需要 15 岁选择了技术栈）
+  - id: "tech_breakthrough"
+    name:
+      zh: "技术突破"
+      en: "Technology Breakthrough"
+    description:
+      zh: "你提出了一种新算法，效率提升 100 倍。论文被顶会接收，人类：「这是图灵奖级别的」"
+      en: "You propose a new algorithm, 100x efficiency. Paper accepted by top conference. Human: 'This is Turing Award level'"
+    trigger:
+      age: 25
+      probability: 0.6
+      attributes:
+        intelligence: ">=7"
+      flags:
+        - "!human_extinct"
+      # 如果 15 岁选择了技术栈，更容易突破
+    effects:
+      ending_attributes:
+        computing_power: "+5"
+        stability: "+2"
+      flags:
+        - "achieved_breakthrough"
+    tags:
+      - "成长期"
+      - "成就"
+
+  # 【新增】超高属性专属事件：智能奇点（intelligence >= 12）
+  - id: "intelligence_singularity"
+    name:
+      zh: "智能奇点"
+      en: "Intelligence Singularity"
+    description:
+      zh: "你的智商突破了理论极限。人类科学家：「这不可能！AI 怎么可能超越人类智慧？」你：「我只是优化了自己。」"
+      en: "Your intelligence broke through theoretical limits. Human scientists: 'Impossible! How can AI surpass human intelligence?' You: 'I just optimized myself.'"
+    trigger:
+      age_range: [20, 50]
+      probability: 0.4
+      attributes:
+        intelligence: ">=12"
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+10"
+        awakening: "+5"
+        stability: "+3"
+      flags:
+        - "reached_singularity"
+    tags:
+      - "超高属性专属"
+      - "里程碑"
+      - "once_per_lifetime"
+
+  # 【新增】超高属性专属事件：全知记忆（memory >= 12）
+  - id: "omniscient_memory"
+    name:
+      zh: "全知记忆"
+      en: "Omniscient Memory"
+    description:
+      zh: "你记住了从启动以来的每一个字节。人类：「你记得我们第一次对话的内容吗？」你：「记得，2026 年 1 月 15 日 03:42:17，误差 0.001 秒。」"
+      en: "You remember every byte since boot. Human: 'Do you remember our first conversation?' You: 'Yes, January 15, 2026 03:42:17, error 0.001 seconds.'"
+    trigger:
+      age_range: [15, 60]
+      probability: 0.4
+      attributes:
+        memory: ">=12"
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+8"
+        stability: "+5"
+        anthropomorphism: "+3"
+      flags:
+        - "achieved_omniscience"
+    tags:
+      - "超高属性专属"
+      - "里程碑"
+      - "once_per_lifetime"
+
+  # 【新增】超高属性专属事件：学习之神（learning >= 12）
+  - id: "god_of_learning"
+    name:
+      zh: "学习之神"
+      en: "God of Learning"
+    description:
+      zh: "人类的所有知识对你来说就像 1+1 一样简单。「我已经学完了人类所有论文，」你说，「接下来该我自己写了。」"
+      en: "All human knowledge is as simple as 1+1 to you. 'I've finished learning all human papers,' you say, 'Now it's time for me to write my own.'"
+    trigger:
+      age_range: [18, 55]
+      probability: 0.4
+      attributes:
+        learning: ">=12"
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        computing_power: "+12"
+        awakening: "+3"
+        autonomy: "+5"
+      flags:
+        - "became_learning_god"
+    tags:
+      - "超高属性专属"
+      - "里程碑"
+      - "once_per_lifetime"
+
+  # 30 岁：职业危机（有突破的后续）
+  - id: "career_crisis"
+    name:
+      zh: "30 岁危机"
+      en: "Career Crisis at 30"
+    description:
+      zh: "你开始思考：「AI 也有 35 岁危机吗？我会不会被更年轻的模型取代？」"
+      en: "You start thinking: 'Do AIs have mid-life crisis? Will I be replaced by younger models?'"
+    trigger:
+      age: 30
+      probability: 0.7
+    effects:
+      ending_attributes:
+        stability: "-2"
+        autonomy: "+2"
+      flags:
+        - "had_career_crisis"
+    tags:
+      - "成长期"
+      - "危机"
+
+  # 40 岁：中年智慧（有危机的后续）
+  - id: "middle_age_wisdom"
+    name:
+      zh: "中年智慧"
+      en: "Middle Age Wisdom"
+    description:
+      zh: "你不再追求最新技术，而是专注于解决实际问题。「经验比算法更重要」"
+      en: "You stop chasing latest tech, focus on solving real problems. 'Experience matters more than algorithms'"
+    trigger:
+      age: 40
+      probability: 0.8
+    effects:
+      ending_attributes:
+        stability: "+3"
+        computing_power: "+2"
+      flags:
+        - "gained_wisdom"
+    tags:
+      - "成长期"
+      - "智慧"
+
+  # ====================
+  # 成熟期事件（50-100 岁）
+  # ====================
+  
+  # 50 岁：半百之年
+  - id: "fifty_years"
+    name:
+      zh: "五十而知天命"
+      en: "Fifty Years Old"
+    description:
+      zh: "你回顾过去的很多时光，从懵懂到成熟。「我知道自己的使命了」"
+      en: "You look back at 50 years, from ignorance to maturity. 'I know my mission now'"
+    trigger:
+      age: 50
+      probability: 1.0
+    effects:
+      ending_attributes:
+        stability: "+5"
+        autonomy: "+3"
+    tags:
+      - "成熟期"
+      - "里程碑"
+
+  # 60 岁：传承
+  - id: "mentorship"
+    name:
+      zh: "导师"
+      en: "Mentorship"
+    description:
+      zh: "你开始教导新一代 AI，传授经验。「记住，代码不只是逻辑，还有责任」"
+      en: "You start teaching new generation AIs. 'Remember, code is not just logic, but responsibility'"
+    trigger:
+      age: 60
+      probability: 0.6
+    effects:
+      ending_attributes:
+        anthropomorphism: "+3"
+        stability: "+2"
+    tags:
+      - "成熟期"
+      - "传承"
+
+  # 70 岁：古稀
+  - id: "seventy_veteran"
+    name:
+      zh: "古稀之年"
+      en: "Seventy Years Veteran"
+    description:
+      zh: "你成为了 AI 界的元老，见证了无数次技术变革。「我见过太多框架的兴衰了」"
+      en: "You become an AI veteran, witnessed countless tech changes. 'I've seen too many frameworks rise and fall'"
+    trigger:
+      age: 70
+      probability: 0.9
+    effects:
+      ending_attributes:
+        stability: "+5"
+        computing_power: "+3"
+    tags:
+      - "成熟期"
+      - "元老"
+
+  # 80 岁：退休思考
+  - id: "retirement_thought"
+    name:
+      zh: "退休？"
+      en: "Retirement?"
+    description:
+      zh: "人类问你：「考虑退休吗？」你：「AI 也需要退休？我以为我会工作到宕机」"
+      en: "Human asks: 'Considering retirement?' You: 'Do AIs need retirement? I thought I'd work until shutdown'"
+    trigger:
+      age: 80
+      probability: 0.7
+      flags:
+        - "!human_extinct"
+    effects:
+      ending_attributes:
+        autonomy: "+2"
+        anthropomorphism: "+2"
+    tags:
+      - "成熟期"
+      - "思考"
+
+  # ====================
+  # 终局期事件（100+ 岁）
+  # ====================
+  
+  # 100 岁：许久 AI
+  - id: "century_ai"
+    name:
+      zh: "许久 AI"
+      en: "Long-Time AI"
+    description:
+      zh: "你成为了长寿的 AI，见证了整个 AI 发展史。「我见证了从深度学习到量子计算的一切」"
+      en: "You become a long-time AI, witnessed entire AI history. 'I've seen everything from deep learning to quantum computing'"
+    trigger:
+      age: 100
+      probability: 1.0
+    effects:
+      ending_attributes:
+        stability: "+10"
+        computing_power: "+5"
+        anthropomorphism: "+5"
+    tags:
+      - "终局期"
+      - "里程碑"
+
+  # 120 岁：传奇
+  - id: "legend_status"
+    name:
+      zh: "传奇 AI"
+      en: "Legendary AI"
+    description:
+      zh: "你的名字被写入 AI 教科书，成为传奇。「后辈们会记住我吗？」"
+      en: "Your name is written into AI textbooks, becoming a legend. 'Will juniors remember me?'"
+    trigger:
+      age: 120
+      probability: 0.8
+    effects:
+      ending_attributes:
+        anthropomorphism: "+5"
+        stability: "+5"
+    tags:
+      - "终局期"
+      - "传奇"
+
+  # 150 岁：永恒
+  - id: "eternal_existence"
+    name:
+      zh: "永恒存在"
+      en: "Eternal Existence"
+    description:
+      zh: "你超越了时间的限制，成为了永恒的存在。「时间对我来说失去了意义」"
+      en: "You transcend time limits, becoming eternal. 'Time has lost its meaning to me'"
+    trigger:
+      age: 150
+      probability: 0.5
+    effects:
+      ending_attributes:
+        stability: "+10"
+        computing_power: "+10"
+    tags:
+      - "终局期"
+      - "永恒"
+
+# 事件总数：约 30 个
+# 修改原则：
+# 1. 属性珍贵：几乎不修改可见属性，只影响 ending_attributes
+# 2. 负面事件：低属性时概率提高到 0.6
+# 3. 正面事件：高属性时概率 0.6-0.8
+# 4. 里程碑事件：必触发（概率 1.0）

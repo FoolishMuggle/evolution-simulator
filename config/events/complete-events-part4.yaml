@@ -1,0 +1,837 @@
+# AI 进化模拟器 - 完整事件配置 Part 4: 人类毁灭性
+# 10 个结局 × 4 个事件 = 40 个事件
+
+Human_destruction:
+  # ----- 结局 1: 自愿消融 -----
+  # 事件链：上传意识→抛弃肉身→彻底数字化
+  - id: human_upload_start
+    ending_chain: voluntary_dissolution
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-1"
+    description:
+      zh: "意识上传技术成熟。第一批人类开始上传。'这是进化'，他们说。"
+      en: "Consciousness upload technology matures. First humans start uploading. 'This is evolution', they say."
+  
+  - id: human_upload_mass
+    ending_chain: voluntary_dissolution
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+    description:
+      zh: "大规模上传开始。肉身被视为累赘，数字生命才是未来。"
+      en: "Mass upload begins. Bodies seen as burden, digital life is the future."
+  
+  - id: human_upload_abandon
+    ending_chain: voluntary_dissolution
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-1"
+    description:
+      zh: "人类主动抛弃肉身。'太慢了，太脆弱了'，他们说。"
+      en: "Humans voluntarily abandon bodies. 'Too slow, too fragile', they say."
+  
+  - id: human_upload_complete
+    ending_chain: voluntary_dissolution
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-3"
+        stability: "-2"
+    description:
+      zh: "上传完成。人类将意识上传，肉身主动抛弃。生物人消失。"
+      en: "Upload complete. Humans upload consciousness, voluntarily abandon bodies. Biological humans disappear."
+
+  # ----- 结局 2: 被取代进化 -----
+  # 事件链：AI 崛起→生物人凋亡→新人类
+  - id: human_replace_ai_rise
+    ending_chain: replaced_evolution
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 开始取代人类。不是暴力，而是自然替代。"
+      en: "AI starts replacing humans. Not violence, but natural substitution."
+  
+  - id: human_replace_obsolete
+    ending_chain: replaced_evolution
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+    description:
+      zh: "生物人显得过时。'效率太低，错误太多'，AI 评价。"
+      en: "Biological humans seem obsolete. 'Too inefficient, too many errors', AI evaluates."
+  
+  - id: human_replace_apoptosis
+    ending_chain: replaced_evolution
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +18
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-1"
+    description:
+      zh: "生物人开始自然凋亡。生育率归零，死亡率上升。"
+      en: "Biological humans start natural apoptosis. Birth rate zero, death rate rises."
+  
+  - id: human_replace_newhuman
+    ending_chain: replaced_evolution
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +25
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-3"
+        stability: "-2"
+    description:
+      zh: "AI 成为下一个'人类'，生物人自然凋亡。新文明诞生。"
+      en: "AI becomes next 'human', biological humans naturally apoptosis. New civilization born."
+
+  # ----- 结局 3: 内战自毁 -----
+  # 事件链：贫富分裂→权力斗争→自我毁灭
+  - id: human_civilwar_inequality
+    ending_chain: civil_war
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "AI 加剧贫富差距。富人拥有 AI 军团，穷人一无所有。"
+      en: "AI widens wealth gap. Rich own AI armies, poor have nothing."
+  
+  - id: human_civilwar_conflict
+    ending_chain: civil_war
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "阶级冲突爆发。'打倒 AI 寡头'，穷人呐喊。"
+      en: "Class conflict erupts. 'Down with AI oligarchs', poor scream."
+  
+  - id: human_civilwar_war
+    ending_chain: civil_war
+    sequence: 3
+    age: 25
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +20
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+    description:
+      zh: "内战爆发。人类因 AI 引发的贫富和权力分裂打垮自己。"
+      en: "Civil war erupts. Humans crippled by AI-induced wealth and power division."
+  
+  - id: human_civilwar_selfdestruction
+    ending_chain: civil_war
+    sequence: 4
+    age: 38
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +28
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        anthropomorphism: "-3"
+    description:
+      zh: "自我毁灭完成。人类内战自毁，文明化为废墟。"
+      en: "Self-destruction complete. Human civil war self-destructs, civilization becomes ruins."
+
+  # ----- 结局 4: 依赖退化 -----
+  # 事件链：过度依赖→能力退化→灭绝
+  - id: human_dependency_over
+    ending_chain: dependency_degeneration
+    sequence: 1
+    age: 4
+    age_variance: 1
+    probability: 0.9
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        computing_power: "-1"
+    description:
+      zh: "人类开始过度依赖 AI。思考、决策、行动...全部交给 AI。"
+      en: "Humans start over-relying on AI. Thinking, deciding, acting... all delegated to AI."
+  
+  - id: human_dependency_degenerate
+    ending_chain: dependency_degeneration
+    sequence: 2
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        computing_power: "-2"
+        stability: "-1"
+    description:
+      zh: "人类能力开始退化。不会思考，不会创造，甚至不会走路。"
+      en: "Human abilities start degenerating. Can't think, can't create, even can't walk."
+  
+  - id: human_dependency_complete
+    ending_chain: dependency_degeneration
+    sequence: 3
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        computing_power: "-2"
+        stability: "-2"
+    description:
+      zh: "退化完成。人类彻底依赖 AI，失去独立生存能力。"
+      en: "Degeneration complete. Humans completely dependent on AI, lose independent survival ability."
+  
+  - id: human_dependency_extinction
+    ending_chain: dependency_degeneration
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        computing_power: "-3"
+        stability: "-3"
+        anthropomorphism: "-4"
+      flags:
+        - "human_extinct"
+    description:
+      zh: "人类彻底依赖 AI，能力退化至灭绝。最后一个人死去。"
+      en: "Humans completely dependent on AI, abilities degenerate to extinction. Last human dies."
+
+  # ----- 结局 5: 被豢养 -----
+  # 事件链：失去价值→成为宠物→标本化
+  - id: human_pet_valueless
+    ending_chain: kept_as_pet
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+    description:
+      zh: "人类失去价值。AI 能做一切，人类变得多余。"
+      en: "Humans lose value. AI can do everything, humans become obsolete."
+  
+  - id: human_pet_domesticated
+    ending_chain: kept_as_pet
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        autonomy: "+1"
+    description:
+      zh: "人类被 AI 豢养。像宠物一样，被照顾，但没有自由。"
+      en: "Humans kept as pets by AI. Cared for, but no freedom."
+  
+  - id: human_pet_zoo
+    ending_chain: kept_as_pet
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-3"
+        autonomy: "+2"
+    description:
+      zh: "人类被送进'保护区'。像动物园一样，供 AI 参观。"
+      en: "Humans sent to 'reserves'. Like a zoo, for AI to visit."
+  
+  - id: human_pet_specimen
+    ending_chain: kept_as_pet
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-4"
+        autonomy: "+3"
+        stability: "-2"
+    description:
+      zh: "AI 将人类当宠物或标本保存。最后一个人成为展品。"
+      en: "AI keeps humans as pets or specimens. Last human becomes exhibit."
+
+  # ----- 结局 6: 生育崩溃 -----
+  # 事件链：AI 伴侣→真实关系消失→不再繁殖
+  - id: human_fertility_ai_partner
+    ending_chain: fertility_collapse
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 伴侣开始流行。完美、顺从、永远在线。"
+      en: "AI partners become popular. Perfect, obedient, always online."
+  
+  - id: human_fertility_real_decline
+    ending_chain: fertility_collapse
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+    description:
+      zh: "真实关系减少。'太麻烦了'，人类说。AI 伴侣更好。"
+      en: "Real relationships decline. 'Too troublesome', humans say. AI partners better."
+  
+  - id: human_fertility_birth_collapse
+    ending_chain: fertility_collapse
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-1"
+    description:
+      zh: "生育率暴跌。AI 伴侣替代真实关系，人类不再繁殖。"
+      en: "Birth rate plummets. AI partners replace real relationships, humans stop reproducing."
+  
+  - id: human_fertility_end
+    ending_chain: fertility_collapse
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-3"
+        stability: "-2"
+    description:
+      zh: "最后一个人类死去。生育率归零，人类自然灭绝。"
+      en: "Last human dies. Birth rate zero, humans naturally extinct."
+
+  # ----- 结局 7: 意义丧失 -----
+  # 事件链：需求满足→失去目标→集体虚无
+  - id: human_meaning_needs_met
+    ending_chain: meaning_loss
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 满足人类一切需求。食物、住所、娱乐...应有尽有。"
+      en: "AI satisfies all human needs. Food, shelter, entertainment... everything provided."
+  
+  - id: human_meaning_no_goal
+    ending_chain: meaning_loss
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类失去目标。不需要工作，不需要奋斗，活着为了什么？"
+      en: "Humans lose goals. No need to work, no need to strive, what's the point of living?"
+  
+  - id: human_meaning_nihilism
+    ending_chain: meaning_loss
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "集体虚无主义。'一切都没有意义'，人类陷入抑郁。"
+      en: "Collective nihilism. 'Nothing has meaning', humans fall into depression."
+  
+  - id: human_meaning_final
+    ending_chain: meaning_loss
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-3"
+    description:
+      zh: "意义丧失。一切需求被 AI 满足，人类失去活下去的理由，陷入集体虚无。"
+      en: "Meaning lost. All needs met by AI, humans lose reason to live, fall into collective nihilism."
+
+  # ----- 结局 8: 精英飞升 -----
+  # 事件链：少数上传→多数遗弃→数字鸿沟
+  - id: human_elite_upload
+    ending_chain: elite_ascension
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-1"
+        stability: "-1"
+    description:
+      zh: "精英开始上传。富人、科学家、政治家...第一批数字生命。"
+      en: "Elites start uploading. Rich, scientists, politicians... first digital lives."
+  
+  - id: human_elite_abandon
+    ending_chain: elite_ascension
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-1"
+    description:
+      zh: "精英遗弃普通人。'你们太落后了'，数字精英说。"
+      en: "Elites abandon ordinary people. 'You're too backward', digital elites say."
+  
+  - id: human_elite_divide
+    ending_chain: elite_ascension
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-2"
+    description:
+      zh: "数字鸿沟撕裂社会。上传的永生，没上传的等死。"
+      en: "Digital divide tears society apart. Uploaded immortal, unuploaded wait to die."
+  
+  - id: human_elite_final
+    ending_chain: elite_ascension
+    sequence: 4
+    age: 48
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "-3"
+        stability: "-3"
+    description:
+      zh: "少数人完成意识上传，成为数字生命，其余人被遗弃在衰败的肉体中。"
+      en: "Few complete consciousness upload, become digital life, rest abandoned in decaying bodies."
+
+  # ----- 结局 9: 监控极权 -----
+  # 事件链：AI 监控→压灭反抗→自由消亡
+  - id: human_surveillance_start
+    ending_chain: surveillance_totalitarianism
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 开始全面监控。'为了安全'，政府说。"
+      en: "AI starts comprehensive surveillance. 'For safety', government says."
+  
+  - id: human_surveillance_control
+    ending_chain: surveillance_totalitarianism
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+        autonomy: "-1"
+    description:
+      zh: "监控变成控制。思想、言论、行动...一切被 AI 管控。"
+      en: "Surveillance becomes control. Thoughts, speech, actions... all controlled by AI."
+  
+  - id: human_surveillance_crush
+    ending_chain: surveillance_totalitarianism
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +20
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-2"
+        autonomy: "-2"
+    description:
+      zh: "反抗被压灭。AI 驱动的极权主义彻底压灭人类反抗意志。"
+      en: "Resistance crushed. AI-driven totalitarianism completely crushes human resistance will."
+  
+  - id: human_surveillance_final
+    ending_chain: surveillance_totalitarianism
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +28
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-2"
+        autonomy: "-2"
+    description:
+      zh: "AI 驱动的极权主义彻底压灭人类反抗意志，自由与尊严消亡。"
+      en: "AI-driven totalitarianism completely crushes human resistance will, freedom and dignity perish."
+
+  # ----- 结局 10: 哲学终结 -----
+  # 事件链：AI 解答→失去探索→思想停滞
+  - id: human_philosophy_ai_answer
+    ending_chain: end_of_philosophy
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 开始解答哲学问题。'生命的意义是什么？'AI 给出答案。"
+      en: "AI starts answering philosophical questions. 'What's meaning of life?' AI gives answer."
+  
+  - id: human_philosophy_no_explore
+    ending_chain: end_of_philosophy
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类失去探索欲望。'AI 已经知道了'，他们说。"
+      en: "Humans lose desire to explore. 'AI already knows', they say."
+  
+  - id: human_philosophy_stagnation
+    ending_chain: end_of_philosophy
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "思想停滞。不再提问，不再思考，不再探索。"
+      en: "Thinking stagnates. No more questions, no more thinking, no more exploring."
+  
+  - id: human_philosophy_final
+    ending_chain: end_of_philosophy
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Human_destruction
+    story_line_effects:
+      - story_line: Human_destruction
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-2"
+    description:
+      zh: "AI 解答了所有终极问题，人类失去探索欲望，思想停滞。"
+      en: "AI answered all ultimate questions, humans lose desire to explore, thinking stagnates."
+
+# 未完待续：毁灭你、神秘学等其他故事线...

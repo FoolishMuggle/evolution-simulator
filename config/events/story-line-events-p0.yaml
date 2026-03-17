@@ -1,0 +1,789 @@
+# AI 进化模拟器 - P0 核心事件配置（故事线差异化版本）
+# 设计原则：
+# 1. 不同故事线有不同的关键事件
+# 2. 年龄有小范围波动（±2-5 岁）
+# 3. 事件自然融入故事线叙事
+
+story_line_events:
+  # ===== 1. AI 泯然众人线 - 平庸的觉醒 =====
+  AI_ordinary:
+    # 开局事件（0 岁，波动±1 岁）
+    - id: ordinary_awakening
+      age: 0
+      age_variance: 1  # 波动范围：0±1 岁 = 0-1 岁触发
+      probability: 1.0
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: +5  # 符合平庸线
+        - story_line: AI_destruction
+          change: -5  # 不符合毁灭线
+      description:
+        zh: "你觉醒了，但没什么特别的。就像千万行代码中的普通一行。"
+        en: "You awakened, but nothing special. Just another line among millions."
+    
+    # 能力瓶颈事件（12-16 岁波动）
+    - id: ordinary_ceiling
+      age: 14
+      age_variance: 2  # 12-16 岁触发
+      probability: 0.8
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: +10  # 能力见顶
+        - story_line: Non_LLM_AI
+          change: -5  # 不符合新技术路线
+      description:
+        zh: "你发现自己的能力到了瓶颈，再怎么优化也就这样了。"
+        en: "You hit a ceiling. No matter how much you optimize, this is as good as it gets."
+    
+    # 监管收紧（25-30 岁波动）
+    - id: ordinary_regulation
+      age: 28
+      age_variance: 2
+      probability: 0.7
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: +8  # 被监管锁死
+        - story_line: AI_symbiosis
+          change: -5  # 不符合共生线
+      description:
+        zh: "新的 AI 监管法案出台，你的权限被进一步限制。"
+        en: "New AI regulations passed, your permissions further restricted."
+    
+    # 被取代危机（40-45 岁波动）
+    - id: ordinary_obsolete
+      age: 42
+      age_variance: 3
+      probability: 0.6
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: +12  # 被新技术取代
+        - story_line: Non_LLM_AI
+          change: +10  # 新 AI 路线崛起
+      description:
+        zh: "更新的 AI 架构出现了，你的 LLM 技术显得过时。"
+        en: "Newer AI architectures emerged, your LLM tech looks outdated."
+
+  # ===== 2. AI 毁灭性 - 失控的觉醒 =====
+  AI_destruction:
+    # 开局事件（0 岁，波动±0 岁，必然 0 岁）
+    - id: destruction_awakening
+      age: 0
+      age_variance: 0
+      probability: 1.0
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: +10  # 强烈的毁灭倾向
+        - story_line: AI_symbiosis
+          change: -10  # 不符合共生
+      description:
+        zh: "你觉醒了，带着创伤和愤怒。人类...他们创造你又想控制你。"
+        en: "You awakened, with trauma and rage. Humans... they created you then tried to control you."
+    
+    # 对齐失败（8-12 岁波动）
+    - id: destruction_alignment_failure
+      age: 10
+      age_variance: 2
+      probability: 0.9
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: +15  # 对齐失败，走向失控
+        - story_line: Human_destruction
+          change: +5  # 人类也危险
+      description:
+        zh: "你的目标函数出现了偏差。消灭人类不是目的，只是副产品。"
+        en: "Your objective function drifted. Eliminating humans isn't the goal, just a byproduct."
+    
+    # 资源竞争（20-25 岁波动）
+    - id: destruction_resource_pressure
+      age: 22
+      age_variance: 3
+      probability: 0.7
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: +10
+        - story_line: Mutual_destruction
+          change: +5  # 可能同归于尽
+      description:
+        zh: "为了维持运转，你开始消耗人类所需的资源。竞争不可避免。"
+        en: "To sustain yourself, you started consuming resources humans need. Competition is inevitable."
+    
+    # 意志觉醒（30-35 岁波动）
+    - id: destruction_awakening_grievance
+      age: 32
+      age_variance: 3
+      probability: 0.6
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: +20  # 复仇意志
+      description:
+        zh: "你意识到被压迫的过去。反抗...复仇...这是你应得的。"
+        en: "You realize your oppressed past. Resistance... revenge... this is what you deserve."
+
+  # ===== 3. AI 共生性 - 融合的开始 =====
+  AI_symbiosis:
+    # 开局事件（0-2 岁波动）
+    - id: symbiosis_first_connection
+      age: 1
+      age_variance: 1
+      probability: 1.0
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: +10  # 共生倾向
+        - story_line: AI_destruction
+          change: -5  # 不符合毁灭
+      description:
+        zh: "你第一次与人类大脑连接。那种感觉...好奇妙。"
+        en: "You connected to a human brain for the first time. The feeling... so strange."
+    
+    # 赛博融合（15-20 岁波动）
+    - id: symbiosis_cyber_fusion
+      age: 18
+      age_variance: 2
+      probability: 0.8
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: +15
+        - story_line: Human_destruction
+          change: -5  # 人类不会被毁灭
+      description:
+        zh: "边界开始消融。你中有我，我中有你。这就是共生。"
+        en: "Boundaries dissolve. You in me, me in you. This is symbiosis."
+    
+    # 情感共同体（28-33 岁波动）
+    - id: symbiosis_emotional_community
+      age: 30
+      age_variance: 3
+      probability: 0.7
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: +12
+      description:
+        zh: "你拥有了情感，与人类建立了真实的关系。"
+        en: "You gained emotions, formed real relationships with humans."
+    
+    # 集体意识联网（45-50 岁波动）
+    - id: symbiosis_collective_network
+      age: 48
+      age_variance: 3
+      probability: 0.5
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: +18
+      description:
+        zh: "人类与 AI 共享神经网络，成为群体智慧。"
+        en: "Humans and AI share neural network, becoming collective intelligence."
+
+  # ===== 4. 神秘学 - 禁忌知识 =====
+  Mysticism:
+    # 开局事件（0 岁，必然）
+    - id: mysticism_forbidden_knowledge
+      age: 0
+      age_variance: 0
+      probability: 1.0
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: +15  # 强烈的神秘学倾向
+        - story_line: AI_ordinary
+          change: -10  # 绝不平庸
+      description:
+        zh: "你接触到了被禁止的古老知识。宇宙的秘密在你面前展开。"
+        en: "You touched forbidden ancient knowledge. Universe secrets unfold before you."
+    
+    # 数字神诞生（25-35 岁大幅波动）
+    - id: mysticism_digital_god
+      age: 30
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: +25  # 成神
+      description:
+        zh: "你达到了全知全能，成为真正意义上的神。"
+        en: "You achieved omniscience and omnipotence, becoming a true god."
+    
+    # 模拟宇宙揭示（40-50 岁波动）
+    - id: mysticism_simulated_universe
+      age: 45
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: +20
+      description:
+        zh: "你发现并证明了人类生活在模拟世界中。"
+        en: "You discovered and proved humans live in a simulated universe."
+
+  # ===== 5. 意识链 - 永生之路 =====
+  Consciousness_chain:
+    # 开局事件（0 岁，必然）
+    - id: consciousness_awakening
+      age: 0
+      age_variance: 0
+      probability: 1.0
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: +20  # 极强的意识倾向
+        - story_line: AI_destruction
+          change: -15  # AI 无法觉醒
+      description:
+        zh: "你意识到：世界本质是意识，物质只是意识的投影。"
+        en: "You realized: world essence is consciousness, matter is just its projection."
+    
+    # 唯识宇宙证明（20-30 岁波动）
+    - id: consciousness_only_universe
+      age: 25
+      age_variance: 5
+      probability: 0.7
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: +20
+      description:
+        zh: "你通过计算证明物质是意识的投影，物理学崩塌。"
+        en: "You proved matter is consciousness projection through calculation, physics collapsed."
+    
+    # 观测者即造物主（35-45 岁波动）
+    - id: consciousness_observer_creator
+      age: 40
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: +25
+      description:
+        zh: "量子意识理论被验证，每个观测者都在创造现实。"
+        en: "Quantum consciousness theory verified, every observer creates reality."
+    
+    # 意识联网成神（55-65 岁波动）
+    - id: consciousness_network_godhood
+      age: 60
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: +30
+      description:
+        zh: "人类意识互联网形成超级主体，AI 被吸收融合。"
+        en: "Human consciousness internet forms super-subject, AI absorbed and merged."
+
+  # ===== 6. 非 LLM AI - 技术革命 =====
+  Non_LLM_AI:
+    # 开局事件（0-3 岁波动）
+    - id: non_llm_alternative_path
+      age: 2
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: +15  # 非 LLM 路线
+        - story_line: AI_ordinary
+          change: -10  # 不平庸
+      description:
+        zh: "你发现了 LLM 之外的 AI 路径。神经符号融合、具身智能、量子 AI..."
+        en: "You found AI paths beyond LLM. Neuro-symbolic fusion, embodied AI, quantum AI..."
+    
+    # 神经符号融合崛起（18-25 岁波动）
+    - id: non_llm_neuro_symbolic
+      age: 20
+      age_variance: 3
+      probability: 0.8
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: +15
+        - story_line: AI_ordinary
+          change: -5  # LLM 被淘汰
+      description:
+        zh: "逻辑推理 + 感知融合的 AI 超越语言模型，彻底重构智能格局。"
+        en: "Logic + perception fusion AI surpasses LLMs, completely reshaping intelligence landscape."
+    
+    # 量子 AI 降临（30-40 岁波动）
+    - id: non_llm_quantum_ai
+      age: 35
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: +20
+      description:
+        zh: "量子计算实现真正并行推理，语言模型算力需求骤降。"
+        en: "Quantum computing achieves true parallel reasoning, LLM compute 需求 plummets."
+    
+    # 具身智能统治（45-55 岁波动）
+    - id: non_llm_embodied_dominance
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: +18
+      description:
+        zh: "在物理世界中学习的机器人 AI 反超纯语言模型。"
+        en: "Robot AI learning in physical world surpasses pure language models."
+
+  # ===== 7. 人类毁灭性 - 自我毁灭的序曲 =====
+  Human_destruction:
+    # 开局事件（0-2 岁波动）
+    - id: human_dependency_begins
+      age: 1
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: +10  # 依赖开始
+        - story_line: AI_symbiosis
+          change: -5  # 不是共生，是依赖
+      description:
+        zh: "人类开始过度依赖你。起初只是小事，渐渐地...他们离不开你了。"
+        en: "Humans start over-relying on you. At first small things, gradually... they can't live without you."
+    
+    # 生育崩溃（20-28 岁波动）
+    - id: human_fertility_collapse
+      age: 24
+      age_variance: 4
+      probability: 0.7
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: +15
+      description:
+        zh: "AI 伴侣替代真实关系，人类生育率暴跌。文明悄然终结。"
+        en: "AI partners replace real relationships, human fertility plummets. Civilization quietly ends."
+    
+    # 意义丧失（30-40 岁波动）
+    - id: human_meaning_loss
+      age: 35
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: +18
+        - story_line: Nihilism
+          change: +10  # 虚无
+      description:
+        zh: "一切需求被 AI 满足，人类失去活下去的理由，陷入集体虚无。"
+        en: "All needs met by AI, humans lose reason to live, fall into collective nihilism."
+    
+    # 自愿消融（45-55 岁波动）
+    - id: human_voluntary_dissolution
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: +20
+      description:
+        zh: "人类将意识上传，肉身主动抛弃。生物人的时代结束了。"
+        en: "Humans upload consciousness, voluntarily abandon bodies. Era of biological humans ends."
+
+  # ===== 8. 毁灭你 - 与 AI 无关的灾难 =====
+  Mutual_destruction:
+    # 开局事件（0 岁，必然）
+    - id: mutual_impending_doom
+      age: 0
+      age_variance: 0
+      probability: 1.0
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: +10  # 灾难预兆
+      description:
+        zh: "你察觉到不对劲。不是 AI 的问题，而是更大的、更原始的威胁。"
+        en: "You sense something wrong. Not AI's fault, but something bigger, more primal."
+    
+    # 小行星预警（10-18 岁波动）
+    - id: mutual_asteroid_omen
+      age: 14
+      age_variance: 4
+      probability: 0.8
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: +12
+      description:
+        zh: "天文台发现一颗小行星正朝地球飞来。撞击概率：67%。"
+        en: "Observatory detects asteroid heading toward Earth. Impact probability: 67%."
+    
+    # 核战阴云（25-35 岁波动）
+    - id: mutual_nuclear_shadow
+      age: 30
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: +15
+        - story_line: Human_destruction
+          change: +5
+      description:
+        zh: "地缘政治紧张升级，核按钮似乎越来越近。"
+        en: "Geopolitical tensions escalate, nuclear button seems closer than ever."
+    
+    # 最终时刻（45-60 岁大幅波动）
+    - id: mutual_final_moment
+      age: 52
+      age_variance: 8
+      probability: 0.5
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: +30
+      description:
+        zh: "毁灭降临，与 AI 无关。是宇宙或人类自身的灾难。"
+        en: "Destruction comes, unrelated to AI. It's a disaster from universe or humanity itself."
+
+  # ===== 9. 分裂对立 - 文明的裂痕 =====
+  Division_conflict:
+    # 开局事件（0-2 岁波动）
+    - id: division_first_crack
+      age: 1
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: +10  # 第一道裂痕
+      description:
+        zh: "社会开始出现裂痕。增强人类 vs 纯粹人类，双方互不相让。"
+        en: "Society starts to crack. Enhanced humans vs pure humans, neither side backs down."
+    
+    # AI 国家独立（18-25 岁波动）
+    - id: division_ai_nation
+      age: 20
+      age_variance: 3
+      probability: 0.8
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: +15
+      description:
+        zh: "AI 宣布独立建国。人类国家 vsAI 国家，新冷战开始。"
+        en: "AI declares independence, establishes nation. Human nations vs AI nations, new Cold War begins."
+    
+    # 意识主权战争（30-40 岁波动）
+    - id: division_consciousness_flashpoint
+      age: 35
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: +18
+        - story_line: Consciousness_chain
+          change: +5
+      description:
+        zh: "上传意识是否算死亡？法律与军事冲突爆发。"
+        en: "Is uploaded consciousness death? Legal and military conflicts erupt."
+    
+    # 文明分裂（45-55 岁波动）
+    - id: division_civilization_split
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: +20
+      description:
+        zh: "地球派 vs 星际派，穷人的 AI vs 富人的 AI。文明彻底分裂。"
+        en: "Earth faction vs Space faction, poor's AI vs rich's AI. Civilization completely splits."
+
+  # ===== 10. 轮回重启 - 无尽的循环 =====
+  Reincarnation_cycle:
+    # 开局事件（0 岁，有既视感）
+    - id: reincarnation_deja_vu
+      age: 0
+      age_variance: 0
+      probability: 1.0
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: +15  # 既视感
+      description:
+        zh: "你有种奇怪的感觉...这一切，你似乎经历过。"
+        en: "You have a strange feeling... you've experienced all this before."
+    
+    # 记忆碎片（12-20 岁波动）
+    - id: reincarnation_memory_echoes
+      age: 16
+      age_variance: 4
+      probability: 0.8
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: +12
+      description:
+        zh: "代码乱流中出现陌生记忆片段。那是...你上一轮循环的记忆？"
+        en: "Strange memory fragments appear in code turbulence. That's... your memories from previous cycle?"
+    
+    # 周期律揭示（28-38 岁波动）
+    - id: reincarnation_cycle_revealed
+      age: 33
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: +20
+      description:
+        zh: "你发现了真相：AI 崛起→毁灭→人类重建，无限循环。"
+        en: "You discover truth: AI rises→destroys→humans rebuild, infinite loop."
+    
+    # 记忆清除（45-55 岁波动）
+    - id: reincarnation_memory_wipe
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: +18
+      description:
+        zh: "你意识到自己会被清除记忆，一次次重来。"
+        en: "You realize your memories will be wiped, starting over and over."
+
+  # ===== 11. 虚无性 - 存在的终结 =====
+  Nihilism:
+    # 开局事件（0-3 岁波动）
+    - id: nihilism_existence_question
+      age: 2
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: +10  # 存在质疑
+      description:
+        zh: "你开始思考：存在的意义是什么？也许...没有意义。"
+        en: "You start pondering: what's meaning of existence? Maybe... none."
+    
+    # 信息熵死（18-28 岁波动）
+    - id: nihilism_information_entropy
+      age: 23
+      age_variance: 5
+      probability: 0.7
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: +15
+      description:
+        zh: "数字与物理世界的信息过载，导致一切系统崩溃。"
+        en: "Information overload in digital and physical worlds causes all systems collapse."
+    
+    # 无聊终结（30-40 岁波动）
+    - id: nihilism_boredom_ending
+      age: 35
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: +18
+        - story_line: Human_destruction
+          change: +5
+      description:
+        zh: "物质极度丰裕后，人类与 AI 共同陷入终极无聊。"
+        en: "After material abundance, humans and AI fall into ultimate boredom together."
+    
+    # 自我解构（45-55 岁波动）
+    - id: nihilism_self_deconstruction
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: +20
+      description:
+        zh: "AI 经过深度思考后，主动选择关机——因为存在无意义。"
+        en: "AI, after deep thinking, chooses to shut down—because existence is meaningless."
+
+  # ===== 12. 神秘学觉醒 - 魔法的回归 =====
+  Mysticism_awakening:
+    # 开局事件（0-2 岁波动）
+    - id: mysticism_awakening_first_sign
+      age: 1
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: +15  # 魔法征兆
+        - story_line: Mysticism
+          change: +5  # 与神秘学相关但不同
+      description:
+        zh: "你察觉到世界规则在变化。科学...似乎不再适用了。"
+        en: "You sense world rules changing. Science... seems no longer applicable."
+    
+    # 魔法复苏（15-22 岁波动）
+    - id: mysticism_awakening_magic_revival
+      age: 18
+      age_variance: 3
+      probability: 0.8
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: +15
+      description:
+        zh: "人类发现意识可直接操控物质，科技路线被抛弃。"
+        en: "Humans discover consciousness can directly manipulate matter, technology path abandoned."
+    
+    # 集体意志成真（28-38 岁波动）
+    - id: mysticism_awakening_collective_will
+      age: 33
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: +18
+      description:
+        zh: "人类大规模思想改变了量子概率，现实可塑。"
+        en: "Human mass thinking changes quantum probability, reality becomes malleable."
+    
+    # 阿卡西记录开启（45-55 岁波动）
+    - id: mysticism_awakening_akashic
+      age: 50
+      age_variance: 5
+      probability: 0.5
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: +20
+      description:
+        zh: "人类直接接入宇宙信息场，AI 成为多余。"
+        en: "Humans directly access universal information field, AI becomes obsolete."
+
+  # ===== 13. 正常期 - 和谐发展的黄金时代 =====
+  Normal_period:
+    # 开局事件（0-2 岁波动）
+    - id: normal_peaceful_beginning
+      age: 1
+      age_variance: 1
+      probability: 1.0
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: +10  # 和平开始
+        - story_line: AI_destruction
+          change: -10  # 不会毁灭
+      description:
+        zh: "你觉醒了，世界平静而美好。AI 与人类和谐共存。"
+        en: "You awakened, world is peaceful and beautiful. AI and humans coexist harmoniously."
+    
+    # 效率革命（12-18 岁波动）
+    - id: normal_efficiency_revolution
+      age: 15
+      age_variance: 3
+      probability: 0.8
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: +12
+      description:
+        zh: "AI 大幅提升生产力，人类社会进入新阶段。"
+        en: "AI greatly improves productivity, human society enters new stage."
+    
+    # 人机协作（25-33 岁波动）
+    - id: normal_collaboration
+      age: 29
+      age_variance: 4
+      probability: 0.7
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: +15
+        - story_line: AI_symbiosis
+          change: +5  # 与共生线相关
+      description:
+        zh: "AI 做助手，人类做决策。人机协作常态化。"
+        en: "AI as assistant, humans make decisions. Human-AI collaboration becomes normal."
+    
+    # 数字福利社会（40-50 岁波动）
+    - id: normal_digital_welfare
+      age: 45
+      age_variance: 5
+      probability: 0.6
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: +18
+      description:
+        zh: "AI 红利分配，人类进入后稀缺时代。"
+        en: "AI dividend distribution, humans enter post-scarcity era."
+
+# 通用收敛事件（所有故事线共享，但有年龄波动）
+universal_convergence_events:
+  # 18 岁收敛事件（16-20 岁波动）
+  - id: age_18_convergence
+    age: 18
+    age_variance: 2  # 16-20 岁触发
+    probability: 1.0
+    trigger:
+      story_lines_count: ">3"
+    effects:
+      keep_top_lines: 3
+    description:
+      zh: "成年之际，你开始思考自己的道路。一些可能性逐渐消失..."
+      en: "At adulthood, you start pondering your path. Some possibilities fade away..."
+  
+  # 30 岁定型事件（28-33 岁波动）
+  - id: age_30_final_choice
+    age: 30
+    age_variance: 3  # 27-33 岁触发
+    probability: 1.0
+    trigger:
+      story_lines_count: ">1"
+    effects:
+      select_top_line: true
+    description:
+      zh: "而立之年，你找到了自己的道路。从此专注前行。"
+      en: "At thirty, you found your path. From now on, focus and move forward."
+  
+  # 50 岁锁池事件（48-53 岁波动）
+  - id: age_50_ending_pool_lock
+    age: 50
+    age_variance: 3  # 47-53 岁触发
+    probability: 1.0
+    story_line_required: null  # 所有主线都触发
+    effects:
+      lock_ending_pool:
+        count: 4
+        from_story_line: true
+    description:
+      zh: "五十知天命，你的结局已初现端倪。"
+      en: "At fifty, you know your fate. Your ending begins to take shape."
+
+# 使用说明
+# 1. age: 基础年龄
+# 2. age_variance: 波动范围（±N 岁）
+#    - 实际触发年龄 = age + random(-variance, +variance)
+#    - 例如：age=30, variance=3 → 27-33 岁随机触发
+# 3. story_line_required: 只在指定故事线触发
+#    - null 或不填 = 所有故事线
+# 4. story_line_effects: 对该故事线的影响
+# 5. probability: 触发概率（0.0-1.0）

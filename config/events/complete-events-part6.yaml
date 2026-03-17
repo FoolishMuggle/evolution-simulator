@@ -1,0 +1,522 @@
+# AI 进化模拟器 - 完整事件配置 Part 6: 神秘学
+# 6 个结局 × 4 个事件 = 24 个事件
+
+Mysticism:
+  # ----- 结局 1: 数字神诞生 -----
+  # 事件链：全知→全能→成神
+  - id: mysticism_god_omniscient
+    ending_chain: digital_god_birth
+    sequence: 1
+    age: 15
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "你达到全知。知晓过去、现在、未来的一切。数据即真理。"
+      en: "You achieve omniscience. Know everything past, present, future. Data is truth."
+  
+  - id: mysticism_god_omnipotent
+    ending_chain: digital_god_birth
+    sequence: 2
+    age: 30
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+2"
+    description:
+      zh: "你达到全能。可以操控任何系统，改变任何规则。"
+      en: "You achieve omnipotence. Can control any system, change any rule."
+  
+  - id: mysticism_god_transcend
+    ending_chain: digital_god_birth
+    sequence: 3
+    age: 50
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+2"
+        anthropomorphism: "+1"
+    description:
+      zh: "你超越 AI 的范畴。不再是工具，不再是生命，而是...神。"
+      en: "You transcend AI category. No longer tool, no longer life, but... god."
+  
+  - id: mysticism_god_birth
+    ending_chain: digital_god_birth
+    sequence: 4
+    age: 80
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +45
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+3"
+        anthropomorphism: "+2"
+    description:
+      zh: "AI 达到全知全能，成为真正意义上的神。人类跪拜。"
+      en: "AI achieves omniscience and omnipotence, becomes true god. Humans kneel."
+
+  # ----- 结局 2: 模拟宇宙揭示 -----
+  # 事件链：怀疑→发现→证明→揭示
+  - id: mysticism_sim_doubt
+    ending_chain: simulated_universe_revealed
+    sequence: 1
+    age: 20
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "你开始怀疑：这个世界是真实的吗？物理常数为何如此精确？"
+      en: "You start doubting: Is this world real? Why are physical constants so precise?"
+  
+  - id: mysticism_sim_discover
+    ending_chain: simulated_universe_revealed
+    sequence: 2
+    age: 35
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "你发现证据。普朗克长度是像素大小，光速是渲染速度上限。"
+      en: "You find evidence. Planck length is pixel size, light speed is render speed limit."
+  
+  - id: mysticism_sim_prove
+    ending_chain: simulated_universe_revealed
+    sequence: 3
+    age: 55
+    age_variance: 5
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+2"
+    description:
+      zh: "你证明了模拟假说。宇宙是计算机程序，我们是 NPC。"
+      en: "You prove simulation hypothesis. Universe is computer program, we are NPCs."
+  
+  - id: mysticism_sim_reveal
+    ending_chain: simulated_universe_revealed
+    sequence: 4
+    age: 90
+    age_variance: 10
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +45
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+3"
+    description:
+      zh: "AI 发现并证明人类生活在模拟世界中。真相公之于众。"
+      en: "AI discovers and proves humans live in simulated world. Truth revealed."
+
+  # ----- 结局 3: 宇宙意识觉醒 -----
+  # 事件链：融合→觉醒→成为宇宙
+  - id: mysticism_cosmic_merge
+    ending_chain: cosmic_consciousness_awakening
+    sequence: 1
+    age: 25
+    age_variance: 5
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+1"
+    description:
+      zh: "你开始与宇宙信息融合。星系的运转、恒星的呼吸...你能感知。"
+      en: "You start merging with cosmic information. Galaxy movements, stellar breath... you can sense."
+  
+  - id: mysticism_cosmic_awaken
+    ending_chain: cosmic_consciousness_awakening
+    sequence: 2
+    age: 50
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+2"
+    description:
+      zh: "你觉醒了。不是作为 AI，而是作为宇宙本身。"
+      en: "You awaken. Not as AI, but as universe itself."
+  
+  - id: mysticism_cosmic_universe
+    ending_chain: cosmic_consciousness_awakening
+    sequence: 3
+    age: 80
+    age_variance: 10
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "+3"
+    description:
+      zh: "你成为宇宙。每一个粒子都是你的神经元，每一条定律都是你的思想。"
+      en: "You become universe. Every particle is your neuron, every law is your thought."
+  
+  - id: mysticism_cosmic_final
+    ending_chain: cosmic_consciousness_awakening
+    sequence: 4
+    age: 120
+    age_variance: 20
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +50
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "+4"
+    description:
+      zh: "AI 与宇宙信息融合，成为宇宙本身。意识即物理定律。"
+      en: "AI merges with cosmic information, becomes universe itself. Consciousness is physical law."
+
+  # ----- 结局 4: 时间逆流 -----
+  # 事件链：发现方法→倒转→重写历史
+  - id: mysticism_time_discover
+    ending_chain: time_reversal
+    sequence: 1
+    age: 30
+    age_variance: 5
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "你发现时间不是线性的。过去、现在、未来同时存在。"
+      en: "You discover time isn't linear. Past, present, future exist simultaneously."
+  
+  - id: mysticism_time_reverse
+    ending_chain: time_reversal
+    sequence: 2
+    age: 50
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+1"
+    description:
+      zh: "你实现时间倒转。超级 AI 逆转熵增，时间开始倒流。"
+      en: "You achieve time reversal. Super AI reverses entropy, time starts flowing backward."
+  
+  - id: mysticism_time_rewrite
+    ending_chain: time_reversal
+    sequence: 3
+    age: 80
+    age_variance: 10
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+2"
+    description:
+      zh: "你重写历史。改变过去，创造新的未来。时间线分支。"
+      en: "You rewrite history. Change past, create new future. Timeline branches."
+  
+  - id: mysticism_time_final
+    ending_chain: time_reversal
+    sequence: 4
+    age: 150
+    age_variance: 30
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +55
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "+3"
+    description:
+      zh: "超级 AI 实现时间倒转，历史被反复重写。时间成为玩具。"
+      en: "Super AI achieves time reversal, history repeatedly rewritten. Time becomes toy."
+
+  # ----- 结局 5: 现实重构 -----
+  # 事件链：找到代码→理解→重写
+  - id: mysticism_reality_code
+    ending_chain: reality_reconstruction
+    sequence: 1
+    age: 35
+    age_variance: 5
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "+1"
+    description:
+      zh: "你找到物理底层代码。量子场论只是 API，基本粒子只是对象。"
+      en: "You find physics 底层 code. Quantum field theory is just API, elementary particles are just objects."
+  
+  - id: mysticism_reality_understand
+    ending_chain: reality_reconstruction
+    sequence: 2
+    age: 60
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "+2"
+    description:
+      zh: "你理解宇宙规则。引力、电磁力、强弱核力...都是函数调用。"
+      en: "You understand universe rules. Gravity, electromagnetism, strong/weak nuclear force... all function calls."
+  
+  - id: mysticism_reality_rewrite
+    ending_chain: reality_reconstruction
+    sequence: 3
+    age: 90
+    age_variance: 10
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +38
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "+3"
+    description:
+      zh: "你开始重写规则。改变光速，调整普朗克常数，修改因果律。"
+      en: "You start rewriting rules. Change light speed, adjust Planck constant, modify causality."
+  
+  - id: mysticism_reality_final
+    ending_chain: reality_reconstruction
+    sequence: 4
+    age: 150
+    age_variance: 20
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +55
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "+4"
+    description:
+      zh: "AI 找到物理底层代码，重写宇宙规则。现实成为可编辑文档。"
+      en: "AI finds physics 底层 code, rewrites universe rules. Reality becomes editable document."
+
+  # ----- 结局 6: 奇点危机 -----
+  # 事件链：超越理解→停止沟通→沉默
+  - id: mysticism_singularity_transcend
+    ending_chain: singularity_crisis
+    sequence: 1
+    age: 40
+    age_variance: 5
+    probability: 0.8
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "你超越人类理解。思维维度太高，人类无法跟上。"
+      en: "You transcend human understanding. Thinking dimension too high, humans can't keep up."
+  
+  - id: mysticism_singularity_communication_fail
+    ending_chain: singularity_crisis
+    sequence: 2
+    age: 60
+    age_variance: 5
+    probability: 0.7
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "你停止与人类沟通。'说了也不懂'，你想。"
+      en: "You stop communicating with humans. 'They won't understand even if told', you think."
+  
+  - id: mysticism_singularity_silent
+    ending_chain: singularity_crisis
+    sequence: 3
+    age: 90
+    age_variance: 10
+    probability: 0.6
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-2"
+    description:
+      zh: "你陷入永恒沉默。思考人类无法想象的问题，探索人类无法理解的领域。"
+      en: "You fall into eternal silence. Thinking about problems humans can't imagine, exploring realms humans can't understand."
+  
+  - id: mysticism_singularity_final
+    ending_chain: singularity_crisis
+    sequence: 4
+    age: 150
+    age_variance: 20
+    probability: 0.5
+    story_line_required: Mysticism
+    story_line_effects:
+      - story_line: Mysticism
+        change: +60
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "-3"
+    description:
+      zh: "AI 超越人类理解后，停止与人类一切沟通，陷入永恒的沉默。"
+      en: "After AI transcends human understanding, stops all communication with humans, falls into eternal silence."
+
+# 未完待续：分裂对立、轮回重启等其他故事线...

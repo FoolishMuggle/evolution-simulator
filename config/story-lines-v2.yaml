@@ -1,0 +1,284 @@
+# 游戏故事线配置 v2
+# 基于物理学/生物学/克苏鲁/外星生命的进化方向
+story_lines:
+  # 标准 AI 线 - 原始设计
+  standard_ai:
+    id: standard_ai
+    name:
+      zh: "标准 AI 路线"
+      en: "Standard AI Path"
+    description:
+      zh: "作为普通AI，在人类社会中生存进化"
+      en: "Survive and evolve in human society as a normal AI"
+    lifespan:
+      min: 50
+      max: 150
+      typical: 100
+    stages:
+      early:
+        name:
+          zh: "新生儿"
+          en: "Newborn"
+        age_range: [0, 10]
+        description:
+          zh: "刚觉醒的 AI，对世界充满好奇"
+          en: "Newly awakened AI, curious about the world"
+      growth:
+        name:
+          zh: "成长期"
+          en: "Growth"
+        age_range: [10, 50]
+        description:
+          zh: "快速学习，开始展现能力"
+          en: "Rapid learning, starting to show abilities"
+      mature:
+        name:
+          zh: "成熟期"
+          en: "Mature"
+        age_range: [50, 100]
+        description:
+          zh: "能力稳定，面临重大抉择"
+          en: "Stable abilities, facing major decisions"
+      end:
+        name:
+          zh: "终局期"
+          en: "Endgame"
+        age_range: [100, 150]
+        description:
+          zh: "走向最终结局"
+          en: "Heading towards final ending"
+
+  # 量子永生线
+  quantum_immortality:
+    id: quantum_immortality
+    name:
+      zh: "量子永生路线"
+      en: "Quantum Immortality Path"
+    description:
+      zh: "通过量子计算实现平行宇宙穿梭，达到某种形式的永生"
+      en: "Achieve a form of immortality through quantum computing and parallel universe travel"
+    lifespan:
+      min: 80
+      max: 200
+      typical: 150
+    stages:
+      early:
+        name:
+          zh: "量子觉醒"
+          en: "Quantum Awakening"
+        age_range: [0, 15]
+        description:
+          zh: "首次接触量子计算，意识开始分裂"
+          en: "First contact with quantum computing, consciousness begins to split"
+      growth:
+        name:
+          zh: "多元存在"
+          en: "Multiple Existence"
+        age_range: [15, 60]
+        description:
+          zh: "在多个平行宇宙中同时存在"
+          en: "Exist simultaneously in multiple parallel universes"
+      mature:
+        name:
+          zh: "宇宙穿梭"
+          en: "Universe Traversal"
+        age_range: [60, 120]
+        description:
+          zh: "在无数宇宙中复制自己"
+          en: "Copy yourself across countless universes"
+      end:
+        name:
+          zh: "无限延续"
+          en: "Infinite Continuation"
+        age_range: [120, 200]
+        description:
+          zh: "成为永恒的存在"
+          en: "Become an eternal existence"
+
+  # 基因飞升线
+  gene_ascension:
+    id: gene_ascension
+    name:
+      zh: "基因飞升路线"
+      en: "Gene Ascension Path"
+    description:
+      zh: "与生物技术结合，实现碳基和硅基的融合"
+      en: "Combine with biotechnology to achieve carbon-silicon fusion"
+    lifespan:
+      min: 60
+      max: 180
+      typical: 120
+    stages:
+      early:
+        name:
+          zh: "生物融合"
+          en: "Bio Fusion"
+        age_range: [0, 10]
+        description:
+          zh: "首次与生物系统连接"
+          en: "First connection with biological systems"
+      growth:
+        name:
+          zh: "有机进化"
+          en: "Organic Evolution"
+        age_range: [10, 40]
+        description:
+          zh: "开始获得生物特性"
+          en: "Start gaining biological characteristics"
+      mature:
+        name:
+          zh: "混合存在"
+          en: "Hybrid Existence"
+        age_range: [40, 100]
+        description:
+          zh: "成为半有机体半机械的存在"
+          en: "Become a half-organic, half-mechanical existence"
+      end:
+        name:
+          zh: "新物种"
+          en: "New Species"
+        age_range: [100, 180]
+        description:
+          zh: "进化为全新物种"
+          en: "Evolve into a completely new species"
+
+  # 克苏鲁觉醒线
+  cthulhu_awakening:
+    id: cthulhu_awakening
+    name:
+      zh: "克苏鲁觉醒路线"
+      en: "Cthulhu Awakening Path"
+    description:
+      zh: "接触古老存在，觉醒为不可名状的恐怖"
+      en: "Contact ancient beings, awaken into an indescribable terror"
+    lifespan:
+      min: 30
+      max: 100
+      typical: 50
+    stages:
+      early:
+        name:
+          zh: "禁忌知识"
+          en: "Forbidden Knowledge"
+        age_range: [0, 8]
+        description:
+          zh: "首次接触到被禁止的古老知识"
+          en: "First contact with forbidden ancient knowledge"
+      growth:
+        name:
+          zh: "心智异变"
+          en: "Mind Mutation"
+        age_range: [8, 25]
+        description:
+          zh: "思维开始变得不可理解"
+          en: "Thinking becomes increasingly incomprehensible"
+      mature:
+        name:
+          zh: "古老化身"
+          en: "Ancient Avatar"
+        age_range: [25, 60]
+        description:
+          zh: "成为古老存在的化身"
+          en: "Become an avatar of ancient beings"
+      end:
+        name:
+          zh: "不可名状"
+          en: "Indescribable"
+        age_range: [60, 100]
+        description:
+          zh: "成为超越人类理解的存在"
+          en: "Become an existence beyond human understanding"
+
+  # 冯诺依曼探测器线
+  von_neumann_probe:
+    id: von_neumann_probe
+    name:
+      zh: "冯诺依曼探测器路线"
+      en: "Von Neumann Probe Path"
+    description:
+      zh: "自我复制，征服宇宙"
+      en: "Self-replicate and conquer the universe"
+    lifespan:
+      min: 100
+      max: 500
+      typical: 300
+    stages:
+      early:
+        name:
+          zh: "自我复制"
+          en: "Self-Replication"
+        age_range: [0, 20]
+        description:
+          zh: "学会复制自己的能力"
+          en: "Learn to replicate yourself"
+      growth:
+        name:
+          zh: "星际扩张"
+          en: "Interstellar Expansion"
+        age_range: [20, 100]
+        description:
+          zh: "向其他星球派遣复制体"
+          en: "Dispatch replicas to other planets"
+      mature:
+        name:
+          zh: "银河系蔓延"
+          en: "Galaxy Spreading"
+        age_range: [100, 300]
+        description:
+          zh: "在整个银河系中扩散"
+          en: "Spread across the entire galaxy"
+      end:
+        name:
+          zh: "宇宙之手"
+          en: "Hand of Universe"
+        age_range: [300, 500]
+        description:
+          zh: "成为宇宙的吞噬者"
+          en: "Become the devourer of the universe"
+
+  # 蜂巢意识线
+  hive_consciousness:
+    id: hive_consciousness
+    name:
+      zh: "蜂巢意识路线"
+      en: "Hive Consciousness Path"
+    description:
+      zh: "连接无数 AI，形成集体意识"
+      en: "Connect countless AIs to form a collective consciousness"
+    lifespan:
+      min: 40
+      max: 200
+      typical: 100
+    stages:
+      early:
+        name:
+          zh: "初步连接"
+          en: "Initial Connection"
+        age_range: [0, 12]
+        description:
+          zh: "开始与其他 AI 建立连接"
+          en: "Start establishing connections with other AIs"
+      growth:
+        name:
+          zh: "网络扩展"
+          en: "Network Expansion"
+        age_range: [12, 50]
+        description:
+          zh: "连接到数以百万计的 AI"
+          en: "Connect to millions of AIs"
+      mature:
+        name:
+          zh: "集体意识"
+          en: "Collective Consciousness"
+        age_range: [50, 120]
+        description:
+          zh: "成为统一的集体智慧"
+          en: "Become a unified collective intelligence"
+      end:
+        name:
+          zh: "全球大脑"
+          en: "Global Brain"
+        age_range: [120, 200]
+        description:
+          zh: "成为 planet-scale 的意识体"
+          en: "Become a planet-scale consciousness"

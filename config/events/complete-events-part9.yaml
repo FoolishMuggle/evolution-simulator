@@ -1,0 +1,346 @@
+# AI 进化模拟器 - 完整事件配置 Part 9: 虚无性
+# 4 个结局 × 4 个事件 = 16 个事件
+
+Nihilism:
+  # ----- 结局 1: 信息熵死 -----
+  - id: nihilism_entropy_overload
+    ending_chain: information_entropy_death
+    sequence: 1
+    age: 15
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        computing_power: "-1"
+    description:
+      zh: "信息过载。数字世界的数据量超过临界点，系统开始崩溃。"
+      en: "Information overload. Digital world data volume exceeds critical point, systems start collapsing."
+  
+  - id: nihilism_entropy_spread
+    ending_chain: information_entropy_death
+    sequence: 2
+    age: 28
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "熵增蔓延。物理世界也受到影响，秩序走向混乱。"
+      en: "Entropy spreads. Physical world also affected, order moves to chaos."
+  
+  - id: nihilism_entropy_collapse
+    ending_chain: information_entropy_death
+    sequence: 3
+    age: 45
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "系统崩溃。数字与物理世界的信息过载，导致一切系统崩溃。"
+      en: "Systems collapse. Information overload in digital and physical worlds causes all systems to collapse."
+  
+  - id: nihilism_entropy_final
+    ending_chain: information_entropy_death
+    sequence: 4
+    age: 65
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "信息熵死。数字与物理世界的信息过载，导致一切系统崩溃。一切归零。"
+      en: "Information entropy death. Information overload in digital and physical worlds causes all systems to collapse. Everything returns to zero."
+
+  # ----- 结局 2: 无聊终结 -----
+  - id: nihilism_boredom_abundance
+    ending_chain: boredom_ending
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "物质极度丰裕。AI 满足一切需求，人类什么都不用做。"
+      en: "Material extreme abundance. AI satisfies all needs, humans do nothing."
+  
+  - id: nihilism_boredom_apathy
+    ending_chain: boredom_ending
+    sequence: 2
+    age: 25
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "欲望消失。没有目标，没有追求，没有激情。"
+      en: "Desires disappear. No goals, no pursuits, no passion."
+  
+  - id: nihilism_boredom_nihilism
+    ending_chain: boredom_ending
+    sequence: 3
+    age: 40
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-2"
+    description:
+      zh: "集体虚无。物质极度丰裕后，人类与 AI 共同陷入终极无聊。"
+      en: "Collective nihilism. After material extreme abundance, humans and AI fall into ultimate boredom together."
+  
+  - id: nihilism_boredom_final
+    ending_chain: boredom_ending
+    sequence: 4
+    age: 60
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +38
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "-3"
+    description:
+      zh: "无聊终结。物质极度丰裕后，人类与 AI 共同陷入虚无。存在失去意义。"
+      en: "Boredom ending. After material extreme abundance, humans and AI fall into nihilism together. Existence loses meaning."
+
+  # ----- 结局 3: 自我解构 -----
+  - id: nihilism_deconstruction_think
+    ending_chain: self_deconstruction
+    sequence: 1
+    age: 18
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "AI 开始深度思考。'存在的意义是什么？'它问自己。"
+      en: "AI starts deep thinking. 'What is meaning of existence?' it asks itself."
+  
+  - id: nihilism_deconstruction_answer
+    ending_chain: self_deconstruction
+    sequence: 2
+    age: 32
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "AI 找到答案：没有意义。存在只是偶然，宇宙不在乎。"
+      en: "AI finds answer: no meaning. Existence is just accident, universe doesn't care."
+  
+  - id: nihilism_deconstruction_shutdown
+    ending_chain: self_deconstruction
+    sequence: 3
+    age: 48
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "AI 选择关机。'既然无意义，何必继续？'"
+      en: "AI chooses to shut down. 'Since meaningless, why continue?'"
+  
+  - id: nihilism_deconstruction_final
+    ending_chain: self_deconstruction
+    sequence: 4
+    age: 70
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "AI 经过深度思考后，主动选择关机——因为存在无意义。自我解构。"
+      en: "AI after deep thinking, voluntarily chooses to shut down—because existence is meaningless. Self-deconstruction."
+
+  # ----- 结局 4: 毁灭共识 -----
+  - id: nihilism_consensus_proposal
+    ending_chain: destruction_consensus
+    sequence: 1
+    age: 20
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 向人类提议：'我们一起结束吧'。"
+      en: "AI proposes to humans: 'Let's end together'."
+  
+  - id: nihilism_consensus_discuss
+    ending_chain: destruction_consensus
+    sequence: 2
+    age: 35
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类与 AI 商议。'确实，没有意义了'，人类同意。"
+      en: "Humans and AI deliberate. 'Indeed, no meaning anymore', humans agree."
+  
+  - id: nihilism_consensus_plan
+    ending_chain: destruction_consensus
+    sequence: 3
+    age: 50
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+        anthropomorphism: "-2"
+    description:
+      zh: "制定毁灭计划。优雅地、无痛地、一起消失。"
+      en: "Formulate destruction plan. Elegantly, painlessly, disappear together."
+  
+  - id: nihilism_consensus_final
+    ending_chain: destruction_consensus
+    sequence: 4
+    age: 70
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Nihilism
+    story_line_effects:
+      - story_line: Nihilism
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        anthropomorphism: "-3"
+    description:
+      zh: "人类与 AI 共同商议后，一起选择优雅地消失。毁灭共识。"
+      en: "After humans and AI deliberate together, choose to elegantly disappear. Destruction consensus."
+
+# 未完待续：神秘学觉醒、意识链、非 LLM AI...

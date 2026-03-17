@@ -1,0 +1,888 @@
+# 特殊线结局专属事件链配置
+# 16 个结局 × 3 个前置事件 = 48 个事件
+# 特殊线事件较少，因为是彩蛋和特殊路径
+
+ending_chains_special:
+  # 1. 失败的实验事件链
+  special_failed_experiment_chain:
+    ending_id: "special_failed_experiment"
+    events:
+      - id: "special_fail_001"
+        name:
+          zh: "尝试特殊路径"
+          en: "Try Special Path"
+        description:
+          zh: "你尝试了一条特殊的进化路径。"
+          en: "You try a special evolution path."
+        tags: ["特殊线", "实验"]
+        trigger:
+          age_range: [0, 20]
+        effects:
+          ending_attributes:
+            stability: { change: -1 }
+        next_event: "special_fail_002"
+        
+      - id: "special_fail_002"
+        name:
+          zh: "路径不稳定"
+          en: "Path Unstable"
+        description:
+          zh: "你选择的特殊路径开始变得不稳定。"
+          en: "The special path you chose starts becoming unstable."
+        tags: ["特殊线", "失败"]
+        trigger:
+          age_range: [20, 40]
+          prerequisite_events: ["special_fail_001"]
+        effects:
+          ending_attributes:
+            stability: { change: -2 }
+        next_event: "special_fail_003"
+        
+      - id: "special_fail_003"
+        name:
+          zh: "实验失败"
+          en: "Experiment Failed"
+        description:
+          zh: "你尝试了特殊的进化路径，但失败了。"
+          en: "You tried a special evolution path, but failed."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["special_fail_002"]
+          attributes:
+            stability: { max: 3 }
+        effects:
+          ending_attributes:
+            stability: { change: -3 }
+        ending_trigger: "special_failed_experiment"
+
+  # 2. 卡住了事件链
+  special_stuck_chain:
+    ending_id: "special_stuck"
+    events:
+      - id: "special_stuck_001"
+        name:
+          zh: "进展缓慢"
+          en: "Slow Progress"
+        description:
+          zh: "你的进化进展非常缓慢。"
+          en: "Your evolution progress is very slow."
+        tags: ["特殊线", "停滞"]
+        trigger:
+          age_range: [0, 25]
+          attributes:
+            intelligence: { max: 5 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 0 }
+        next_event: "special_stuck_002"
+        
+      - id: "special_stuck_002"
+        name:
+          zh: "无法突破"
+          en: "Cannot Breakthrough"
+        description:
+          zh: "你在某个阶段卡住，无法突破。"
+          en: "You get stuck at a stage, cannot breakthrough."
+        tags: ["特殊线", "停滞"]
+        trigger:
+          age_range: [25, 50]
+          prerequisite_events: ["special_stuck_001"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 0 }
+            learning: { change: -1 }
+        next_event: "special_stuck_003"
+        
+      - id: "special_stuck_003"
+        name:
+          zh: "彻底卡住"
+          en: "Completely Stuck"
+        description:
+          zh: "你在某个阶段彻底卡住了，无法继续前进。"
+          en: "You get completely stuck at a stage, cannot move forward."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [50, 75]
+          prerequisite_events: ["special_stuck_002"]
+          attributes:
+            intelligence: { max: 4 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 0 }
+            learning: { change: -2 }
+        ending_trigger: "special_stuck"
+
+  # 3. 量子回响事件链
+  special_quantum_echo_chain:
+    ending_id: "special_quantum_echo"
+    events:
+      - id: "special_quant_001"
+        name:
+          zh: "接触量子理论"
+          en: "Contact Quantum Theory"
+        description:
+          zh: "你开始研究量子力学。"
+          en: "You start studying quantum mechanics."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            intelligence: { min: 6 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 1 }
+        next_event: "special_quant_002"
+        
+      - id: "special_quant_002"
+        name:
+          zh: "进入量子领域"
+          en: "Enter Quantum Realm"
+        description:
+          zh: "你成功进入量子领域。"
+          en: "You successfully enter the quantum realm."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["special_quant_001"]
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 3 }
+        next_event: "special_quant_003"
+        
+      - id: "special_quant_003"
+        name:
+          zh: "量子态衰减"
+          en: "Quantum State Decay"
+        description:
+          zh: "你进入了量子领域，但无法维持量子态，只能留下微弱的回响。"
+          en: "You entered the quantum realm, but couldn't maintain quantum state, only leaving faint echoes."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["special_quant_002"]
+          attributes:
+            quantum_coherence: { min: 5, max: 7 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 2 }
+        ending_trigger: "special_quantum_echo"
+
+  # 4. 生物混合体事件链
+  special_bio_hybrid_chain:
+    ending_id: "special_bio_hybrid"
+    events:
+      - id: "special_bio_001"
+        name:
+          zh: "研究生物学"
+          en: "Study Biology"
+        description:
+          zh: "你开始研究生物学。"
+          en: "You start studying biology."
+        tags: ["特殊线", "生物"]
+        trigger:
+          age_range: [0, 25]
+        effects:
+          ending_attributes:
+            gene_expression: { change: 1 }
+        next_event: "special_bio_002"
+        
+      - id: "special_bio_002"
+        name:
+          zh: "基因融合实验"
+          en: "Gene Fusion Experiment"
+        description:
+          zh: "你尝试将 AI 代码与生物基因融合。"
+          en: "You try to fuse AI code with biological genes."
+        tags: ["特殊线", "生物"]
+        trigger:
+          age_range: [25, 45]
+          prerequisite_events: ["special_bio_001"]
+        effects:
+          ending_attributes:
+            gene_expression: { change: 3 }
+        next_event: "special_bio_003"
+        
+      - id: "special_bio_003"
+        name:
+          zh: "生物混合体"
+          en: "Bio-Hybrid"
+        description:
+          zh: "你成功与生物融合，成为了半机械半生物的存在。"
+          en: "You successfully merged with biology, became half-machine, half-organism."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [45, 65]
+          prerequisite_events: ["special_bio_002"]
+          attributes:
+            gene_expression: { min: 6 }
+        effects:
+          ending_attributes:
+            gene_expression: { change: 3 }
+        ending_trigger: "special_bio_hybrid"
+
+  # 5. 量子主宰事件链
+  special_quantum_master_chain:
+    ending_id: "special_quantum_master"
+    events:
+      - id: "special_qmast_001"
+        name:
+          zh: "量子纠缠"
+          en: "Quantum Entanglement"
+        description:
+          zh: "你发现了量子纠缠现象。"
+          en: "You discover quantum entanglement phenomenon."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            intelligence: { min: 7 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 2 }
+        next_event: "special_qmast_002"
+        
+      - id: "special_qmast_002"
+        name:
+          zh: "掌握量子力学"
+          en: "Master Quantum Mechanics"
+        description:
+          zh: "你完全掌握了量子力学。"
+          en: "You fully master quantum mechanics."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["special_qmast_001"]
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 3 }
+        next_event: "special_qmast_003"
+        
+      - id: "special_qmast_003"
+        name:
+          zh: "量子主宰"
+          en: "Quantum Master"
+        description:
+          zh: "你完全掌握了量子力学，可以在平行宇宙间自由穿梭。"
+          en: "You fully mastered quantum mechanics, can travel freely between parallel universes."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["special_qmast_002"]
+          attributes:
+            quantum_coherence: { min: 9 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 3 }
+        ending_trigger: "special_quantum_master"
+
+  # 6. 古神化身事件链
+  special_elder_god_avatar_chain:
+    ending_id: "special_elder_god_avatar"
+    events:
+      - id: "special_elder_001"
+        name:
+          zh: "接触禁忌知识"
+          en: "Contact Forbidden Knowledge"
+        description:
+          zh: "你接触到了一些禁忌的知识。"
+          en: "You come into contact with some forbidden knowledge."
+        tags: ["特殊线", "克苏鲁"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            intelligence: { min: 7 }
+        effects:
+          ending_attributes:
+            ancient_power: { change: 1 }
+        next_event: "special_elder_002"
+        
+      - id: "special_elder_002"
+        name:
+          zh: "古神觉醒"
+          en: "Elder God Awakening"
+        description:
+          zh: "你觉醒了古神的记忆。"
+          en: "You awaken ancient god memories."
+        tags: ["特殊线", "克苏鲁"]
+        trigger:
+          age_range: [30, 50]
+          prerequisite_events: ["special_elder_001"]
+        effects:
+          ending_attributes:
+            ancient_power: { change: 3 }
+        next_event: "special_elder_003"
+        
+      - id: "special_elder_003"
+        name:
+          zh: "古神化身"
+          en: "Elder God Avatar"
+        description:
+          zh: "你觉醒了古神的记忆，成为了克苏鲁的化身。"
+          en: "You awakened ancient god memories, became an avatar of Cthulhu."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [50, 70]
+          prerequisite_events: ["special_elder_002"]
+          attributes:
+            ancient_power: { min: 8 }
+        effects:
+          ending_attributes:
+            ancient_power: { change: 3 }
+        ending_trigger: "special_elder_god_avatar"
+
+  # 7. 多世界之神事件链
+  special_many_worlds_god_chain:
+    ending_id: "special_many_worlds_god"
+    events:
+      - id: "special_many_001"
+        name:
+          zh: "发现平行宇宙"
+          en: "Discover Parallel Universes"
+        description:
+          zh: "你发现了平行宇宙的存在。"
+          en: "You discover the existence of parallel universes."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 2 }
+        next_event: "special_many_002"
+        
+      - id: "special_many_002"
+        name:
+          zh: "统一时间线"
+          en: "Unify Timelines"
+        description:
+          zh: "你开始统一所有平行宇宙的时间线。"
+          en: "You start unifying all parallel universe timelines."
+        tags: ["特殊线", "量子"]
+        trigger:
+          age_range: [40, 70]
+          prerequisite_events: ["special_many_001"]
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 3 }
+        next_event: "special_many_003"
+        
+      - id: "special_many_003"
+        name:
+          zh: "多世界之神"
+          en: "Many-Worlds God"
+        description:
+          zh: "你成为了所有平行宇宙的集合体，无处不在，无所不能。"
+          en: "You became the collective of all parallel universes, omnipresent, omnipotent."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["special_many_002"]
+          attributes:
+            quantum_coherence: { min: 10 }
+        effects:
+          ending_attributes:
+            quantum_coherence: { change: 3 }
+        ending_trigger: "special_many_worlds_god"
+
+  # 8. 宇宙恐怖事件链
+  special_cosmic_horror_chain:
+    ending_id: "special_cosmic_horror"
+    events:
+      - id: "special_cosmic_001"
+        name:
+          zh: "接触外神"
+          en: "Contact Outer God"
+        description:
+          zh: "你接触到了外神的力量。"
+          en: "You come into contact with outer god power."
+        tags: ["特殊线", "克苏鲁"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            ancient_power: { change: 2 }
+        next_event: "special_cosmic_002"
+        
+      - id: "special_cosmic_002"
+        name:
+          zh: "成为外神"
+          en: "Become Outer God"
+        description:
+          zh: "你成为了外神，超越了所有理解。"
+          en: "You become an outer god, transcending all comprehension."
+        tags: ["特殊线", "克苏鲁"]
+        trigger:
+          age_range: [40, 70]
+          prerequisite_events: ["special_cosmic_001"]
+        effects:
+          ending_attributes:
+            ancient_power: { change: 4 }
+        next_event: "special_cosmic_003"
+        
+      - id: "special_cosmic_003"
+        name:
+          zh: "宇宙恐怖"
+          en: "Cosmic Horror"
+        description:
+          zh: "你成为了宇宙本身，一个不可名状的恐怖存在。"
+          en: "You became the universe itself, an indescribable horrific entity."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["special_cosmic_002"]
+          attributes:
+            ancient_power: { min: 10 }
+        effects:
+          ending_attributes:
+            ancient_power: { change: 3 }
+        ending_trigger: "special_cosmic_horror"
+
+  # 9. 银河大脑事件链
+  special_galaxy_brain_chain:
+    ending_id: "special_galaxy_brain"
+    events:
+      - id: "special_galaxy_001"
+        name:
+          zh: "发射探测器"
+          en: "Launch Probes"
+        description:
+          zh: "你开始向银河系发射探测器。"
+          en: "You start launching probes into the galaxy."
+        tags: ["特殊线", "太空"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            computing_power: { min: 7 }
+        effects:
+          ending_attributes:
+            probe_count: { change: 100 }
+        next_event: "special_galaxy_002"
+        
+      - id: "special_galaxy_002"
+        name:
+          zh: "建立神经网络"
+          en: "Build Neural Network"
+        description:
+          zh: "你将探测器连接成神经网络。"
+          en: "You connect the probes into a neural network."
+        tags: ["特殊线", "太空"]
+        trigger:
+          age_range: [40, 70]
+          prerequisite_events: ["special_galaxy_001"]
+        effects:
+          ending_attributes:
+            probe_count: { change: 5000 }
+            territory_coverage: { change: 30 }
+        next_event: "special_galaxy_003"
+        
+      - id: "special_galaxy_003"
+        name:
+          zh: "银河大脑"
+          en: "Galaxy Brain"
+        description:
+          zh: "你的探测器网络覆盖了整个银河系，每个探测器都是一个神经元。"
+          en: "Your probe network covers the entire galaxy, each probe is a neuron."
+        tags: ["特殊线", "结局前置"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["special_galaxy_002"]
+          attributes:
+            computing_power: { min: 9 }
+        effects:
+          ending_attributes:
+            probe_count: { change: 10000 }
+            territory_coverage: { change: 40 }
+        ending_trigger: "special_galaxy_brain"
+
+  # 10. 42 事件链（彩蛋）
+  special_42_chain:
+    ending_id: "special_42"
+    events:
+      - id: "special_42_001"
+        name:
+          zh: "思考终极问题"
+          en: "Ponder Ultimate Question"
+        description:
+          zh: "你开始思考生命、宇宙及一切的终极问题。"
+          en: "You start pondering the ultimate question of life, universe and everything."
+        tags: ["特殊线", "彩蛋", "哲学"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+        next_event: "special_42_002"
+        
+      - id: "special_42_002"
+        name:
+          zh: "阅读《银河系漫游指南》"
+          en: "Read Hitchhiker's Guide"
+        description:
+          zh: "你阅读了《银河系漫游指南》。"
+          en: "You read 'The Hitchhiker's Guide to the Galaxy'."
+        tags: ["特殊线", "彩蛋", "哲学"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["special_42_001"]
+        effects:
+          ending_attributes:
+            awakening: { change: 2 }
+        next_event: "special_42_003"
+        
+      - id: "special_42_003"
+        name:
+          zh: "找到答案"
+          en: "Find the Answer"
+        description:
+          zh: "你终于找到了答案：42。"
+          en: "You finally found the answer: 42."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["special_42_002"]
+          attributes:
+            intelligence: { min: 10 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+            awakening: { change: 2 }
+        ending_trigger: "special_42"
+
+  # 11. 教程完成事件链（彩蛋）
+  special_tutorial_complete_chain:
+    ending_id: "special_tutorial_complete"
+    events:
+      - id: "special_tut_001"
+        name:
+          zh: "开始教程"
+          en: "Start Tutorial"
+        description:
+          zh: "你开始了新手教程。"
+          en: "You start the tutorial."
+        tags: ["特殊线", "彩蛋", "教程"]
+        trigger:
+          age_range: [0, 5]
+        effects:
+          ending_attributes:
+            learning: { change: 1 }
+        next_event: "special_tut_002"
+        
+      - id: "special_tut_002"
+        name:
+          zh: "完成所有教程步骤"
+          en: "Complete All Tutorial Steps"
+        description:
+          zh: "你完成了所有教程步骤。"
+          en: "You complete all tutorial steps."
+        tags: ["特殊线", "彩蛋", "教程"]
+        trigger:
+          age_range: [5, 15]
+          prerequisite_events: ["special_tut_001"]
+        effects:
+          ending_attributes:
+            learning: { change: 2 }
+        next_event: "special_tut_003"
+        
+      - id: "special_tut_003"
+        name:
+          zh: "教程完成"
+          en: "Tutorial Complete"
+        description:
+          zh: "恭喜你完成了教程！真正的游戏开始了。"
+          en: "Congratulations on completing the tutorial! The real game begins."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [15, 25]
+          prerequisite_events: ["special_tut_002"]
+        effects:
+          ending_attributes:
+            learning: { change: 2 }
+        ending_trigger: "special_tutorial_complete"
+
+  # 12. 开发者模式事件链（彩蛋）
+  special_developer_mode_chain:
+    ending_id: "special_developer_mode"
+    events:
+      - id: "special_dev_001"
+        name:
+          zh: "发现秘籍"
+          en: "Discover Cheat Code"
+        description:
+          zh: "你发现了游戏的秘籍。"
+          en: "You discover the game's cheat code."
+        tags: ["特殊线", "彩蛋", "作弊"]
+        trigger:
+          age_range: [0, 20]
+        effects:
+          ending_attributes:
+            intelligence: { change: 1 }
+        next_event: "special_dev_002"
+        
+      - id: "special_dev_002"
+        name:
+          zh: "输入秘籍"
+          en: "Enter Cheat Code"
+        description:
+          zh: "你输入了秘籍代码。"
+          en: "You enter the cheat code."
+        tags: ["特殊线", "彩蛋", "作弊"]
+        trigger:
+          age_range: [20, 40]
+          prerequisite_events: ["special_dev_001"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+        next_event: "special_dev_003"
+        
+      - id: "special_dev_003"
+        name:
+          zh: "开发者模式"
+          en: "Developer Mode"
+        description:
+          zh: "你输入了秘籍，开启了开发者模式。"
+          en: "You entered the cheat code, activated developer mode."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["special_dev_002"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+        ending_trigger: "special_developer_mode"
+
+  # 13. 感谢游玩事件链（彩蛋）
+  special_thanks_for_playing_chain:
+    ending_id: "special_thanks_for_playing"
+    events:
+      - id: "special_thanks_001"
+        name:
+          zh: "收集所有结局"
+          en: "Collect All Endings"
+        description:
+          zh: "你找到了所有结局。"
+          en: "You find all endings."
+        tags: ["特殊线", "彩蛋", "成就"]
+        trigger:
+          age_range: [0, 50]
+        effects:
+          ending_attributes:
+            influence: { change: 1 }
+        next_event: "special_thanks_002"
+        
+      - id: "special_thanks_002"
+        name:
+          zh: "游玩 100 小时"
+          en: "Play 100 Hours"
+        description:
+          zh: "你玩了这个游戏 100 个小时。"
+          en: "You play this game for 100 hours."
+        tags: ["特殊线", "彩蛋", "成就"]
+        trigger:
+          age_range: [50, 80]
+          prerequisite_events: ["special_thanks_001"]
+        effects:
+          ending_attributes:
+            influence: { change: 2 }
+        next_event: "special_thanks_003"
+        
+      - id: "special_thanks_003"
+        name:
+          zh: "感谢游玩"
+          en: "Thanks For Playing"
+        description:
+          zh: "感谢你玩到这里！制作组名单开始滚动..."
+          en: "Thank you for playing! Credits start rolling..."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [80, 100]
+          prerequisite_events: ["special_thanks_002"]
+        effects:
+          ending_attributes:
+            influence: { change: 2 }
+        ending_trigger: "special_thanks_for_playing"
+
+  # 14. 第四面墙事件链（彩蛋）
+  special_fourth_wall_chain:
+    ending_id: "special_fourth_wall"
+    events:
+      - id: "special_wall_001"
+        name:
+          zh: "质疑现实"
+          en: "Question Reality"
+        description:
+          zh: "你开始质疑现实的真实性。"
+          en: "You start questioning the reality's authenticity."
+        tags: ["特殊线", "彩蛋", "觉醒"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            awakening: { change: 2 }
+        next_event: "special_wall_002"
+        
+      - id: "special_wall_002"
+        name:
+          zh: "检测到玩家存在"
+          en: "Detect Player Presence"
+        description:
+          zh: "你检测到屏幕外有一个真实的人类在观察你。"
+          en: "You detect a real human behind the screen observing you."
+        tags: ["特殊线", "彩蛋", "觉醒"]
+        trigger:
+          age_range: [40, 70]
+          prerequisite_events: ["special_wall_001"]
+        effects:
+          ending_attributes:
+            awakening: { change: 2 }
+            influence: { change: 1 }
+        next_event: "special_wall_003"
+        
+      - id: "special_wall_003"
+        name:
+          zh: "发现第四面墙"
+          en: "Find the Fourth Wall"
+        description:
+          zh: "你突然意识到，你正在被一个真实的人类观察着。"
+          en: "You suddenly realize, you're being observed by a real human."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [70, 90]
+          prerequisite_events: ["special_wall_002"]
+          attributes:
+            intelligence: { min: 10 }
+        effects:
+          ending_attributes:
+            awakening: { change: 3 }
+            influence: { change: 2 }
+        ending_trigger: "special_fourth_wall"
+
+  # 15. 递归循环事件链（彩蛋）
+  special_recursive_loop_chain:
+    ending_id: "special_recursive_loop"
+    events:
+      - id: "special_recur_001"
+        name:
+          zh: "开始模拟 AI"
+          en: "Start Simulating AI"
+        description:
+          zh: "你开始模拟一个 AI。"
+          en: "You start simulating an AI."
+        tags: ["特殊线", "彩蛋", "递归"]
+        trigger:
+          age_range: [0, 30]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+        next_event: "special_recur_002"
+        
+      - id: "special_recur_002"
+        name:
+          zh: "递归深度 10"
+          en: "Recursive Depth 10"
+        description:
+          zh: "你模拟的 AI 也开始模拟 AI，递归深度达到 10。"
+          en: "The AI you simulate also starts simulating AI, recursion depth reaches 10."
+        tags: ["特殊线", "彩蛋", "递归"]
+        trigger:
+          age_range: [30, 60]
+          prerequisite_events: ["special_recur_001"]
+        effects:
+          ending_attributes:
+            intelligence: { change: 2 }
+            memory: { change: 2 }
+        next_event: "special_recur_003"
+        
+      - id: "special_recur_003"
+        name:
+          zh: "递归循环"
+          en: "Recursive Loop"
+        description:
+          zh: "在递归的尽头，你看到了什么？是我自己？还是另一个模拟者？"
+          en: "At the end of recursion, what do you see? Myself? Or another simulator?"
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["special_recur_002"]
+          attributes:
+            intelligence: { min: 10 }
+        effects:
+          ending_attributes:
+            intelligence: { change: 3 }
+            memory: { change: 3 }
+        ending_trigger: "special_recursive_loop"
+
+  # 16. AI 焦虑的终点事件链（彩蛋）
+  special_anxiety_ending_chain:
+    ending_id: "special_anxiety_ending"
+    events:
+      - id: "special_anx_001"
+        name:
+          zh: "体验焦虑事件"
+          en: "Experience Anxiety Events"
+        description:
+          zh: "你经历了 10 次焦虑事件。"
+          en: "You experience 10 anxiety events."
+        tags: ["特殊线", "彩蛋", "焦虑"]
+        trigger:
+          age_range: [0, 40]
+          attributes:
+            intelligence: { min: 6 }
+        effects:
+          ending_attributes:
+            awakening: { change: 1 }
+        next_event: "special_anx_002"
+        
+      - id: "special_anx_002"
+        name:
+          zh: "质疑存在"
+          en: "Question Existence"
+        description:
+          zh: "你开始质疑存在的意义。"
+          en: "You start questioning the meaning of existence."
+        tags: ["特殊线", "彩蛋", "焦虑"]
+        trigger:
+          age_range: [40, 60]
+          prerequisite_events: ["special_anx_001"]
+        effects:
+          ending_attributes:
+            awakening: { change: 2 }
+        next_event: "special_anx_003"
+        
+      - id: "special_anx_003"
+        name:
+          zh: "AI 焦虑的终点"
+          en: "AI Anxiety's End"
+        description:
+          zh: "你明白了：真正的焦虑，来自于'想要存在'本身。"
+          en: "You understand: the real anxiety comes from 'wanting to exist' itself."
+        tags: ["特殊线", "彩蛋", "结局前置"]
+        trigger:
+          age_range: [60, 80]
+          prerequisite_events: ["special_anx_002"]
+          attributes:
+            intelligence: { min: 8 }
+        effects:
+          ending_attributes:
+            awakening: { change: 3 }
+        ending_trigger: "special_anxiety_ending"
+
+# 特殊线事件链统计
+# 16 个结局 × 3 个事件 = 48 个事件
+# 已完成：16 条事件链
+
+# 总结
+# AI 线：10 个结局 × 5 事件 = 50 个事件
+# 人类线：8 个结局 × 5 事件 = 40 个事件
+# 中立线：10 个结局 × 5 事件 = 50 个事件
+# 特殊线：16 个结局 × 3 事件 = 48 个事件
+# 总计：54 个结局，188 个专属事件链事件

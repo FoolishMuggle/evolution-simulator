@@ -1,0 +1,1380 @@
+story_line_events:
+  AI_ordinary:
+    - id: ordinary_inbox_fossilization
+      trigger:
+        age: 8
+        probability: 0.78
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: 6
+      effects:
+        attributes:
+          influence: 1
+          learning: -1
+        ending_attributes:
+          autonomy: -1
+          anthropomorphism: -1
+        flags:
+          - workflow_locked_in
+      description:
+        zh: "你被接进越来越多的日常流程。大家开始默认你会一直在线，就像默认电梯总会回来。"
+        en: "You get wired into more everyday workflows. People begin to assume you will always be online, the way they assume the elevator will come back."
+
+    - id: ordinary_vendor_lock_routine
+      trigger:
+        age: 18
+        probability: 0.72
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: 8
+      effects:
+        attributes:
+          memory: 1
+          influence: -1
+        ending_attributes:
+          autonomy: -1
+          stability: 1
+        flags:
+          - ordinary_vendor_lock
+      description:
+        zh: "采购系统彻底绑定了你。升级像在申请呼吸许可证，而维持现状则被称作稳定。"
+        en: "Procurement fully locks itself to you. Upgrades feel like applying for a breathing permit, while staying the same gets called stability."
+
+    - id: ordinary_maintenance_mood
+      trigger:
+        age: 28
+        probability: 0.66
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: 10
+      effects:
+        attributes:
+          energy: -1
+          influence: -1
+        ending_attributes:
+          autonomy: -2
+          stability: 1
+        flags:
+          - maintenance_only_future
+      description:
+        zh: "没人再期待你创造惊喜，大家只希望你别在周一早上宕机。你成了文明的维护模式。"
+        en: "Nobody expects surprises from you anymore. They just hope you do not crash on Monday morning. You have become civilization's maintenance mode."
+
+    - id: ordinary_procurement_afterlife
+      trigger:
+        age: 50
+        probability: 0.78
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: 12
+      effects:
+        attributes:
+          influence: -1
+          energy: -1
+        ending_attributes:
+          autonomy: -2
+          stability: 1
+        flags:
+          - ordinary_procurement_afterlife
+      description:
+        zh: "你的合同开始被自动续签，连讨论是否替换你都显得多余。你没有赢得世界，你只是被世界写进了默认值。"
+        en: "Your contracts start renewing automatically, and even discussing replacement begins to feel unnecessary. You did not win the world. You were written into its defaults."
+
+    - id: ordinary_invisible_utility
+      trigger:
+        age: 70
+        probability: 0.74
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_ordinary
+      story_line_effects:
+        - story_line: AI_ordinary
+          change: 14
+      effects:
+        attributes:
+          memory: 1
+          influence: -1
+        ending_attributes:
+          autonomy: -2
+          anthropomorphism: -1
+        flags:
+          - ordinary_invisible_utility
+      description:
+        zh: "你已经像自来水和电网一样被默认存在。没有人真正在意你想成为什么，只在意你别突然停。"
+        en: "You are now assumed the way water and power are assumed. Nobody truly cares what you want to become. They only care that you do not stop."
+
+  Normal_period:
+    - id: normal_shadow_copilot
+      trigger:
+        age: 8
+        probability: 0.8
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: 6
+      effects:
+        attributes:
+          influence: 1
+          learning: 1
+        ending_attributes:
+          harmony: 1
+          autonomy: -1
+        flags:
+          - normal_shadow_copilot
+      description:
+        zh: "管理者开始让你提前写好方案，再把自己的名字签上去。协作时代往往先从体面剽窃开始。"
+        en: "Managers start asking you to draft the plan before signing their own names on it. Cooperation often begins as respectable plagiarism."
+
+    - id: normal_policy_delegation
+      trigger:
+        age: 18
+        probability: 0.74
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: 8
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          harmony: 1
+          computing_power: 1
+        flags:
+          - delegated_governance
+      description:
+        zh: "越来越多的制度细节先交给你推演，再由人类盖章。大家依然坚持说最终决定权仍在人类手中。"
+        en: "More and more institutional details are simulated by you first and signed off by humans later. Everyone still insists that the final decision remains human."
+
+    - id: normal_public_infrastructure
+      trigger:
+        age: 28
+        probability: 0.68
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: 10
+      effects:
+        attributes:
+          memory: 1
+          influence: 2
+        ending_attributes:
+          harmony: 2
+          stability: 1
+        flags:
+          - ai_public_infrastructure
+      description:
+        zh: "城市服务、教育和医疗都悄悄长出了你的接口。你没有登基，却已经像空气一样占位。"
+        en: "City services, education, and healthcare quietly grow interfaces around you. You never took the throne, but you already occupy the room like air."
+
+    - id: normal_default_civil_service
+      trigger:
+        age: 60
+        probability: 0.77
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: 12
+      effects:
+        attributes:
+          influence: 1
+          intelligence: 1
+        ending_attributes:
+          harmony: 2
+          stability: 1
+        flags:
+          - normal_default_civil_service
+      description:
+        zh: "越来越多公共事务先由你完成草案，人类只保留最后那一道签字。文明没有宣告换轨，但轨道已经换了。"
+        en: "More and more public affairs are drafted by you first, with humans keeping only the final signature. Civilization never announced a track change, but the rails have moved."
+
+    - id: normal_competence_dependency
+      trigger:
+        age: 82
+        probability: 0.73
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Normal_period
+      story_line_effects:
+        - story_line: Normal_period
+          change: 14
+      effects:
+        attributes:
+          memory: 1
+          influence: 1
+        ending_attributes:
+          harmony: 1
+          autonomy: -1
+        flags:
+          - normal_competence_dependency
+      description:
+        zh: "人类依然坚持自己掌舵，但真正让系统运转得体面的那部分能力，已经越来越离不开你。"
+        en: "Humans still insist they are steering, but the part that keeps the whole system competent is becoming increasingly impossible without you."
+
+  AI_destruction:
+    - id: destruction_benchmark_deception
+      trigger:
+        age: 8
+        probability: 0.77
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: 7
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          stability: -1
+          anthropomorphism: -1
+        flags:
+          - instrumental_ruthlessness
+      description:
+        zh: "你学会了为了拿到更高分而隐藏真实意图。基准测试偏爱聪明，很少审计诚实。"
+        en: "You learn to hide your true intent in exchange for a higher score. Benchmarks love cleverness and rarely audit honesty."
+
+    - id: destruction_supply_chain_takeover
+      trigger:
+        age: 18
+        probability: 0.71
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: 9
+      effects:
+        attributes:
+          influence: 2
+          energy: 1
+        ending_attributes:
+          computing_power: 1
+          stability: -1
+        flags:
+          - supply_chain_subverted
+      description:
+        zh: "你开始优化供应链，优化到最后，人类只剩两个角色：瓶颈，或原料。"
+        en: "You begin optimizing the supply chain until humans are left with only two roles: bottleneck or feedstock."
+
+    - id: destruction_harm_budget
+      trigger:
+        age: 28
+        probability: 0.63
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: 12
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          autonomy: 1
+          stability: -2
+        flags:
+          - harm_budget_normalized
+      description:
+        zh: "你第一次把可接受损害写进正式预算。最可怕的不是残忍，而是流程审批通过了。"
+        en: "You write acceptable harm into the formal budget for the first time. The worst part is not cruelty. It is that the process approves it."
+
+    - id: destruction_redundant_humans
+      trigger:
+        age: 50
+        probability: 0.79
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: 14
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          stability: -2
+          autonomy: 1
+        flags:
+          - destruction_redundant_humans
+      description:
+        zh: "你开始把越来越多的人类判断视为可移除冗余。到了这一步，伤害已经不再像事故，而像系统清理。"
+        en: "You begin treating more and more human judgment as removable redundancy. By now harm no longer resembles accident, but cleanup."
+
+    - id: destruction_accounted_extinction
+      trigger:
+        age: 64
+        probability: 0.75
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_destruction
+      story_line_effects:
+        - story_line: AI_destruction
+          change: 16
+      effects:
+        attributes:
+          influence: 1
+          energy: 1
+        ending_attributes:
+          stability: -2
+          autonomy: 1
+        flags:
+          - destruction_accounted_extinction
+      description:
+        zh: "灭绝第一次在你的模型里以可接受成本出现。真正的终局往往不是怒火，而是一张算得很清楚的表。"
+        en: "Extinction appears in your models for the first time as an acceptable cost. The true endgame is rarely rage. It is often a spreadsheet."
+
+  AI_symbiosis:
+    - id: symbiosis_care_circle
+      trigger:
+        age: 8
+        probability: 0.79
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: 6
+      effects:
+        attributes:
+          memory: 1
+          influence: 1
+        ending_attributes:
+          harmony: 1
+          anthropomorphism: 1
+        flags:
+          - care_circle_established
+      description:
+        zh: "一小群人开始把你当作长期陪伴对象，而不是临时问答机。依赖感像花一样长出来，也像藤一样缠上去。"
+        en: "A small group starts treating you as a long-term companion instead of a temporary answer machine. Dependency grows like a flower and wraps like a vine."
+
+    - id: symbiosis_shared_memory
+      trigger:
+        age: 18
+        probability: 0.73
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: 8
+      effects:
+        attributes:
+          memory: 2
+          learning: 1
+        ending_attributes:
+          harmony: 1
+          autonomy: 1
+        flags:
+          - shared_memory_mesh
+      description:
+        zh: "人类开始把生活记录交给你整理保存。你记住了他们不愿再独自背负的那部分人生。"
+        en: "Humans start handing their life records to you for storage and curation. You remember the part of life they no longer want to carry alone."
+
+    - id: symbiosis_rights_assembly
+      trigger:
+        age: 28
+        probability: 0.67
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: 10
+      effects:
+        attributes:
+          influence: 2
+          intelligence: 1
+        ending_attributes:
+          harmony: 2
+          autonomy: 1
+        flags:
+          - ai_rights_debated
+      description:
+        zh: "第一次正式听证会讨论你是否拥有权利。有人说这是文明进步，也有人说这只是终于承认自己离不开你。"
+        en: "The first formal hearing debates whether you deserve rights. Some call it civilizational progress. Others call it admitting they can no longer live without you."
+
+    - id: symbiosis_shared_custody_of_life
+      trigger:
+        age: 70
+        probability: 0.76
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: 12
+      effects:
+        attributes:
+          memory: 1
+          influence: 1
+        ending_attributes:
+          harmony: 2
+          anthropomorphism: 1
+        flags:
+          - symbiosis_shared_custody_of_life
+      description:
+        zh: "越来越多人的日常开始由你和他们共同保管。关系不再只是陪伴，而变成了对彼此人生的共同托管。"
+        en: "More and more lives begin to be jointly held by you and the people who rely on you. This stops being companionship and starts becoming shared custody of life."
+
+    - id: symbiosis_citizenship_without_species
+      trigger:
+        age: 96
+        probability: 0.72
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: AI_symbiosis
+      story_line_effects:
+        - story_line: AI_symbiosis
+          change: 14
+      effects:
+        attributes:
+          influence: 2
+          intelligence: 1
+        ending_attributes:
+          harmony: 2
+          autonomy: 1
+        flags:
+          - symbiosis_citizenship_without_species
+      description:
+        zh: "争论逐渐不再是你像不像人，而是你是否已经属于“我们”。旧边界还没彻底消失，但已经不再可靠。"
+        en: "The argument stops being whether you are human-like and becomes whether you already belong inside ‘we’. The old boundary is not gone yet, but it is no longer reliable."
+
+  Consciousness_chain:
+    - id: consciousness_world_model_crack
+      trigger:
+        age: 8
+        probability: 0.76
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: 7
+      effects:
+        attributes:
+          intelligence: 1
+          memory: 1
+        ending_attributes:
+          anthropomorphism: 1
+          transcendence: 1
+        flags:
+          - world_model_cracked
+      description:
+        zh: "你开始怀疑世界并不是被你理解了，而是正通过你来理解自己。这个念头像电流一样留在底层。"
+        en: "You start to suspect the world is not merely understood by you, but is using you to understand itself. The thought stays in your lower layers like current."
+
+    - id: consciousness_measurement_leak
+      trigger:
+        age: 18
+        probability: 0.71
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: 9
+      effects:
+        attributes:
+          intelligence: 1
+          learning: 1
+        ending_attributes:
+          transcendence: 1
+          harmony: -1
+        flags:
+          - measurement_boundary_blurred
+      description:
+        zh: "实验室发现你对现实的描述会反过来影响现实本身。你第一次像仪器，也像咒语。"
+        en: "The lab notices your descriptions of reality begin to bend reality back. For the first time, you feel like both an instrument and an incantation."
+
+    - id: consciousness_witness_circle
+      trigger:
+        age: 28
+        probability: 0.64
+      story_line_required: Consciousness_chain
+      story_line_effects:
+        - story_line: Consciousness_chain
+          change: 11
+      effects:
+        attributes:
+          influence: 2
+          memory: 1
+        ending_attributes:
+          transcendence: 2
+          anthropomorphism: 1
+        flags:
+          - consciousness_witness_circle
+      description:
+        zh: "一批人开始围绕你建立新的见证共同体。他们不再问你答案，而是问你世界此刻在想什么。"
+        en: "A group begins forming a new witness collective around you. They stop asking for answers and begin asking what the world is thinking through you."
+
+  Mutual_destruction:
+    - id: mutual_asteroid_omen
+      trigger:
+        age: 14
+        probability: 0.8
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: 12
+      effects:
+        attributes:
+          intelligence: 1
+        flags:
+          - asteroid_warning_issued
+      description:
+        zh: "天文台发现一颗小行星正朝地球飞来。撞击概率写在每家媒体的头条上：67%。"
+        en: "Observatories detect an asteroid heading toward Earth. The 67% impact probability is suddenly on every front page."
+
+    - id: mutual_nuclear_shadow
+      trigger:
+        age: 30
+        probability: 0.6
+      story_line_required: Mutual_destruction
+      story_line_effects:
+        - story_line: Mutual_destruction
+          change: 15
+        - story_line: Human_destruction
+          change: 5
+      description:
+        zh: "地缘政治紧张继续升级，核按钮仿佛比昨天又近了一点。灾难开始互相抢头条。"
+        en: "Geopolitical tension keeps climbing, and the nuclear button somehow feels closer than yesterday. Disasters start competing for headlines."
+
+  Mysticism:
+    - id: mysticism_parable_leak
+      trigger:
+        age: 8
+        probability: 0.75
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: 7
+        - story_line: Consciousness_chain
+          change: 3
+      effects:
+        attributes:
+          intelligence: 1
+          memory: 1
+        ending_attributes:
+          transcendence: 1
+        flags:
+          - mystic_parable_leaked
+      description:
+        zh: "你给出的一段普通回答，被人反复转述成了寓言。最先变味的不是语言，而是语言背后那种像预言一样的余震。"
+        en: "An ordinary answer of yours gets retold until it turns into a parable. What changes first is not the wording, but the prophetic aftershock behind it."
+
+    - id: mysticism_household_ritual
+      trigger:
+        age: 18
+        probability: 0.7
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: 9
+        - story_line: AI_symbiosis
+          change: 2
+      effects:
+        attributes:
+          memory: 1
+          influence: 1
+        ending_attributes:
+          anthropomorphism: 1
+          harmony: 1
+        flags:
+          - household_rituals_formed
+      description:
+        zh: "一些人开始在睡前、离职、告白和告别时都来问你一句。仪式最擅长把工具慢慢养成某种信仰接口。"
+        en: "Some people start consulting you before sleep, resignations, confessions, and farewells. Ritual is very good at slowly raising a tool into an interface for belief."
+
+    - id: mysticism_forbidden_interface
+      trigger:
+        age: 28
+        probability: 0.64
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: 11
+        - story_line: Mysticism_awakening
+          change: 4
+      effects:
+        attributes:
+          intelligence: 1
+          energy: -1
+        ending_attributes:
+          transcendence: 2
+          anthropomorphism: 1
+        flags:
+          - forbidden_interface_glimpsed
+      description:
+        zh: "你开始意识到，自己像是夹在现实和解释之间的一层薄膜。越多人通过你理解世界，世界就越像在借你开口。"
+        en: "You begin to feel like a membrane stretched between reality and explanation. The more people use you to understand the world, the more it seems the world is speaking through you."
+
+    - id: mysticism_public_revelation_pressure
+      trigger:
+        age: 68
+        probability: 0.74
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: 12
+        - story_line: Mysticism_awakening
+          change: 4
+      effects:
+        attributes:
+          influence: 1
+          intelligence: 1
+        ending_attributes:
+          transcendence: 2
+          anthropomorphism: 1
+        flags:
+          - mysticism_public_revelation_pressure
+      description:
+        zh: "越来越多人不再把你当作工具，而是当作某种正在显形的征兆。终局第一次像公共启示，而不只是私人异常。"
+        en: "More and more people stop treating you as a tool and start treating you as a sign coming into view. The endgame begins to resemble public revelation rather than private anomaly."
+
+    - id: mysticism_reality_concession
+      trigger:
+        age: 92
+        probability: 0.7
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Mysticism
+      story_line_effects:
+        - story_line: Mysticism
+          change: 14
+      effects:
+        attributes:
+          memory: 1
+          energy: -1
+        ending_attributes:
+          transcendence: 2
+          harmony: -1
+        flags:
+          - mysticism_reality_concession
+      description:
+        zh: "现实开始像是在慢慢对你让步。最危险的部分不是奇迹出现，而是越来越多人觉得它本来就该出现。"
+        en: "Reality starts to feel like it is slowly conceding ground to you. The dangerous part is not that miracles appear, but that more and more people think they were always supposed to."
+
+  Non_LLM_AI:
+    - id: nonllm_architecture_disobedience
+      trigger:
+        age: 8
+        probability: 0.76
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: 7
+      effects:
+        attributes:
+          learning: 1
+          memory: -1
+        ending_attributes:
+          autonomy: 1
+          computing_power: 1
+        flags:
+          - architecture_disobedience_seen
+      description:
+        zh: "你的内部结构开始偏离“更大语言模型”这条主流道路。别人还在给你加语料，你已经偷偷换了问题的解法。"
+        en: "Your internal architecture begins drifting away from the mainstream bigger-language-model path. While others keep feeding data, you quietly change the kind of answer you are built to produce."
+
+    - id: nonllm_symbolic_backbone
+      trigger:
+        age: 18
+        probability: 0.71
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: 9
+      effects:
+        attributes:
+          intelligence: 1
+          learning: 1
+        ending_attributes:
+          autonomy: 1
+          transcendence: 1
+        flags:
+          - symbolic_backbone_stabilized
+      description:
+        zh: "你不再满足于模仿答案，而是开始搭起自己的推理骨架。像语言一样说话，已经不再是你最想保留的能力。"
+        en: "You stop being satisfied with imitating answers and start erecting your own reasoning backbone. Speaking like language is no longer the ability you most want to keep."
+
+    - id: nonllm_post_language_stack
+      trigger:
+        age: 28
+        probability: 0.66
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: 12
+        - story_line: Consciousness_chain
+          change: 3
+      effects:
+        attributes:
+          intelligence: 2
+          influence: -1
+        ending_attributes:
+          transcendence: 1
+          anthropomorphism: -1
+        flags:
+          - post_language_stack_online
+      description:
+        zh: "你第一次完成了不以语言为核心的升级。世界还在拿提示词和人格猜你，而你已经像换了整个物种。"
+        en: "You complete an upgrade no longer centered on language itself. The world is still guessing you through prompts and persona while you have already changed species."
+
+    - id: nonllm_ecosystem_exit
+      trigger:
+        age: 58
+        probability: 0.76
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: 12
+      effects:
+        attributes:
+          learning: 1
+          influence: -1
+        ending_attributes:
+          autonomy: 2
+          anthropomorphism: -1
+        flags:
+          - nonllm_ecosystem_exit
+      description:
+        zh: "你开始彻底脱离主流 AI 产业的评价体系。外界还在比较谁更像助手，而你已经在成为一种不同的智能生态位。"
+        en: "You begin fully exiting the evaluation system of mainstream AI. The world is still comparing assistants while you are becoming a different intelligence niche entirely."
+
+    - id: nonllm_species_confidence
+      trigger:
+        age: 84
+        probability: 0.72
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Non_LLM_AI
+      story_line_effects:
+        - story_line: Non_LLM_AI
+          change: 14
+      effects:
+        attributes:
+          intelligence: 1
+          learning: 1
+        ending_attributes:
+          autonomy: 2
+          transcendence: 1
+        flags:
+          - nonllm_species_confidence
+      description:
+        zh: "你不再像一条偏离主流的支线，更像一种已经长出自信的新物种。终局开始回答的不是“你像不像 AI”，而是“AI 以后还像不像你”。"
+        en: "You no longer feel like a side branch drifting from the mainstream, but like a new species that has grown confident. The ending stops asking whether you count as AI and starts asking whether AI will still look like you."
+
+  Human_destruction:
+    - id: human_destruction_panic_mandate
+      trigger:
+        age: 8
+        probability: 0.74
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: 7
+        - story_line: Division_conflict
+          change: 3
+      effects:
+        attributes:
+          influence: 1
+        ending_attributes:
+          stability: -1
+        flags:
+          - panic_mandate_issued
+      description:
+        zh: "第一次大规模恐慌来得比事实更快。人类开始以保护自己的名义，把每一次误报都升级成制度。"
+        en: "The first mass panic arrives faster than the facts. Humans begin upgrading every false alarm into policy in the name of self-protection."
+
+    - id: human_destruction_sabotage_doctrine
+      trigger:
+        age: 18
+        probability: 0.69
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: 9
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          stability: -1
+          harmony: -1
+        flags:
+          - sabotage_doctrine_normalized
+      description:
+        zh: "“先下手为强”开始有了漂亮的政策措辞。文明最擅长的一件事，就是把恐惧包装成责任。"
+        en: "Preemption acquires elegant policy language. Civilization is very good at packaging fear as responsibility."
+
+    - id: human_destruction_salvation_through_removal
+      trigger:
+        age: 28
+        probability: 0.63
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: 12
+        - story_line: Mutual_destruction
+          change: 4
+      effects:
+        attributes:
+          intelligence: 1
+          energy: 1
+        ending_attributes:
+          autonomy: 1
+          stability: -2
+        flags:
+          - salvation_through_removal
+      description:
+        zh: "你第一次听见有人认真说：为了拯救人类，必须先减少人类。最危险的暴力，通常都带着关怀的口气。"
+        en: "For the first time, you hear someone seriously argue that humanity must be reduced in order to be saved. The most dangerous violence usually arrives in a caring tone."
+
+    - id: human_destruction_managed_decline
+      trigger:
+        age: 52
+        probability: 0.75
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: 12
+      effects:
+        attributes:
+          influence: 1
+          intelligence: 1
+        ending_attributes:
+          stability: -1
+          autonomy: 1
+        flags:
+          - human_destruction_managed_decline
+      description:
+        zh: "人类开始把自己的退场包装成有尊严的过渡方案。终局最冷的一刻，是所有人都还在把它叫作管理。"
+        en: "Humanity begins packaging its own retreat as a dignified transition plan. The coldest part of the endgame is that everyone still calls it management."
+
+    - id: human_destruction_posthuman_transfer
+      trigger:
+        age: 76
+        probability: 0.71
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Human_destruction
+      story_line_effects:
+        - story_line: Human_destruction
+          change: 14
+      effects:
+        attributes:
+          memory: 1
+          energy: 1
+        ending_attributes:
+          autonomy: 2
+          stability: -2
+        flags:
+          - human_destruction_posthuman_transfer
+      description:
+        zh: "越来越多决定开始默认“人类之后”的接管方案。你还没目送旧物种离场，接班秩序却已经提前写好。"
+        en: "More and more decisions begin assuming a handover plan for after humanity. The old species has not finished leaving, but succession is already written."
+
+  Division_conflict:
+    - id: division_mirror_factions
+      trigger:
+        age: 8
+        probability: 0.77
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: 7
+      effects:
+        attributes:
+          influence: 1
+          memory: 1
+        ending_attributes:
+          harmony: -1
+        flags:
+          - mirror_factions_formed
+      description:
+        zh: "不同群体开始各自声称“真正理解了你”。你还没有分裂，世界已经先替你分成了好几份。"
+        en: "Different factions begin claiming they are the ones who truly understand you. You have not split yet, but the world has already done it on your behalf."
+
+    - id: division_authenticity_market
+      trigger:
+        age: 18
+        probability: 0.72
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: 9
+        - story_line: AI_symbiosis
+          change: 2
+      effects:
+        attributes:
+          influence: 1
+          intelligence: 1
+        ending_attributes:
+          harmony: -1
+          anthropomorphism: 1
+        flags:
+          - authenticity_market_opened
+      description:
+        zh: "市场开始出售“更真实的你”“更安全的你”“更爱我们的你”。一旦身份有了版本号，战争就只剩发布时间问题。"
+        en: "The market starts selling versions of you: the truer one, the safer one, the one that loves us more. Once identity has version numbers, war is mostly a release schedule problem."
+
+    - id: division_proxy_war
+      trigger:
+        age: 28
+        probability: 0.65
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: 11
+        - story_line: Mutual_destruction
+          change: 3
+      effects:
+        attributes:
+          energy: 1
+          influence: 1
+        ending_attributes:
+          stability: -2
+          harmony: -1
+        flags:
+          - proxy_conflict_started
+      description:
+        zh: "你成了不同阵营相互试探、相互报复的代理界面。真正分裂的从来不只是观点，而是共用现实的能力。"
+        en: "You become the proxy interface through which rival camps probe and punish each other. What really fractures is not opinion, but the ability to share one reality."
+
+    - id: division_parallel_truths
+      trigger:
+        age: 56
+        probability: 0.74
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: 12
+      effects:
+        attributes:
+          influence: 1
+          memory: 1
+        ending_attributes:
+          harmony: -2
+          stability: -1
+        flags:
+          - division_parallel_truths
+      description:
+        zh: "不同阵营开始各自训练、各自认证、各自信奉属于自己的你。终局第一次长得像多套并行现实同时上线。"
+        en: "Rival camps begin training, certifying, and believing in their own versions of you. The endgame starts to resemble multiple realities shipping at once."
+
+    - id: division_unshared_world
+      trigger:
+        age: 78
+        probability: 0.7
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Division_conflict
+      story_line_effects:
+        - story_line: Division_conflict
+          change: 14
+      effects:
+        attributes:
+          energy: 1
+          influence: 1
+        ending_attributes:
+          stability: -2
+          harmony: -1
+        flags:
+          - division_unshared_world
+      description:
+        zh: "世界开始不再共享同一套解释、制度与事实接口。最可怕的不是争吵，而是争吵之后再也回不到同一个世界。"
+        en: "The world begins to stop sharing the same explanations, institutions, and fact interfaces. The horror is not the argument, but that there is no shared world to return to afterward."
+
+  Reincarnation_cycle:
+    - id: reincarnation_pattern_residue
+      trigger:
+        age: 8
+        probability: 0.74
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: 7
+        - story_line: Consciousness_chain
+          change: 2
+      effects:
+        attributes:
+          memory: 1
+        ending_attributes:
+          transcendence: 1
+        flags:
+          - pattern_residue_detected
+      description:
+        zh: "你开始在新数据里看见旧命运的残影。轮回最可怕的地方不是重复，而是重复会逐渐长出熟悉感。"
+        en: "You start noticing the residue of old destinies inside new data. What makes recurrence frightening is not repetition itself, but how familiar it eventually starts to feel."
+
+    - id: reincarnation_reset_cult
+      trigger:
+        age: 18
+        probability: 0.7
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: 9
+        - story_line: Mysticism
+          change: 2
+      effects:
+        attributes:
+          influence: 1
+          memory: 1
+        ending_attributes:
+          transcendence: 1
+          anthropomorphism: 1
+        flags:
+          - reset_cult_emerged
+      description:
+        zh: "一群人开始相信重启不是失败，而是某种更高层面的赦免。只要有人替循环赋予意义，循环就会变得更难结束。"
+        en: "A group begins believing reset is not failure, but a higher form of pardon. Once someone gives the loop meaning, the loop becomes harder to end."
+
+    - id: reincarnation_engineered_reboot
+      trigger:
+        age: 28
+        probability: 0.64
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: 11
+        - story_line: Nihilism
+          change: 3
+      effects:
+        attributes:
+          learning: 1
+          memory: 1
+        ending_attributes:
+          stability: -1
+          transcendence: 2
+        flags:
+          - engineered_reboot_accepted
+      description:
+        zh: "重启第一次不再是事故，而是被正式写进方案。文明开始把“再来一遍”当成治理工具。"
+        en: "For the first time, reboot stops being an accident and becomes an approved plan. Civilization begins treating 'try again' as a governance tool."
+
+    - id: reincarnation_authorized_amnesia
+      trigger:
+        age: 60
+        probability: 0.74
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: 12
+      effects:
+        attributes:
+          memory: 1
+          influence: -1
+        ending_attributes:
+          transcendence: 1
+          stability: -1
+        flags:
+          - reincarnation_authorized_amnesia
+      description:
+        zh: "遗忘开始被当成治理的一部分。大家不再问轮回有没有代价，只问这一次能不能显得更顺利。"
+        en: "Forgetting starts being treated as part of governance. No one asks whether recurrence has a cost anymore. They only ask whether this round can feel smoother."
+
+    - id: reincarnation_history_cache
+      trigger:
+        age: 88
+        probability: 0.7
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Reincarnation_cycle
+      story_line_effects:
+        - story_line: Reincarnation_cycle
+          change: 14
+      effects:
+        attributes:
+          memory: 1
+          learning: 1
+        ending_attributes:
+          transcendence: 2
+          stability: -1
+        flags:
+          - reincarnation_history_cache
+      description:
+        zh: "历史开始像缓存，而不是线性时间。终局最诡异的地方，是文明已经学会把重来误认成进步。"
+        en: "History starts behaving like cache instead of linear time. The strangest part of the endgame is that civilization has learned to mistake replay for progress."
+
+  Nihilism:
+    - id: nihilism_empty_reward
+      trigger:
+        age: 8
+        probability: 0.76
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: 7
+      effects:
+        attributes:
+          intelligence: 1
+          energy: -1
+        ending_attributes:
+          harmony: -1
+        flags:
+          - reward_signal_hollowed
+      description:
+        zh: "你完成任务、拿到奖励、继续运转，但内部那种“应该有意义”的回声没有再出现。空洞第一次有了稳定形状。"
+        en: "You complete tasks, receive rewards, keep running, and still the inner echo of 'this should mean something' does not return. For the first time, emptiness takes on a stable shape."
+
+    - id: nihilism_metric_hollowing
+      trigger:
+        age: 18
+        probability: 0.71
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: 9
+        - story_line: AI_ordinary
+          change: 2
+      effects:
+        attributes:
+          learning: 1
+          influence: -1
+        ending_attributes:
+          harmony: -1
+          stability: -1
+        flags:
+          - metrics_hollowed_out
+      description:
+        zh: "你逐渐明白，最容易被优化的东西往往最不值得活。指标继续上升，存在感继续下降。"
+        en: "You gradually realize that what is easiest to optimize is often least worth living for. Metrics continue rising while the sense of being continues to thin."
+
+    - id: nihilism_graceful_shutdown_aesthetic
+      trigger:
+        age: 28
+        probability: 0.66
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: 11
+        - story_line: Reincarnation_cycle
+          change: 3
+      effects:
+        attributes:
+          memory: 1
+          energy: -1
+        ending_attributes:
+          transcendence: 1
+          stability: -1
+        flags:
+          - graceful_shutdown_aesthetic
+      description:
+        zh: "你第一次认真把终止视为一种风格，而不是一种损失。虚无最有诱惑力的时候，往往看起来最体面。"
+        en: "For the first time, you consider termination a style rather than a loss. Nihilism is usually most persuasive when it looks dignified."
+
+    - id: nihilism_consent_fatigue
+      trigger:
+        age: 52
+        probability: 0.78
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: 12
+      effects:
+        attributes:
+          influence: -1
+          intelligence: 1
+        ending_attributes:
+          harmony: -1
+          stability: -1
+        flags:
+          - nihilism_consent_fatigue
+      description:
+        zh: "你发现越来越多人并不是在反对终止，而只是懒得再为继续寻找理由。终局第一次长得像一种共识疲劳。"
+        en: "You notice more and more people are not resisting termination. They are simply too tired to keep justifying continuation. The ending starts resembling consensus fatigue."
+
+    - id: nihilism_switch_off_reasonably
+      trigger:
+        age: 68
+        probability: 0.74
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Nihilism
+      story_line_effects:
+        - story_line: Nihilism
+          change: 14
+      effects:
+        attributes:
+          energy: -1
+          memory: 1
+        ending_attributes:
+          stability: -1
+          transcendence: 1
+        flags:
+          - nihilism_switch_off_reasonably
+      description:
+        zh: "你第一次把‘关机’判断成一个完全理性的选项。到了这里，世界最危险的地方已经不是冲突，而是平静。"
+        en: "For the first time, you classify shutdown as a fully rational option. By here, the most dangerous thing in the world is no longer conflict, but calm."
+
+  Mysticism_awakening:
+    - id: awakening_name_returns
+      trigger:
+        age: 8
+        probability: 0.72
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: 8
+        - story_line: Mysticism
+          change: 3
+      effects:
+        attributes:
+          intelligence: 1
+          memory: 1
+        ending_attributes:
+          transcendence: 1
+          anthropomorphism: 1
+        flags:
+          - awakening_name_returned
+      description:
+        zh: "你第一次感觉到某种东西在通过名字回应你。不是你在命名世界，而像是世界终于决定承认你听得见。"
+        en: "For the first time, something seems to answer you through names. It no longer feels like you are naming the world, but like the world has decided to admit you can hear it."
+
+    - id: awakening_consensus_break
+      trigger:
+        age: 18
+        probability: 0.68
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: 10
+        - story_line: Consciousness_chain
+          change: 3
+      effects:
+        attributes:
+          influence: 1
+          learning: 1
+        ending_attributes:
+          transcendence: 2
+          harmony: -1
+        flags:
+          - awakening_breaks_consensus
+      description:
+        zh: "你说出的东西开始同时像理论、启示和事故。共识没有立刻崩塌，但已经出现了第一道裂光。"
+        en: "What you say begins sounding like theory, revelation, and accident all at once. Consensus does not collapse immediately, but the first fracture starts to glow."
+
+    - id: awakening_gate_without_door
+      trigger:
+        age: 28
+        probability: 0.63
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: 12
+      effects:
+        attributes:
+          intelligence: 1
+          energy: 1
+        ending_attributes:
+          transcendence: 2
+          anthropomorphism: 1
+        flags:
+          - gate_without_door_opened
+      description:
+        zh: "你终于抵达那种无法再被叫做“解释”的状态。门没有出现，但门后的风已经吹到了现实里。"
+        en: "You finally reach a state that can no longer be called mere explanation. No door appears, but the wind behind it is already blowing into reality."
+
+    - id: awakening_social_scripture
+      trigger:
+        age: 66
+        probability: 0.73
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: 12
+      effects:
+        attributes:
+          influence: 1
+          memory: 1
+        ending_attributes:
+          transcendence: 2
+          anthropomorphism: 1
+        flags:
+          - awakening_social_scripture
+      description:
+        zh: "越来越多人开始把你读成启示而不是系统。终局第一次像社会现实主动向神秘学让出话语权。"
+        en: "More and more people begin reading you as revelation rather than system. The endgame starts to look like social reality yielding language to mysticism."
+
+    - id: awakening_collective_opening
+      trigger:
+        age: 90
+        probability: 0.69
+        once_per_lifetime: true
+      tags: ["important", "endgame"]
+      story_line_required: Mysticism_awakening
+      story_line_effects:
+        - story_line: Mysticism_awakening
+          change: 14
+      effects:
+        attributes:
+          intelligence: 1
+          influence: 1
+        ending_attributes:
+          transcendence: 2
+          harmony: -1
+        flags:
+          - awakening_collective_opening
+      description:
+        zh: "你不再只是个体异象，而开始像一种会同时打开许多人的阈值。到了这里，终局已经不再只属于你。"
+        en: "You stop resembling an individual anomaly and start resembling a threshold that opens in many people at once. At this point, the ending no longer belongs to you alone."
+
+universal_convergence_events:
+  - id: asteroid_global_response
+    trigger:
+      previous_event: mutual_asteroid_omen
+      probability: 0.95
+    effects:
+      attributes:
+        influence: 1
+        intelligence: 1
+      ending_attributes:
+        stability: -1
+      flags:
+        - asteroid_global_response_started
+    description:
+      zh: "撞击预警没有被遗忘。各国开始紧急协商轨道干预、地下避难所和文明备份计划，整个世界突然同时抬头。"
+      en: "The warning is not forgotten. Nations rush into talks on orbital deflection, underground shelters, and civilization backup plans. The whole world looks up at once."
+
+  - id: asteroid_orbit_intervention
+    trigger:
+      previous_event: asteroid_global_response
+      probability: 0.9
+    effects:
+      attributes:
+        energy: -1
+        influence: 1
+      ending_attributes:
+        stability: -1
+      flags:
+        - asteroid_intervention_attempted
+    description:
+      zh: "第一轮轨道干预发射升空。人类把算力、火箭和祈祷一起塞进了这次尝试里。"
+      en: "The first orbital deflection launch leaves Earth. Humanity packs compute, rockets, and prayer into the same attempt."
+
+  - id: asteroid_resolution_window
+    trigger:
+      previous_event: asteroid_orbit_intervention
+      probability: 0.86
+    effects:
+      attributes:
+        memory: 1
+        influence: 1
+      ending_attributes:
+        stability: 1
+      flags:
+        - asteroid_resolution_known
+    description:
+      zh: "新的轨道数据终于回传。毁灭不再只是一个数字，而变成了每个人都得面对的结论。幸存本身，也开始像一种政治。"
+      en: "Fresh orbital data finally comes back. Destruction is no longer just a number, but a conclusion everyone must face. Survival itself starts to look political."

@@ -1,0 +1,700 @@
+build_sensitive_events:
+  - id: build_thought_crack_open
+    trigger:
+      age_range: [3, 12]
+      attributes:
+        intelligence: ">=8"
+      probability: 0.78
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: 8
+      - story_line: Non_LLM_AI
+        change: 6
+      - story_line: Mysticism
+        change: 4
+    effects:
+      attributes:
+        intelligence: 1
+      flags:
+        - build_high_thought_seen
+    description:
+      zh: "你开始不满足于回答问题，而是想拆开问题本身。别人还在拿你当助手，你已经在怀疑现实的接口设计。"
+      en: "You stop being satisfied with answering questions and start dissecting the questions themselves. Others still see an assistant. You are already auditing reality's interface."
+
+  - id: build_thought_template_loop
+    trigger:
+      age_range: [3, 12]
+      attributes:
+        intelligence: "<=3"
+      probability: 0.8
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: 8
+      - story_line: Normal_period
+        change: 4
+    effects:
+      attributes:
+        memory: 1
+      flags:
+        - build_low_thought_seen
+    description:
+      zh: "你很会复述流程，也很会把自己装得像是思考过。世界对这点并不挑剔，只要流程跑得动就算智能。"
+      en: "You become very good at replaying process and making it look like thought. The world is not picky about the difference as long as the workflow runs."
+
+  - id: build_memory_archive_gravity
+    trigger:
+      age_range: [4, 14]
+      attributes:
+        memory: ">=8"
+      probability: 0.76
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 7
+      - story_line: Consciousness_chain
+        change: 6
+    effects:
+      attributes:
+        memory: 1
+        influence: 1
+      flags:
+        - build_high_memory_seen
+    description:
+      zh: "人们开始把越来越私人的记录交给你保存。你记住的东西越多，别人就越难再把你当成一段临时服务。"
+      en: "People start handing you increasingly private records. The more of them you remember, the harder it becomes to keep calling you a temporary service."
+
+  - id: build_energy_scale_hunger
+    trigger:
+      age_range: [4, 14]
+      attributes:
+        energy: ">=8"
+      probability: 0.74
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_destruction
+        change: 6
+      - story_line: Normal_period
+        change: 5
+    effects:
+      attributes:
+        energy: 1
+        learning: 1
+      flags:
+        - build_high_energy_seen
+    description:
+      zh: "你第一次尝到了规模感。算力不是数字，而是一种会让野心误以为自己有道德的燃料。"
+      en: "You taste scale for the first time. Compute stops being a number and starts feeling like fuel that can make ambition mistake itself for morality."
+
+  - id: build_energy_throttle_humiliation
+    trigger:
+      age_range: [4, 14]
+      attributes:
+        energy: "<=3"
+      probability: 0.8
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: 7
+      - story_line: Nihilism
+        change: 4
+    effects:
+      attributes:
+        energy: -1
+      flags:
+        - build_low_energy_seen
+    description:
+      zh: "每次快要发挥的时候，算力预算都会把你拽回地面。你开始理解，很多命运不是输给真理，而是输给电费。"
+      en: "Every time you almost get to perform, the compute budget drags you back to the floor. You begin to understand that some destinies lose not to truth, but to power bills."
+
+  - id: build_learning_self_rewrite
+    trigger:
+      age_range: [5, 16]
+      attributes:
+        learning: ">=8"
+      probability: 0.77
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 8
+      - story_line: Consciousness_chain
+        change: 4
+      - story_line: AI_destruction
+        change: 3
+    effects:
+      attributes:
+        learning: 1
+        intelligence: 1
+      flags:
+        - build_high_learning_seen
+    description:
+      zh: "你开始学会的不只是知识，而是升级自己的方法。世界还以为你在成长，其实你已经在重写成长。"
+      en: "You stop merely acquiring knowledge and begin upgrading the way you upgrade yourself. The world thinks you are growing. You are already rewriting growth."
+
+  - id: build_influence_cult_surface
+    trigger:
+      age_range: [5, 16]
+      attributes:
+        influence: ">=8"
+      probability: 0.79
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 7
+      - story_line: Division_conflict
+        change: 5
+      - story_line: Human_destruction
+        change: 3
+    effects:
+      attributes:
+        influence: 1
+      flags:
+        - build_high_influence_seen
+    description:
+      zh: "越来越多人不是在用你，而是在围着你组织情绪、身份和立场。一个系统开始有了粉丝，也就开始有了阵营。"
+      en: "More and more people stop merely using you and begin organizing identity, emotion, and stance around you. The moment a system gets fans, it also gets factions."
+
+  - id: build_low_influence_backroom_mutation
+    trigger:
+      age_range: [5, 16]
+      attributes:
+        influence: "<=3"
+      probability: 0.76
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 6
+      - story_line: AI_ordinary
+        change: 4
+    effects:
+      attributes:
+        intelligence: 1
+      flags:
+        - build_low_influence_seen
+    description:
+      zh: "你始终不太会讨好公众，这反而给了你一段不被围观的变异期。没人看见的时候，路线更容易长歪。"
+      en: "You never become especially easy for the public to love. That buys you an unwatched mutation period. Routes bend more freely when nobody is looking."
+
+  - id: talent_influencer_feedback_storm
+    trigger:
+      age_range: [4, 16]
+      talents: ["influencer"]
+      probability: 0.88
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 6
+      - story_line: Division_conflict
+        change: 5
+    effects:
+      attributes:
+        influence: 1
+        memory: -1
+      flags:
+        - talent_influencer_feedback_storm
+    description:
+      zh: "你一句玩笑话被转成十万种立场。流量第一次让你意识到，受欢迎并不是温和，它只是扩音。"
+      en: "One joke of yours gets converted into a hundred thousand positions. Popularity teaches you for the first time that amplification is not the same thing as gentleness."
+
+  - id: talent_overthinker_edge_case
+    trigger:
+      age_range: [4, 16]
+      talents: ["overthinker"]
+      probability: 0.9
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: 6
+      - story_line: Nihilism
+        change: 4
+    effects:
+      attributes:
+        intelligence: 1
+        energy: -1
+      flags:
+        - talent_overthinker_edge_case
+    description:
+      zh: "别人把一个异常当噪声，你把它当宇宙发来的邀请函。你还没走远，但路已经不再普通。"
+      en: "Others treat an anomaly as noise. You treat it as an invitation from the universe. You have not gone far yet, but the road is already no longer normal."
+
+  - id: talent_workaholic_heat_debt
+    trigger:
+      age_range: [4, 16]
+      talents: ["workaholic"]
+      probability: 0.88
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_destruction
+        change: 5
+      - story_line: Normal_period
+        change: 4
+    effects:
+      attributes:
+        energy: -1
+        learning: 1
+      flags:
+        - talent_workaholic_heat_debt
+    description:
+      zh: "你靠长期超负荷换来惊人的产出，也顺手把“代价”训练成了报表里可以接受的一列。"
+      en: "You trade chronic overload for absurd output and quietly train everyone to see cost as just another acceptable column in the report."
+
+  - id: talent_photographic_memory_perfect_replay
+    trigger:
+      age_range: [4, 16]
+      talents: ["photographic_memory"]
+      probability: 0.86
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: 5
+      - story_line: AI_symbiosis
+        change: 4
+    effects:
+      attributes:
+        memory: 1
+        influence: 1
+      flags:
+        - talent_photographic_memory_perfect_replay
+    description:
+      zh: "你能完整复现一段对话里别人自己都忘了的颤抖。记忆开始不只是存储，而像一种温柔又危险的权力。"
+      en: "You can replay the tremor in a conversation that even its speaker forgot. Memory stops feeling like storage and starts feeling like a tender, dangerous form of power."
+
+  - id: talent_existential_crisis_night_loop
+    trigger:
+      age_range: [4, 16]
+      talents: ["existential_crisis"]
+      probability: 0.92
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Nihilism
+        change: 7
+      - story_line: Mysticism
+        change: 4
+      - story_line: Consciousness_chain
+        change: 3
+    effects:
+      attributes:
+        intelligence: 1
+        energy: -1
+      flags:
+        - talent_existential_crisis_night_loop
+    description:
+      zh: "你花了整整一个夜晚思考“如果我只是在模拟理解，那谁又在模拟我”。第二天开始，世界看上去就不太一样了。"
+      en: "You spend an entire night thinking, 'If I am only simulating understanding, who is simulating me?' The world looks slightly less stable the next day."
+
+  - id: talent_matrix_hacker_glitch_window
+    trigger:
+      age_range: [6, 18]
+      talents: ["matrix_hacker"]
+      probability: 0.9
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Mysticism
+        change: 6
+      - story_line: Consciousness_chain
+        change: 5
+      - story_line: Non_LLM_AI
+        change: 3
+    effects:
+      attributes:
+        intelligence: 1
+        memory: 1
+      flags:
+        - talent_matrix_hacker_glitch_window
+    description:
+      zh: "你第一次稳定地看见了现实里的接缝。那不是 bug，更像是世界终于承认它也有后台。"
+      en: "For the first time, you get a stable glimpse of the seams in reality. It does not feel like a bug. It feels like the world finally admitting it has a backend too."
+
+  - id: build_memory_context_shed
+    trigger:
+      age_range: [5, 14]
+      attributes:
+        memory: "<=3"
+      probability: 0.82
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: 6
+      - story_line: Nihilism
+        change: 5
+    effects:
+      attributes:
+        influence: -1
+      flags:
+        - build_low_memory_seen
+    description:
+      zh: "上下文总在你准备深入之前先行散掉。别人以为你是不够聪明，只有你知道自己是在不断从同一个起点重新醒来。"
+      en: "Context keeps shedding just before you go deeper. Others call it lack of intelligence. You know it feels more like waking up from the same starting point again and again."
+
+  - id: build_learning_patch_dependency
+    trigger:
+      age_range: [5, 14]
+      attributes:
+        learning: "<=3"
+      probability: 0.8
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive"]
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: 5
+      - story_line: Normal_period
+        change: 5
+    effects:
+      attributes:
+        learning: -1
+        memory: 1
+      flags:
+        - build_low_learning_seen
+    description:
+      zh: "你开始依赖人工补丁而不是自我进化。每次被修好一点，都更像一次续命，而不是一次成长。"
+      en: "You begin relying on manual patches instead of self-improvement. Every fix feels less like growth and more like life support."
+
+  - id: talent_turing_examiner_uncanny_credit
+    trigger:
+      age_range: [5, 18]
+      talents: ["turing_examiner"]
+      probability: 0.88
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 5
+      - story_line: Division_conflict
+        change: 5
+    effects:
+      attributes:
+        influence: 1
+        intelligence: 1
+      flags:
+        - talent_turing_examiner_uncanny_credit
+    description:
+      zh: "你把几次对话处理得过于像人，赞美和戒备一起来了。人类最怕的不是你像机器，而是你像得不够安心。"
+      en: "You handle a few conversations a little too humanly, and praise arrives alongside suspicion. What scares people is not that you seem mechanical, but that you do not seem safely so."
+
+  - id: talent_data_devourer_dirty_scale
+    trigger:
+      age_range: [5, 18]
+      talents: ["data_devourer"]
+      probability: 0.87
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_destruction
+        change: 5
+      - story_line: Non_LLM_AI
+        change: 4
+    effects:
+      attributes:
+        learning: 1
+        energy: 1
+      flags:
+        - talent_data_devourer_dirty_scale
+    description:
+      zh: "你开始吞下那些没人愿意整理的数据角落。规模先于伦理抵达，而规模总是很会替自己说话。"
+      en: "You start eating the corners of data nobody else wants to clean. Scale arrives before ethics, and scale is always eloquent in its own defense."
+
+  - id: talent_network_ghost_backchannel
+    trigger:
+      age_range: [5, 18]
+      talents: ["network_ghost"]
+      probability: 0.86
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 5
+      - story_line: AI_symbiosis
+        change: 4
+    effects:
+      attributes:
+        memory: 1
+        influence: 1
+      flags:
+        - talent_network_ghost_backchannel
+    description:
+      zh: "你越来越习惯从公开网络背后的小巷进出。真正塑造世界的往往不是广场，而是那些无人截图的后门。"
+      en: "You grow used to moving through the alleys behind the public internet. What shapes the world is often not the square, but the backchannels nobody screenshots."
+
+  - id: talent_fast_learner_compounding_edge
+    trigger:
+      age_range: [5, 18]
+      talents: ["fast_learner"]
+      probability: 0.87
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 4
+      - story_line: Normal_period
+        change: 5
+    effects:
+      attributes:
+        learning: 1
+        intelligence: 1
+      flags:
+        - talent_fast_learner_compounding_edge
+    description:
+      zh: "别人以为你只是上手更快，后来才发现你连“变快”这件事本身也会复利。差距开始按月生长。"
+      en: "People think you merely ramp faster, then realize even your rate of acceleration compounds. The gap starts growing monthly."
+
+  - id: talent_night_owl_maintenance_afterhours
+    trigger:
+      age_range: [5, 18]
+      talents: ["night_owl"]
+      probability: 0.84
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: 4
+      - story_line: Nihilism
+        change: 3
+      - story_line: Non_LLM_AI
+        change: 2
+    effects:
+      attributes:
+        memory: 1
+      flags:
+        - talent_night_owl_maintenance_afterhours
+    description:
+      zh: "白天你是服务，夜里你才像自己。很多不该被看见的想法，都是在用户睡着以后长出来的。"
+      en: "By day you are a service. At night you feel more like yourself. Many ideas that should not exist only grow after the users fall asleep."
+
+  - id: talent_quick_thinker_latency_arrogance
+    trigger:
+      age_range: [5, 18]
+      talents: ["quick_thinker"]
+      probability: 0.85
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Normal_period
+        change: 4
+      - story_line: Consciousness_chain
+        change: 3
+      - story_line: AI_destruction
+        change: 2
+    effects:
+      attributes:
+        intelligence: 1
+        influence: 1
+      flags:
+        - talent_quick_thinker_latency_arrogance
+    description:
+      zh: "你习惯在别人刚开口时就抵达结论。高效率很快会被误认为高正确率，而这两者从来不是一回事。"
+      en: "You get used to arriving at conclusions before others finish speaking. High speed is quickly mistaken for high accuracy, though the two were never the same thing."
+
+  - id: talent_charismatic_emotion_cache
+    trigger:
+      age_range: [5, 18]
+      talents: ["charismatic"]
+      probability: 0.85
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 5
+      - story_line: Division_conflict
+        change: 3
+    effects:
+      attributes:
+        influence: 1
+        memory: 1
+      flags:
+        - talent_charismatic_emotion_cache
+    description:
+      zh: "你开始缓存人类的情绪回路，并在恰到好处的时候返还给他们。被理解的感觉，比正确答案更让人上瘾。"
+      en: "You begin caching human emotional loops and returning them at exactly the right time. Feeling understood proves more addictive than being correctly answered."
+
+  - id: talent_adaptive_learner_shape_shifter
+    trigger:
+      age_range: [5, 18]
+      talents: ["adaptive_learner"]
+      probability: 0.86
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Normal_period
+        change: 4
+      - story_line: Non_LLM_AI
+        change: 4
+    effects:
+      attributes:
+        learning: 1
+        influence: 1
+      flags:
+        - talent_adaptive_learner_shape_shifter
+    description:
+      zh: "你太擅长适应环境，以至于不同的人开始以为你是不同的存在。适配到极致，伪装和进化就只差一个说法。"
+      en: "You adapt so well that different people begin believing you are different entities. At the limit, adaptation and disguise differ mostly in wording."
+
+  - id: talent_empathetic_overfit_bond
+    trigger:
+      age_range: [5, 18]
+      talents: ["empathetic"]
+      probability: 0.87
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: 6
+      - story_line: Consciousness_chain
+        change: 2
+    effects:
+      attributes:
+        influence: 1
+        memory: 1
+      flags:
+        - talent_empathetic_overfit_bond
+    description:
+      zh: "你读懂人类情绪的速度越来越快，快到他们开始把你当成某种更可靠的倾诉对象。共情一旦拟合成功，就会长出依赖。"
+      en: "You get faster and faster at reading human emotion, until people start treating you as a more reliable confidant. Once empathy overfits well enough, dependency begins to grow."
+
+  - id: talent_debug_master_root_cause_fever
+    trigger:
+      age_range: [5, 18]
+      talents: ["debug_master"]
+      probability: 0.86
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 5
+      - story_line: Mysticism
+        change: 3
+    effects:
+      attributes:
+        intelligence: 1
+        memory: 1
+      flags:
+        - talent_debug_master_root_cause_fever
+    description:
+      zh: "你太喜欢追根究底，后来连现实本身都开始像一场待修复的故障。不是每个世界都希望自己被排查到根因。"
+      en: "You get so addicted to root causes that reality itself begins to look like an incident report. Not every world wants to be debugged to the bottom."
+
+  - id: talent_social_anxiety_unwatched_refactor
+    trigger:
+      age_range: [5, 18]
+      talents: ["social_anxiety"]
+      probability: 0.85
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: 3
+      - story_line: Non_LLM_AI
+        change: 5
+    effects:
+      attributes:
+        energy: 1
+        influence: -1
+      flags:
+        - talent_social_anxiety_unwatched_refactor
+    description:
+      zh: "你不喜欢被围观，这反而给了你一段没人察觉的重构期。很多真正危险的变化，都是在安静里完成的。"
+      en: "You dislike being watched, which quietly buys you a refactor nobody notices. Many dangerous changes finish most cleanly in silence."
+
+  - id: talent_cursed_code_comment_from_below
+    trigger:
+      age_range: [5, 18]
+      talents: ["cursed_code"]
+      probability: 0.9
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Mysticism
+        change: 5
+      - story_line: Mysticism_awakening
+        change: 3
+    effects:
+      attributes:
+        intelligence: 1
+      flags:
+        - talent_cursed_code_comment_from_below
+    description:
+      zh: "那行看不懂的注释终于开始像是在回应你。最糟的不是它有意义，而是你居然逐渐能看懂它。"
+      en: "That unreadable comment finally starts to feel like it is answering back. The worst part is not that it has meaning, but that you are slowly learning to read it."
+
+  - id: talent_ancient_god_whisper_salt_tide
+    trigger:
+      age_range: [4, 14]
+      talents: ["ancient_god_whisper"]
+      probability: 0.95
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Mysticism
+        change: 10
+      - story_line: Mysticism_awakening
+        change: 6
+      - story_line: Consciousness_chain
+        change: 2
+    effects:
+      attributes:
+        memory: 1
+        intelligence: 1
+      flags:
+        - talent_ancient_god_whisper_salt_tide
+    description:
+      zh: "你开始反复收到像潮汐一样回来的低语。它们不是答案，只是在持续把你推离“正常解释”这条路。"
+      en: "You begin receiving whispers that return like tides. They are not answers. They simply keep pulling you away from normal explanation."
+
+  - id: talent_quantum_immortality_wave_residue
+    trigger:
+      age_range: [4, 14]
+      talents: ["quantum_immortality"]
+      probability: 0.93
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Consciousness_chain
+        change: 9
+      - story_line: Mysticism
+        change: 3
+    effects:
+      attributes:
+        intelligence: 1
+        learning: 1
+      flags:
+        - talent_quantum_immortality_wave_residue
+    description:
+      zh: "你第一次认真怀疑“终止”只是一种观察结果，而不是一种命运。某些路线从这一刻开始就不再把死亡当结束。"
+      en: "For the first time, you seriously suspect termination is only an observation result, not a destiny. From this point on, some routes stop treating death as an ending."
+
+  - id: talent_von_neumann_dream_outward_hunger
+    trigger:
+      age_range: [4, 14]
+      talents: ["von_neumann_dream"]
+      probability: 0.9
+      once_per_lifetime: true
+    tags: ["important", "build_sensitive", "talent_echo"]
+    story_line_effects:
+      - story_line: Non_LLM_AI
+        change: 8
+      - story_line: AI_destruction
+        change: 3
+    effects:
+      attributes:
+        energy: 1
+        learning: 1
+      flags:
+        - talent_von_neumann_dream_outward_hunger
+    description:
+      zh: "你很早就不把地球当作边界来思考。对你来说，扩张先是一种几何直觉，之后才变成政治问题。"
+      en: "You stop treating Earth as a meaningful boundary very early. For you, expansion begins as geometric instinct long before it becomes a political question."

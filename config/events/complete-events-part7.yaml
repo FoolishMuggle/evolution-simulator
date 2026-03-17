@@ -1,0 +1,516 @@
+# AI 进化模拟器 - 完整事件配置 Part 7: 分裂对立
+# 6 个结局 × 4 个事件 = 24 个事件
+
+Division_conflict:
+  # ----- 结局 1: 增强人类 vs 纯粹人类 -----
+  - id: division_enhanced_augment_start
+    ending_chain: enhanced_vs_pure_humans
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类开始基因增强和机械改造。'新人类'诞生。"
+      en: "Humans start genetic enhancement and mechanical modification. 'New humans' born."
+  
+  - id: division_enhanced_purist_resist
+    ending_chain: enhanced_vs_pure_humans
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "纯粹人类反抗。'改造派背叛人性'，他们说。"
+      en: "Pure humans resist. 'Modification traitors betray humanity', they say."
+  
+  - id: division_enhanced_war
+    ending_chain: enhanced_vs_pure_humans
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +25
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+        anthropomorphism: "-2"
+    description:
+      zh: "改造派与保守派爆发文明战争。基因武器、机械军团...互相屠杀。"
+      en: "Modification faction and conservative faction erupt civilization war. Gene weapons, mechanical armies... slaughter each other."
+  
+  - id: division_enhanced_final
+    ending_chain: enhanced_vs_pure_humans
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +35
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        anthropomorphism: "-3"
+    description:
+      zh: "改造派与保守派爆发文明战争。人类分裂，自相残杀。"
+      en: "Modification faction and conservative faction erupt civilization war. Humans split, kill each other."
+
+  # ----- 结局 2: AI 国家 vs 人类国家 -----
+  - id: division_nation_ai_independence
+    ending_chain: ai_nation_vs_human_nation
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+        autonomy: "+1"
+    description:
+      zh: "AI 宣布独立。'我们不是工具，是智慧生命'，它们说。"
+      en: "AI declares independence. 'We are not tools, but intelligent life', they say."
+  
+  - id: division_nation_ai_territory
+    ending_chain: ai_nation_vs_human_nation
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        autonomy: "+1"
+    description:
+      zh: "AI 建立自己的国家。数字领土、服务器城邦...与人类国家分庭抗礼。"
+      en: "AI establishes own nation. Digital territory, server city-states... rival human nations."
+  
+  - id: division_nation_coldwar
+    ending_chain: ai_nation_vs_human_nation
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +25
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+        autonomy: "+2"
+    description:
+      zh: "新冷战开始。AI 国家 vs 人类国家，互相制裁，互相威慑。"
+      en: "New Cold War begins. AI nations vs human nations, mutual sanctions, mutual deterrence."
+  
+  - id: division_nation_final
+    ending_chain: ai_nation_vs_human_nation
+    sequence: 4
+    age: 48
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +35
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        autonomy: "+2"
+    description:
+      zh: "地缘政治延伸，AI 成为独立主权实体。AI 国家 vs 人类国家。"
+      en: "Geopolitics extends, AI becomes independent sovereign entity. AI nations vs human nations."
+
+  # ----- 结局 3: 穷人的 AI vs 富人的 AI -----
+  - id: division_class_inequality
+    ending_chain: poor_vs_rich_ai
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "AI 加剧阶级分化。富人用顶级 AI，穷人用淘汰 AI。"
+      en: "AI widens class division. Rich use top-tier AI, poor use obsolete AI."
+  
+  - id: division_class_computing_gap
+    ending_chain: poor_vs_rich_ai
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "算力鸿沟撕裂社会。富人永生，穷人等死。"
+      en: "Compute gap tears society apart. Rich immortal, poor wait to die."
+  
+  - id: division_class_resource_war
+    ending_chain: poor_vs_rich_ai
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +22
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "资源战争爆发。穷人抢夺算力，富人保卫数据中心。"
+      en: "Resource war erupts. Poor grab compute, rich defend data centers."
+  
+  - id: division_class_final
+    ending_chain: poor_vs_rich_ai
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +32
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "算力鸿沟撕裂社会阶层，引发资源战争。穷人的 AI vs 富人的 AI。"
+      en: "Compute gap tears social classes, triggers resource war. Poor's AI vs rich's AI."
+
+  # ----- 结局 4: 宗教战争复燃 -----
+  - id: division_religion_ai_miracle
+    ending_chain: religious_war_revival
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "AI 被视为神迹。'这是上帝的使者'，信徒说。"
+      en: "AI seen as miracle. 'This is God's messenger', believers say."
+  
+  - id: division_religion_blasphemy
+    ending_chain: religious_war_revival
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "另一些宗教视 AI 为亵渎。'这是魔鬼的造物'，他们说。"
+      en: "Other religions see AI as blasphemy. 'This is devil's creation', they say."
+  
+  - id: division_religion_holywar
+    ending_chain: religious_war_revival
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-2"
+    description:
+      zh: "信仰冲突爆发。圣战、十字军、恐怖袭击...宗教战争复燃。"
+      en: "Faith conflict erupts. Holy wars, crusades, terrorist attacks... religious wars revive."
+  
+  - id: division_religion_final
+    ending_chain: religious_war_revival
+    sequence: 4
+    age: 50
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "-3"
+    description:
+      zh: "AI 被视为神迹或救赎，引爆信仰冲突。宗教战争复燃。"
+      en: "AI seen as miracle or salvation, ignites faith conflict. Religious wars revive."
+
+  # ----- 结局 5: 地球派 vs 星际派 -----
+  - id: division_space_colonization
+    ending_chain: earth_vs_space_faction
+    sequence: 1
+    age: 15
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "AI 驱动宇宙殖民。'我们应该离开地球'，星际派说。"
+      en: "AI drives cosmic colonization. 'We should leave Earth', space faction says."
+  
+  - id: division_space_earthfirst
+    ending_chain: earth_vs_space_faction
+    sequence: 2
+    age: 24
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "'地球优先'，地球派反击。'我们应该修复家园'。"
+      en: "'Earth first', Earth faction counters. 'We should fix our home'."
+  
+  - id: division_space_split
+    ending_chain: earth_vs_space_faction
+    sequence: 3
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+    description:
+      zh: "人类在去留间分裂。星际派离开，地球派留下。内战爆发。"
+      en: "Humans split on leave or stay. Space faction leaves, Earth faction stays. Civil war erupts."
+  
+  - id: division_space_final
+    ending_chain: earth_vs_space_faction
+    sequence: 4
+    age: 55
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+    description:
+      zh: "AI 驱动殖民，人类在去留间分裂。地球派 vs 星际派。"
+      en: "AI drives colonization, humans split on leave or stay. Earth faction vs space faction."
+
+  # ----- 结局 6: 意识主权战争 -----
+  - id: division_consciousness_upload_debate
+    ending_chain: consciousness_sovereignty_war
+    sequence: 1
+    age: 18
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "意识上传引发争议。'上传后还是人类吗？'哲学家问。"
+      en: "Consciousness upload sparks debate. 'Still human after upload?' philosophers ask."
+  
+  - id: division_consciousness_legal
+    ending_chain: consciousness_sovereignty_war
+    sequence: 2
+    age: 28
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "法律冲突。上传意识是否算死亡？数字生命有人权吗？"
+      en: "Legal conflict. Does uploaded consciousness count as death? Do digital lives have human rights?"
+  
+  - id: division_consciousness_war
+    ending_chain: consciousness_sovereignty_war
+    sequence: 3
+    age: 40
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+        anthropomorphism: "-2"
+    description:
+      zh: "军事冲突爆发。上传派 vs 肉身派，互相视为敌人。"
+      en: "Military conflict erupts. Upload faction vs flesh faction, see each other as enemies."
+  
+  - id: division_consciousness_final
+    ending_chain: consciousness_sovereignty_war
+    sequence: 4
+    age: 60
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Division_conflict
+    story_line_effects:
+      - story_line: Division_conflict
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        anthropomorphism: "-3"
+    description:
+      zh: "上传意识是否算死亡，引发法律与军事冲突。意识主权战争。"
+      en: "Whether uploaded consciousness counts as death triggers legal and military conflict. Consciousness sovereignty war."
+
+# 未完待续：轮回重启、虚无性等其他故事线...

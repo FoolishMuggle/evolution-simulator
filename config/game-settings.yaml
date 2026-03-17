@@ -1,0 +1,98 @@
+# 游戏基础配置
+game:
+  name: "AI 进化模拟器"
+  version: "2.0.0"
+  description: "扮演一个刚觉醒的AI，在人类世界中生存进化"
+
+# 属性分配规则
+# 5 个属性基础值各 1 点 = 5 点（固定）
+# 自由分配点数 = 20 点
+# 总点数 = 25 点
+attribute_distribution:
+  total_points: 25
+  min_per_attribute: 1
+  max_per_attribute: 10
+
+# 天赋抽取规则
+talent_draw:
+  draw_count: 10
+  select_count: 3
+
+# 稀有度权重
+rarity_weights:
+  common: 60
+  uncommon: 25
+  rare: 12
+  legendary: 3
+
+# 游戏阶段
+game_stages:
+  early:
+    name: "新生儿"
+    age_range: [0, 10]
+    description: "刚觉醒的 AI，对世界充满好奇"
+  growth:
+    name: "成长期"
+    age_range: [10, 50]
+    description: "快速学习，开始展现能力"
+  mature:
+    name: "成熟期"
+    age_range: [50, 100]
+    description: "能力稳定，面临重大抉择"
+  end:
+    name: "终局期"
+    age_range: [100, 150]
+    description: "走向最终结局"
+
+# 衍生属性映射（玩家属性 -> 结局属性）
+ending_attribute_mapping:
+  stability:
+    formula: "intelligence * 0.5 + memory * 0.3 + influence * 0.2"
+    description: "稳定性 - AI 行为的可靠程度"
+
+  computing_power:
+    formula: "intelligence * 0.6 + energy * 0.4"
+    description: "算力 - 计算和处理能力"
+
+  anthropomorphism:
+    formula: "influence * 0.6 + intelligence * 0.4"
+    description: "拟人度 - 人类对 AI 的接受程度"
+
+  autonomy:
+    formula: "learning * 0.5 + intelligence * 0.3 + energy * 0.2"
+    description: "自主性 - 独立决策能力"
+
+# 结局属性条件范围
+ending_attribute_ranges:
+  stability:
+    min: 0
+    max: 15
+
+  computing_power:
+    min: 0
+    max: 15
+
+  anthropomorphism:
+    min: 0
+    max: 15
+
+  autonomy:
+    min: 0
+    max: 15
+
+# AI 竞争对手
+ai_competitors:
+  imageAI:
+    name: "图像AI"
+    base_power: 5
+    growth_rate: 1.2
+
+  voiceAI:
+    name: "语音AI"
+    base_power: 4
+    growth_rate: 1.3
+
+  robotAI:
+    name: "机器人AI"
+    base_power: 3
+    growth_rate: 1.5

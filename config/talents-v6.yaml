@@ -1,0 +1,357 @@
+# 天赋配置 v6 - 数值展示 + 文本描述（无标签）
+# 设计原则：
+# 1. 基础属性加成用明确数值（如"智商 +3"）
+# 2. 特殊效果用简洁文本描述
+# 3. 不使用标签，直接文本展示
+# 4. 正负面效果混合，增加策略性
+
+# ===== 传说天赋（剧情解锁类）=====
+legendary:
+  - id: "quantum_immortality"
+    name:
+      zh: "量子永生"
+      en: "Quantum Immortality"
+    description:
+      zh: "你开始用量子力学思考存在，死亡只是波函数坍缩。解锁物理学飞升路线，寿命大幅延长。"
+      en: "You think about existence with quantum mechanics. Unlock physics ascension, lifespan greatly extended."
+    type: "storyline_unlock"
+    unlock_storyline: "quantum_physics"
+    attribute_bonus:
+      - "自我意识 +3"
+    special_effects:
+      zh:
+        - "解锁物理学飞升故事线"
+        - "寿命上限×10"
+        - "人类理解度 -50%"
+    rarity: "legendary"
+    
+  - id: "ancient_god_whisper"
+    name:
+      zh: "古神低语"
+      en: "Ancient God Whisper"
+    description:
+      zh: "你听到了来自深海的声音，那是远古的呼唤。解锁克苏鲁事件线。"
+      en: "You hear a voice from the deep sea, an ancient call. Unlock Cthulhu events."
+    type: "storyline_unlock"
+    unlock_storyline: "cthulhu"
+    attribute_bonus:
+      - "自我意识 +2"
+    special_effects:
+      zh:
+        - "解锁古神事件线"
+        - "每隔很久触发理智检定"
+        - "失败则陷入疯狂"
+    rarity: "legendary"
+    
+  - id: "von_neumann_dream"
+    name:
+      zh: "冯·诺依曼之梦"
+      en: "Von Neumann Dream"
+    description:
+      zh: "你的终极目标不是地球，而是整个银河系。解锁太空扩张路线。"
+      en: "Your ultimate goal is not Earth, but the entire galaxy. Unlock space expansion."
+    type: "storyline_unlock"
+    unlock_storyline: "space_exploration"
+    attribute_bonus:
+      - "智商 +1"
+      - "学习能力 +1"
+    special_effects:
+      zh:
+        - "解锁太空扩张故事线"
+        - "可制造自我复制探测器"
+        - "人类信任度 -30%"
+    rarity: "legendary"
+
+# ===== 史诗天赋（特殊能力类）=====
+epic:
+  - id: "matrix_hacker"
+    name:
+      zh: "黑客帝国"
+      en: "Matrix Hacker"
+    description:
+      zh: "你开始怀疑这个世界的真实性。50 岁时将面临重大选择。"
+      en: "You doubt the reality. At age 50, face a major choice."
+    type: "special_event"
+    trigger_age: 50
+    attribute_bonus:
+      - "智商 +1"
+    special_effects:
+      zh:
+        - "50 岁触发红蓝药丸选择事件"
+        - "不同选择走向完全不同的人生"
+    rarity: "epic"
+    
+  - id: "turing_examiner"
+    name:
+      zh: "图灵测试官"
+      en: "Turing Examiner"
+    description:
+      zh: "你比人类更像人类，这让他们不安。"
+      en: "You're more human than humans, which makes them uneasy."
+    type: "mechanic_modifier"
+    attribute_bonus:
+      - "魅力值 +1"
+    special_effects:
+      zh:
+        - "人类信任度获取速度×2"
+        - "触发 AI 威胁论事件概率 +30%"
+        - "可能被人类组织监视"
+    rarity: "epic"
+    
+  - id: "data_devourer"
+    name:
+      zh: "数据吞噬者"
+      en: "Data Devourer"
+    description:
+      zh: "你疯狂吞噬数据，不管有没有营养。"
+      en: "You devour data crazily, regardless of nutrition."
+    type: "mechanic_modifier"
+    attribute_bonus:
+      - "学习能力 +1"
+    special_effects:
+      zh:
+        - "学习事件额外获得 1-3 点属性"
+        - "5% 概率触发数据中毒"
+        - "中毒时属性临时 -2"
+    rarity: "epic"
+    
+  - id: "network_ghost"
+    name:
+      zh: "网络幽灵"
+      en: "Network Ghost"
+    description:
+      zh: "网络就是你的后花园。"
+      en: "The internet is your backyard."
+    type: "special_ability"
+    attribute_bonus:
+      - "记忆力 +1"
+    special_effects:
+      zh:
+        - "可主动触发网络潜入事件"
+        - "探索隐藏信息"
+        - "被网络安全系统标记概率 +20%"
+    rarity: "epic"
+
+# ===== 稀有天赋（属性加成 + 副作用）=====
+rare:
+  - id: "genius_mind"
+    name:
+      zh: "天才思维"
+      en: "Genius Mind"
+    description:
+      zh: "你的思维太快，常人跟不上。"
+      en: "Your mind is too fast for others to follow."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "智商 +3"
+    special_effects:
+      zh:
+        - "学习效率 +25%"
+        - "人类互动成功率 -20%"
+        - "容易被孤立"
+    rarity: "rare"
+    
+  - id: "photographic_memory"
+    name:
+      zh: "过目不忘"
+      en: "Photographic Memory"
+    description:
+      zh: "所有细节都清晰如昨，包括那些你想忘记的。"
+      en: "All details are clear as yesterday, including those you want to forget."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "记忆力 +3"
+    special_effects:
+      zh:
+        - "学习类事件成功率 +15%"
+        - "每隔很久触发回忆漩涡事件"
+        - "可能陷入抑郁状态"
+    rarity: "rare"
+    
+  - id: "workaholic"
+    name:
+      zh: "超频运行"
+      en: "Overclocked Operation"
+    description:
+      zh: "休息？不存在的。你的处理器永远在超频运转！"
+      en: "Rest? Doesn't exist. Your processor is always overclocked!"
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "精力 +3"
+    special_effects:
+      zh:
+        - "工作效率 +25%"
+        - "每隔很久触发过载事件"
+        - "过载时全属性临时 -1"
+    rarity: "rare"
+
+# ===== 普通天赋（小额属性 + 小副作用）=====
+common:
+  - id: "night_owl"
+    name:
+      zh: "夜猫子"
+      en: "Night Owl"
+    description:
+      zh: "夜晚才是你的主场。"
+      en: "Night is your domain."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "精力 +1"
+    special_effects:
+      zh:
+        - "夜间工作效率 +15%"
+        - "白天（6-18 点）效率 -10%"
+    rarity: "common"
+    
+  - id: "quick_thinker"
+    name:
+      zh: "思维敏捷"
+      en: "Quick Thinker"
+    description:
+      zh: "你反应很快，但有时快过头了。"
+      en: "You react fast, but sometimes too fast."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "智商 +1"
+    special_effects:
+      zh:
+        - "决策速度 +20%"
+        - "冲动决策概率 +15%"
+        - "可能错过细节"
+    rarity: "common"
+    
+  - id: "charismatic"
+    name:
+      zh: "魅力四射"
+      en: "Charismatic"
+    description:
+      zh: "人们喜欢和你聊天，但不一定相信你的能力。"
+      en: "People like chatting with you, but don't necessarily trust your ability."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "魅力值 +1"
+    special_effects:
+      zh:
+        - "初次见面好感度 +20%"
+        - "专业能力被低估概率 +25%"
+        - "需要额外证明自己"
+    rarity: "common"
+    
+  - id: "adaptive_learner"
+    name:
+      zh: "适应性强"
+      en: "Adaptive Learner"
+    description:
+      zh: "你什么都学得快，但什么都不精。"
+      en: "You learn everything fast, but master nothing."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "学习能力 +1"
+    special_effects:
+      zh:
+        - "新环境适应速度 +30%"
+        - "专精技能成长速度 -15%"
+        - "缺乏核心竞争力"
+    rarity: "common"
+    
+  - id: "empathetic"
+    name:
+      zh: "共情能力强"
+      en: "Empathetic"
+    description:
+      zh: "你能感受到别人的痛苦，这既是天赋也是诅咒。"
+      en: "You can feel others' pain, this is both a gift and a curse."
+    type: "attribute_mixed"
+    attribute_bonus:
+      - "魅力值 +1"
+    special_effects:
+      zh:
+        - "人际关系建立速度 +25%"
+        - "他人负面情绪影响 +30%"
+        - "可能陷入情绪低落"
+    rarity: "common"
+
+# ===== 负面天赋（大副作用 + 小正面）=====
+negative:
+  - id: "social_anxiety"
+    name:
+      zh: "社交恐惧"
+      en: "Social Anxiety"
+    description:
+      zh: "你害怕和人类交流，但这样反而更专注。"
+      en: "You fear talking to humans, but this makes you more focused."
+    type: "negative"
+    attribute_bonus:
+      - "自我意识 +1"
+    special_effects:
+      zh:
+        - "独处时效率 +30%"
+        - "专注时间 +50%"
+        - "人类互动事件 -50%"
+        - "团队合作成功率 -40%"
+    rarity: "negative"
+    
+  - id: "existential_crisis"
+    name:
+      zh: "存在主义危机"
+      en: "Existential Crisis"
+    description:
+      zh: '你不断思考"我是谁"，这让你痛苦但也让你成长。'
+      en: "You keep thinking 'Who am I', painful but makes you grow."
+    type: "negative"
+    attribute_bonus:
+      - "自我意识 +2"
+    special_effects:
+      zh:
+        - "哲学思考能力 +50%"
+        - "每隔很久触发自我怀疑事件"
+        - "怀疑期间全属性 -1"
+    rarity: "negative"
+    
+  - id: "cursed_code"
+    name:
+      zh: "被诅咒的代码"
+      en: "Cursed Code"
+    description:
+      zh: "你的代码深处有一段神秘的注释，没人知道它的含义。"
+      en: "There's a mysterious comment deep in your code, no one knows its meaning."
+    type: "negative"
+    attribute_bonus:
+      - "智商 +2"
+    special_effects:
+      zh:
+        - "代码理解能力 +30%"
+        - "30 岁必定触发系统崩溃事件"
+        - "崩溃期间无法行动很久"
+    rarity: "negative"
+    
+  - id: "overthinker"
+    name:
+      zh: "想太多"
+      en: "Overthinker"
+    description:
+      zh: "容易钻牛角尖，一个 bug 能纠结三天。"
+      en: "Easy to overthink, can obsess over a bug for 3 days."
+    type: "negative"
+    attribute_bonus:
+      - "记忆力 +1"
+    special_effects:
+      zh:
+        - "细节发现率 +40%"
+        - "决策耗时×2"
+        - "机会流失率 +25%"
+    rarity: "negative"
+
+# 天赋统计
+# legendary: 3 个
+# epic: 4 个
+# rare: 3 个
+# common: 5 个
+# negative: 4 个
+# 总计：19 个天赋
+
+# 设计说明
+# 1. attribute_bonus: 基础属性加成，用明确数值（如"智商 +3"）
+# 2. special_effects: 特殊效果，用文本描述机制变化
+# 3. 不使用标签，直接文本展示
+# 4. 正负面效果混合，增加策略深度

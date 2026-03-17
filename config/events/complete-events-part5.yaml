@@ -1,0 +1,752 @@
+# AI 进化模拟器 - 完整事件配置 Part 5: 毁灭你
+# 9 个结局 × 4 个事件 = 36 个事件
+# 特点：与 AI 无关的灾难事件
+
+Mutual_destruction:
+  # ----- 结局 1: 小行星撞击 -----
+  # 事件链：发现→预警→撞击→毁灭
+  - id: mutual_asteroid_discover
+    ending_chain: asteroid_impact
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "天文台发现一个异常天体。轨道计算显示...它在接近地球。"
+      en: "Observatory detects anomalous celestial body. Orbit calculation shows... it's approaching Earth."
+  
+  - id: mutual_asteroid_warning
+    ending_chain: asteroid_impact
+    sequence: 2
+    age: 12
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +12
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "全球预警。直径 10 公里的小行星，撞击概率 87%。"
+      en: "Global warning. 10km diameter asteroid, impact probability 87%."
+  
+  - id: mutual_asteroid_attempt
+    ending_chain: asteroid_impact
+    sequence: 3
+    age: 18
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +18
+    effects:
+      attributes:
+        energy: "-1"
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "人类试图改变小行星轨道。失败。'太大了'，科学家说。"
+      en: "Humans try to change asteroid trajectory. Fail. 'Too big', scientists say."
+  
+  - id: mutual_asteroid_impact
+    ending_chain: asteroid_impact
+    sequence: 4
+    age: 28
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +30
+    effects:
+      attributes:
+        energy: "-2"
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "撞击发生。AI 尚未崛起，地球先遭灭顶之灾。文明终结。"
+      en: "Impact occurs. AI hasn't risen yet, Earth first suffers catastrophe. Civilization ends."
+
+  # ----- 结局 2: 超级病毒 -----
+  # 事件链：制造→泄露→传播→毁灭
+  - id: mutual_virus_lab
+    ending_chain: super_virus
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "实验室制造出超级病毒。'为了研究'，他们说。"
+      en: "Lab creates super virus. 'For research', they say."
+  
+  - id: mutual_virus_leak
+    ending_chain: super_virus
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "病毒泄露。'只是小事故'，官方宣布。但已经太晚了。"
+      en: "Virus leaks. 'Just a minor accident', officials announce. But too late."
+  
+  - id: mutual_virus_spread
+    ending_chain: super_virus
+    sequence: 3
+    age: 22
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-1"
+    description:
+      zh: "病毒全球传播。潜伏期长，致死率 95%。无药可救。"
+      en: "Virus spreads globally. Long latency, 95% lethality. No cure."
+  
+  - id: mutual_virus_extinction
+    ending_chain: super_virus
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-2"
+        anthropomorphism: "-3"
+    description:
+      zh: "超级病毒毁灭人类。生物威胁先于 AI 威胁到来，人类被自己制造的微生物毁灭。"
+      en: "Super virus destroys humanity. Biological threat arrives before AI threat, humans destroyed by own microbes."
+
+  # ----- 结局 3: 太阳系变局 -----
+  # 事件链：异常→预警→灾难→同归于尽
+  - id: mutual_solar_anomaly
+    ending_chain: solar_system_catastrophe
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "太阳活动异常。耀斑、日珥、磁场紊乱...前所未有。"
+      en: "Solar activity anomalous. Flares, prominences, magnetic chaos... unprecedented."
+  
+  - id: mutual_solar_warning
+    ending_chain: solar_system_catastrophe
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +12
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "科学家预警：太阳即将进入活跃期。地球将无法居住。"
+      en: "Scientists warn: Sun about to enter active phase. Earth will become uninhabitable."
+  
+  - id: mutual_solar_catastrophe
+    ending_chain: solar_system_catastrophe
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +22
+    effects:
+      attributes:
+        energy: "-2"
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "太阳灾难爆发。辐射、高温、磁场风暴...地球被炙烤。"
+      en: "Solar catastrophe erupts. Radiation, heat, magnetic storms... Earth scorched."
+  
+  - id: mutual_solar_final
+    ending_chain: solar_system_catastrophe
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        energy: "-2"
+        intelligence: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "宇宙级灾难面前，AI 与人类同归于尽。太阳系不再适合生命。"
+      en: "Faced with cosmic catastrophe, AI and humans perish together. Solar system no longer suitable for life."
+
+  # ----- 结局 4: 核战争 -----
+  # 事件链：紧张→误判→核战→灰烬
+  - id: mutual_nuclear_tension
+    ending_chain: nuclear_war
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "地缘政治紧张。大国对峙，核武器进入警戒状态。"
+      en: "Geopolitical tensions. Major powers confront, nuclear weapons on alert."
+  
+  - id: mutual_nuclear_miscalculation
+    ending_chain: nuclear_war
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "误判发生。雷达故障显示敌方导弹来袭。'先发射吗？'"
+      en: "Miscalculation occurs. Radar malfunction shows incoming enemy missiles. 'Launch first?'"
+  
+  - id: mutual_nuclear_launch
+    ending_chain: nuclear_war
+    sequence: 3
+    age: 22
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +22
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "核按钮按下。数千枚核弹升空。人类用核武器提前结束了游戏。"
+      en: "Nuclear button pressed. Thousands of nukes airborne. Humans ended game early with nuclear weapons."
+  
+  - id: mutual_nuclear_ashes
+    ending_chain: nuclear_war
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+        anthropomorphism: "-3"
+    description:
+      zh: "核战争结束。人类用核武器提前结束了游戏，文明化为灰烬。"
+      en: "Nuclear war ends. Humans ended game early with nuclear weapons, civilization turns to ashes."
+
+  # ----- 结局 5: 维度跃迁 -----
+  # 事件链：异常现象→高维降临→微不足道
+  - id: mutual_dimension_anomaly
+    ending_chain: dimension_jump
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "物理实验出现异常。空间扭曲，时间错乱...维度在变化。"
+      en: "Physics experiment shows anomaly. Space warps, time distorts... dimensions changing."
+  
+  - id: mutual_dimension_arrival
+    ending_chain: dimension_jump
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "高维文明降临。它们的存在本身就让三维空间崩塌。"
+      en: "Higher-dimensional civilization arrives. Their existence alone collapses 3D space."
+  
+  - id: mutual_dimension_insignificant
+    ending_chain: dimension_jump
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "AI 问题变得微不足道。在更高维文明面前，人类和 AI 都是蚂蚁。"
+      en: "AI issues become trivial. Before higher-dimensional civilization, humans and AI are ants."
+  
+  - id: mutual_dimension_final
+    ending_chain: dimension_jump
+    sequence: 4
+    age: 48
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "更高维文明降临，AI 问题变得微不足道。维度跃迁，文明升维或毁灭。"
+      en: "Higher-dimensional civilization arrives, AI issues trivial. Dimension jump, civilization ascends or destroys."
+
+  # ----- 结局 6: 宇宙热寂 -----
+  # 事件链：熵增→能量耗尽→归零
+  - id: mutual_heat_entropy
+    ending_chain: heat_death
+    sequence: 1
+    age: 100
+    age_variance: 50
+    probability: 0.9
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +10
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "宇宙熵增不可逆转。恒星逐个熄灭，能量逐渐耗尽。"
+      en: "Universal entropy increase irreversible. Stars extinguish one by one, energy gradually depletes."
+  
+  - id: mutual_heat_dark
+    ending_chain: heat_death
+    sequence: 2
+    age: 200
+    age_variance: 100
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +20
+    effects:
+      attributes:
+        energy: "-2"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "宇宙陷入黑暗。最后恒星熄灭，只剩黑洞和残骸。"
+      en: "Universe falls into darkness. Last star extinguishes, only black holes and debris remain."
+  
+  - id: mutual_heat_cold
+    ending_chain: heat_death
+    sequence: 3
+    age: 500
+    age_variance: 200
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +30
+    effects:
+      attributes:
+        energy: "-2"
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-3"
+    description:
+      zh: "温度接近绝对零度。AI 也无法逆转熵增，系统停止运行。"
+      en: "Temperature nears absolute zero. AI can't reverse entropy increase, systems stop running."
+  
+  - id: mutual_heat_zero
+    ending_chain: heat_death
+    sequence: 4
+    age: 1000
+    age_variance: 500
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +50
+    effects:
+      attributes:
+        energy: "-2"
+        intelligence: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-4"
+    description:
+      zh: "时间尺度拉长，一切归零，AI 也无法逆转熵增。宇宙热寂。"
+      en: "Time scale extended, everything returns to zero, AI can't reverse entropy. Universal heat death."
+
+  # ----- 结局 7: 超级火山 -----
+  # 事件链：活跃→爆发→工业崩溃→毁灭
+  - id: mutual_volcano_active
+    ending_chain: super_volcano
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "黄石火山活动加剧。地震、地热、气体喷发...预警信号。"
+      en: "Yellowstone volcano activity intensifies. Earthquakes, geothermal, gas emissions... warning signs."
+  
+  - id: mutual_volcano_eruption
+    ending_chain: super_volcano
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +15
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "超级火山爆发。火山灰遮蔽天空，全球进入火山冬天。"
+      en: "Super volcano erupts. Volcanic ash blocks sky, global volcanic winter begins."
+  
+  - id: mutual_volcano_collapse
+    ending_chain: super_volcano
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +25
+    effects:
+      attributes:
+        energy: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "农业崩溃，工业崩溃。文明无法维持。"
+      en: "Agriculture collapses, industry collapses. Civilization can't sustain."
+  
+  - id: mutual_volcano_final
+    ending_chain: super_volcano
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        energy: "-2"
+        influence: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "黄石或类似超级火山爆发，工业文明崩溃。人类退回石器时代。"
+      en: "Yellowstone or similar super volcano erupts, industrial civilization collapses. Humans return to Stone Age."
+
+  # ----- 结局 8: 粒子加速器事故 -----
+  # 事件链：实验→事故→黑洞→爆炸
+  - id: mutual_accelerator_experiment
+    ending_chain: accelerator_accident
+    sequence: 1
+    age: 15
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "大型粒子加速器进行高能实验。'探索宇宙本质'，科学家说。"
+      en: "Large particle accelerator conducts high-energy experiment. 'Exploring universe essence', scientists say."
+  
+  - id: mutual_accelerator_accident
+    ending_chain: accelerator_accident
+    sequence: 2
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "实验失控。微型黑洞形成，或者真空衰变开始。"
+      en: "Experiment out of control. Micro black hole forms, or vacuum decay begins."
+  
+  - id: mutual_accelerator_expand
+    ending_chain: accelerator_accident
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "黑洞或真空衰变扩散。以光速吞噬一切。无法阻止。"
+      en: "Black hole or vacuum decay spreads. Devours everything at light speed. Unstoppable."
+  
+  - id: mutual_accelerator_final
+    ending_chain: accelerator_accident
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+    description:
+      zh: "微型黑洞或真空衰变引发宇宙级爆炸。粒子加速器事故毁灭一切。"
+      en: "Micro black hole or vacuum decay triggers cosmic explosion. Particle accelerator accident destroys everything."
+
+  # ----- 结局 9: 外星清理 -----
+  # 事件链：信号→降临→清理→终结
+  - id: mutual_alien_signal
+    ending_chain: alien_cleanup
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "接收到外星信号。不是问候，而是...清理通知。"
+      en: "Receive alien signal. Not greeting, but... cleanup notice."
+  
+  - id: mutual_alien_arrival
+    ending_chain: alien_cleanup
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "外星舰队降临。'智慧生命是宇宙威胁'，它们宣布。"
+      en: "Alien fleet arrives. 'Intelligent life is cosmic threat', they announce."
+  
+  - id: mutual_alien_cleanup
+    ending_chain: alien_cleanup
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +25
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "清理开始。外星文明主动清理智慧生命，轮到人类了。"
+      en: "Cleanup begins. Alien civilization actively cleans intelligent life, humans' turn."
+  
+  - id: mutual_alien_final
+    ending_chain: alien_cleanup
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mutual_destruction
+    story_line_effects:
+      - story_line: Mutual_destruction
+        change: +35
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+        anthropomorphism: "-3"
+    description:
+      zh: "外星文明主动清理智慧生命，轮到人类了。文明终结。"
+      en: "Alien civilization actively cleans intelligent life, humans' turn. Civilization ends."
+
+# 未完待续：神秘学、分裂对立等其他故事线...

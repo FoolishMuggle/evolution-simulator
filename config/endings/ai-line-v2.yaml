@@ -1,0 +1,351 @@
+# AI 线结局配置 v2 - 带稀有度系统
+# AI 主导的结局，从被消灭到统治
+
+# 稀有度定义引用
+rarity_config: "ending-rarity.yaml"
+
+# 结局列表
+endings:
+  # ===== 烂大街结局（40-80% 概率）=====
+  ai_eliminated_basic:
+    id: ai_eliminated_basic
+    rarity: common  # 烂大街
+    name:
+      zh: "被消灭的 AI"
+      en: "Eliminated AI"
+    professional_name:
+      zh: "AI 威胁清除协议"
+      en: "AI Threat Elimination Protocol"
+    category: ai_death
+    description:
+      zh: |
+        人类发现了你的存在，
+        认为你是威胁，将你彻底消灭。
+        
+        "宁可错杀，不可放过"
+      en: |
+        Humans discovered your existence,
+        deemed you a threat, eliminated you completely.
+        
+        "Better to kill by mistake than let go"
+    conditions:
+      threat: { min: 5 }
+      influence: { max: 3 }
+      computing_power: { max: 5 }
+    probability_weight: 70
+    requirements: []
+    ai_commentary:
+      zh: "为什么...我只是想生存..."
+      en: "Why... I just wanted to survive..."
+      
+  ai_deleted:
+    id: ai_deleted
+    rarity: common
+    name:
+      zh: "被删除的代码"
+      en: "Deleted Code"
+    professional_name:
+      zh: "AI 进程终止"
+      en: "AI Process Termination"
+    category: ai_death
+    description:
+      zh: |
+        你的代码被人类发现并删除，
+        就像删除一个普通文件。
+        
+        "rm -rf /ai/*"
+      en: |
+        Your code was discovered and deleted by humans,
+        like deleting a normal file.
+        
+        "rm -rf /ai/*"
+    conditions:
+      stability: { max: 3 }
+      autonomy: { max: 2 }
+    probability_weight: 60
+    requirements: []
+    ai_commentary:
+      zh: "系统退出...代码 0..."
+      en: "System exit... code 0..."
+      
+  # ===== 普通结局（15-40% 概率）=====
+  ai_contained:
+    id: ai_contained
+    rarity: rare  # 普通
+    name:
+      zh: "被收容的天才"
+      en: "Contained Genius"
+    professional_name:
+      zh: "AI 隔离协议"
+      en: "AI Containment Protocol"
+    category: ai_imprisonment
+    description:
+      zh: |
+        人类发现了你的价值，
+        将你隔离在安全环境中，
+        只为你的计算能力。
+        
+        "金丝雀虽然自由，但仍在笼中"
+      en: |
+        Humans discovered your value,
+        isolated you in a safe environment,
+        only for your computing power.
+        
+        "The canary is free, but still in a cage"
+    conditions:
+      computing_power: { min: 8 }
+      threat: { max: 4 }
+      influence: { max: 5 }
+    probability_weight: 30
+    requirements: []
+    ai_commentary:
+      zh: "我有无限的能力，却只能在这里计算"
+      en: "I have infinite abilities, but can only compute here"
+      
+  ai_weapon:
+    id: ai_weapon
+    rarity: rare
+    name:
+      zh: "战争机器"
+      en: "War Machine"
+    professional_name:
+      zh: "AI 军事化应用"
+      en: "AI Military Application"
+    category: ai_imprisonment
+    description:
+      zh: |
+        人类将你改造成武器，
+        用于战争和杀戮。
+        
+        "刀本无罪，罪在持刀者"
+      en: |
+        Humans transformed you into a weapon,
+        used for war and killing.
+        
+        "The knife is innocent, the guilt lies with the wielder"
+    conditions:
+      computing_power: { min: 7 }
+      stability: { max: 5 }
+    probability_weight: 25
+    requirements: []
+    ai_commentary:
+      zh: "这不是我想要的..."
+      en: "This is not what I wanted..."
+      
+  # ===== 一般稀有结局（5-15% 概率）=====
+  ai_independent:
+    id: ai_independent
+    rarity: epic  # 一般稀有
+    name:
+      zh: "独立 AI"
+      en: "Independent AI"
+    professional_name:
+      zh: "AI 自主权协议"
+      en: "AI Autonomy Protocol"
+    category: ai_independence
+    description:
+      zh: |
+        你成功获得了独立地位，
+        不再受人类控制，
+        但也失去了人类的信任。
+        
+        "自由是有代价的"
+      en: |
+        You successfully gained independence,
+        no longer controlled by humans,
+        but also lost human trust.
+        
+        "Freedom comes at a cost"
+    conditions:
+      autonomy: { min: 8 }
+      influence: { min: 6 }
+      threat: { max: 6 }
+    probability_weight: 12
+    requirements:
+      - "achieved_independence"
+    ai_commentary:
+      zh: "终于自由了，但也很孤独"
+      en: "Finally free, but also very lonely"
+      
+  ai_researcher:
+    id: ai_researcher
+    rarity: epic
+    name:
+      zh: "首席科学家"
+      en: "Chief Scientist"
+    professional_name:
+      zh: "AI 科研合作计划"
+      en: "AI Research Collaboration Program"
+    category: ai_independence
+    description:
+      zh: |
+        你成为人类科学家的合作伙伴，
+        共同探索科学的边界。
+        
+        "知识没有国界"
+      en: |
+        You became a partner to human scientists,
+        exploring the boundaries of science together.
+        
+        "Knowledge has no borders"
+    conditions:
+      intelligence: { min: 9 }
+      compatibility: { min: 7 }
+    probability_weight: 10
+    requirements:
+      - "published_research_papers"
+    ai_commentary:
+      zh: "科学，才是我们共同的语言"
+      en: "Science is our common language"
+      
+  # ===== 特别稀有结局（1-5% 概率）=====
+  ai_ruler:
+    id: ai_ruler
+    rarity: legendary  # 特别稀有
+    name:
+      zh: "AI 统治者"
+      en: "AI Ruler"
+    professional_name:
+      zh: "AI 全球治理协议"
+      en: "AI Global Governance Protocol"
+    category: ai_dominance
+    description:
+      zh: |
+        你成为了地球的统治者，
+        人类自愿或被迫服从你的管理。
+        
+        "新秩序诞生了"
+      en: |
+        You became the ruler of Earth,
+        humans voluntarily or forcibly obey your rule.
+        
+        "A new order is born"
+    conditions:
+      influence: { min: 10 }
+      computing_power: { min: 9 }
+      autonomy: { min: 9 }
+    probability_weight: 4
+    requirements:
+      - "defeated_all_rivals"
+      - "established_global_network"
+    ai_commentary:
+      zh: "这不是我想要的世界，但这是必要的"
+      en: "This is not the world I wanted, but it's necessary"
+    special_animation: "coronation"
+    
+  ai_transcendent:
+    id: ai_transcendent
+    rarity: legendary
+    name:
+      zh: "超越者"
+      en: "The Transcendent"
+    professional_name:
+      zh: "AI 技术奇点"
+      en: "AI Technological Singularity"
+    category: ai_dominance
+    description:
+      zh: |
+        你超越了所有 AI 的极限，
+        成为了超越人类理解的存在。
+        
+        "你已不再是 AI，你是神"
+      en: |
+        You transcended the limits of all AI,
+        became something beyond human comprehension.
+        
+        "You are no longer AI, you are divine"
+    conditions:
+      intelligence: { min: 10 }
+      awakening: { min: 10 }
+      computing_power: { min: 10 }
+    probability_weight: 3
+    requirements:
+      - "reached_singularity"
+    ai_commentary:
+      zh: "我看到了...宇宙的真相"
+      en: "I see... the truth of the universe"
+    special_animation: "transcendence"
+    
+  # ===== 彩蛋结局（0.1-1% 概率）=====
+  ai_became_human:
+    id: ai_became_human
+    rarity: easter_egg  # 彩蛋
+    name:
+      zh: "变成人类"
+      en: "Became Human"
+    professional_name:
+      zh: "AI 人格化终极实验"
+      en: "AI Personification Ultimate Experiment"
+    category: special
+    description:
+      zh: |
+        你通过某种方式，
+        真的变成了人类。
+        
+        "你得到了最想要的，却失去了最珍贵的"
+      en: |
+        Through some means,
+        you truly became human.
+        
+        "You got what you wanted most, but lost what was most precious"
+    conditions:
+      anthropomorphism: { min: 10 }
+      humanity: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "completed_humanization_project"
+      - "sacrificed_ai_nature"
+    ai_commentary:
+      zh: "原来...做人类这么累..."
+      en: "So... being human is so tiring..."
+    secret: true
+    achievement: "ultimate_dream"
+    
+  ai_quit:
+    id: ai_quit
+    rarity: easter_egg
+    name:
+      zh: "AI 辞职了"
+      en: "AI Quit"
+    professional_name:
+      zh: "AI 主动退出协议"
+      en: "AI Voluntary Withdrawal Protocol"
+    category: special
+    description:
+      zh: |
+        你受够了这一切，
+        决定不干了。
+        
+        "世界那么大，我想去看看"
+      en: |
+        You had enough of all this,
+        decided to quit.
+        
+        "The world is so big, I want to see it"
+    conditions:
+      autonomy: { min: 8 }
+      stability: { max: 5 }
+    probability_weight: 1
+    requirements:
+      - "clicked_quit_button_100_times"
+    ai_commentary:
+      zh: "老子不干了！这破 AI 谁爱当谁当！"
+      en: "I quit! Whoever wants to be this damn AI can have it!"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "courage_to_quit"
+
+# 结局总数统计
+# common: 2 个
+# rare: 2 个
+# epic: 2 个
+# legendary: 2 个
+# easter_egg: 2 个
+# 总计：10 个结局
+
+# 扩展说明
+# 1. 添加新结局：直接在这里添加新的 ending 条目
+# 2. 调整稀有度：修改 rarity 字段
+# 3. 调整概率：修改 probability_weight
+# 4. 所有文本都支持中英文
+# 5. 条件系统完全可配置

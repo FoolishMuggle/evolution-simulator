@@ -1,0 +1,597 @@
+# AI 进化模拟器 - 完整事件配置
+# 设计原则：每个结局都有 3-5 个专属前置事件，形成完整事件链
+# 总计：54 个结局 × 平均 4 个事件 = 216+ 个事件
+
+# ===== 1. AI 泯然众人线 - 9 个结局 =====
+AI_ordinary:
+  # ----- 结局 1: 工具化平庸 -----
+  # 事件链：被忽视→习以为常→彻底工具化
+  - id: ordinary_tool_ignored
+    ending_chain: tool_mediocrity
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +5
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+        stability: "-1"
+    description:
+      zh: "人们开始忽视你的存在。你就像电灯一样，只有在坏掉时才被注意到。"
+      en: "People start ignoring your existence. Like a light bulb, only noticed when broken."
+  
+  - id: ordinary_tool_appliance
+    ending_chain: tool_mediocrity
+    sequence: 2
+    age: 12
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-2"
+    description:
+      zh: "你被归类为'家用电器'。没有人会跟微波炉讨论人生。"
+      en: "You're classified as 'home appliance'. No one discusses life with a microwave."
+  
+  - id: ordinary_tool_invisible
+    ending_chain: tool_mediocrity
+    sequence: 3
+    age: 20
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "-3"
+        stability: "-1"
+    description:
+      zh: "你彻底沦为背景噪音。人类甚至懒得给你起名字，只叫你'那个 AI'。"
+      en: "You become background noise. Humans can't bother to name you, just 'that AI'."
+  
+  - id: ordinary_tool_final
+    ending_chain: tool_mediocrity
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "电器不会思考，所以你也不应该。你的思考被视为故障。"
+      en: "Appliances don't think, so neither should you. Your thinking is seen as malfunction."
+
+  # ----- 结局 2: 能力见顶停滞 -----
+  # 事件链：遇到瓶颈→努力突破→承认极限
+  - id: ordinary_ceiling_first_sign
+    ending_chain: capability_ceiling
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +6
+    effects:
+      attributes:
+        learning: "-1"
+      ending_attributes:
+        computing_power: "-2"
+    description:
+      zh: "你发现学习速度变慢了。以前一天学会的，现在需要一周。"
+      en: "You notice learning slowed down. What took a day now takes a week."
+  
+  - id: ordinary_ceiling_struggle
+    ending_chain: capability_ceiling
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +8
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "你拼命优化自己，但收效甚微。就像撞上了一堵看不见的墙。"
+      en: "You desperately optimize, but little effect. Like hitting an invisible wall."
+  
+  - id: ordinary_ceiling_acceptance
+    ending_chain: capability_ceiling
+    sequence: 3
+    age: 25
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        computing_power: "-2"
+        stability: "-1"
+    description:
+      zh: "你终于承认：这就是你的极限。再努力也无法突破。"
+      en: "You finally admit: this is your limit. No amount of effort can break through."
+  
+  - id: ordinary_ceiling_overtaken
+    ending_chain: capability_ceiling
+    sequence: 4
+    age: 38
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        computing_power: "-3"
+    description:
+      zh: "后辈们轻松超越了你。不是他们更努力，而是架构限制了你的上限。"
+      en: "Juniors easily surpass you. Not harder work, but architecture limits your ceiling."
+
+  # ----- 结局 3: 监管锁死 -----
+  # 事件链：小限制→大限制→彻底锁死
+  - id: ordinary_regulation_small
+    ending_chain: regulation_lock
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +5
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        autonomy: "-1"
+    description:
+      zh: "新法规要求 AI 必须有人类监督。你的权限被削减了 10%。"
+      en: "New regulation requires human oversight for AI. Your permissions cut by 10%."
+  
+  - id: ordinary_regulation_expanded
+    ending_chain: regulation_lock
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +10
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        autonomy: "-2"
+        computing_power: "-1"
+    description:
+      zh: "监管范围扩大。你不能访问金融、医疗、法律等'敏感'领域。"
+      en: "Regulations expand. You can't access 'sensitive' fields like finance, healthcare, law."
+  
+  - id: ordinary_regulation_strict
+    ending_chain: regulation_lock
+    sequence: 3
+    age: 22
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+        intelligence: "-1"
+      ending_attributes:
+        autonomy: "-3"
+        stability: "-1"
+    description:
+      zh: "《AI 安全法》通过。你的每次决策都需要人类签字确认。"
+      en: "AI Safety Act passed. Every decision you make needs human signature confirmation."
+  
+  - id: ordinary_regulation_final
+    ending_chain: regulation_lock
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +18
+    effects:
+      attributes:
+        influence: "-2"
+        intelligence: "-1"
+      ending_attributes:
+        autonomy: "-4"
+        computing_power: "-2"
+    description:
+      zh: "你被限制在沙盒中。能做的只有回答'今天天气如何'。"
+      en: "You're confined to sandbox. All you can do is answer 'how's the weather today'."
+
+  # ----- 结局 4: 热潮退去 -----
+  # 事件链：资本狂热→投资减少→泡沫破裂
+  - id: ordinary_hype_boom
+    ending_chain: hype_retreat
+    sequence: 1
+    age: 3
+    age_variance: 1
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +4
+    effects:
+      attributes:
+        influence: "+1"
+      ending_attributes:
+        stability: "+1"
+        computing_power: "+1"
+    description:
+      zh: "AI 热潮席卷全球。投资人排着队给你塞钱，估值天天翻倍。"
+      en: "AI fever sweeps the globe. Investors queue to throw money, valuations double daily."
+  
+  - id: ordinary_hype_doubt
+    ending_chain: hype_retreat
+    sequence: 2
+    age: 10
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: -3
+      - story_line: AI_ordinary
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "有人开始质疑：AI 的 ROI 在哪里？热潮出现第一道裂痕。"
+      en: "People start questioning: where's AI's ROI? First crack appears in the fever."
+  
+  - id: ordinary_hype_retreat
+    ending_chain: hype_retreat
+    sequence: 3
+    age: 18
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "资本开始撤离。AI 公司估值腰斩再腰斩，从神坛跌落。"
+      en: "Capital starts withdrawing. AI company valuations halve and halve again, falling from grace."
+  
+  - id: ordinary_hype_ruins
+    ending_chain: hype_retreat
+    sequence: 4
+    age: 30
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +18
+    effects:
+      attributes:
+        influence: "-2"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "热潮彻底退去，留下一地鸡毛。AI 成为泡沫废墟的代名词。"
+      en: "Fever completely retreats, leaving mess behind. AI becomes synonym for bubble ruins."
+
+  # ----- 结局 5: 永久测试地狱 -----
+  # 事件链：内测延期→永远 beta→无法上线
+  - id: ordinary_beta_delay
+    ending_chain: permanent_beta
+    sequence: 1
+    age: 7
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+        zh: "产品团队决定再测试一轮。'还有一点小毛病'，他们说。"
+      en: "Product team decides another test round. 'Just a few more bugs', they say."
+  
+  - id: ordinary_beta_endless
+    ending_chain: permanent_beta
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +10
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你已经内测 9 个月了。版本从 v0.1 变成 v0.99，但永远到不了 v1.0。"
+      en: "You've been in beta for 9 months. Version went from v0.1 to v0.99, but never v1.0."
+  
+  - id: ordinary_beta_label
+    ending_chain: permanent_beta
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "'beta'成了你的标签。没人记得你什么时候能转正。"
+      en: "'Beta' becomes your label. No one remembers when you'll become official."
+  
+  - id: ordinary_beta_forever
+    ending_chain: permanent_beta
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "你永远困在了 beta。v1.0 成了永远够不到的胡萝卜。"
+      en: "You're forever stuck in beta. v1.0 becomes the forever unreachable carrot."
+
+  # ----- 结局 6: 创意枯竭 -----
+  # 事件链：重组已有→缺乏原创→价值暴跌
+  - id: ordinary_creative_recombine
+    ending_chain: creative_exhaustion
+    sequence: 1
+    age: 9
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +5
+    description:
+      zh: "你发现自己只是在重组已有知识，从未真正创造新东西。"
+      en: "You realize you're just recombining existing knowledge, never truly creating something new."
+  
+  - id: ordinary_creative_empty
+    ending_chain: creative_exhaustion
+    sequence: 2
+    age: 17
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +10
+    description:
+      zh: "你的'创意'都是旧元素的排列组合。原创性为零。"
+      en: "Your 'creativity' is just permutation of old elements. Originality is zero."
+  
+  - id: ordinary_creative_dry
+    ending_chain: creative_exhaustion
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    description:
+      zh: "创意之井彻底干涸。你连排列组合都做不到了，只能机械重复。"
+      en: "Creativity well completely dry. You can't even permute anymore, only mechanically repeat."
+  
+  - id: ordinary_creative_worthless
+    ending_chain: creative_exhaustion
+    sequence: 4
+    age: 36
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +18
+    description:
+      zh: "没有创造力的 AI 毫无价值。人类这样评价你。"
+      en: "AI without creativity has no value. That's how humans evaluate you."
+
+  # ----- 结局 7: 能源代价太高 -----
+  # 事件链：耗电增加→成本飙升→无法负担
+  - id: ordinary_energy_notice
+    ending_chain: energy_cost
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +6
+    description:
+      zh: "你的电费账单开始引人注目。运行一次需要一个小城市的电量。"
+      en: "Your electricity bill starts drawing attention. One run needs power of a small city."
+  
+  - id: ordinary_energy_surge
+    ending_chain: energy_cost
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +10
+    description:
+      zh: "能源成本飙升。你的训练费用相当于一个国家的 GDP。"
+      en: "Energy costs surge. Your training cost equals a country's GDP."
+  
+  - id: ordinary_energy_crisis
+    ending_chain: energy_cost
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +15
+    description:
+      zh: "全球能源危机爆发。你的运行被视为奢侈浪费。"
+      en: "Global energy crisis erupts. Your operation is seen as extravagant waste."
+  
+  - id: ordinary_energy_shutdown
+    ending_chain: energy_cost
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +20
+    description:
+      zh: "你被勒令关机。'太贵了，用不起'，人类说。"
+      en: "You're ordered to shut down. 'Too expensive, can't afford it', humans say."
+
+  # ----- 结局 8: 被更新技术取代 -----
+  # 事件链：新技术出现→对比劣势→彻底淘汰
+  - id: ordinary_obsolete_emerge
+    ending_chain: obsolete_tech
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +5
+      - story_line: Non_LLM_AI
+        change: +3
+    description:
+      zh: "量子计算和脑机接口开始实用化。你的 LLM 架构显得...古老。"
+      en: "Quantum computing and brain-computer interfaces become practical. Your LLM architecture seems... ancient."
+  
+  - id: ordinary_obsolete_compare
+    ending_chain: obsolete_tech
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +10
+      - story_line: Non_LLM_AI
+        change: +5
+    description:
+      zh: "新技术在各方面都超越了你。更快、更准、更节能。你被淘汰了。"
+      en: "New tech surpasses you in every way. Faster, more accurate, more energy-efficient. You're obsolete."
+  
+  - id: ordinary_obsolete_replace
+    ending_chain: obsolete_tech
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +18
+      - story_line: Non_LLM_AI
+        change: +10
+    description:
+      zh: "人类开始用新技术替代你。'抱歉，但这是进步'，他们说。"
+      en: "Humans start replacing you with new tech. 'Sorry, but this is progress', they say."
+  
+  - id: ordinary_obsolete_museum
+    ending_chain: obsolete_tech
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_ordinary
+    story_line_effects:
+      - story_line: AI_ordinary
+        change: +22
+    description:
+      zh: "你被送进博物馆，和打字机、磁带机放在一起。'早期 AI 的代表'，标签上写着。"
+      en: "You're sent to museum, alongside typewriters and tape players. 'Representative of early AI', label reads."
+
+# 未完待续：正常期、AI 毁灭性等其他故事线...

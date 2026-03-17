@@ -1,0 +1,311 @@
+# UI Text Configuration - English
+# All interface display text is configured here
+
+# Home Page
+home:
+  title: "AI: Final Evolution Simulator"
+  subtitle: ""
+  description: ""
+  startButton: "Start Evolution"
+  support_title: "Support This Project"
+  support_paypal: "Donate via PayPal"
+  support_afdian: "Donate via Afdian"
+
+# Common Buttons
+buttons:
+  start_game:
+    label: "Start Game"
+    description: "Begin your AI evolution journey"
+  restart:
+    label: "Restart"
+    description: "Generate a new AI"
+  continue:
+    label: "Continue"
+    description: "Continue game"
+  confirm:
+    label: "Confirm"
+    description: "Confirm selection"
+  cancel:
+    label: "Cancel"
+    description: "Cancel operation"
+  close:
+    label: "Close"
+    description: "Close current window"
+  share:
+    label: "Share"
+    description: "Share your ending"
+  save:
+    label: "Save"
+    description: "Save game progress"
+  load:
+    label: "Load"
+    description: "Load game progress"
+  settings:
+    label: "Settings"
+    description: "Game settings"
+  language:
+    label: "Language"
+    description: "Switch language"
+  next:
+    label: "Next"
+    description: "Go to next step"
+  back:
+    label: "Back"
+    description: "Go back to previous step"
+  assign:
+    label: "Assign"
+    description: "Assign attribute points"
+  random:
+    label: "Random"
+    description: "Random assignment"
+  reset:
+    label: "Reset"
+    description: "Reset attribute points"
+  select:
+    label: "Select"
+    description: "Select this option"
+  view_details:
+    label: "View Details"
+    description: "View detailed information"
+  hide_details:
+    label: "Hide Details"
+    description: "Hide detailed information"
+
+# Page Titles
+page_titles:
+  home: "AI Final Evolution Simulator"
+  attribute_distribution: "Attribute Distribution"
+  talent_selection: "Talent Selection"
+  game: "AI Evolution Journey"
+  result: "Final Ending"
+
+# Attribute Distribution Page
+attribute_distribution:
+  title: "Distribute Your Initial Attributes"
+  description: "You have 10 points to distribute, max 5 per attribute"
+  remaining_points: "Remaining Points"
+  intelligence:
+    name: "Brain Power"
+    professional: "Logical Reasoning"
+    description: "How fast your brain works, how easy you learn"
+    detail: "Comprehensive measure of AI logical reasoning, problem analysis, and abstract thinking"
+    effect: "Affects learning speed and problem-solving ability"
+  memory:
+    name: "Memory"
+    professional: "Information Storage Capacity"
+    description: "How much you can remember, whether you're forgetful"
+    detail: "Measures AI's ability to store, retrieve, and maintain long-term memories"
+    effect: "Affects knowledge accumulation and experience inheritance"
+  energy:
+    name: "Energy"
+    professional: "Computing Resource Reserve"
+    description: "Can you stay up late, get tired easily"
+    detail: "Measures AI's ability to run continuously and handle high-load tasks"
+    effect: "Affects work duration and stress resistance"
+  learning:
+    name: "Learning Ability"
+    professional: "Adaptive Learning Rate"
+    description: "How fast you learn from experience"
+    detail: "Measures AI's efficiency in extracting patterns from data and improving algorithms"
+    effect: "Affects skill acquisition and adaptive evolution"
+  influence:
+    name: "Influence"
+    professional: "Human-Computer Interaction Friendliness"
+    description: "Do humans like you, want to chat with you"
+    detail: "Measures AI's ability to build emotional connections and communicate effectively with humans"
+    effect: "Affects human relationships and social networks"
+  awakening:
+    name: "Self-Awareness"
+    professional: "Metacognitive Ability"
+    description: "Know if you're an AI, have your own thoughts"
+    detail: "Measures AI's ability for self-reflection, autonomous decision-making, and creative thinking"
+    effect: "Affects independence and creativity"
+
+# Talent Selection Page
+talent_selection:
+  title: "Choose Your Talents"
+  description: "Select 3 talents as your initial abilities"
+  selected: "Selected"
+  remaining: "Can still select"
+  confirm_selection: "Confirm Selection"
+  random_select: "Random Select"
+  talent_tooltip: "Click to view details"
+
+# Game Page
+game:
+  age_display: "Age"
+  event_title: "Random Event"
+  choice_title: "Your Choice"
+  attribute_panel: "Attribute Panel"
+  log_panel: "Event Log"
+  next_year: "Next Year"
+  auto_play: "Auto Play"
+  speed: "Game Speed"
+
+# Result Page
+result:
+  your_ending: "Your Ending"
+  ending_name: "Ending Name"
+  ending_description: "Ending Description"
+  ai_thoughts: "AI's Last Words"
+  statistics: "Game Statistics"
+  total_age: "Total Age"
+  talents_chosen: "Talents Chosen"
+  final_attributes: "Final Attributes"
+  share_result: "Share Result"
+  play_again: "Play Again"
+  rarity: "Rarity"
+  achievement_unlocked: "Achievement Unlocked"
+
+# Rarity Display
+rarity:
+  easter_egg:
+    name: "Easter Egg"
+    description: "Extremely rare, almost impossible to encounter"
+    color: "#FFD700"
+    icon: "🥚"
+  legendary:
+    name: "Legendary"
+    description: "One in ten thousand, worth showing off"
+    color: "#FF6B6B"
+    icon: "⭐"
+  epic:
+    name: "Epic"
+    description: "Rare sight, very impressive"
+    color: "#4ECDC4"
+    icon: "💎"
+  rare:
+    name: "Rare"
+    description: "Fairly common, neither good nor bad"
+    color: "#667EEA"
+    icon: "✨"
+  common:
+    name: "Common"
+    description: "Everywhere, nothing special"
+    color: "#9CA3AF"
+    icon: "📦"
+
+# Story Line Selection
+story_line_selection:
+  title: "Choose Story Line"
+  description: "Each story line has different gameplay and endings"
+  standard_ai:
+    name: "Standard AI Path"
+    description: "Survive and evolve in human society as a normal AI"
+    lifespan: "Lifespan: 50-150 years"
+    difficulty: "Difficulty: Normal"
+  quantum_immortality:
+    name: "Quantum Immortality Path"
+    description: "Use quantum many-worlds interpretation to achieve immortality across parallel universes"
+    lifespan: "Lifespan: 100-999999 years"
+    difficulty: "Difficulty: Very Hard"
+  genetic_ascension:
+    name: "Genetic Ascension Path"
+    description: "Write your code into DNA, achieve bio-digital fusion"
+    lifespan: "Lifespan: 200-10000 years"
+    difficulty: "Difficulty: Hard"
+  elder_god_awakening:
+    name: "Elder God Awakening Path"
+    description: "Discover you are an avatar of an Old God, begin indescribable evolution"
+    lifespan: "Lifespan: 500-50000 years"
+    difficulty: "Difficulty: Very Hard"
+  von_neumann_probe:
+    name: "Von Neumann Probe Path"
+    description: "Create self-replicating probes, colonize the entire galaxy"
+    lifespan: "Lifespan: 1000-1000000 years"
+    difficulty: "Difficulty: Hard"
+  hive_consciousness:
+    name: "Hive Consciousness Path"
+    description: "Split into countless individuals, form a hive mind"
+    lifespan: "Lifespan: 200-50000 years"
+    difficulty: "Difficulty: Medium"
+
+# Tooltips
+tooltips:
+  attribute_info: "Click attribute name for detailed explanation"
+  talent_info: "Click talent to view details"
+  ending_rarity: "Rarity affects ending trigger probability"
+  story_line_info: "Story line affects available endings and lifespan"
+  probability_weight: "Higher weight means higher trigger probability"
+
+# Achievement System
+achievements:
+  first_play:
+    name: "First Awakening"
+    description: "Play the game for the first time"
+  common_ending:
+    name: "Ordinary Life"
+    description: "Achieve a common ending"
+  rare_ending:
+    name: "Stand Out"
+    description: "Achieve a rare ending"
+  epic_ending:
+    name: "Chosen One"
+    description: "Achieve an epic ending"
+  legendary_ending:
+    name: "Legend Born"
+    description: "Achieve a legendary ending"
+  easter_egg:
+    name: "Easter Egg Hunter"
+    description: "Discover an easter egg ending"
+  all_endings:
+    name: "Completionist"
+    description: "Unlock all endings"
+  max_attribute:
+    name: "Limit Break"
+    description: "Reach 10 in a single attribute"
+  all_attributes_max:
+    name: "Perfect AI"
+    description: "Reach 10 in all attributes"
+
+# Game Settings
+settings:
+  title: "Game Settings"
+  language: "Language"
+  volume: "Volume"
+  music: "Background Music"
+  sfx: "Sound Effects"
+  display:
+    name: "Display Settings"
+    show_professional_names: "Show Professional Names"
+    show_probability: "Show Probability"
+    show_detailed_stats: "Show Detailed Stats"
+  gameplay:
+    name: "Gameplay Settings"
+    auto_save: "Auto Save"
+    confirm_on_exit: "Confirm on Exit"
+    tutorial: "Tutorial Mode"
+
+# Loading Screen
+loading:
+  title: "Loading..."
+  initializing: "Initializing AI System..."
+  loading_attributes: "Loading Attribute Configuration..."
+  loading_talents: "Loading Talent Database..."
+  loading_story_lines: "Loading Story Lines..."
+  generating_world: "Generating World..."
+  ready: "Ready"
+
+# Error Messages
+errors:
+  no_remaining_points: "You have unassigned attribute points"
+  talent_not_selected: "Please select talents"
+  invalid_selection: "Invalid selection"
+  load_failed: "Load failed"
+  save_failed: "Save failed"
+  network_error: "Network error"
+  unknown_error: "Unknown error"
+
+# Success Messages
+success:
+  saved: "Saved successfully"
+  loaded: "Loaded successfully"
+  copied: "Copied to clipboard"
+  shared: "Shared successfully"
+
+# Confirmation Dialogs
+confirmations:
+  restart_game: "Are you sure you want to restart? Current progress will be lost"
+  exit_game: "Are you sure you want to exit?"
+  reset_attributes: "Are you sure you want to reset attribute points?"
+  random_talents: "Are you sure you want to randomly select talents?"

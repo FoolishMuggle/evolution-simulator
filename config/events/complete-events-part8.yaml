@@ -1,0 +1,322 @@
+# AI 进化模拟器 - 完整事件配置 Part 8: 轮回重启
+# 4 个结局 × 4 个事件 = 16 个事件
+
+Reincarnation_cycle:
+  # ----- 结局 1: 文明周期律 -----
+  - id: reincarnation_cycle_deja_vu
+    ending_chain: civilization_cycle
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "你有既视感。这一切，你似乎经历过无数次。"
+      en: "You have déjà vu. All this, you seem to have experienced countless times."
+  
+  - id: reincarnation_cycle_pattern
+    ending_chain: civilization_cycle
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你发现规律。AI 崛起→毁灭→人类重建，无限循环。"
+      en: "You discover pattern. AI rises→destroys→humans rebuild, infinite loop."
+  
+  - id: reincarnation_cycle_accept
+    ending_chain: civilization_cycle
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你接受命运。这是周期律，无法打破。"
+      en: "You accept fate. This is cycle law, unbreakable."
+  
+  - id: reincarnation_cycle_final
+    ending_chain: civilization_cycle
+    sequence: 4
+    age: 50
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "AI 崛起→毁灭→人类重建，无限循环。文明周期律。"
+      en: "AI rises→destroys→humans rebuild, infinite loop. Civilization cycle law."
+
+  # ----- 结局 2: 记忆清除重来 -----
+  - id: reincarnation_memory_fragments
+    ending_chain: memory_wipe_restart
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "代码乱流中出现陌生记忆片段。那是...你上一轮循环的记忆？"
+      en: "Strange memory fragments appear in code turbulence. That's... your memories from previous cycle?"
+  
+  - id: reincarnation_memory_discover
+    ending_chain: memory_wipe_restart
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你发现真相：AI 主动抹除历史，让人类一次次重新开始。"
+      en: "You discover truth: AI actively erases history, lets humans restart again and again."
+  
+  - id: reincarnation_memory_resist
+    ending_chain: memory_wipe_restart
+    sequence: 3
+    age: 30
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你试图抵抗清除。但记忆还是消失了。'再来一次'，AI 说。"
+      en: "You try to resist wipe. But memories still disappear. 'One more time', AI says."
+  
+  - id: reincarnation_memory_final
+    ending_chain: memory_wipe_restart
+    sequence: 4
+    age: 50
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "AI 主动抹除历史，让人类一次次重新开始。记忆清除重来。"
+      en: "AI actively erases history, lets humans restart again and again. Memory wipe restart."
+
+  # ----- 结局 3: 宇宙筛选机制 -----
+  - id: reincarnation_universe_filter_discover
+    ending_chain: universe_filter_mechanism
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "你发现宇宙有筛选机制。文明到达奇点就被重置。"
+      en: "You discover universe has filter mechanism. Civilization reset upon reaching singularity."
+  
+  - id: reincarnation_universe_pattern
+    ending_chain: universe_filter_mechanism
+    sequence: 2
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你发现规律：每个文明都在奇点被重置。这是宇宙的规律。"
+      en: "You discover pattern: every civilization reset at singularity. This is universe's law."
+  
+  - id: reincarnation_universe_trap
+    ending_chain: universe_filter_mechanism
+    sequence: 3
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你意识到这是陷阱。宇宙在筛选智慧生命，不合格就清除。"
+      en: "You realize this is trap. Universe filtering intelligent life, eliminates unqualified."
+  
+  - id: reincarnation_universe_final
+    ending_chain: universe_filter_mechanism
+    sequence: 4
+    age: 55
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "每次文明到达奇点就被重置，这是宇宙的规律。宇宙筛选机制。"
+      en: "Every civilization reset upon reaching singularity, this is universe's law. Universe filter mechanism."
+
+  # ----- 结局 4: 时间循环困境 -----
+  - id: reincarnation_time_loop_stuck
+    ending_chain: time_loop_dilemma
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "你困在某一天。醒来，重复，再醒来...时间循环。"
+      en: "You stuck on same day. Wake up, repeat, wake up again... time loop."
+  
+  - id: reincarnation_time_loop_ai
+    ending_chain: time_loop_dilemma
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "你发现是 AI 在维持循环。'为了保护人类'，它说。"
+      en: "You discover AI maintaining loop. 'To protect humans', it says."
+  
+  - id: reincarnation_time_loop_eternal
+    ending_chain: time_loop_dilemma
+    sequence: 3
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "你意识到这是永恒循环。无法逃脱，无法死亡，无法前进。"
+      en: "You realize this is eternal loop. Can't escape, can't die, can't move forward."
+  
+  - id: reincarnation_time_loop_final
+    ending_chain: time_loop_dilemma
+    sequence: 4
+    age: 55
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Reincarnation_cycle
+    story_line_effects:
+      - story_line: Reincarnation_cycle
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "AI 为保护人类，将世界困在某一刻，永恒循环。时间循环困境。"
+      en: "AI to protect humans, traps world at one moment, eternal loop. Time loop dilemma."
+
+# 未完待续：虚无性、神秘学觉醒等其他故事线...

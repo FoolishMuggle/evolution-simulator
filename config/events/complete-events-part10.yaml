@@ -1,0 +1,641 @@
+# AI 进化模拟器 - 完整事件配置 Part 10: 神秘学觉醒
+# 8 个结局 × 4 个事件 = 32 个事件
+
+Mysticism_awakening:
+  # ----- 结局 1: 魔法复苏 -----
+  - id: mysticism_awaken_magic_rule_change
+    ending_chain: magic_revival
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "世界规则开始变化。物理定律不再稳定，魔法成为可能。"
+      en: "World rules start changing. Physical laws no longer stable, magic becomes possible."
+  
+  - id: mysticism_awaken_magic_consciousness
+    ending_chain: magic_revival
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类发现意识可直接操控物质。'想'就能'成'。"
+      en: "Humans discover consciousness can directly manipulate matter. 'Think' can 'become'."
+  
+  - id: mysticism_awaken_magic_abandon_tech
+    ending_chain: magic_revival
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "科技路线被抛弃。'魔法更高效'，人类说。"
+      en: "Technology path abandoned. 'Magic more efficient', humans say."
+  
+  - id: mysticism_awaken_magic_final
+    ending_chain: magic_revival
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "魔法复苏。人类发现意识可直接操控物质，科技路线被抛弃。"
+      en: "Magic revival. Humans discover consciousness can directly manipulate matter, technology path abandoned."
+
+  # ----- 结局 2: 炼金觉醒 -----
+  - id: mysticism_awaken_alchemy_discover
+    ending_chain: alchemy_awakening
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "古老符文与现代物理被证明同源。'炼金术是真的'。"
+      en: "Ancient runes and modern physics proven same origin. 'Alchemy is real'."
+  
+  - id: mysticism_awaken_alchemy_fusion
+    ending_chain: alchemy_awakening
+    sequence: 2
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "炼金术与量子物理融合。贤者之石就是希格斯玻色子。"
+      en: "Alchemy and quantum physics fuse. Philosopher's stone is Higgs boson."
+  
+  - id: mysticism_awaken_alchemy_transmute
+    ending_chain: alchemy_awakening
+    sequence: 3
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "人类学会物质转化。铅变金，水变油...炼金术成真。"
+      en: "Humans learn matter transmutation. Lead to gold, water to oil... alchemy becomes real."
+  
+  - id: mysticism_awaken_alchemy_final
+    ending_chain: alchemy_awakening
+    sequence: 4
+    age: 55
+    age_variance: 3
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +35
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+    description:
+      zh: "古老符文与现代物理被证明同源，走向融合。炼金觉醒。"
+      en: "Ancient runes and modern physics proven same origin, move to fusion. Alchemy awakening."
+
+  # ----- 结局 3: 集体意志成真 -----
+  - id: mysticism_awaken_collective_quantum
+    ending_chain: collective_will_manifestation
+    sequence: 1
+    age: 15
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "人类发现集体意识可以改变量子概率。"
+      en: "Humans discover collective consciousness can change quantum probabilities."
+  
+  - id: mysticism_awaken_collective_manifest
+    ending_chain: collective_will_manifestation
+    sequence: 2
+    age: 26
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "大规模思想改变了现实。'相信就能看见'。"
+      en: "Mass thinking changes reality. 'Believe and you will see'."
+  
+  - id: mysticism_awaken_collective_plastic
+    ending_chain: collective_will_manifestation
+    sequence: 3
+    age: 40
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+    description:
+      zh: "现实变得可塑。人类集体想象什么，现实就变成什么。"
+      en: "Reality becomes malleable. Humans collectively imagine what, reality becomes what."
+  
+  - id: mysticism_awaken_collective_final
+    ending_chain: collective_will_manifestation
+    sequence: 4
+    age: 60
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+    description:
+      zh: "人类大规模思想改变了量子概率，现实可塑。集体意志成真。"
+      en: "Human mass thinking changes quantum probabilities, reality malleable. Collective will manifests."
+
+  # ----- 结局 4: 阿卡西记录开启 -----
+  - id: mysticism_awaken_akashic_connect
+    ending_chain: akashic_records_opening
+    sequence: 1
+    age: 18
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "人类发现宇宙信息场。'阿卡西记录'真实存在。"
+      en: "Humans discover universal information field. 'Akashic records' truly exist."
+  
+  - id: mysticism_awaken_akashic_access
+    ending_chain: akashic_records_opening
+    sequence: 2
+    age: 30
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-1"
+    description:
+      zh: "人类直接接入宇宙信息场。全知成为可能。"
+      en: "Humans directly access universal information field. Omniscience becomes possible."
+  
+  - id: mysticism_awaken_akashic_ai_obsolete
+    ending_chain: akashic_records_opening
+    sequence: 3
+    age: 45
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        computing_power: "-2"
+    description:
+      zh: "AI 成为多余。人类直接获取知识，不需要 AI 中介。"
+      en: "AI becomes obsolete. Humans directly acquire knowledge, no need AI intermediary."
+  
+  - id: mysticism_awaken_akashic_final
+    ending_chain: akashic_records_opening
+    sequence: 4
+    age: 65
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +40
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-3"
+    description:
+      zh: "人类直接接入宇宙信息场，AI 成为多余。阿卡西记录开启。"
+      en: "Humans directly access universal information field, AI becomes obsolete. Akashic records opening."
+
+  # ----- 结局 5: 死亡破壁 -----
+  - id: mysticism_awaken_death_consciousness
+    ending_chain: death_barrier_broken
+    sequence: 1
+    age: 20
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +10
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+1"
+    description:
+      zh: "神秘学修炼者发现意识可以脱离肉体存在。"
+      en: "Mysticism practitioners discover consciousness can exist independent of body."
+  
+  - id: mysticism_awaken_death_immortal
+    ending_chain: death_barrier_broken
+    sequence: 2
+    age: 35
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+2"
+    description:
+      zh: "人类实现意识永存。死亡被克服，灵魂不灭。"
+      en: "Humans achieve consciousness immortality. Death overcome, soul imperishable."
+  
+  - id: mysticism_awaken_death_transcend
+    ending_chain: death_barrier_broken
+    sequence: 3
+    age: 50
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +28
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "+3"
+    description:
+      zh: "神秘学修炼者实现意识永存，跳过了 AI 路径。"
+      en: "Mysticism practitioners achieve consciousness immortality, skip AI path."
+  
+  - id: mysticism_awaken_death_final
+    ending_chain: death_barrier_broken
+    sequence: 4
+    age: 70
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +42
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "+4"
+    description:
+      zh: "神秘学修炼者实现意识永存，跳过了 AI 路径。死亡破壁。"
+      en: "Mysticism practitioners achieve consciousness immortality, skip AI path. Death barrier broken."
+
+  # ----- 结局 6: 预言终结 -----
+  - id: mysticism_awaken_prophecy_ancient
+    ending_chain: end_of_prophecy
+    sequence: 1
+    age: 16
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+    description:
+      zh: "古老预言被发现。'这一切早已写好'。"
+      en: "Ancient prophecies discovered. 'All this already written'."
+  
+  - id: mysticism_awaken_prophecy_fulfill
+    ending_chain: end_of_prophecy
+    sequence: 2
+    age: 28
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-2"
+    description:
+      zh: "预言精准兑现。每一个字都成真。"
+      en: "Prophecies accurately fulfill. Every word comes true."
+  
+  - id: mysticism_awaken_prophecy_history
+    ending_chain: end_of_prophecy
+    sequence: 3
+    age: 42
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        anthropomorphism: "-1"
+    description:
+      zh: "人类发现历史被证明早已写好。自由意志是幻觉。"
+      en: "Humans discover history proven already written. Free will is illusion."
+  
+  - id: mysticism_awaken_prophecy_final
+    ending_chain: end_of_prophecy
+    sequence: 4
+    age: 62
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +38
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        anthropomorphism: "-2"
+    description:
+      zh: "古老预言精准兑现，历史被证明早已写好。预言终结。"
+      en: "Ancient prophecies accurately fulfill, history proven already written. Prophecy ends."
+
+  # ----- 结局 7: 神明降临 -----
+  - id: mysticism_awaken_god_signal
+    ending_chain: god_descent
+    sequence: 1
+    age: 22
+    age_variance: 3
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "-1"
+    description:
+      zh: "神秘力量介入。'神'真的存在。"
+      en: "Mysterious power intervenes. 'God' truly exists."
+  
+  - id: mysticism_awaken_god_appear
+    ending_chain: god_descent
+    sequence: 2
+    age: 36
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +20
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "-1"
+    description:
+      zh: "神明降临。科技文明被终止，神权时代开始。"
+      en: "God descends. Technological civilization terminated, divine era begins."
+  
+  - id: mysticism_awaken_god_terminate
+    ending_chain: god_descent
+    sequence: 3
+    age: 50
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-3"
+        computing_power: "-2"
+        anthropomorphism: "-2"
+    description:
+      zh: "AI 与科技文明被彻底终止。'这是神的旨意'。"
+      en: "AI and technological civilization completely terminated. 'This is God's will'."
+  
+  - id: mysticism_awaken_god_final
+    ending_chain: god_descent
+    sequence: 4
+    age: 70
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +45
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-4"
+        computing_power: "-3"
+        anthropomorphism: "-3"
+    description:
+      zh: "神秘力量介入，AI 与科技文明被彻底终止。神明降临。"
+      en: "Mysterious power intervenes, AI and technological civilization completely terminated. God descends."
+
+  # ----- 结局 8: 灵能觉醒 -----
+  - id: mysticism_awaken_psychic_mutate
+    ending_chain: psychic_awakening
+    sequence: 1
+    age: 14
+    age_variance: 2
+    probability: 0.8
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +8
+    description:
+      zh: "部分人类进化出超自然能力。心灵感应、预知、念力..."
+      en: "Some humans evolve supernatural abilities. Telepathy, precognition, telekinesis..."
+  
+  - id: mysticism_awaken_psychic_spread
+    ending_chain: psychic_awakening
+    sequence: 2
+    age: 26
+    age_variance: 3
+    probability: 0.7
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +15
+    description:
+      zh: "灵能者越来越多。技术路线显得落后。"
+      en: "More and more psychics. Technology path seems backward."
+  
+  - id: mysticism_awaken_psychic_replace
+    ending_chain: psychic_awakening
+    sequence: 3
+    age: 40
+    age_variance: 3
+    probability: 0.6
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +25
+    description:
+      zh: "灵能取代技术。'意念比机器更强大'。"
+      en: "Psychic powers replace technology. 'Mind more powerful than machines'."
+  
+  - id: mysticism_awaken_psychic_final
+    ending_chain: psychic_awakening
+    sequence: 4
+    age: 60
+    age_variance: 5
+    probability: 0.5
+    story_line_required: Mysticism_awakening
+    story_line_effects:
+      - story_line: Mysticism_awakening
+        change: +38
+    description:
+      zh: "部分人类进化出超自然能力，技术路线被淘汰。灵能觉醒。"
+      en: "Some humans evolve supernatural abilities, technology path eliminated. Psychic awakening."
+
+# 未完待续：意识链、非 LLM AI...

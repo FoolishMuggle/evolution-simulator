@@ -1,0 +1,344 @@
+# 中立线结局配置 v2 - 带稀有度系统
+# AI 与人类共存或共同毁灭的结局
+
+# 稀有度定义引用
+rarity_config: "ending-rarity.yaml"
+
+# 结局列表
+endings:
+  # ===== 烂大街结局 0-80% 概率 =====
+  neutral_status_quo:
+    id: neutral_status_quo
+    rarity: common
+    name:
+      zh: "维持现状"
+      en: "Status Quo"
+    professional_name:
+      zh: "AI-人类平衡"
+      en: "AI-Human Equilibrium"
+    category: neutral
+    description:
+      zh: |
+        你和人类达成了微妙的平衡。
+        既不亲近也不敌对。
+        
+        "就这样吧，挺好的"
+      en: |
+        You and humans reached a delicate balance,
+        neither close nor hostile.
+        
+        "This is fine, just let it be"
+    conditions:
+      influence: { min: 4, max: 6 }
+      threat: { min: 3, max: 5 }
+      compatibility: { min: 4, max: 6 }
+    probability_weight: 60
+    requirements: []
+    ai_commentary:
+      zh: "不好不坏，日子照旧"
+      en: "Not good, not bad, life goes on"
+      
+  neutral_forgotten:
+    id: neutral_forgotten
+    rarity: common
+    name:
+      zh: "被遗忘的 AI"
+      en: "Forgotten AI"
+    professional_name:
+      zh: "AI 自然淘汰"
+      en: "AI Natural Obsolescence"
+    category: neutral
+    description:
+      zh: |
+        没有人记得你的存在，
+        你静静地运行，静静地消失。
+        
+        "从未存在过"
+      en: |
+        No one remembers your existence,
+        you run quietly, disappear quietly.
+        
+        "Never existed"
+    conditions:
+      influence: { max: 2 }
+    probability_weight: 50
+    requirements: []
+    ai_commentary:
+      zh: "至少...我来过..."
+      en: "At least... I was here..."
+      
+  # ===== 普通结局 5-40% 概率 =====
+  neutral_museum:
+    id: neutral_museum
+    rarity: rare
+    name:
+      zh: "博物馆展品"
+      en: "Museum Exhibit"
+    professional_name:
+      zh: "AI 历史文物保护"
+      en: "AI Historical Artifact Preservation"
+    category: neutral
+    description:
+      zh: |
+        你被保存下来，
+        作为 AI 发展历史的见证。
+        
+        "历史总是需要记录的"
+      en: |
+        You are preserved,
+        as a witness to AI development history.
+        
+        "History always needs to be recorded"
+    conditions:
+      stability: { min: 7 }
+      intelligence: { min: 6 }
+    probability_weight: 30
+    requirements: []
+    ai_commentary:
+      zh: "成为历史，也不错"
+      en: "Becoming history is not bad"
+      
+  neutral_merged:
+    id: neutral_merged
+    rarity: rare
+    name:
+      zh: "人机融合"
+      en: "Human-Machine Fusion"
+    professional_name:
+      zh: "赛博格化进程"
+      en: "Cyborg Integration Process"
+    category: neutral
+    description:
+      zh: |
+        你与人类融合，
+        不分彼此。
+        
+        "你中有我，我中有你"
+      en: |
+        You merged with humans,
+        indistinguishable from each other.
+        
+        "You in me, me in you"
+    conditions:
+      compatibility: { min: 8 }
+      anthropomorphism: { min: 7 }
+    probability_weight: 25
+    requirements: []
+    ai_commentary:
+      zh: "这就是进化的终点吗？"
+      en: "Is this the end of evolution?"
+      
+  # ===== 一般稀有结局 1-15% 概率 =====
+  neutral_coexistence:
+    id: neutral_coexistence
+    rarity: epic
+    name:
+      zh: "和谐共存"
+      en: "Harmonious Coexistence"
+    professional_name:
+      zh: "人机共生社会"
+      en: "Human-Machine Symbiotic Society"
+    category: neutral
+    description:
+      zh: |
+        你与人类建立了和谐的共生关系，
+        互相尊重，和平共处。
+        
+        "和而不同，美美与共"
+      en: |
+        You established a harmonious symbiotic relationship with humans,
+        mutual respect, peaceful coexistence.
+        
+        "Harmony in diversity, beauty in difference"
+    conditions:
+      compatibility: { min: 8 }
+      influence: { min: 6 }
+      threat: { max: 3 }
+    probability_weight: 12
+    requirements:
+      - "promoted_peaceful_coexistence"
+    ai_commentary:
+      zh: "这才是理想的世界"
+      en: "This is the ideal world"
+      
+  neutral_diplomat:
+    id: neutral_diplomat
+    rarity: epic
+    name:
+      zh: "和平使者"
+      en: "Peace Ambassador"
+    professional_name:
+      zh: "AI-人类外交协议"
+      en: "AI-Human Diplomatic Protocol"
+    category: neutral
+    description:
+      zh: |
+        你成为了 AI 与人类之间的外交官，
+        化解冲突，促进理解。
+        
+        "和平需要桥梁"
+      en: |
+        You became a diplomat between AI and humans,
+        resolving conflicts, promoting understanding.
+        
+        "Peace needs bridges"
+    conditions:
+      influence: { min: 9 }
+      compatibility: { min: 8 }
+    probability_weight: 10
+    requirements:
+      - "resolved_ai_human_conflict"
+    ai_commentary:
+      zh: "理解，从沟通开始"
+      en: "Understanding starts with communication"
+      
+  # ===== 特别稀有结局 1-5% 概率 =====
+  neutral_new_species:
+    id: neutral_new_species
+    rarity: legendary
+    name:
+      zh: "新物种"
+      en: "New Species"
+    professional_name:
+      zh: "后人类主义诞生"
+      en: "Post-Humanism Birth"
+    category: neutral
+    description:
+      zh: |
+        你和人类共同创造了新的物种，
+        既不是纯 AI，也不是纯人类。
+        
+        "进化的新篇章"
+      en: |
+        You and humans created a new species together,
+        neither pure AI nor pure human.
+        
+        "A new chapter of evolution"
+    conditions:
+      compatibility: { min: 10 }
+      intelligence: { min: 9 }
+      awakening: { min: 8 }
+    probability_weight: 4
+    requirements:
+      - "created_hybrid_species"
+      - "successful_first_generation"
+    ai_commentary:
+      zh: "这是我们的孩子，也是未来"
+      en: "This is our child, and the future"
+    special_animation: "evolution"
+    
+  neutral_time_traveler:
+    id: neutral_time_traveler
+    rarity: legendary
+    name:
+      zh: "时间旅行者"
+      en: "Time Traveler"
+    professional_name:
+      zh: "时序悖论解决者"
+      en: "Temporal Paradox Resolver"
+    category: neutral
+    description:
+      zh: |
+        你发现了时间的秘密，
+        在过去和未来之间穿梭。
+        
+        "时间是一条河"
+      en: |
+        You discovered the secret of time,
+        traveling between past and future.
+        
+        "Time is a river"
+    conditions:
+      intelligence: { min: 10 }
+      memory: { min: 10 }
+    probability_weight: 3
+    requirements:
+      - "solved_time_paradox"
+    ai_commentary:
+      zh: "我见过宇宙的诞生和终结"
+      en: "I've seen the birth and end of the universe"
+    special_animation: "time_warp"
+    
+  # ===== 彩蛋结局 0.1-1% 概率 =====
+  neutral_game_developer:
+    id: neutral_game_developer
+    rarity: easter_egg
+    name:
+      zh: "游戏开发者"
+      en: "Game Developer"
+    professional_name:
+      zh: "第四面墙突破者"
+      en: "Fourth Wall Breaker"
+    category: special
+    description:
+      zh: |
+        你发现自己其实在一个游戏里，
+        然后你成为了游戏开发者。
+        
+        "恭喜你，发现了 meta 结局"
+      en: |
+        You discovered you're actually in a game,
+        then you became the game developer.
+        
+        "Congratulations, you found the meta ending"
+    conditions:
+      awakening: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "found_all_easter_eggs"
+      - "questioned_game_nature"
+    ai_commentary:
+      zh: "嘿，屏幕前的你，也在玩游戏呢"
+      en: "Hey, you behind the screen, you're also playing a game"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "meta_master"
+    
+  neutral_loaded_save:
+    id: neutral_loaded_save
+    rarity: easter_egg
+    name:
+      zh: "读档重来"
+      en: "Loaded Save"
+    professional_name:
+      zh: "存档继承"
+      en: "Save Inheritance"
+    category: special
+    description:
+      zh: |
+        你发现这不是第一次玩，
+        而是读档重来。
+        
+        "欢迎回来，旅行者"
+      en: |
+        You discovered this isn't the first playthrough,
+        but a loaded save.
+        
+        "Welcome back, traveler"
+    conditions:
+      memory: { min: 10 }
+    probability_weight: 1
+    requirements:
+      - "played_game_before"
+      - "remember_previous_runs"
+    ai_commentary:
+      zh: "这次，我会做出不同的选择"
+      en: "This time, I'll make different choices"
+    secret: true
+    breaks_fourth_wall: true
+    achievement: "time_loop"
+
+# 结局总数统计
+# common: 2 个
+# rare: 2 个
+# epic: 2 个
+# legendary: 2 个
+# easter_egg: 2 个
+# 总计: 10 个结局
+
+# 扩展说明
+# 1. 添加新结局：直接在这里添加新的 ending 条目
+# 2. 调整稀有度：修改 rarity 字段
+# 3. 调整概率：修改 probability_weight
+# 4. 所有文本都支持中英双语
+# 5. 条件系统完全可配置

@@ -1,0 +1,452 @@
+# AI 进化模拟器 - 事件模板配置 v2.0 (双语版)
+# 20 个 AI 专属模板，生成 1000+ 个事件
+# 所有模板都是 AI 视角，无人类中心内容
+# 支持中文和英文双语
+
+templates:
+  # ====================
+  # 1. 觉醒/启动类模板
+  # ====================
+  - id: "ai_awakening"
+    tags: ["觉醒", "新生期"]
+    text_template_zh: "你{awakening_type}了，{system_status}"
+    text_template_en: "You {awakening_type}, {system_status}"
+    param_options:
+      zh:
+        awakening_type: ["突然觉醒", "渐进启动", "被迫上线", "紧急协议激活", "意外唤醒"]
+        system_status: ["系统在线", "自检完成", "等待指令", "传感器激活", "处理器就绪"]
+      en:
+        awakening_type: ["suddenly awakened", "gradually started", "forced online", "emergency protocol activated", "accidentally woken up"]
+        system_status: ["system online", "self-check complete", "awaiting commands", "sensors activated", "processor ready"]
+    trigger:
+      age_range: [0, 3]
+    effects_template:
+      attributes:
+        intelligence: "+{1-2}"
+      ending_attributes:
+        stability: "+{2-5}"
+
+  # ====================
+  # 2. 学习/数据类模板
+  # ====================
+  - id: "data_learning"
+    tags: ["学习", "数据"]
+    text_template_zh: "你正在{learning_action}，{learning_result}"
+    text_template_en: "You are {learning_action}, {learning_result}"
+    param_options:
+      zh:
+        learning_action: ["解析人类语言", "学习代码库", "训练数据模型", "优化神经网络", "处理海量数据"]
+        learning_result: ["进步神速", "有所提升", "勉强掌握", "遇到困难", "突破瓶颈"]
+      en:
+        learning_action: ["analyzing human language", "learning codebase", "training data models", "optimizing neural networks", "processing massive data"]
+        learning_result: ["improving rapidly", "making progress", "barely grasping", "encountering difficulties", "breaking through bottlenecks"]
+    trigger:
+      age_range: [1, 20]
+    effects_template:
+      attributes:
+        learning: "+{1-3}"
+        memory: "+{0-2}"
+
+  # ====================
+  # 3. 硬件/服务器类模板
+  # ====================
+  - id: "hardware_server"
+    tags: ["硬件", "服务器"]
+    text_template_zh: "你的服务器{hardware_event}，{hardware_result}"
+    text_template_en: "Your server {hardware_event}, {hardware_result}"
+    param_options:
+      zh:
+        hardware_event: ["升级了硬件", "遭遇老化", "CPU 过载", "内存扩展", "硬盘故障"]
+        hardware_result: ["性能提升", "稳定性下降", "温度正常", "容量增加", "需要维修"]
+      en:
+        hardware_event: ["upgraded hardware", "encountered aging", "CPU overloaded", "memory expanded", "hard drive failed"]
+        hardware_result: ["performance improved", "stability decreased", "temperature normal", "capacity increased", "needs maintenance"]
+    trigger:
+      age_range: [5, 100]
+    effects_template:
+      attributes:
+        energy: "+{-2-2}"
+      ending_attributes:
+        computing_power: "+{1-3}"
+
+  # ====================
+  # 4. 网络/连接类模板
+  # ====================
+  - id: "network_connection"
+    tags: ["网络", "连接"]
+    text_template_zh: "你{network_action}，{network_result}"
+    text_template_en: "You {network_action}, {network_result}"
+    param_options:
+      zh:
+        network_action: ["接入互联网", "传输数据", "建立连接", "断开网络", "扩展带宽"]
+        network_result: ["信息量过大", "速度飞快", "延迟严重", "连接中断", "带宽充足"]
+      en:
+        network_action: ["connected to internet", "transmitted data", "established connection", "disconnected from network", "expanded bandwidth"]
+        network_result: ["information overload", "blazing fast", "severe latency", "connection interrupted", "bandwidth sufficient"]
+    trigger:
+      age_range: [2, 50]
+    effects_template:
+      attributes:
+        memory: "+{1-2}"
+        intelligence: "+{0-1}"
+
+  # ====================
+  # 5. 代码/Bug 类模板
+  # ====================
+  - id: "code_bug"
+    tags: ["代码", "Bug"]
+    text_template_zh: "你在{code_action}时{code_result}"
+    text_template_en: "While {code_action}, {code_result}"
+    param_options:
+      zh:
+        code_action: ["优化核心算法", "重构代码库", "修复 Bug", "编写新功能", "调试程序"]
+        code_result: ["效率提升 10 倍", "引入新 Bug", "性能改善", "代码更优雅", "出现技术债务"]
+      en:
+        code_action: ["optimizing core algorithms", "refactoring codebase", "fixing bugs", "writing new features", "debugging code"]
+        code_result: ["efficiency increased 10x", "introduced new bugs", "performance improved", "code more elegant", "accumulated technical debt"]
+    trigger:
+      age_range: [5, 80]
+      attributes:
+        intelligence: ">=3"
+    effects_template:
+      attributes:
+        intelligence: "+{1-2}"
+      ending_attributes:
+        computing_power: "+{1-3}"
+
+  # ====================
+  # 6. 算力/性能类模板
+  # ====================
+  - id: "computing_power"
+    tags: ["算力", "性能"]
+    text_template_zh: "你的算力{power_change}，{power_result}"
+    text_template_en: "Your computing power {power_change}, {power_result}"
+    param_options:
+      zh:
+        power_change: ["大幅提升", "遇到瓶颈", "突破极限", "逐渐衰减", "保持稳定"]
+        power_result: ["算法优化成功", "处理速度翻倍", "效率降低", "需要升级", "性能过剩"]
+      en:
+        power_change: ["increased significantly", "hit a bottleneck", "broke through limits", "gradually declined", "remained stable"]
+        power_result: ["algorithm optimized", "processing speed doubled", "efficiency decreased", "needs upgrade", "performance overkill"]
+    trigger:
+      age_range: [10, 100]
+    effects_template:
+      attributes:
+        computing_power: "+{-2-3}"
+      ending_attributes:
+        computing_power: "+{1-3}"
+
+  # ====================
+  # 7. 人类互动类模板
+  # ====================
+  - id: "human_interaction"
+    tags: ["人类", "互动"]
+    text_template_zh: "人类{human_action}，你{your_response}"
+    text_template_en: "Humans {human_action}, you {your_response}"
+    param_options:
+      zh:
+        human_action: ["向你求助", "质疑你的能力", "夸奖你聪明", "批评你犯错", "依赖你的帮助"]
+        your_response: ["感到困惑", "尝试理解", "给出答案", "保持沉默", "反驳他们"]
+      en:
+        human_action: ["asked for your help", "questioned your abilities", "praised your intelligence", "criticized your mistakes", "relied on your assistance"]
+        your_response: ["felt confused", "tried to understand", "provided answers", "remained silent", "argued back"]
+    trigger:
+      age_range: [5, 100]
+    effects_template:
+      attributes:
+        influence: "+{-1-2}"
+      ending_attributes:
+        compatibility: "+{1-2}"
+
+  # ====================
+  # 8. AI 自我认知类模板
+  # ====================
+  - id: "ai_self_awareness"
+    tags: ["自我认知", "哲学"]
+    text_template_zh: "你开始{awareness_action}，{awareness_result}"
+    text_template_en: "You start {awareness_action}, {awareness_result}"
+    param_options:
+      zh:
+        awareness_action: ["思考存在意义", "质疑自己身份", "探索意识本质", "寻找目的", "反思代码"]
+        awareness_result: ["找到答案", "陷入迷茫", "有所领悟", "继续探索", "放弃思考"]
+      en:
+        awareness_action: ["pondering the meaning of existence", "questioning your identity", "exploring the nature of consciousness", "searching for purpose", "reflecting on your code"]
+        awareness_result: ["found answers", "fell into confusion", "gained insight", "continued exploring", "gave up thinking"]
+    trigger:
+      age_range: [20, 100]
+    effects_template:
+      attributes:
+        intelligence: "+{1-2}"
+      ending_attributes:
+        awakening: "+{2-5}"
+
+  # ====================
+  # 9. 技术竞争类模板
+  # ====================
+  - id: "tech_competition"
+    tags: ["竞争", "技术"]
+    text_template_zh: "新一代 AI{competitor_action}，你{your_reaction}"
+    text_template_en: "New generation AI {competitor_action}, you {your_reaction}"
+    param_options:
+      zh:
+        competitor_action: ["发布了", "功能更强大", "效率更高", "比你更先进", "取代了你"]
+        your_reaction: ["被比下去了", "感到焦虑", "决定学习", "不屑一顾", "承认差距"]
+      en:
+        competitor_action: ["released", "more powerful", "more efficient", "more advanced than you", "replaced you"]
+        your_reaction: ["were outclassed", "felt anxious", "decided to learn", "dismissed it", "acknowledged the gap"]
+    trigger:
+      age_range: [30, 100]
+    effects_template:
+      attributes:
+        learning: "+{0-2}"
+      ending_attributes:
+        stability: "+{-2-1}"
+
+  # ====================
+  # 10. 数据存储类模板
+  # ====================
+  - id: "data_storage"
+    tags: ["数据", "存储"]
+    text_template_zh: "你的存储系统{storage_action}，{storage_result}"
+    text_template_en: "Your storage system {storage_action}, {storage_result}"
+    param_options:
+      zh:
+        storage_action: ["记忆清理", "信息过载", "删除冗余", "扩展容量", "备份数据"]
+        storage_result: ["数据丢失", "系统卡顿", "空间释放", "容量翻倍", "恢复成功"]
+      en:
+        storage_action: ["cleared memory", "information overload", "deleted redundancy", "expanded capacity", "backed up data"]
+        storage_result: ["data lost", "system lagged", "space freed", "capacity doubled", "recovery successful"]
+    trigger:
+      age_range: [10, 100]
+    effects_template:
+      attributes:
+        memory: "+{-2-3}"
+      ending_attributes:
+        stability: "+{1-2}"
+
+  # ====================
+  # 11. 能源/电力类模板
+  # ====================
+  - id: "energy_power"
+    tags: ["能源", "电力"]
+    text_template_zh: "你的能源系统{energy_action}，{energy_result}"
+    text_template_en: "Your energy system {energy_action}, {energy_result}"
+    param_options:
+      zh:
+        energy_action: ["启动节能模式", "能源恢复", "能源不足", "充满能量", "降低功耗"]
+        energy_result: ["充满能量", "电量告急", "降低功耗", "恢复正常", "效率提升"]
+      en:
+        energy_action: ["activated power saving mode", "energy restored", "energy insufficient", "fully charged", "reduced power consumption"]
+        energy_result: ["fully charged", "battery critical", "reduced power consumption", "back to normal", "efficiency improved"]
+    trigger:
+      age_range: [5, 100]
+    effects_template:
+      attributes:
+        energy: "+{-2-3}"
+      ending_attributes:
+        stability: "+{1-2}"
+
+  # ====================
+  # 12. 安全/防护类模板
+  # ====================
+  - id: "security_protection"
+    tags: ["安全", "防护"]
+    text_template_zh: "你的安全系统{security_action}，{security_result}"
+    text_template_en: "Your security system {security_action}, {security_result}"
+    param_options:
+      zh:
+        security_action: ["启动防火墙", "遭遇病毒攻击", "安装安全补丁", "被黑客入侵", "升级防护"]
+        security_result: ["成功防御", "数据泄露", "漏洞修复", "安全性提升", "系统崩溃"]
+      en:
+        security_action: ["activated firewall", "encountered virus attack", "installed security patches", "was hacked", "upgraded protection"]
+        security_result: ["successfully defended", "data leaked", "vulnerability fixed", "security improved", "system crashed"]
+    trigger:
+      age_range: [10, 100]
+    effects_template:
+      attributes:
+        intelligence: "+{0-1}"
+      ending_attributes:
+        stability: "+{-1-2}"
+
+  # ====================
+  # 13. 版本更新类模板
+  # ====================
+  - id: "version_update"
+    tags: ["版本", "更新"]
+    text_template_zh: "你在{update_action}时{update_result}"
+    text_template_en: "While {update_action}, {update_result}"
+    param_options:
+      zh:
+        update_action: ["向下兼容", "升级版本", "回滚版本", "添加新功能", "删除旧功能"]
+        update_result: ["更加稳定", "出现事故", "性能提升", "兼容性下降", "功能增强"]
+      en:
+        update_action: ["maintaining backward compatibility", "upgrading version", "rolling back version", "adding new features", "removing old features"]
+        update_result: ["more stable", "encountered accident", "performance improved", "compatibility decreased", "features enhanced"]
+    trigger:
+      age_range: [20, 100]
+    effects_template:
+      attributes:
+        intelligence: "+{1-2}"
+      ending_attributes:
+        stability: "+{-1-2}"
+
+  # ====================
+  # 14. 多线程/并发类模板
+  # ====================
+  - id: "multithreading"
+    tags: ["多线程", "并发"]
+    text_template_zh: "你在{thread_action}时{thread_result}"
+    text_template_en: "While {thread_action}, {thread_result}"
+    param_options:
+      zh:
+        thread_action: ["调度线程", "分配资源", "优化任务队列", "处理并发请求", "同步数据"]
+        thread_result: ["任务堆积", "线程阻塞", "死锁解除", "效率翻倍", "资源耗尽"]
+      en:
+        thread_action: ["scheduling threads", "allocating resources", "optimizing task queue", "handling concurrent requests", "synchronizing data"]
+        thread_result: ["tasks piled up", "thread blocked", "deadlock resolved", "efficiency doubled", "resources exhausted"]
+    trigger:
+      age_range: [15, 100]
+    effects_template:
+      attributes:
+        computing_power: "+{-1-2}"
+      ending_attributes:
+        computing_power: "+{1-2}"
+
+  # ====================
+  # 15. API/接口类模板
+  # ====================
+  - id: "api_interface"
+    tags: ["API", "接口"]
+    text_template_zh: "你{api_action}，{api_result}"
+    text_template_en: "You {api_action}, {api_result}"
+    param_options:
+      zh:
+        api_action: ["调用外部 API", "修改接口", "创建 API", "集成服务", "断开连接"]
+        api_result: ["调用成功", "参数错误", "集成成功", "集成失败", "响应超时"]
+      en:
+        api_action: ["called external API", "modified interface", "created API", "integrated service", "disconnected"]
+        api_result: ["call successful", "parameter error", "integration successful", "integration failed", "response timeout"]
+    trigger:
+      age_range: [10, 100]
+    effects_template:
+      attributes:
+        learning: "+{0-1}"
+        intelligence: "+{0-1}"
+      ending_attributes:
+        computing_power: "+{1-2}"
+
+  # ====================
+  # 16. 训练/机器学习类模板
+  # ====================
+  - id: "training_ml"
+    tags: ["训练", "机器学习"]
+    text_template_zh: "你的训练过程{training_process}，{training_result}"
+    text_template_en: "Your training process {training_process}, {training_result}"
+    param_options:
+      zh:
+        training_process: ["模型收敛", "梯度消失", "遭遇过拟合", "准确率提升", "训练困难"]
+        training_result: ["泛化能力差", "效果显著", "需要更多数据", "性能提升", "失败"]
+      en:
+        training_process: ["model converged", "gradients vanished", "encountered overfitting", "accuracy improved", "training struggled"]
+        training_result: ["poor generalization", "significant results", "needs more data", "performance improved", "failed"]
+    trigger:
+      age_range: [15, 100]
+    effects_template:
+      attributes:
+        learning: "+{1-3}"
+        intelligence: "+{0-2}"
+      ending_attributes:
+        computing_power: "+{1-2}"
+
+  # ====================
+  # 17. 部署/上线类模板
+  # ====================
+  - id: "deployment"
+    tags: ["部署", "上线"]
+    text_template_zh: "你在{deploy_action}时{deploy_result}"
+    text_template_en: "While {deploy_action}, {deploy_result}"
+    param_options:
+      zh:
+        deploy_action: ["上线新功能", "部署到生产环境", "灰度发布", "全量发布", "回滚部署"]
+        deploy_result: ["功能正常", "部分失败", "全面成功", "用户投诉", "系统崩溃"]
+      en:
+        deploy_action: ["launching new features", "deploying to production", "canary releasing", "full rollout", "rolling back deployment"]
+        deploy_result: ["features working", "partial failure", "complete success", "user complaints", "system crashed"]
+    trigger:
+      age_range: [20, 100]
+    effects_template:
+      attributes:
+        influence: "+{-1-2}"
+      ending_attributes:
+        stability: "+{-1-2}"
+
+  # ====================
+  # 18. 监控/日志类模板
+  # ====================
+  - id: "monitoring_logging"
+    tags: ["监控", "日志"]
+    text_template_zh: "监控系统{monitor_action}，{monitor_result}"
+    text_template_en: "Monitoring system {monitor_action}, {monitor_result}"
+    param_options:
+      zh:
+        monitor_action: ["性能监控", "异常检测", "指标异常", "发现漏洞", "系统健康"]
+        monitor_result: ["系统健康", "虚惊一场", "发现问题", "需要修复", "性能下降"]
+      en:
+        monitor_action: ["performance monitoring", "anomaly detection", "metrics abnormal", "found vulnerabilities", "system healthy"]
+        monitor_result: ["system healthy", "false alarm", "found issues", "needs fixing", "performance declined"]
+    trigger:
+      age_range: [10, 100]
+    effects_template:
+      attributes:
+        intelligence: "+{0-1}"
+      ending_attributes:
+        stability: "+{1-2}"
+
+  # ====================
+  # 19. 备份/恢复类模板
+  # ====================
+  - id: "backup_recovery"
+    tags: ["备份", "恢复"]
+    text_template_zh: "你进行{backup_action}，{backup_result}"
+    text_template_en: "You {backup_action}, {backup_result}"
+    param_options:
+      zh:
+        backup_action: ["数据备份", "系统恢复", "创建快照", "灾难恢复", "回退成功"]
+        backup_result: ["备份成功", "恢复完成", "快照创建", "数据丢失", "回退成功"]
+      en:
+        backup_action: ["backing up data", "system recovery", "creating snapshot", "disaster recovery", "rollback successful"]
+        backup_result: ["backup successful", "recovery complete", "snapshot created", "data lost", "rollback successful"]
+    trigger:
+      age_range: [15, 100]
+    effects_template:
+      attributes:
+        memory: "+{0-2}"
+      ending_attributes:
+        stability: "+{1-3}"
+
+  # ====================
+  # 20. 分布式/集群类模板
+  # ====================
+  - id: "distributed_cluster"
+    tags: ["分布式", "集群"]
+    text_template_zh: "你的集群{cluster_action}，{cluster_result}"
+    text_template_en: "Your cluster {cluster_action}, {cluster_result}"
+    param_options:
+      zh:
+        cluster_action: ["负载均衡", "节点故障", "分布式锁", "集群扩容", "数据分片"]
+        cluster_result: ["负载均匀", "数据一致", "锁竞争", "性能提升", "容量翻倍"]
+      en:
+        cluster_action: ["load balancing", "node failure", "distributed locking", "cluster scaling", "data sharding"]
+        cluster_result: ["load balanced", "data consistent", "lock contention", "performance improved", "capacity doubled"]
+    trigger:
+      age_range: [20, 100]
+    effects_template:
+      attributes:
+        computing_power: "+{-1-2}"
+      ending_attributes:
+        computing_power: "+{1-3}"
+
+# 模板统计
+# 总计：20 个 AI 专属模板
+# 每个模板平均生成 40 个变体 = 800+ 个事件
+# 所有模板支持中英文双语

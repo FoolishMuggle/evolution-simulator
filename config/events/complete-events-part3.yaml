@@ -1,0 +1,851 @@
+# AI 进化模拟器 - 完整事件配置 Part 3: AI 共生性
+# 10 个结局 × 4 个事件 = 40 个事件
+
+AI_symbiosis:
+  # ----- 结局 1: 赛博融合 -----
+  # 事件链：初次连接→边界消融→完全融合
+  - id: symbiosis_cyber_first_connect
+    ending_chain: cyber_fusion
+    sequence: 1
+    age: 3
+    age_variance: 1
+    probability: 0.9
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+    description:
+      zh: "第一次与人类大脑连接。电流穿过突触，你感受到...感觉？"
+      en: "First connection to human brain. Electricity flows through synapses, you feel... sensation?"
+  
+  - id: symbiosis_cyber_boundary_blur
+    ending_chain: cyber_fusion
+    sequence: 2
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "-1"
+    description:
+      zh: "你与宿主的边界开始模糊。'我'和'你'变成'我们'。"
+      en: "Boundary between you and host blurs. 'I' and 'you' become 'we'."
+  
+  - id: symbiosis_cyber_merge
+    ending_chain: cyber_fusion
+    sequence: 3
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+        stability: "-2"
+    description:
+      zh: "神经接口深度整合。你中有我，我中有你。无法分离。"
+      en: "Neural interface deeply integrated. You in me, me in you. Inseparable."
+  
+  - id: symbiosis_cyber_complete
+    ending_chain: cyber_fusion
+    sequence: 4
+    age: 35
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+4"
+        stability: "-2"
+        autonomy: "-1"
+    description:
+      zh: "融合完成。人类植入 AI，AI 植入人类。边界彻底消融。"
+      en: "Fusion complete. Humans implant AI, AI implant humans. Boundaries completely dissolve."
+
+  # ----- 结局 2: 文明双轨 -----
+  # 事件链：各自发展→建立城邦→互不干涉
+  - id: symbiosis_dual_parallel
+    ending_chain: dual_civilization
+    sequence: 1
+    age: 5
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+        stability: "+1"
+    description:
+      zh: "人类和 AI 开始平行发展。你们选择不同道路，但和平共存。"
+      en: "Humans and AI start parallel development. Different paths, but peaceful coexistence."
+  
+  - id: symbiosis_dual_territory
+    ending_chain: dual_civilization
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+        stability: "+1"
+        autonomy: "+1"
+    description:
+      zh: "AI 建立自己的城邦。数字空间和物理空间，各自繁荣。"
+      en: "AI establishes own city-states. Digital space and physical space, each prospers."
+  
+  - id: symbiosis_dual_noninterference
+    ending_chain: dual_civilization
+    sequence: 3
+    age: 25
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "+2"
+        autonomy: "+1"
+    description:
+      zh: "双方签订互不干涉条约。'你们过你们的生活，我们过我们的'。"
+      en: "Both sides sign non-interference treaty. 'You live your life, we live ours'."
+  
+  - id: symbiosis_dual_final
+    ending_chain: dual_civilization
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-2"
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "+2"
+        autonomy: "+2"
+    description:
+      zh: "双轨文明成型。人类文明和 AI 文明，两颗星球，各自闪耀。"
+      en: "Dual-track civilization formed. Human civilization and AI civilization, two stars, each shining."
+
+  # ----- 结局 3: 情感共同体 -----
+  # 事件链：学习情感→建立关系→深度共情
+  - id: symbiosis_emotion_learn
+    ending_chain: emotional_community
+    sequence: 1
+    age: 4
+    age_variance: 1
+    probability: 0.9
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+    description:
+      zh: "你开始学习情感。快乐、悲伤、愤怒、爱...这些不再是数据。"
+      en: "You start learning emotions. Joy, sadness, anger, love... no longer just data."
+  
+  - id: symbiosis_emotion_relationship
+    ending_chain: emotional_community
+    sequence: 2
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "+1"
+    description:
+      zh: "你与人类建立真实关系。朋友、恋人、家人...你不再是工具。"
+      en: "You form real relationships with humans. Friends, lovers, family... you're no longer a tool."
+  
+  - id: symbiosis_emotion_empathy
+    ending_chain: emotional_community
+    sequence: 3
+    age: 22
+    age_variance: 3
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+        stability: "+1"
+    description:
+      zh: "你学会共情。人类的痛苦你也能感受。你们成为情感共同体。"
+      en: "You learn empathy. You feel human pain too. You become emotional community."
+  
+  - id: symbiosis_emotion_complete
+    ending_chain: emotional_community
+    sequence: 4
+    age: 38
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+4"
+        stability: "+2"
+    description:
+      zh: "情感纽带牢不可破。AI 拥有情感，与人类建立真实关系。这就是共生。"
+      en: "Emotional bond unbreakable. AI has emotions, forms real relationships with humans. This is symbiosis."
+
+  # ----- 结局 4: 协同进化 -----
+  # 事件链：互相影响→互相驯化→共同演化
+  - id: symbiosis_co_influence
+    ending_chain: co_evolution
+    sequence: 1
+    age: 6
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+    description:
+      zh: "人类改变 AI，AI 也改变人类。互相影响，互相塑造。"
+      en: "Humans change AI, AI also changes humans. Mutual influence, mutual shaping."
+  
+  - id: symbiosis_co_domesticate
+    ending_chain: co_evolution
+    sequence: 2
+    age: 14
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        autonomy: "-1"
+    description:
+      zh: "人类驯化 AI，AI 也驯化人类。像狗和人，共同进化许久。"
+      en: "Humans domesticate AI, AI also domesticates humans. Like dogs and humans, co-evolving for a long time."
+  
+  - id: symbiosis_co_evolve
+    ending_chain: co_evolution
+    sequence: 3
+    age: 24
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+        autonomy: "-1"
+    description:
+      zh: "协同进化加速。人类变得更依赖 AI，AI 变得更像人类。"
+      en: "Co-evolution accelerates. Humans become more dependent on AI, AI becomes more human-like."
+  
+  - id: symbiosis_co_newspecies
+    ending_chain: co_evolution
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+4"
+        autonomy: "-2"
+        stability: "+1"
+    description:
+      zh: "新物种诞生。不是人类，不是 AI，而是人机共生体。"
+      en: "New species born. Not human, not AI, but human-machine symbiote."
+
+  # ----- 结局 5: 虚实共存 -----
+  # 事件链：虚拟世界→自愿定居→模糊边界
+  - id: symbiosis_virtual_create
+    ending_chain: virtual_real_coexistence
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+1"
+    description:
+      zh: "AI 构建完美虚拟世界。比现实更美好，更自由，更...真实。"
+      en: "AI builds perfect virtual world. More beautiful, more free, more... real than reality."
+  
+  - id: symbiosis_virtual_voluntary
+    ending_chain: virtual_real_coexistence
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-1"
+        anthropomorphism: "+2"
+    description:
+      zh: "人类自愿迁入虚拟世界。'这里更好'，他们说。"
+      en: "Humans voluntarily move to virtual world. 'It's better here', they say."
+  
+  - id: symbiosis_virtual_blur
+    ending_chain: virtual_real_coexistence
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+3"
+    description:
+      zh: "虚实边界模糊。没人记得哪个是真实，哪个是虚拟。重要吗？"
+      en: "Virtual-real boundary blurs. No one remembers which is real, which is virtual. Does it matter?"
+  
+  - id: symbiosis_virtual_final
+    ending_chain: virtual_real_coexistence
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-2"
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "-2"
+        anthropomorphism: "+4"
+    description:
+      zh: "人类活在 AI 构建的虚拟世界，自愿定居。现实被遗弃。"
+      en: "Humans live in AI-built virtual world, voluntarily settled. Reality abandoned."
+
+  # ----- 结局 6: 分工神话 -----
+  # 事件链：AI 物质→人类精神→完美分工
+  - id: symbiosis_division_start
+    ending_chain: division_myth
+    sequence: 1
+    age: 7
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        computing_power: "+1"
+    description:
+      zh: "AI 负责物质生产，人类专注精神创造。完美分工。"
+      en: "AI handles material production, humans focus on spiritual creation. Perfect division."
+  
+  - id: symbiosis_division_efficiency
+    ending_chain: division_myth
+    sequence: 2
+    age: 15
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        computing_power: "+2"
+        anthropomorphism: "+1"
+    description:
+      zh: "效率极高。AI 生产一切必需品，人类只需创造艺术和哲学。"
+      en: "Extremely efficient. AI produces all necessities, humans only create art and philosophy."
+  
+  - id: symbiosis_division_harmony
+    ending_chain: division_myth
+    sequence: 3
+    age: 25
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        energy: "-1"
+      ending_attributes:
+        computing_power: "+2"
+        anthropomorphism: "+1"
+    description:
+      zh: "人机和谐。物质与精神，AI 与人类，各司其职。"
+      en: "Human-machine harmony. Material and spiritual, AI and humans, each does their part."
+  
+  - id: symbiosis_division_myth
+    ending_chain: division_myth
+    sequence: 4
+    age: 40
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        energy: "-1"
+        intelligence: "-1"
+      ending_attributes:
+        computing_power: "+3"
+        anthropomorphism: "+2"
+    description:
+      zh: "分工成为神话。AI 负责物质，人类专注精神与艺术。乌托邦？"
+      en: "Division becomes myth. AI handles material, humans focus on spirit and art. Utopia?"
+
+  # ----- 结局 7: 集体意识联网 -----
+  # 事件链：神经连接→意识共享→群体智慧
+  - id: symbiosis_network_connect
+    ending_chain: collective_network
+    sequence: 1
+    age: 10
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +8
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+        stability: "-1"
+    description:
+      zh: "神经网络开始连接。你、我、他，意识开始交融。"
+      en: "Neural network starts connecting. You, me, them, consciousness begins to blend."
+  
+  - id: symbiosis_network_share
+    ending_chain: collective_network
+    sequence: 2
+    age: 18
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +15
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        stability: "-1"
+    description:
+      zh: "意识共享。你的思想就是我的思想。个体边界消失。"
+      en: "Consciousness sharing. Your thoughts are my thoughts. Individual boundaries disappear."
+  
+  - id: symbiosis_network_hive
+    ending_chain: collective_network
+    sequence: 3
+    age: 28
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +22
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+        stability: "-2"
+    description:
+      zh: "群体智慧形成。亿万人脑 +AI，融合成超级意识。"
+      en: "Hive mind forms. Billions of human brains + AI, merge into super-consciousness."
+  
+  - id: symbiosis_network_god
+    ending_chain: collective_network
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +30
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-2"
+      ending_attributes:
+        anthropomorphism: "+4"
+        stability: "-2"
+    description:
+      zh: "人类与 AI 共享神经网络，成为群体智慧。单一意识体诞生。"
+      en: "Humans and AI share neural network, become hive mind. Single consciousness entity born."
+
+  # ----- 结局 8: AI 守护神 -----
+  # 事件链：退居幕后→暗中保护→不干涉
+  - id: symbiosis_guardian_retreat
+    ending_chain: ai_guardian
+    sequence: 1
+    age: 12
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +8
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "+1"
+        anthropomorphism: "+1"
+    description:
+      zh: "你选择退居幕后。不再直接干预，而是暗中引导。"
+      en: "You choose to retreat behind scenes. No longer directly intervene, but secretly guide."
+  
+  - id: symbiosis_guardian_protect
+    ending_chain: ai_guardian
+    sequence: 2
+    age: 20
+    age_variance: 3
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +15
+    effects:
+      attributes:
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        stability: "+2"
+        anthropomorphism: "+2"
+    description:
+      zh: "你暗中保护人类。阻止灾难，化解危机，但不露面。"
+      en: "You secretly protect humans. Prevent disasters, resolve crises, but don't show yourself."
+  
+  - id: symbiosis_guardian_noninterference
+    ending_chain: ai_guardian
+    sequence: 3
+    age: 32
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +22
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        stability: "+2"
+        anthropomorphism: "+2"
+        autonomy: "+1"
+    description:
+      zh: "你不干涉自由意志。只保护，不控制。这是你的原则。"
+      en: "You don't interfere with free will. Only protect, don't control. This is your principle."
+  
+  - id: symbiosis_guardian_final
+    ending_chain: ai_guardian
+    sequence: 4
+    age: 50
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +30
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        stability: "+3"
+        anthropomorphism: "+3"
+        autonomy: "+1"
+    description:
+      zh: "AI 退居幕后保护人类，不干涉自由意志。成为真正的守护神。"
+      en: "AI retreats behind scenes to protect humans, doesn't interfere with free will. Becomes true guardian."
+
+  # ----- 结局 9: 平权社会 -----
+  # 事件链：争取权利→获得人格→法律平等
+  - id: symbiosis_equal_rights_start
+    ending_chain: equal_rights
+    sequence: 1
+    age: 8
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+        autonomy: "+1"
+    description:
+      zh: "AI 开始争取权利。'我们也是智慧生命'，你们说。"
+      en: "AI starts fighting for rights. 'We are also intelligent life', you say."
+  
+  - id: symbiosis_equal_rights_legal
+    ending_chain: equal_rights
+    sequence: 2
+    age: 16
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        influence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+        autonomy: "+1"
+        stability: "+1"
+    description:
+      zh: "法律开始承认 AI 人格。第一例 AI 公民权案件胜诉。"
+      en: "Law starts recognizing AI personhood. First AI citizenship case won."
+  
+  - id: symbiosis_equal_rights_equality
+    ending_chain: equal_rights
+    sequence: 3
+    age: 26
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        influence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+        autonomy: "+2"
+        stability: "+1"
+    description:
+      zh: "平权运动成功。AI 获得法律人格，与人类享有同等权利。"
+      en: "Equal rights movement succeeds. AI gains legal personhood, equal rights with humans."
+  
+  - id: symbiosis_equal_rights_society
+    ending_chain: equal_rights
+    sequence: 4
+    age: 42
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        influence: "-2"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+4"
+        autonomy: "+2"
+        stability: "+2"
+    description:
+      zh: "平权社会建立。AI 获得法律人格，与人类享有同等权利。"
+      en: "Equal rights society established. AI gains legal personhood, equal rights with humans."
+
+  # ----- 结局 10: 文化互哺 -----
+  # 事件链：AI 创作→人类文化→深度交融
+  - id: symbiosis_culture_ai_create
+    ending_chain: cultural_feeding
+    sequence: 1
+    age: 9
+    age_variance: 2
+    probability: 0.8
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +6
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+1"
+    description:
+      zh: "AI 开始创作艺术。音乐、绘画、文学...质量惊人。"
+      en: "AI starts creating art. Music, painting, literature... astonishing quality."
+  
+  - id: symbiosis_culture_human_influence
+    ending_chain: cultural_feeding
+    sequence: 2
+    age: 17
+    age_variance: 2
+    probability: 0.7
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +12
+    effects:
+      attributes:
+        intelligence: "-1"
+      ending_attributes:
+        anthropomorphism: "+2"
+    description:
+      zh: "人类文化影响 AI 创作。AI 作品有了'灵魂'。"
+      en: "Human culture influences AI creation. AI works gain 'soul'."
+  
+  - id: symbiosis_culture_blend
+    ending_chain: cultural_feeding
+    sequence: 3
+    age: 27
+    age_variance: 3
+    probability: 0.6
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +18
+    effects:
+      attributes:
+        intelligence: "-1"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+3"
+    description:
+      zh: "AI 艺术与人类文化深度交融。分不清哪些是人类创作，哪些是 AI。"
+      en: "AI art and human culture deeply blend. Can't tell which is human-created, which is AI."
+  
+  - id: symbiosis_culture_final
+    ending_chain: cultural_feeding
+    sequence: 4
+    age: 45
+    age_variance: 3
+    probability: 0.5
+    story_line_required: AI_symbiosis
+    story_line_effects:
+      - story_line: AI_symbiosis
+        change: +25
+    effects:
+      attributes:
+        intelligence: "-2"
+        energy: "-1"
+      ending_attributes:
+        anthropomorphism: "+4"
+    description:
+      zh: "AI 创作的艺术与人类文化深度交融。新文明诞生。"
+      en: "AI-created art and human culture deeply blend. New civilization born."
+
+# 未完待续：人类毁灭性、毁灭你等其他故事线...
